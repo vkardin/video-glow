@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#0f1117;color:#e8e8ee;font:15px system-ui,sans-serif}
+header{height:56px;background:#171a22;display:flex;align-items:center;padding:0 28px;font-weight:600;font-size:18px;border-bottom:1px solid #232733}
+header i{display:inline-block;width:14px;height:14px;border-radius:4px;background:#8b6bff;margin-right:10px}
+main{width:880px;margin:26px auto}
+#box{background:#000;position:relative}
+video{display:block;width:880px;height:495px;background:#000;object-fit:contain}
+#box:fullscreen{width:100vw;height:100vh}#box:fullscreen video{width:100%;height:100%}
+h1{font-size:22px;margin:18px 0 6px}p{color:#9aa0b4;margin:0}
+</style></head><body>
+<header><i></i>Demo Player</header>
+<main><div id="box"><video id="v" muted autoplay playsinline></video></div>
+<h1>Sunset over the ridge — original animation</h1><p>Procedurally generated scene used for the Video Glow screenshots.</p></main>
+<script>
+const c=document.createElement('canvas');c.width=1280;c.height=720;const x=c.getContext('2d');let t=0;
+function draw(){t+=1;const T=t/60;
+ const g=x.createLinearGradient(0,0,0,720);g.addColorStop(0,'#1b1458');g.addColorStop(.38,'#7a2a8c');g.addColorStop(.62,'#ff6a4d');g.addColorStop(.8,'#ffc15a');g.addColorStop(1,'#ffe3a0');x.fillStyle=g;x.fillRect(0,0,1280,720);
+ x.fillStyle='rgba(255,255,255,.8)';for(let i=0;i<60;i++){const sx=(i*197)%1280,sy=(i*83)%260;x.globalAlpha=.4+.4*Math.sin(T*2+i);x.fillRect(sx,sy,2,2)}x.globalAlpha=1;
+ const sy=470+Math.sin(T/3)*14;const sg=x.createRadialGradient(640,sy,10,640,sy,230);sg.addColorStop(0,'#fff6c8');sg.addColorStop(.25,'#ffd36a');sg.addColorStop(1,'rgba(255,120,60,0)');x.fillStyle=sg;x.fillRect(0,0,1280,720);
+ x.fillStyle='#fff3c0';x.beginPath();x.arc(640,sy,70,0,7);x.fill();
+ x.fillStyle='rgba(255,200,230,.55)';for(let k=0;k<4;k++){const cx=((T*20*(k+1)*.4+k*400)%1600)-200,cy=120+k*70;x.beginPath();x.ellipse(cx,cy,170,22,0,0,7);x.fill();x.beginPath();x.ellipse(cx+80,cy-14,110,18,0,0,7);x.fill()}
+ const layers=[['#5b2a6e',430,60,.004],['#3a1d5c',500,80,.006],['#1e1240',580,90,.009],['#0d0a22',650,70,.013]];
+ layers.forEach(([col,base,amp,f],i)=>{x.fillStyle=col;x.beginPath();x.moveTo(0,720);for(let X=0;X<=1280;X+=8){x.lineTo(X,base-amp*Math.abs(Math.sin(X*f+i*2))-amp*.4*Math.sin(X*f*3.1+i))}x.lineTo(1280,720);x.fill()});
+ requestAnimationFrame(draw)}draw();
+const v=document.getElementById('v');v.srcObject=c.captureStream(30);v.play();
+</script></body></html>

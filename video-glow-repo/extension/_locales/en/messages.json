@@ -1,0 +1,398 @@
+{
+  "extName": {
+    "message": "Video Glow — ambient light for any video"
+  },
+  "extDescription": {
+    "message": "Soft ambient glow around any video on any site, also in fullscreen. Fills black bars. Shape, blur and size are fully adjustable."
+  },
+  "actionTitle": {
+    "message": "Video Glow"
+  },
+  "cmdToggle": {
+    "message": "Turn the glow on / off everywhere"
+  },
+  "cmdSite": {
+    "message": "Turn the glow on / off on this site"
+  },
+  "p_enabled_title": {
+    "message": "Turn on / off everywhere (Alt+Shift+B)"
+  },
+  "p_site_off": {
+    "message": "Disable on $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_presets": {
+    "message": "Presets"
+  },
+  "preset_soft": {
+    "message": "Soft"
+  },
+  "preset_cinema": {
+    "message": "Cinema"
+  },
+  "preset_neon": {
+    "message": "Neon"
+  },
+  "preset_exact": {
+    "message": "Exact"
+  },
+  "p_page": {
+    "message": "Glow on the page"
+  },
+  "p_shape": {
+    "message": "Frame shape"
+  },
+  "p_shape_rect": {
+    "message": "Rectangle"
+  },
+  "p_shape_rounded": {
+    "message": "Rounded"
+  },
+  "p_shape_circle": {
+    "message": "Circle"
+  },
+  "s_spread": {
+    "message": "Frame size"
+  },
+  "s_spread_hint": {
+    "message": "How far the glow extends beyond the video edges"
+  },
+  "s_feather": {
+    "message": "Edge softness"
+  },
+  "s_feather_hint": {
+    "message": "How smoothly the glow fades toward its outer border: 0 — sharp edge, 100 — soft fade across the whole frame"
+  },
+  "s_radius": {
+    "message": "Corner radius"
+  },
+  "p_seamless": {
+    "message": "Seamless junction with the video"
+  },
+  "p_seamless_hint": {
+    "message": "The picture continues beyond the frame edges and the glow is at full strength right at the junction. Also works in fullscreen"
+  },
+  "p_mode": {
+    "message": "Layering"
+  },
+  "p_mode_screen": {
+    "message": "On top, lighten"
+  },
+  "p_mode_normal": {
+    "message": "On top, normal"
+  },
+  "p_mode_under": {
+    "message": "Behind the page"
+  },
+  "p_mode_hint": {
+    "message": "“On top” is visible even over opaque backgrounds and never covers the video itself. “Behind the page” doesn't touch the content but may hide behind block backgrounds."
+  },
+  "p_fs": {
+    "message": "Fullscreen"
+  },
+  "p_fs_fill": {
+    "message": "Fill the whole screen"
+  },
+  "p_fs_fill_hint": {
+    "message": "Covers the black bars, not just a frame around the video"
+  },
+  "p_look": {
+    "message": "Appearance"
+  },
+  "s_blur": {
+    "message": "Blur"
+  },
+  "s_sample": {
+    "message": "Sample size"
+  },
+  "s_sample_hint": {
+    "message": "Width of the frame taken from the video: smaller — softer and lighter, larger — more detailed"
+  },
+  "s_opacity": {
+    "message": "Glow strength"
+  },
+  "s_saturation": {
+    "message": "Saturation"
+  },
+  "s_brightness": {
+    "message": "Color brightness"
+  },
+  "s_fade": {
+    "message": "Fade on pause / play"
+  },
+  "s_fade_hint": {
+    "message": "How long the glow takes to fade out on pause and fade in on play"
+  },
+  "p_fps": {
+    "message": "Update rate, fps"
+  },
+  "p_adv": {
+    "message": "Advanced"
+  },
+  "p_fillbars": {
+    "message": "Fill bars inside the player"
+  },
+  "p_fillbars_hint": {
+    "message": "If the video doesn't fill its block (outside fullscreen)"
+  },
+  "p_cropbars": {
+    "message": "Ignore black bars inside the video"
+  },
+  "p_cropbars_hint": {
+    "message": "Movies with baked-in bars (2.39:1) won't produce dark zones in the glow"
+  },
+  "p_adaptive": {
+    "message": "Adapt to a slow device"
+  },
+  "p_adaptive_hint": {
+    "message": "Automatically lowers the update rate if the computer can't keep up"
+  },
+  "p_eco": {
+    "message": "Save battery"
+  },
+  "p_eco_hint": {
+    "message": "Below 30% charge and unplugged, limit updates to 15 fps"
+  },
+  "s_minwidth": {
+    "message": "Minimum video width"
+  },
+  "s_minwidth_hint": {
+    "message": "Videos narrower than this (previews, banners) are ignored"
+  },
+  "u_ms": {
+    "message": " ms"
+  },
+  "p_reset": {
+    "message": "Reset settings"
+  },
+  "p_options": {
+    "message": "All settings"
+  },
+  "p_donate": {
+    "message": "Support the project"
+  },
+  "p_note": {
+    "message": "Changes apply instantly"
+  },
+  "st_ok": {
+    "message": "The glow is working on this page"
+  },
+  "st_paused": {
+    "message": "Video is paused — the glow is off"
+  },
+  "st_small": {
+    "message": "The video is smaller than the minimum width"
+  },
+  "st_site": {
+    "message": "Disabled on this site"
+  },
+  "st_disabled": {
+    "message": "Video Glow is turned off"
+  },
+  "st_pageoff": {
+    "message": "Glow on the page is turned off"
+  },
+  "st_fsoff": {
+    "message": "Glow in fullscreen is turned off"
+  },
+  "st_offscreen": {
+    "message": "The video is not visible on screen"
+  },
+  "st_hidden": {
+    "message": "The video is hidden by the page"
+  },
+  "st_pip": {
+    "message": "Picture-in-picture is active"
+  },
+  "st_otherfs": {
+    "message": "Another element is in fullscreen"
+  },
+  "st_novideo": {
+    "message": "The video has not loaded yet"
+  },
+  "st_none": {
+    "message": "No video found on this page"
+  },
+  "st_unsupported": {
+    "message": "Not available on this page"
+  },
+  "st_unreadable": {
+    "message": "The browser doesn't allow reading frames of this video (other domain / protection). The glow works, but black-bar detection is unavailable."
+  },
+  "o_title": {
+    "message": "Video Glow — settings"
+  },
+  "o_sites": {
+    "message": "Disabled sites"
+  },
+  "o_sites_hint": {
+    "message": "The glow never appears on these sites."
+  },
+  "o_sites_empty": {
+    "message": "No disabled sites"
+  },
+  "o_site_add_ph": {
+    "message": "example.com"
+  },
+  "o_site_add": {
+    "message": "Add"
+  },
+  "o_site_remove": {
+    "message": "Remove"
+  },
+  "o_backup": {
+    "message": "Backup"
+  },
+  "o_export": {
+    "message": "Export settings"
+  },
+  "o_import": {
+    "message": "Import settings"
+  },
+  "o_import_ok": {
+    "message": "Settings imported"
+  },
+  "o_import_err": {
+    "message": "Could not read the file"
+  },
+  "o_reset_all": {
+    "message": "Reset all settings"
+  },
+  "o_reset_confirm": {
+    "message": "Reset all settings to defaults? The list of disabled sites will be cleared too."
+  },
+  "o_shortcuts": {
+    "message": "Keyboard shortcuts"
+  },
+  "o_shortcuts_btn": {
+    "message": "Configure shortcuts"
+  },
+  "o_shortcuts_text": {
+    "message": "Turn on / off everywhere: Alt+Shift+B. “Turn on / off on this site” has no default key — assign one in the browser's shortcut settings."
+  },
+  "o_about": {
+    "message": "About"
+  },
+  "o_version": {
+    "message": "Version $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_privacy": {
+    "message": "Privacy policy"
+  },
+  "o_privacy_text": {
+    "message": "Video Glow does not collect or send any data. Settings are stored locally in your browser."
+  },
+  "o_limits": {
+    "message": "Limitations"
+  },
+  "o_limits_text": {
+    "message": "Videos protected by DRM (Netflix, Disney+ and similar) can't be read by the browser, so there is no glow for them. For videos from another domain without CORS, black-bar detection and the “video itself in fullscreen” mode are unavailable."
+  },
+  "w_title": {
+    "message": "Video Glow is installed"
+  },
+  "w_sub": {
+    "message": "Ambient glow for any video on any site."
+  },
+  "w_step1": {
+    "message": "Open any video and press play — the glow appears smoothly around it."
+  },
+  "w_step2": {
+    "message": "Click the extension icon to change size, blur, shape and presets."
+  },
+  "w_step3": {
+    "message": "Press Alt+Shift+B to turn the glow on or off."
+  },
+  "w_step4": {
+    "message": "In fullscreen the glow fills the black bars of your screen."
+  },
+  "w_note": {
+    "message": "No glow? Open the popup — it tells you why (paused, too small, protected video…)."
+  },
+  "w_open": {
+    "message": "Open settings"
+  },
+  "hover_tip": {
+    "message": "Video Glow: glow on/off"
+  },
+  "st_useroff": {
+    "message": "Glow turned off with the button on the video"
+  },
+  "u_sec": {
+    "message": " s"
+  },
+  "p_badge_site": {
+    "message": "this site"
+  },
+  "p_scope_site": {
+    "message": "Own settings for $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_scope_hint": {
+    "message": "Off: changes apply to all sites. On: only to this site."
+  },
+  "p_scope_reset": {
+    "message": "Reset to global settings"
+  },
+  "p_pause": {
+    "message": "On pause"
+  },
+  "p_pause_mode": {
+    "message": "Glow when paused"
+  },
+  "p_pause_fade": {
+    "message": "Fades out"
+  },
+  "p_pause_hold": {
+    "message": "Stays on"
+  },
+  "p_pause_delay": {
+    "message": "Fades after a delay"
+  },
+  "s_pause_delay": {
+    "message": "Fade after"
+  },
+  "p_fs_same": {
+    "message": "Same as on the page"
+  },
+  "p_fs_same_hint": {
+    "message": "Off: fullscreen gets its own blur, brightness and pause settings."
+  },
+  "p_dim": {
+    "message": "Dim the page around the player"
+  },
+  "p_dim_hint": {
+    "message": "Cinema mode: everything except the video gets darker."
+  },
+  "s_dim": {
+    "message": "Dimming"
+  },
+  "p_hover": {
+    "message": "Button on the video"
+  },
+  "p_hover_hint": {
+    "message": "A small button appears on the video when you move the mouse over it."
+  },
+  "o_custom_sites": {
+    "message": "Sites with their own settings"
+  },
+  "o_custom_hint": {
+    "message": "Enable \"Own settings for this site\" in the popup to add a site here."
+  },
+  "o_custom_empty": {
+    "message": "No sites yet."
+  }
+}
