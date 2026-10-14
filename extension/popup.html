@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Video Glow</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="logo"></span><b>Video Glow</b><em id="scopeBadge" hidden data-i18n="p_badge_site"></em></div>
+    <label class="switch" data-i18n-title="p_enabled_title">
+      <input type="checkbox" data-key="enabled"><span></span>
+    </label>
+  </header>
+
+  <div id="status" class="status" data-kind="info">
+    <i></i>
+    <div><span id="statusText"></span><small id="statusNote"></small></div>
+  </div>
+
+  <section id="site" class="card">
+    <label class="check">
+      <input type="checkbox" id="siteOff">
+      <span id="siteOffText"></span>
+    </label>
+  </section>
+
+  <section id="scope" class="card">
+    <label class="check">
+      <input type="checkbox" id="siteMode">
+      <span><span id="siteModeText"></span><small data-i18n="p_scope_hint"></small></span>
+    </label>
+    <button id="scopeReset" type="button" hidden data-i18n="p_scope_reset"></button>
+  </section>
+
+  <section class="card">
+    <div class="top"><span class="lbl" data-i18n="p_presets"></span></div>
+    <div id="presets" class="chips"></div>
+  </section>
+
+  <section class="card">
+    <div class="head">
+      <h3 data-i18n="p_page"></h3>
+      <label class="switch"><input type="checkbox" data-key="pageGlow"><span></span></label>
+    </div>
+
+    <div class="ctl">
+      <div class="top"><span class="lbl" data-i18n="p_shape"></span></div>
+      <div class="seg" data-key="shape">
+        <button type="button" data-v="rect"><i style="border-radius:1px"></i><span data-i18n="p_shape_rect"></span></button>
+        <button type="button" data-v="rounded"><i style="border-radius:5px"></i><span data-i18n="p_shape_rounded"></span></button>
+        <button type="button" data-v="circle"><i style="border-radius:50%"></i><span data-i18n="p_shape_circle"></span></button>
+      </div>
+    </div>
+
+    <div id="pageSliders"></div>
+
+    <label class="check">
+      <input type="checkbox" data-key="seamless">
+      <span><span data-i18n="p_seamless"></span><small data-i18n="p_seamless_hint"></small></span>
+    </label>
+
+    <div class="ctl">
+      <div class="top">
+        <span class="lbl" data-i18n="p_mode"></span>
+        <select data-key="pageMode">
+          <option value="screen" data-i18n="p_mode_screen"></option>
+          <option value="normal" data-i18n="p_mode_normal"></option>
+          <option value="under" data-i18n="p_mode_under"></option>
+        </select>
+      </div>
+      <div class="hint" data-i18n="p_mode_hint"></div>
+    </div>
+
+    <label class="check">
+      <input type="checkbox" data-key="dim">
+      <span><span data-i18n="p_dim"></span><small data-i18n="p_dim_hint"></small></span>
+    </label>
+    <div id="dimSliders"></div>
+  </section>
+
+  <section class="card">
+    <div class="head"><h3 data-i18n="p_pause"></h3></div>
+    <div class="ctl">
+      <div class="top">
+        <span class="lbl" data-i18n="p_pause_mode"></span>
+        <select data-key="pauseMode">
+          <option value="fade" data-i18n="p_pause_fade"></option>
+          <option value="hold" data-i18n="p_pause_hold"></option>
+          <option value="delay" data-i18n="p_pause_delay"></option>
+        </select>
+      </div>
+    </div>
+    <div id="pauseSliders"></div>
+  </section>
+
+  <section class="card">
+    <div class="head">
+      <h3 data-i18n="p_fs"></h3>
+      <label class="switch"><input type="checkbox" data-key="fullscreenGlow"><span></span></label>
+    </div>
+    <label class="check">
+      <input type="checkbox" data-key="fullscreenFill">
+      <span><span data-i18n="p_fs_fill"></span><small data-i18n="p_fs_fill_hint"></small></span>
+    </label>
+    <label class="check">
+      <input type="checkbox" id="fsSame">
+      <span><span data-i18n="p_fs_same"></span><small data-i18n="p_fs_same_hint"></small></span>
+    </label>
+    <div id="fsOwn" hidden>
+      <div id="fsSliders"></div>
+      <div class="ctl">
+        <div class="top">
+          <span class="lbl" data-i18n="p_pause_mode"></span>
+          <select data-key="fsPauseMode">
+            <option value="fade" data-i18n="p_pause_fade"></option>
+            <option value="hold" data-i18n="p_pause_hold"></option>
+            <option value="delay" data-i18n="p_pause_delay"></option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="head"><h3 data-i18n="p_look"></h3></div>
+    <div id="lookSliders"></div>
+    <div class="ctl">
+      <div class="top">
+        <span class="lbl" data-i18n="p_fps"></span>
+        <select data-key="fps" data-type="number">
+          <option value="15">15</option>
+          <option value="24">24</option>
+          <option value="30">30</option>
+          <option value="60">60</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <details class="card">
+    <summary data-i18n="p_adv"></summary>
+    <label class="check">
+      <input type="checkbox" data-key="cropBars">
+      <span><span data-i18n="p_cropbars"></span><small data-i18n="p_cropbars_hint"></small></span>
+    </label>
+    <label class="check">
+      <input type="checkbox" data-key="fillBars">
+      <span><span data-i18n="p_fillbars"></span><small data-i18n="p_fillbars_hint"></small></span>
+    </label>
+    <label class="check">
+      <input type="checkbox" data-key="hoverButton">
+      <span><span data-i18n="p_hover"></span><small data-i18n="p_hover_hint"></small></span>
+    </label>
+    <label class="check">
+      <input type="checkbox" data-key="adaptive">
+      <span><span data-i18n="p_adaptive"></span><small data-i18n="p_adaptive_hint"></small></span>
+    </label>
+    <label class="check">
+      <input type="checkbox" data-key="ecoBattery">
+      <span><span data-i18n="p_eco"></span><small data-i18n="p_eco_hint"></small></span>
+    </label>
+    <div id="advSliders" class="adv"></div>
+  </details>
+
+  <footer>
+    <button id="reset" type="button" data-i18n="p_reset"></button>
+    <button id="openOptions" type="button" data-i18n="p_options"></button>
+    <button id="donate" type="button" hidden data-i18n="p_donate"></button>
+  </footer>
+  <p class="note" data-i18n="p_note"></p>
+
+  <script src="defaults.js"></script>
+  <script src="i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

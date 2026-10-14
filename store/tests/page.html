@@ -1,0 +1,7 @@
+<!doctype html><html><body style="margin:0;background:#222;color:#fff">
+<div id="wrap" style="padding:80px 120px"><video id="v" muted autoplay playsinline style="width:640px;height:360px;background:#000"></video></div>
+<script>
+const c=document.createElement('canvas');c.width=640;c.height=360;const x=c.getContext('2d');let t=0;
+setInterval(()=>{t++;const g=x.createLinearGradient(0,0,640,0);g.addColorStop(0,`hsl(${(t*3)%360},90%,50%)`);g.addColorStop(1,`hsl(${(t*3+120)%360},90%,50%)`);x.fillStyle=g;x.fillRect(0,0,640,360);},33);
+const v=document.getElementById('v');v.srcObject=c.captureStream(30);v.play();
+</script></body></html>
