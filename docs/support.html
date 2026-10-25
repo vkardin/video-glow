@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Video Glow — Feedback</title>
   <link rel="icon" href="img/icon32.png">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <header class="top">
@@ -33,7 +33,7 @@
     </section>
 
     <section class="block first">
-      <div class="wrap">
+      <div class="wrap fb-grid">
         <form class="tile fb-form" id="fbForm" hidden>
           <div class="seg" role="radiogroup">
             <label><input type="radio" name="kind" value="idea" checked><span data-i18n="f_idea"></span></label>
@@ -48,13 +48,8 @@
           <button type="submit" class="btn primary" data-i18n="f_send"></button>
           <p class="fb-status" id="fbStatus" role="status"></p>
         </form>
-      </div>
-    </section>
-
-    <section class="block">
-      <div class="wrap">
-        <h2 data-i18n="s_gh"></h2>
-        <div class="install">
+        <aside class="fb-side">
+          <h3 data-i18n="s_gh"></h3>
           <a class="tile store" href="https://github.com/vkardin/video-glow/issues/new?template=idea.yml" target="_blank" rel="noopener">
             <span class="emoji" aria-hidden="true">💡</span>
             <div><b data-i18n="s_idea"></b><span data-i18n="s_idea_d"></span></div>
@@ -63,8 +58,8 @@
             <span class="emoji" aria-hidden="true">🐞</span>
             <div><b data-i18n="s_bug"></b><span data-i18n="s_bug_d"></span></div>
           </a>
-        </div>
-        <p class="note"><span data-i18n="s_note"></span> <a href="https://github.com/vkardin/video-glow/issues" target="_blank" rel="noopener" data-i18n="s_all"></a></p>
+          <p class="note"><span data-i18n="s_note"></span> <a href="https://github.com/vkardin/video-glow/issues" target="_blank" rel="noopener" data-i18n="s_all"></a></p>
+        </aside>
       </div>
     </section>
 
@@ -130,6 +125,6 @@
         q5: 'How do I restore the default settings?', a5: 'The reset button at the bottom of the popup works on the second press. You can save a backup in the settings first.' }
     };
   </script>
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
