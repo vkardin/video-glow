@@ -44,6 +44,60 @@
       </div>
     </section>
 
+    <section class="card" id="presets">
+      <h2 data-i18n="o_presets"></h2>
+      <p class="muted" data-i18n="o_presets_hint"></p>
+      <div id="presetList"></div>
+      <div class="row"><button type="button" id="presetAdd" data-i18n="o_preset_add"></button></div>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="o_sites"></h2>
+      <p class="muted" data-i18n="o_sites_hint"></p>
+      <div class="row">
+        <input type="text" id="siteInput" data-i18n-ph="o_site_add_ph">
+        <button type="button" id="siteAdd" data-i18n="o_site_add"></button>
+      </div>
+      <ul class="sites" id="sites"></ul>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="o_custom_sites"></h2>
+      <p class="muted" data-i18n="o_custom_hint"></p>
+      <ul class="sites" id="customSites"></ul>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="o_backup"></h2>
+      <div class="row">
+        <button type="button" id="export" data-i18n="o_export"></button>
+        <button type="button" id="importBtn" data-i18n="o_import"></button>
+        <button type="button" id="resetAll" data-i18n="o_reset_all"></button>
+      </div>
+      <input type="file" id="importFile" accept=".json,application/json" hidden>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="o_shortcuts"></h2>
+      <p class="muted" data-i18n="o_shortcuts_text"></p>
+      <button type="button" id="shortcuts" data-i18n="o_shortcuts_btn"></button>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="o_limits"></h2>
+      <p class="muted" data-i18n="o_limits_text"></p>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="o_about"></h2>
+      <p class="muted" data-i18n="o_privacy_text"></p>
+      <div class="row">
+        <button type="button" id="privacy" hidden data-i18n="o_privacy"></button>
+        <button type="button" id="site" hidden data-i18n="p_site"></button>
+        <button type="button" id="donate" hidden data-i18n="p_donate"></button>
+      </div>
+    </section>
+
     <section class="card" id="hue">
       <h2 data-i18n="hue_title"></h2>
       <p class="muted" data-i18n="hue_hint"></p>
@@ -104,60 +158,6 @@
         <p class="muted small" data-i18n="ha_help"></p>
         <textarea id="haYaml" rows="14" readonly spellcheck="false"></textarea>
       </details>
-    </section>
-
-    <section class="card" id="presets">
-      <h2 data-i18n="o_presets"></h2>
-      <p class="muted" data-i18n="o_presets_hint"></p>
-      <div id="presetList"></div>
-      <div class="row"><button type="button" id="presetAdd" data-i18n="o_preset_add"></button></div>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="o_sites"></h2>
-      <p class="muted" data-i18n="o_sites_hint"></p>
-      <div class="row">
-        <input type="text" id="siteInput" data-i18n-ph="o_site_add_ph">
-        <button type="button" id="siteAdd" data-i18n="o_site_add"></button>
-      </div>
-      <ul class="sites" id="sites"></ul>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="o_custom_sites"></h2>
-      <p class="muted" data-i18n="o_custom_hint"></p>
-      <ul class="sites" id="customSites"></ul>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="o_backup"></h2>
-      <div class="row">
-        <button type="button" id="export" data-i18n="o_export"></button>
-        <button type="button" id="importBtn" data-i18n="o_import"></button>
-        <button type="button" id="resetAll" data-i18n="o_reset_all"></button>
-      </div>
-      <input type="file" id="importFile" accept=".json,application/json" hidden>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="o_shortcuts"></h2>
-      <p class="muted" data-i18n="o_shortcuts_text"></p>
-      <button type="button" id="shortcuts" data-i18n="o_shortcuts_btn"></button>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="o_limits"></h2>
-      <p class="muted" data-i18n="o_limits_text"></p>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="o_about"></h2>
-      <p class="muted" data-i18n="o_privacy_text"></p>
-      <div class="row">
-        <button type="button" id="privacy" hidden data-i18n="o_privacy"></button>
-        <button type="button" id="site" hidden data-i18n="p_site"></button>
-        <button type="button" id="donate" hidden data-i18n="p_donate"></button>
-      </div>
     </section>
   </main>
   <div id="toast"></div>

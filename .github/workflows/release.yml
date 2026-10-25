@@ -26,4 +26,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           V="${VERSION#v}"
+          # повторная сборка той же версии заменяет релиз и переносит метку на текущий коммит
+          if gh release view "v$V" >/dev/null 2>&1; then gh release delete "v$V" --cleanup-tag -y; fi
           gh release create "v$V" dist/*.zip --target "$GITHUB_SHA" --title "Video Glow $V" --generate-notes

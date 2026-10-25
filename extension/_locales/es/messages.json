@@ -1125,5 +1125,8 @@
   },
   "w_s3_key": {
     "message": "activa y desactiva el resplandor"
+  },
+  "w_import_hint": {
+    "message": "¿Vienes de otro ordenador? Carga tu copia de seguridad y recuperarás todos tus ajustes."
   }
 }

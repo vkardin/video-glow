@@ -1125,5 +1125,8 @@
   },
   "w_s3_key": {
     "message": "włącza i wyłącza poświatę"
+  },
+  "w_import_hint": {
+    "message": "Przenosisz się z innego komputera? Wczytaj plik kopii zapasowej, a wszystkie ustawienia wrócą."
   }
 }

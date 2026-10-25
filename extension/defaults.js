@@ -193,3 +193,38 @@ self.VG_CONFIG = {
   BUY_URL: '',            // страница покупки Pro (кнопка «Купить»); пусто — кнопка скрыта
   TRIAL_DAYS: 7           // пробный период Pro после установки, дней (0 — без пробного)
 };
+
+// Резервная копия настроек (импорт в настройках и на странице приветствия).
+// Принимаем только известные ключи с совпадающим типом значения.
+self.VG_sanitizeBackup = (obj) => {
+  const D = self.VG_DEFAULTS;
+  const LIC = (self.VG_LICENSE_KEYS || []).concat(self.VG_PANEL_KEYS || [], self.VG_HUE_KEYS || []);
+  const src = obj && typeof obj === 'object' && obj.settings && typeof obj.settings === 'object'
+    ? obj.settings : obj;
+  const clean = {};
+  for (const k in D) {
+    if (LIC.includes(k)) continue;           // лицензию и дату установки из файла не принимаем
+    if (!src || !(k in src)) continue;
+    const dv = D[k], v = src[k];
+    if (k === 'siteProfiles') {
+      if (v && typeof v === 'object' && !Array.isArray(v)) {
+        const out = {};
+        Object.keys(v).slice(0, 300).forEach((host) => {
+          const p = v[host];
+          if (!p || typeof p !== 'object' || Array.isArray(p)) return;
+          const q = {};
+          self.VG_SCOPED.forEach((sk) => {
+            if (sk in p && typeof p[sk] === typeof D[sk] && (typeof p[sk] !== 'number' || isFinite(p[sk]))) q[sk] = p[sk];
+          });
+          out[String(host).toLowerCase().slice(0, 253)] = q;
+        });
+        clean[k] = out;
+      }
+    } else if (Array.isArray(dv)) {
+      if (Array.isArray(v)) clean[k] = v.filter((x) => typeof x === 'string').slice(0, 500);
+    } else if (typeof v === typeof dv && (typeof v !== 'number' || isFinite(v))) {
+      clean[k] = v;
+    }
+  }
+  return clean;
+};

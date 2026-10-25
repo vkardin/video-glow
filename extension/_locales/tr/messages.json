@@ -1125,5 +1125,8 @@
   },
   "w_s3_key": {
     "message": "ışımayı açar ve kapatır"
+  },
+  "w_import_hint": {
+    "message": "Başka bir bilgisayardan mı geçiyorsunuz? Yedek dosyanızı yükleyin, tüm ayarlarınız geri gelsin."
   }
 }
