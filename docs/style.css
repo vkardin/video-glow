@@ -139,3 +139,11 @@ section.block.first { border-top: 0; padding-top: 32px; }
 .fb-status { margin: 0; font-size: 14px; color: var(--muted); min-height: 1.4em; }
 .fb-status.ok { color: #7ddc8a; }
 .fb-status.err { color: var(--warn); }
+.fb-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.fb-grid .fb-form { max-width: none; }
+.fb-side { display: flex; flex-direction: column; gap: 12px; }
+.fb-side h3 { margin: 4px 0 4px; font-size: 18px; color: var(--text-2); }
+.fb-side .note { margin-top: 4px; }
+.faq { max-width: none; }
+@media (max-width: 860px) { .fb-grid { grid-template-columns: 1fr; } }
+.fb-status:empty { display: none; }
