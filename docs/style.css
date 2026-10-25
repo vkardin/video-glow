@@ -112,3 +112,12 @@ footer.foot a { color: var(--muted); }
 .doc .muted-date { color: var(--muted); font-size: 14px; margin-top: -8px; }
 .doc a { color: var(--text); }
 .brand + .langs { margin-left: auto; }
+.hero.small { padding: 64px 0 8px; }
+section.block.first { border-top: 0; padding-top: 32px; }
+.store .emoji { font-size: 34px; line-height: 1; flex: none; }
+.note { color: var(--muted); font-size: 14px; margin: 18px 0 0; }
+.note a { color: var(--text); }
+.faq { display: grid; gap: 10px; max-width: 820px; }
+.faq details { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 20px; }
+.faq summary { cursor: pointer; font-weight: 600; }
+.faq p { color: var(--text-2); margin: 10px 0 0; }
