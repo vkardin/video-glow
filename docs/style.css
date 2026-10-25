@@ -108,3 +108,7 @@ footer.foot a { color: var(--muted); }
   .hero { padding-top: 48px; }
   section.block { padding: 56px 0; }
 }
+.doc h2 { font-size: 20px; margin: 32px 0 8px; }
+.doc .muted-date { color: var(--muted); font-size: 14px; margin-top: -8px; }
+.doc a { color: var(--text); }
+.brand + .langs { margin-left: auto; }
