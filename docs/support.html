@@ -34,6 +34,26 @@
 
     <section class="block first">
       <div class="wrap">
+        <form class="tile fb-form" id="fbForm" hidden>
+          <div class="seg" role="radiogroup">
+            <label><input type="radio" name="kind" value="idea" checked><span data-i18n="f_idea"></span></label>
+            <label><input type="radio" name="kind" value="bug"><span data-i18n="f_bug"></span></label>
+            <label><input type="radio" name="kind" value="other"><span data-i18n="f_other"></span></label>
+          </div>
+          <label class="fld"><span data-i18n="f_msg"></span>
+            <textarea name="message" rows="6" required maxlength="5000" data-ph="f_msg_ph"></textarea></label>
+          <label class="fld"><span data-i18n="f_mail"></span>
+            <input type="email" name="email" maxlength="200" data-ph="f_mail_ph"></label>
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+          <button type="submit" class="btn primary" data-i18n="f_send"></button>
+          <p class="fb-status" id="fbStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <h2 data-i18n="s_gh"></h2>
         <div class="install">
           <a class="tile store" href="https://github.com/vkardin/video-glow/issues/new?template=idea.yml" target="_blank" rel="noopener">
             <span class="emoji" aria-hidden="true">💡</span>
@@ -73,10 +93,11 @@
   <script>
     window.PAGE_T = {
       ru: { title: 'Video Glow — обратная связь',
+        f_idea: 'Идея', f_bug: 'Ошибка', f_other: 'Другое', f_msg: 'Сообщение', f_msg_ph: 'Опишите идею или что пошло не так. Для ошибки укажите сайт и браузер.', f_mail: 'Почта для ответа (необязательно)', f_mail_ph: 'you@example.com', f_send: 'Отправить', f_sending: 'Отправляю…', f_ok: 'Спасибо! Сообщение отправлено.', f_err: 'Не удалось отправить. Попробуйте позже или напишите через GitHub ниже.', s_gh: 'Или через GitHub',
         s_title: 'Идеи и вопросы', s_lead: 'Расскажите, чего не хватает или что работает не так. Я читаю всё и беру лучшие идеи в следующие версии.',
         s_idea: 'Предложить идею', s_idea_d: 'Новая функция, настройка или улучшение',
         s_bug: 'Сообщить об ошибке', s_bug_d: 'Подсветка не работает или ведёт себя странно',
-        s_note: 'Нужен бесплатный аккаунт GitHub. Если такая идея уже есть, просто поставьте ей 👍, так я вижу, что важнее.', s_all: 'Все идеи и ошибки',
+        s_note: 'Здесь нужен бесплатный аккаунт GitHub. Если такая идея уже есть, просто поставьте ей 👍, так я вижу, что важнее.', s_all: 'Все идеи и ошибки',
         q_title: 'Частые вопросы',
         q1: 'Почему нет подсветки на Netflix и похожих сервисах?', a1: 'Там видео защищено (DRM), и браузер не даёт расширениям читать его кадры. Подсветить такое видео в цвет картинки нельзя.',
         q2: 'Как отключить подсветку на одном сайте?', a2: 'Откройте окно расширения на этом сайте и нажмите «Отключить на …». Там же можно включить отдельные настройки для сайта.',
@@ -84,10 +105,11 @@
         q4: 'Подсветка тормозит или грузит процессор', a4: 'Уменьшите размытие и выключите «Свет в такт звуку», если он не нужен. Если не помогло, сообщите об ошибке и укажите сайт и браузер.',
         q5: 'Как вернуть настройки по умолчанию?', a5: 'Внизу окна расширения есть кнопка сброса, она срабатывает со второго нажатия. Перед сбросом можно сохранить резервную копию в настройках.' },
       uk: { title: 'Video Glow — зворотний зв’язок',
+        f_idea: 'Ідея', f_bug: 'Помилка', f_other: 'Інше', f_msg: 'Повідомлення', f_msg_ph: 'Опишіть ідею або що пішло не так. Для помилки вкажіть сайт і браузер.', f_mail: 'Пошта для відповіді (необов’язково)', f_mail_ph: 'you@example.com', f_send: 'Надіслати', f_sending: 'Надсилаю…', f_ok: 'Дякуємо! Повідомлення надіслано.', f_err: 'Не вдалося надіслати. Спробуйте пізніше або напишіть через GitHub нижче.', s_gh: 'Або через GitHub',
         s_title: 'Ідеї та питання', s_lead: 'Розкажіть, чого бракує або що працює не так. Я читаю все й беру найкращі ідеї в наступні версії.',
         s_idea: 'Запропонувати ідею', s_idea_d: 'Нова функція, налаштування чи покращення',
         s_bug: 'Повідомити про помилку', s_bug_d: 'Підсвітка не працює або поводиться дивно',
-        s_note: 'Потрібен безкоштовний акаунт GitHub. Якщо така ідея вже є, просто поставте їй 👍, так я бачу, що важливіше.', s_all: 'Усі ідеї та помилки',
+        s_note: 'Тут потрібен безкоштовний акаунт GitHub. Якщо така ідея вже є, просто поставте їй 👍, так я бачу, що важливіше.', s_all: 'Усі ідеї та помилки',
         q_title: 'Часті питання',
         q1: 'Чому немає підсвітки на Netflix і схожих сервісах?', a1: 'Там відео захищене (DRM), і браузер не дає розширенням читати його кадри. Підсвітити таке відео в колір картинки неможливо.',
         q2: 'Як вимкнути підсвітку на одному сайті?', a2: 'Відкрийте вікно розширення на цьому сайті й натисніть «Вимкнути на …». Там само можна ввімкнути окремі налаштування для сайту.',
@@ -95,10 +117,11 @@
         q4: 'Підсвітка гальмує або навантажує процесор', a4: 'Зменште розмиття й вимкніть «Світло в такт звуку», якщо воно не потрібне. Якщо не допомогло, повідомте про помилку й вкажіть сайт і браузер.',
         q5: 'Як повернути налаштування за замовчуванням?', a5: 'Внизу вікна розширення є кнопка скидання, вона спрацьовує з другого натискання. Перед скиданням можна зберегти резервну копію в налаштуваннях.' },
       en: { title: 'Video Glow — feedback',
+        f_idea: 'Idea', f_bug: 'Bug', f_other: 'Other', f_msg: 'Message', f_msg_ph: 'Describe your idea or what went wrong. For a bug, mention the site and browser.', f_mail: 'Email for a reply (optional)', f_mail_ph: 'you@example.com', f_send: 'Send', f_sending: 'Sending…', f_ok: 'Thank you! Your message has been sent.', f_err: 'Couldn’t send it. Try again later or write via GitHub below.', s_gh: 'Or via GitHub',
         s_title: 'Ideas and questions', s_lead: 'Tell me what’s missing or what doesn’t work right. I read everything and take the best ideas into the next versions.',
         s_idea: 'Suggest an idea', s_idea_d: 'A new feature, setting or improvement',
         s_bug: 'Report a bug', s_bug_d: 'The glow doesn’t work or behaves oddly',
-        s_note: 'A free GitHub account is needed. If the idea is already there, just give it a 👍 so I can see what matters most.', s_all: 'All ideas and bugs',
+        s_note: 'This needs a free GitHub account. If the idea is already there, just give it a 👍 so I can see what matters most.', s_all: 'All ideas and bugs',
         q_title: 'FAQ',
         q1: 'Why is there no glow on Netflix and similar services?', a1: 'Their video is protected (DRM), and the browser doesn’t let extensions read its frames, so the glow can’t follow the picture there.',
         q2: 'How do I turn the glow off on one site?', a2: 'Open the extension popup on that site and press “Turn off on …”. You can also enable separate settings for the site there.',

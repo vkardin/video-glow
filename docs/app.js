@@ -12,9 +12,14 @@ const WALLETS = [
   { id: 'sol', name: 'Solana', net: 'SOL', color: '#9945ff', sign: 'S', addr: 'G1iMvFiS6yzTouDnZcaFHimkdicNmTtuxhYjZW1UTpPE' }
 ];
 
+// Куда шлются сообщения с формы обратной связи (FormSubmit.co: почта или выданный им адрес-псевдоним).
+// Пусто — форма скрыта.
+const FEEDBACK_TO = 'skircha.vlad@gmail.com';
+
 const T = {
   ru: {
     title: 'Video Glow — подсветка для любого видео',
+    fb_title: 'Есть идея или нашли ошибку?', fb_sub: 'Расскажите, чего не хватает. Лучшие идеи попадут в следующие версии.', fb_btn: 'Написать',
     nav_features: 'Возможности', nav_install: 'Установить', nav_donate: 'Поддержать', nav_support: 'Обратная связь',
     hero_title: 'Подсветка в цвет картинки вокруг любого видео',
     hero_lead: 'Video Glow превращает экран в маленький кинозал: вокруг видео загорается мягкий свет, который повторяет цвета кадра.',
@@ -42,6 +47,7 @@ const T = {
   },
   uk: {
     title: 'Video Glow — підсвітка для будь-якого відео',
+    fb_title: 'Маєте ідею чи знайшли помилку?', fb_sub: 'Розкажіть, чого бракує. Найкращі ідеї потраплять у наступні версії.', fb_btn: 'Написати',
     nav_features: 'Можливості', nav_install: 'Встановити', nav_donate: 'Підтримати', nav_support: 'Зворотний зв’язок',
     hero_title: 'Підсвітка в колір картинки навколо будь-якого відео',
     hero_lead: 'Video Glow перетворює екран на маленький кінозал: навколо відео спалахує м’яке світло, що повторює кольори кадру.',
@@ -69,6 +75,7 @@ const T = {
   },
   en: {
     title: 'Video Glow — ambient light for any video',
+    fb_title: 'Have an idea or found a bug?', fb_sub: 'Tell me what’s missing. The best ideas go into the next versions.', fb_btn: 'Write to us',
     nav_features: 'Features', nav_install: 'Install', nav_donate: 'Donate', nav_support: 'Feedback',
     hero_title: 'Ambient light around any video',
     hero_lead: 'Video Glow turns your screen into a small cinema: a soft light that follows the colours of the picture glows around every video.',
@@ -120,6 +127,10 @@ function apply() {
   document.title = (window.PAGE_T && PAGE_T[lang].title) || t.title;
   document.querySelectorAll('[data-shot]').forEach(img => { img.src = `img/${img.dataset.shot}-${lang}.webp`; });
   document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  document.querySelectorAll('[data-ph]').forEach(el => {
+    const v = (window.PAGE_T && PAGE_T[lang][el.dataset.ph]) || t[el.dataset.ph];
+    if (v != null) el.placeholder = v;
+  });
   document.querySelectorAll('.copy').forEach(b => { if (!b.classList.contains('done')) b.textContent = t.copy; });
 }
 
@@ -165,6 +176,45 @@ document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click'
   apply();
 }));
 const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+function tr(k) { return (window.PAGE_T && PAGE_T[lang][k]) || T[lang][k] || k; }
+
+function setupFeedback() {
+  const f = document.getElementById('fbForm');
+  if (!f || !FEEDBACK_TO) return;
+  f.hidden = false;
+  const st = document.getElementById('fbStatus');
+  const btn = f.querySelector('button[type=submit]');
+  f.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (f._honey.value) return;
+    const kind = f.kind.value;
+    const data = {
+      _subject: `Video Glow: ${kind === 'idea' ? 'идея' : kind === 'bug' ? 'ошибка' : 'сообщение'}`,
+      _template: 'table',
+      kind,
+      message: f.message.value.trim(),
+      email: f.email.value.trim(),
+      lang,
+      browser: navigator.userAgent
+    };
+    if (data.email) data._replyto = data.email;
+    btn.disabled = true; st.className = 'fb-status'; st.textContent = tr('f_sending');
+    try {
+      const r = await fetch('https://formsubmit.co/ajax/' + FEEDBACK_TO, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || String(j.success) === 'false') throw new Error(j.message || r.status);
+      f.reset(); st.className = 'fb-status ok'; st.textContent = tr('f_ok');
+    } catch (err) {
+      st.className = 'fb-status err'; st.textContent = tr('f_err');
+    } finally { btn.disabled = false; }
+  });
+}
+
 renderWallets();
 setStores();
+setupFeedback();
 apply();
