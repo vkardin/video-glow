@@ -121,3 +121,21 @@ section.block.first { border-top: 0; padding-top: 32px; }
 .faq details { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 20px; }
 .faq summary { cursor: pointer; font-weight: 600; }
 .faq p { color: var(--text-2); margin: 10px 0 0; }
+.fb-cta { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.fb-cta .sub { margin-bottom: 0; }
+.fb-form { display: flex; flex-direction: column; gap: 16px; max-width: 720px; padding: 24px; }
+.seg { display: inline-flex; gap: 2px; background: var(--field); border-radius: 999px; padding: 3px; align-self: flex-start; flex-wrap: wrap; }
+.seg label { cursor: pointer; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg span { display: block; padding: 7px 16px; border-radius: 999px; color: var(--muted); font-weight: 600; font-size: 14px; }
+.seg input:checked + span { background: var(--text); color: var(--bg); }
+.seg input:focus-visible + span { outline: 2px solid var(--text); outline-offset: 2px; }
+.fld { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--text-2); }
+.fld textarea, .fld input { font: 15px/1.5 var(--font); color: var(--text); background: var(--field); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; resize: vertical; }
+.fld textarea:focus, .fld input:focus { outline: none; border-color: #4a4a50; }
+.fb-form .btn { align-self: flex-start; }
+.fb-form .btn:disabled { opacity: .6; cursor: default; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; }
+.fb-status { margin: 0; font-size: 14px; color: var(--muted); min-height: 1.4em; }
+.fb-status.ok { color: #7ddc8a; }
+.fb-status.err { color: var(--warn); }
