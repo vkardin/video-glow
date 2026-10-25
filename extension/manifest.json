@@ -3,7 +3,8 @@
   "default_locale": "en",
   "name": "__MSG_extName__",
   "short_name": "Video Glow",
-  "version": "1.0.0",
+  "homepage_url": "https://vkardin.github.io/video-glow/",
+  "version": "1.4.0",
   "description": "__MSG_extDescription__",
   "minimum_chrome_version": "110",
   "permissions": ["storage", "scripting"],
@@ -29,10 +30,17 @@
   "background": {
     "service_worker": "background.js"
   },
+  "web_accessible_resources": [
+    { "resources": ["popup.html"], "matches": ["<all_urls>"] }
+  ],
   "commands": {
     "toggle-glow": {
       "suggested_key": { "default": "Alt+Shift+B" },
       "description": "__MSG_cmdToggle__"
+    },
+    "toggle-panel": {
+      "suggested_key": { "default": "Alt+Shift+G" },
+      "description": "__MSG_cmdPanel__"
     },
     "toggle-site": {
       "description": "__MSG_cmdSite__"

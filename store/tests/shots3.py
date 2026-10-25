@@ -4,7 +4,7 @@ class Q(http.server.SimpleHTTPRequestHandler):
     def log_message(self,*a): pass
 srv=http.server.ThreadingHTTPServer(('127.0.0.1',8770),functools.partial(Q,directory='.'))
 threading.Thread(target=srv.serve_forever,daemon=True).start()
-EXT='/home/claude/video-ambilight'
+EXT=__import__('os').path.abspath('extension')
 async def main():
     async with async_playwright() as p:
         ctx=await p.chromium.launch_persistent_context('/tmp/vgprof6',headless=False,args=['--headless=new','--no-sandbox','--autoplay-policy=no-user-gesture-required',f'--disable-extensions-except={EXT}',f'--load-extension={EXT}'],viewport={'width':1280,'height':800})

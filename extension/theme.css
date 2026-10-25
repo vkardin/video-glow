@@ -1,0 +1,86 @@
+/* Цветовые токены тем. По умолчанию — «Кинозал»; html[data-theme] выбирает другую.
+   Подключается перед popup.css / page.css. */
+:root {
+  --bg: #0a0a0b;
+  --card: #131315;
+  --line: #222225;
+  --text: #f3f2ef;
+  --text-2: #d7d6d2;
+  --muted: #7e7d83;
+  --faint: #6c6b70;
+  --field: #1d1d20;
+  --field-hover: #26262a;
+  --track: #2a2a2e;
+  --fill: #f3f2ef;
+  --thumb: #ffffff;
+  --off: #2a2a2e;
+  --knob-off: #8a898f;
+  --on: #f3f2ef;
+  --knob-on: #0a0a0b;
+  --sel-bg: #f3f2ef;
+  --sel-text: #0a0a0b;
+  --check: #4a4a4f;
+  --accent: #f3f2ef;
+  --ok: #f3f2ef;
+  --warn: #f2c66d;
+  --info: #9a99a0;
+  --r-card: 16px;
+  --r-ctl: 999px;
+  --r-tile: 12px;
+  --font: "Inter", "SF Pro Text", "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --mono: var(--font);
+  --caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%237e7d83'/%3E%3C/svg%3E");
+  color-scheme: dark;
+}
+
+/* «Графит и янтарь» */
+:root[data-theme="amber"] {
+  --bg: #151311; --card: #1c1a17; --line: #2c2823;
+  --text: #ede7dd; --text-2: #ede7dd; --muted: #948b7e; --faint: #8a8174;
+  --field: #24211d; --field-hover: #2c2823; --track: #34302a;
+  --fill: #e3a557; --thumb: #ede7dd; --off: #3a352e; --knob-off: #d9d1c4; --on: #e3a557; --knob-on: #1a1206;
+  --sel-bg: #e3a557; --sel-text: #1a1206; --check: #5a5248; --accent: #e3a557;
+  --ok: #9bc47a; --warn: #e3a557; --info: #c9b28f;
+  --r-card: 14px; --r-ctl: 9px; --r-tile: 9px;
+  --caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%23948b7e'/%3E%3C/svg%3E");
+}
+
+/* «Пульт» (светлая) */
+:root[data-theme="deck"] {
+  --bg: #e8e6e0; --card: #f5f4f0; --line: #d4d1c9;
+  --text: #1c1c1a; --text-2: #1c1c1a; --muted: #6f6c66; --faint: #6f6c66;
+  --field: #ffffff; --field-hover: #ffffff; --track: #d4d1c9;
+  --fill: #1c1c1a; --thumb: #ff5a1f; --off: #cfccc4; --knob-off: #ffffff; --on: #ff5a1f; --knob-on: #ffffff;
+  --sel-bg: #1c1c1a; --sel-text: #ffffff; --check: #1c1c1a; --accent: #ff5a1f;
+  --ok: #46d62a; --warn: #ff5a1f; --info: #a9a69f;
+  --r-card: 6px; --r-ctl: 4px; --r-tile: 4px;
+  --mono: ui-monospace, "JetBrains Mono", "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  --caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%231c1c1a'/%3E%3C/svg%3E");
+  color-scheme: light;
+}
+
+/* «Полночь» */
+:root[data-theme="midnight"] {
+  --bg: #0b1020; --card: #121a2e; --line: #1e2942;
+  --text: #e8eefc; --text-2: #c9d4ee; --muted: #7f8cab; --faint: #6b7896;
+  --field: #18223a; --field-hover: #1f2b47; --track: #26324f;
+  --fill: #7cc4ff; --thumb: #e8eefc; --off: #26324f; --knob-off: #7f8cab; --on: #7cc4ff; --knob-on: #0b1020;
+  --sel-bg: #7cc4ff; --sel-text: #0b1020; --check: #3b4a6e; --accent: #7cc4ff;
+  --ok: #7cc4ff; --warn: #ffd27a; --info: #7f8cab;
+  --caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%237f8cab'/%3E%3C/svg%3E");
+}
+
+/* «День» (светлая) */
+:root[data-theme="day"] {
+  --bg: #f4f4f2; --card: #ffffff; --line: #e6e5e1;
+  --text: #1d1d1f; --text-2: #2c2c2e; --muted: #77767b; --faint: #8e8d92;
+  --field: #efeeeb; --field-hover: #e6e5e1; --track: #e0dfdb;
+  --fill: #1d1d1f; --thumb: #ffffff; --off: #dcdbd7; --knob-off: #ffffff; --on: #1d1d1f; --knob-on: #ffffff;
+  --sel-bg: #1d1d1f; --sel-text: #ffffff; --check: #b9b8b4; --accent: #1d1d1f;
+  --ok: #34c759; --warn: #ff9f0a; --info: #8e8d92;
+  --caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%2377767b'/%3E%3C/svg%3E");
+  color-scheme: light;
+}
+:root[data-theme="day"] input[type=range]::-webkit-slider-thumb { box-shadow: 0 0 0 1px #0002, 0 1px 4px #0003; }
+:root[data-theme="day"] input[type=range]::-moz-range-thumb { box-shadow: 0 0 0 1px #0002, 0 1px 4px #0003; }
+/* «Своя» тема: токены задаёт ui-theme.js из выбранных цветов */
