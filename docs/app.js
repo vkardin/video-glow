@@ -14,7 +14,7 @@ const WALLETS = [
 
 // Куда шлются сообщения с формы обратной связи (FormSubmit.co: почта или выданный им адрес-псевдоним).
 // Пусто — форма скрыта.
-const FEEDBACK_TO = 'skircha.vlad@gmail.com';
+const FEEDBACK_TO = '5b15bb3081e4f8971c3f368b305ab261';
 
 const T = {
   ru: {
