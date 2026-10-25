@@ -31,7 +31,7 @@ Video Glow turns your screen into a small home cinema: a soft light in the colou
 - Smooth fade on play and pause, auto-detection of black bars baked into movies
 - Picture filters, night comfort, flash protection, glow to the beat of the sound
 - Cinema mode, an on/off button on the video, per-site settings, hotkeys, backup
-- Six interface themes, English, Русский, Українська
+- Six interface themes; English, Deutsch, Español, Polski, Português (Brasil), Türkçe, Русский, Українська
 
 | LED strip | Room colour | Themes |
 |---|---|---|

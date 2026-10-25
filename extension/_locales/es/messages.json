@@ -1,0 +1,1129 @@
+{
+  "extName": {
+    "message": "Video Glow — luz ambiental para cualquier vídeo"
+  },
+  "extDescription": {
+    "message": "Suave resplandor ambiental alrededor de cualquier vídeo en cualquier sitio, también en pantalla completa. Rellena las barras negras. Forma, desenfoque y tamaño totalmente ajustables."
+  },
+  "actionTitle": {
+    "message": "Video Glow"
+  },
+  "cmdToggle": {
+    "message": "Activar / desactivar el resplandor en todas partes"
+  },
+  "cmdSite": {
+    "message": "Activar / desactivar el resplandor en este sitio"
+  },
+  "p_enabled_title": {
+    "message": "Activar / desactivar en todas partes (Alt+Shift+B)"
+  },
+  "p_site_off": {
+    "message": "Desactivar en $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_presets": {
+    "message": "Ajustes predefinidos"
+  },
+  "preset_soft": {
+    "message": "Suave"
+  },
+  "preset_cinema": {
+    "message": "Cine"
+  },
+  "preset_neon": {
+    "message": "Neón"
+  },
+  "preset_exact": {
+    "message": "Exacto"
+  },
+  "p_page": {
+    "message": "Resplandor en la página"
+  },
+  "p_shape": {
+    "message": "Forma del marco"
+  },
+  "p_shape_rect": {
+    "message": "Rectángulo"
+  },
+  "p_shape_rounded": {
+    "message": "Redondeado"
+  },
+  "p_shape_circle": {
+    "message": "Círculo"
+  },
+  "s_spread": {
+    "message": "Tamaño del marco"
+  },
+  "s_spread_hint": {
+    "message": "Cuánto se extiende el resplandor más allá de los bordes del vídeo"
+  },
+  "s_feather": {
+    "message": "Suavidad del borde"
+  },
+  "s_feather_hint": {
+    "message": "Con qué suavidad se desvanece el resplandor hacia su borde exterior: 0 — borde nítido, 100 — degradado suave en todo el marco"
+  },
+  "s_radius": {
+    "message": "Radio de las esquinas"
+  },
+  "p_seamless": {
+    "message": "Unión perfecta con el vídeo"
+  },
+  "p_seamless_hint": {
+    "message": "La imagen continúa más allá de los bordes del marco y el resplandor está a plena intensidad justo en la unión. También funciona en pantalla completa"
+  },
+  "p_mode": {
+    "message": "Capa"
+  },
+  "p_mode_screen": {
+    "message": "Encima, aclarar"
+  },
+  "p_mode_normal": {
+    "message": "Encima, normal"
+  },
+  "p_mode_under": {
+    "message": "Detrás de la página"
+  },
+  "p_mode_hint": {
+    "message": "«Encima» se ve incluso sobre fondos opacos y nunca tapa el propio vídeo. «Detrás de la página» no toca el contenido, pero puede quedar oculto tras fondos de bloques."
+  },
+  "p_fs": {
+    "message": "Pantalla completa"
+  },
+  "p_fs_fill": {
+    "message": "Llenar toda la pantalla"
+  },
+  "p_fs_fill_hint": {
+    "message": "Cubre las barras negras, no solo un marco alrededor del vídeo"
+  },
+  "p_look": {
+    "message": "Apariencia"
+  },
+  "s_blur": {
+    "message": "Desenfoque"
+  },
+  "s_sample": {
+    "message": "Tamaño de muestra"
+  },
+  "s_sample_hint": {
+    "message": "Ancho de la imagen tomada del vídeo: menor — más suave y ligero, mayor — más detallado"
+  },
+  "s_opacity": {
+    "message": "Intensidad del resplandor"
+  },
+  "s_saturation": {
+    "message": "Saturación"
+  },
+  "s_brightness": {
+    "message": "Brillo del color"
+  },
+  "s_fade": {
+    "message": "Fundido al pausar / reproducir"
+  },
+  "s_fade_hint": {
+    "message": "Cuánto tarda el resplandor en apagarse al pausar y en aparecer al reproducir"
+  },
+  "p_fps": {
+    "message": "Frecuencia de actualización, fps"
+  },
+  "p_adv": {
+    "message": "Avanzado"
+  },
+  "p_fillbars": {
+    "message": "Rellenar barras dentro del reproductor"
+  },
+  "p_fillbars_hint": {
+    "message": "Si el vídeo no llena su bloque (fuera de pantalla completa)"
+  },
+  "p_cropbars": {
+    "message": "Ignorar barras negras dentro del vídeo"
+  },
+  "p_cropbars_hint": {
+    "message": "Las películas con barras integradas (2,39:1) no generarán zonas oscuras en el resplandor"
+  },
+  "p_adaptive": {
+    "message": "Adaptarse a un equipo lento"
+  },
+  "p_adaptive_hint": {
+    "message": "Reduce automáticamente la frecuencia si el ordenador no da abasto"
+  },
+  "p_eco": {
+    "message": "Ahorrar batería"
+  },
+  "p_eco_hint": {
+    "message": "Por debajo del 30 % y sin cargador, limita a 15 fps"
+  },
+  "s_minwidth": {
+    "message": "Ancho mínimo del vídeo"
+  },
+  "s_minwidth_hint": {
+    "message": "Se ignoran los vídeos más estrechos (vistas previas, banners)"
+  },
+  "u_ms": {
+    "message": " ms"
+  },
+  "p_reset": {
+    "message": "Restablecer ajustes"
+  },
+  "p_options": {
+    "message": "Todos los ajustes"
+  },
+  "p_donate": {
+    "message": "Apoyar el proyecto"
+  },
+  "p_note": {
+    "message": "Los cambios se aplican al instante"
+  },
+  "st_ok": {
+    "message": "El resplandor funciona en esta página"
+  },
+  "st_paused": {
+    "message": "El vídeo está en pausa — el resplandor está apagado"
+  },
+  "st_small": {
+    "message": "El vídeo es más pequeño que el ancho mínimo"
+  },
+  "st_site": {
+    "message": "Desactivado en este sitio"
+  },
+  "st_disabled": {
+    "message": "Video Glow está desactivado"
+  },
+  "st_pageoff": {
+    "message": "El resplandor en la página está desactivado"
+  },
+  "st_fsoff": {
+    "message": "El resplandor en pantalla completa está desactivado"
+  },
+  "st_offscreen": {
+    "message": "El vídeo no está visible en la pantalla"
+  },
+  "st_hidden": {
+    "message": "La página oculta el vídeo"
+  },
+  "st_pip": {
+    "message": "Imagen en imagen está activo"
+  },
+  "st_otherfs": {
+    "message": "Otro elemento está en pantalla completa"
+  },
+  "st_novideo": {
+    "message": "El vídeo aún no se ha cargado"
+  },
+  "st_none": {
+    "message": "No se encontró ningún vídeo en esta página"
+  },
+  "st_unsupported": {
+    "message": "No disponible en esta página"
+  },
+  "st_unreadable": {
+    "message": "El navegador no permite leer los fotogramas de este vídeo (otro dominio / protección). El resplandor funciona, pero la detección de barras no está disponible."
+  },
+  "o_title": {
+    "message": "Video Glow — ajustes"
+  },
+  "o_sites": {
+    "message": "Sitios desactivados"
+  },
+  "o_sites_hint": {
+    "message": "El resplandor nunca aparece en estos sitios."
+  },
+  "o_sites_empty": {
+    "message": "No hay sitios desactivados"
+  },
+  "o_site_add_ph": {
+    "message": "example.com"
+  },
+  "o_site_add": {
+    "message": "Añadir"
+  },
+  "o_site_remove": {
+    "message": "Quitar"
+  },
+  "o_backup": {
+    "message": "Copia de seguridad"
+  },
+  "o_export": {
+    "message": "Exportar ajustes"
+  },
+  "o_import": {
+    "message": "Importar ajustes"
+  },
+  "o_import_ok": {
+    "message": "Ajustes importados"
+  },
+  "o_import_err": {
+    "message": "No se pudo leer el archivo"
+  },
+  "o_reset_all": {
+    "message": "Restablecer todos los ajustes"
+  },
+  "o_reset_confirm": {
+    "message": "¿Restablecer todos los ajustes? La lista de sitios desactivados también se vaciará."
+  },
+  "o_shortcuts": {
+    "message": "Atajos de teclado"
+  },
+  "o_shortcuts_btn": {
+    "message": "Configurar atajos"
+  },
+  "o_shortcuts_text": {
+    "message": "Activar / desactivar en todas partes: Alt+Shift+B. Panel de ajustes sobre la página y el vídeo en pantalla completa: Alt+Shift+G (o el botón del engranaje en el vídeo). «Activar / desactivar en este sitio» no tiene tecla por defecto: asígnala en los atajos del navegador."
+  },
+  "o_about": {
+    "message": "Acerca de"
+  },
+  "o_version": {
+    "message": "Versión $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_privacy": {
+    "message": "Política de privacidad"
+  },
+  "o_privacy_text": {
+    "message": "Video Glow no recopila ni envía ningún dato. Los ajustes se guardan localmente en tu navegador."
+  },
+  "o_limits": {
+    "message": "Limitaciones"
+  },
+  "o_limits_text": {
+    "message": "El navegador no puede leer los vídeos protegidos con DRM (Netflix, Disney+ y similares), así que no hay resplandor para ellos. Para vídeos de otro dominio sin CORS no están disponibles la detección de barras ni el modo «el propio vídeo en pantalla completa»."
+  },
+  "w_title": {
+    "message": "Video Glow está instalado"
+  },
+  "w_sub": {
+    "message": "Resplandor ambiental para cualquier vídeo en cualquier sitio."
+  },
+  "w_step1": {
+    "message": "Abre cualquier vídeo y dale a reproducir: el resplandor aparece suavemente alrededor."
+  },
+  "w_step2": {
+    "message": "Pulsa el icono de la extensión para cambiar tamaño, desenfoque, forma y ajustes predefinidos."
+  },
+  "w_step3": {
+    "message": "Alt+Shift+B activa o desactiva el resplandor."
+  },
+  "w_step4": {
+    "message": "En pantalla completa el resplandor llena las barras negras de tu pantalla."
+  },
+  "w_note": {
+    "message": "¿No hay resplandor? Abre la ventana de la extensión: ahí se indica el motivo (pausa, demasiado pequeño, vídeo protegido…)."
+  },
+  "w_open": {
+    "message": "Abrir ajustes"
+  },
+  "hover_tip": {
+    "message": "Video Glow: resplandor sí/no"
+  },
+  "st_useroff": {
+    "message": "Resplandor desactivado con el botón del vídeo"
+  },
+  "u_sec": {
+    "message": " s"
+  },
+  "p_badge_site": {
+    "message": "este sitio"
+  },
+  "p_scope_site": {
+    "message": "Ajustes propios para $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_scope_hint": {
+    "message": "Desactivado: los cambios se aplican a todos los sitios. Activado: solo a este sitio."
+  },
+  "p_scope_reset": {
+    "message": "Volver a los ajustes generales"
+  },
+  "p_pause": {
+    "message": "En pausa"
+  },
+  "p_pause_mode": {
+    "message": "Resplandor en pausa"
+  },
+  "p_pause_fade": {
+    "message": "Se apaga"
+  },
+  "p_pause_hold": {
+    "message": "Se mantiene"
+  },
+  "p_pause_delay": {
+    "message": "Se apaga con retraso"
+  },
+  "s_pause_delay": {
+    "message": "Apagar tras"
+  },
+  "p_fs_same": {
+    "message": "Igual que en la página"
+  },
+  "p_fs_same_hint": {
+    "message": "Desactivado: la pantalla completa tiene su propio desenfoque, brillo y ajustes de pausa."
+  },
+  "p_dim": {
+    "message": "Oscurecer la página alrededor del reproductor"
+  },
+  "p_dim_hint": {
+    "message": "Modo cine: todo excepto el vídeo se oscurece."
+  },
+  "s_dim": {
+    "message": "Oscurecimiento"
+  },
+  "p_hover": {
+    "message": "Botón en el vídeo"
+  },
+  "p_hover_hint": {
+    "message": "Aparece un pequeño botón en el vídeo al pasar el ratón por encima."
+  },
+  "o_custom_sites": {
+    "message": "Sitios con ajustes propios"
+  },
+  "o_custom_hint": {
+    "message": "Activa «Ajustes propios para este sitio» en la ventana para añadir un sitio aquí."
+  },
+  "o_custom_empty": {
+    "message": "Aún no hay sitios."
+  },
+  "w_perm_title": {
+    "message": "Un paso más: permitir el acceso a los sitios"
+  },
+  "w_perm_text": {
+    "message": "Para dibujar el resplandor junto a los vídeos, Video Glow necesita permiso para funcionar en los sitios donde ves vídeos. No se recopila ni se envía nada. Sin este permiso la extensión no hace nada."
+  },
+  "w_perm_allow": {
+    "message": "Permitir en todos los sitios"
+  },
+  "w_perm_done": {
+    "message": "Listo: el resplandor ya está activo. Recarga las pestañas que estaban abiertas."
+  },
+  "p_perm_need": {
+    "message": "El resplandor aún no está activo: no se ha permitido el acceso a los sitios."
+  },
+  "p_perm_btn": {
+    "message": "Permitir acceso…"
+  },
+  "p_pro_badge": {
+    "message": "Pro"
+  },
+  "p_pro_trial": {
+    "message": "Prueba Pro: quedan $N$ día(s)",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_pro_locked": {
+    "message": "Las funciones Pro están bloqueadas"
+  },
+  "p_pro_get": {
+    "message": "Desbloquear"
+  },
+  "p_pro_key": {
+    "message": "Introducir clave"
+  },
+  "p_pro_title_bars": {
+    "message": "Barras negras"
+  },
+  "p_bars_mode": {
+    "message": "Detección de barras"
+  },
+  "p_bars_auto": {
+    "message": "Automática"
+  },
+  "p_bars_force": {
+    "message": "Forzada (agresiva)"
+  },
+  "p_bars_manual": {
+    "message": "Manual"
+  },
+  "p_bars_hint": {
+    "message": "El modo forzado encuentra barras grises o con ruido en cualquier lado, incluso en un solo lado. Las escenas muy oscuras pueden confundirse con barras."
+  },
+  "s_bar_t": {
+    "message": "Barra superior"
+  },
+  "s_bar_b": {
+    "message": "Barra inferior"
+  },
+  "s_bar_l": {
+    "message": "Barra izquierda"
+  },
+  "s_bar_r": {
+    "message": "Barra derecha"
+  },
+  "p_barshide": {
+    "message": "Quitar las barras de la pantalla"
+  },
+  "p_barshide_hint": {
+    "message": "Amplía el vídeo para que la imagen llene el reproductor. Los bordes se recortan."
+  },
+  "s_barsfill": {
+    "message": "Zoom"
+  },
+  "s_barsfill_hint": {
+    "message": "0 — solo ajustar la imagen, 100 — llenar el reproductor por completo."
+  },
+  "p_pro_title_eyes": {
+    "message": "Ojos sensibles"
+  },
+  "p_guard": {
+    "message": "Protección contra destellos"
+  },
+  "p_guard_hint": {
+    "message": "Oscurece el vídeo y el resplandor cuando la imagen parpadea o destella (3+ destellos por segundo). No es un dispositivo médico."
+  },
+  "p_guard_sens": {
+    "message": "Sensibilidad"
+  },
+  "p_sens_1": {
+    "message": "Baja"
+  },
+  "p_sens_2": {
+    "message": "Media"
+  },
+  "p_sens_3": {
+    "message": "Alta"
+  },
+  "s_guard_strength": {
+    "message": "Oscurecimiento"
+  },
+  "p_guard_video": {
+    "message": "Oscurecer también el propio vídeo"
+  },
+  "s_calm": {
+    "message": "Resplandor tranquilo"
+  },
+  "s_calm_hint": {
+    "message": "Suaviza los cambios de color en el tiempo, menos saltos bruscos."
+  },
+  "p_pro_title_pulse": {
+    "message": "Pulso de sonido"
+  },
+  "p_pulse": {
+    "message": "Pulsar con el sonido"
+  },
+  "p_pulse_hint": {
+    "message": "El resplandor late con el audio. El sonido se analiza en tu dispositivo y nunca se graba. Evítalo si eres sensible a los destellos."
+  },
+  "s_pulse": {
+    "message": "Intensidad del pulso"
+  },
+  "p_pulse_mode": {
+    "message": "Reacciona a"
+  },
+  "p_pulse_bass": {
+    "message": "Graves"
+  },
+  "p_pulse_all": {
+    "message": "Todo el sonido"
+  },
+  "p_pro_title_fx": {
+    "message": "Filtros de vídeo"
+  },
+  "p_fx": {
+    "message": "Aplicar filtros al vídeo"
+  },
+  "fx_clarity": {
+    "message": "Claridad"
+  },
+  "fx_cinema": {
+    "message": "Cine"
+  },
+  "fx_vivid": {
+    "message": "Vivo"
+  },
+  "fx_warm": {
+    "message": "Cálido"
+  },
+  "fx_off": {
+    "message": "No"
+  },
+  "s_fx_brightness": {
+    "message": "Brillo"
+  },
+  "s_fx_contrast": {
+    "message": "Contraste"
+  },
+  "s_fx_saturation": {
+    "message": "Saturación"
+  },
+  "s_fx_sharp": {
+    "message": "Nitidez"
+  },
+  "s_fx_sharp_hint": {
+    "message": "La nitidez, la calidez y las sombras usan un filtro SVG y pueden ser pesadas en vídeo 4K."
+  },
+  "s_fx_warmth": {
+    "message": "Calidez (− frío, + cálido)"
+  },
+  "s_fx_gamma": {
+    "message": "Sombras (aclarar)"
+  },
+  "p_pro_title_night": {
+    "message": "Confort nocturno"
+  },
+  "p_night": {
+    "message": "Confort nocturno"
+  },
+  "p_night_hint": {
+    "message": "En las horas elegidas el vídeo se vuelve más cálido y oscuro y el resplandor más suave. Igual en todos los sitios."
+  },
+  "p_night_from": {
+    "message": "Desde"
+  },
+  "p_night_to": {
+    "message": "Hasta"
+  },
+  "s_night_strength": {
+    "message": "Intensidad"
+  },
+  "st_guard": {
+    "message": "La protección contra destellos está activa ahora."
+  },
+  "st_pulse_nodata": {
+    "message": "Pulso de sonido: este vídeo no da datos de audio."
+  },
+  "o_pro": {
+    "message": "Video Glow Pro"
+  },
+  "o_pro_none": {
+    "message": "Pro no está activo. Introduce una clave de licencia para desbloquear todas las funciones Pro."
+  },
+  "o_pro_trial": {
+    "message": "Periodo de prueba: quedan $N$ día(s). Las funciones Pro funcionan hasta que termine.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_pro_license": {
+    "message": "Pro está activo. Licencia: $N$",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_pro_license_anon": {
+    "message": "Pro está activo."
+  },
+  "o_pro_features": {
+    "message": "Pro incluye: detección y eliminación forzada de barras, protección contra destellos y resplandor tranquilo, pulso de sonido, filtros de vídeo, confort nocturno."
+  },
+  "o_key_ph": {
+    "message": "Pega tu clave de licencia (empieza por VG1.)"
+  },
+  "o_key_activate": {
+    "message": "Activar"
+  },
+  "o_key_remove": {
+    "message": "Quitar clave"
+  },
+  "o_buy": {
+    "message": "Comprar Pro"
+  },
+  "o_key_ok": {
+    "message": "Pro activado"
+  },
+  "o_key_removed": {
+    "message": "Clave eliminada"
+  },
+  "o_key_empty": {
+    "message": "Primero pega una clave"
+  },
+  "o_key_bad": {
+    "message": "Esta clave no es válida"
+  },
+  "o_key_format": {
+    "message": "Eso no parece una clave de licencia"
+  },
+  "o_pro_offline": {
+    "message": "La clave se verifica en este dispositivo y no se hacen peticiones de red. Guárdala en un lugar seguro; las copias de seguridad no la incluyen."
+  },
+  "p_fold_all": {
+    "message": "Contraer todas las secciones"
+  },
+  "p_unfold_all": {
+    "message": "Expandir todas las secciones"
+  },
+  "p_panel_btn": {
+    "message": "Panel sobre la página"
+  },
+  "p_fs_shape_own": {
+    "message": "Forma y tamaño de marco propios"
+  },
+  "p_fs_shape_own_hint": {
+    "message": "Forma, tamaño y suavidad del marco propios en pantalla completa."
+  },
+  "p_fs_shape_note": {
+    "message": "El marco se usa cuando «Llenar toda la pantalla» está desactivado; si está activado, el resplandor llena la pantalla."
+  },
+  "panel_title": {
+    "message": "Ajustes de Video Glow"
+  },
+  "panel_pin": {
+    "message": "Fijar: mantener el panel abierto"
+  },
+  "panel_unpin": {
+    "message": "Soltar: ocultar tras 10 s sin el cursor"
+  },
+  "panel_close": {
+    "message": "Cerrar"
+  },
+  "hover_gear_tip": {
+    "message": "Ajustes de Video Glow"
+  },
+  "cmdPanel": {
+    "message": "Mostrar / ocultar el panel de ajustes sobre la página"
+  },
+  "p_tune": {
+    "message": "Ajuste fino"
+  },
+  "p_behavior": {
+    "message": "Comportamiento"
+  },
+  "p_picture": {
+    "message": "Imagen"
+  },
+  "p_comfort": {
+    "message": "Confort y sonido"
+  },
+  "preset_clarity": {
+    "message": "Claridad"
+  },
+  "preset_night": {
+    "message": "Noche"
+  },
+  "p_preset_save": {
+    "message": "+ Guardar lo actual como ajuste"
+  },
+  "p_preset_manage": {
+    "message": "Editar ajustes predefinidos"
+  },
+  "p_preset_name_ph": {
+    "message": "Nombre del ajuste"
+  },
+  "p_preset_ok": {
+    "message": "Guardar"
+  },
+  "preset_default_name": {
+    "message": "Mi ajuste"
+  },
+  "o_presets": {
+    "message": "Ajustes predefinidos"
+  },
+  "o_presets_hint": {
+    "message": "Un ajuste predefinido cambia todo el aspecto con un clic: el resplandor, el oscurecimiento de la página y los filtros de vídeo. Cambia los integrados o crea los tuyos: puedes copiar los ajustes actuales en cualquiera."
+  },
+  "o_preset_add": {
+    "message": "+ Nuevo ajuste a partir de los actuales"
+  },
+  "o_preset_edit": {
+    "message": "Parámetros"
+  },
+  "o_preset_from_current": {
+    "message": "Copiar ajustes actuales"
+  },
+  "o_preset_reset": {
+    "message": "Restablecer"
+  },
+  "o_preset_delete": {
+    "message": "Eliminar"
+  },
+  "o_preset_saved": {
+    "message": "Ajuste guardado"
+  },
+  "o_preset_changed": {
+    "message": "modificado"
+  },
+  "o_pg_glow": {
+    "message": "Resplandor"
+  },
+  "o_pg_page": {
+    "message": "Página"
+  },
+  "o_pg_fx": {
+    "message": "Filtros de vídeo"
+  },
+  "o_theme": {
+    "message": "Apariencia"
+  },
+  "o_theme_hint": {
+    "message": "Tema del menú, el panel y estas páginas. El resplandor no cambia."
+  },
+  "theme_cinema": {
+    "message": "Cine"
+  },
+  "theme_cinema_d": {
+    "message": "Negro y discreto"
+  },
+  "theme_amber": {
+    "message": "Grafito y ámbar"
+  },
+  "theme_amber_d": {
+    "message": "Oscuro cálido"
+  },
+  "theme_deck": {
+    "message": "Consola"
+  },
+  "theme_deck_d": {
+    "message": "Claro, estilo equipo"
+  },
+  "p_style": {
+    "message": "Estilo del resplandor"
+  },
+  "p_style_soft": {
+    "message": "Suave"
+  },
+  "p_style_led": {
+    "message": "LED"
+  },
+  "p_style_hint": {
+    "message": "«LED» parece una tira de luz detrás de un televisor: puntos de luz separados, cada uno de su color."
+  },
+  "s_leds": {
+    "message": "LED"
+  },
+  "p_room": {
+    "message": "Color de la habitación"
+  },
+  "p_room_hint": {
+    "message": "Toda la página se tiñe suavemente con los colores del vídeo. Funciona mejor con el tema oscuro del sitio."
+  },
+  "s_room": {
+    "message": "Intensidad del tinte"
+  },
+  "hue_title": {
+    "message": "Philips Hue"
+  },
+  "hue_hint": {
+    "message": "Las lámparas de la habitación siguen los colores del vídeo. Funciona mediante el Hue Bridge de tu red doméstica; nada sale de tu red."
+  },
+  "hue_on": {
+    "message": "Las lámparas siguen al vídeo"
+  },
+  "hue_ip_ph": {
+    "message": "Dirección del bridge, p. ej. 192.168.1.20"
+  },
+  "hue_find": {
+    "message": "Buscar bridge"
+  },
+  "hue_link": {
+    "message": "Conectar"
+  },
+  "hue_searching": {
+    "message": "Buscando…"
+  },
+  "hue_found": {
+    "message": "Bridge encontrado: $1. Pulsa Conectar."
+  },
+  "hue_not_found": {
+    "message": "No se encontró ningún bridge. Introduce su dirección (app Hue → Ajustes → Bridges)."
+  },
+  "hue_press": {
+    "message": "Pulsa el botón redondo del bridge (quedan $1 s)…"
+  },
+  "hue_timeout": {
+    "message": "No se pulsó el botón. Inténtalo de nuevo."
+  },
+  "hue_linked": {
+    "message": "Conectado. Elige las lámparas abajo."
+  },
+  "hue_lights": {
+    "message": "Lámparas"
+  },
+  "hue_no_lights": {
+    "message": "El bridge no tiene lámparas de color."
+  },
+  "hue_many": {
+    "message": "Muchas lámparas hacen las actualizaciones más lentas (el bridge admite unos 10 comandos por segundo)."
+  },
+  "hue_bri": {
+    "message": "Brillo máximo"
+  },
+  "hue_speed": {
+    "message": "Respuesta"
+  },
+  "hue_speed_slow": {
+    "message": "Suave"
+  },
+  "hue_speed_norm": {
+    "message": "Normal"
+  },
+  "hue_speed_fast": {
+    "message": "Rápida"
+  },
+  "hue_restore": {
+    "message": "Restaurar las lámparas tras el vídeo"
+  },
+  "hue_forget": {
+    "message": "Desconectar bridge"
+  },
+  "hue_err_net": {
+    "message": "El bridge no responde. Comprueba que está encendido y en la misma red."
+  },
+  "hue_err_ip": {
+    "message": "Introduce la dirección como 192.168.1.20."
+  },
+  "hue_err_auth": {
+    "message": "El bridge ya no acepta esta conexión. Pulsa Conectar de nuevo."
+  },
+  "hue_err_busy": {
+    "message": "La búsqueda está ocupada; inténtalo en 15 minutos o introduce la dirección."
+  },
+  "hue_err_notbridge": {
+    "message": "No hay ningún Hue Bridge en esta dirección."
+  },
+  "theme_midnight": {
+    "message": "Medianoche"
+  },
+  "theme_midnight_d": {
+    "message": "Azul profundo"
+  },
+  "theme_day": {
+    "message": "Día"
+  },
+  "theme_day_d": {
+    "message": "Limpio y claro"
+  },
+  "theme_custom": {
+    "message": "Personalizado"
+  },
+  "theme_custom_d": {
+    "message": "Elige los colores"
+  },
+  "o_custom_bg": {
+    "message": "Fondo"
+  },
+  "o_custom_text": {
+    "message": "Texto"
+  },
+  "o_custom_accent": {
+    "message": "Acento"
+  },
+  "o_custom_reset": {
+    "message": "Restablecer colores"
+  },
+  "q_room": {
+    "message": "Color de la habitación: sí/no"
+  },
+  "q_led": {
+    "message": "LED / resplandor suave"
+  },
+  "q_panel": {
+    "message": "Panel sobre la página"
+  },
+  "q_options": {
+    "message": "Todos los ajustes"
+  },
+  "q_reset": {
+    "message": "Restablecer ajustes"
+  },
+  "q_reset_confirm": {
+    "message": "Pulsa otra vez para restablecer"
+  },
+  "p_title_scene": {
+    "message": "Reacción a la escena"
+  },
+  "p_scene": {
+    "message": "Reaccionar a la escena"
+  },
+  "p_scene_hint": {
+    "message": "Un suave destello de luz en cambios bruscos de escena y explosiones, una lenta «respiración» en escenas oscuras. La protección contra destellos siempre tiene prioridad."
+  },
+  "s_scene": {
+    "message": "Intensidad del efecto"
+  },
+  "p_curve": {
+    "message": "Cambio de color"
+  },
+  "p_curve_normal": {
+    "message": "Normal"
+  },
+  "p_curve_soft": {
+    "message": "Suave"
+  },
+  "p_curve_cinema": {
+    "message": "Cine (instantáneo en el corte)"
+  },
+  "p_curve_sharp": {
+    "message": "Brusco"
+  },
+  "o_pg_scene": {
+    "message": "Efectos"
+  },
+  "preset_anime": {
+    "message": "Anime"
+  },
+  "preset_games": {
+    "message": "Juegos"
+  },
+  "preset_sport": {
+    "message": "Deporte"
+  },
+  "preset_music": {
+    "message": "Música"
+  },
+  "p_site": {
+    "message": "Sitio web"
+  },
+  "lt_title": {
+    "message": "Luces de la habitación: WLED y Home Assistant"
+  },
+  "lt_hint": {
+    "message": "Una tira LED WLED y cualquier luz de Home Assistant siguen los colores del vídeo. Todo se queda en tu red doméstica, nada va a internet."
+  },
+  "lt_delay": {
+    "message": "Retraso de la luz (Hue, WLED, Home Assistant)"
+  },
+  "lt_delay_hint": {
+    "message": "Si las luces cambian antes que la imagen (por ejemplo, tu televisor añade retraso), muévelo a la derecha. 0 significa sin retraso."
+  },
+  "lt_checking": {
+    "message": "Comprobando…"
+  },
+  "lt_err_net": {
+    "message": "El dispositivo no responde. Comprueba que está encendido y en la misma red."
+  },
+  "wl_title": {
+    "message": "Tira WLED"
+  },
+  "wl_on": {
+    "message": "La tira sigue los colores del vídeo"
+  },
+  "wl_ip_ph": {
+    "message": "Dirección de WLED, p. ej. 192.168.1.50"
+  },
+  "wl_check": {
+    "message": "Conectar"
+  },
+  "wl_found": {
+    "message": "Conectado: $1, $2 LED."
+  },
+  "wl_err_notwled": {
+    "message": "No hay WLED en esta dirección."
+  },
+  "wl_layout": {
+    "message": "Colocación de la tira"
+  },
+  "wl_layout_around": {
+    "message": "Alrededor de la pantalla"
+  },
+  "wl_layout_top": {
+    "message": "Solo arriba"
+  },
+  "wl_layout_single": {
+    "message": "Un color para toda la tira"
+  },
+  "wl_count": {
+    "message": "LED (0 = auto)"
+  },
+  "wl_offset": {
+    "message": "Desplazamiento inicial"
+  },
+  "wl_reverse": {
+    "message": "En sentido antihorario"
+  },
+  "wl_restore": {
+    "message": "Restaurar la tira tras el vídeo"
+  },
+  "wl_help": {
+    "message": "«Alrededor de la pantalla»: la tira va en sentido horario desde la esquina inferior izquierda (mirando a la pantalla). Si los colores están desplazados, ajusta «Desplazamiento inicial» o activa «En sentido antihorario»."
+  },
+  "ha_title": {
+    "message": "Home Assistant"
+  },
+  "ha_on": {
+    "message": "Enviar el color a Home Assistant"
+  },
+  "ha_test": {
+    "message": "Probar"
+  },
+  "ha_sent": {
+    "message": "Naranja enviado. Si la luz no cambió, revisa la automatización de abajo."
+  },
+  "ha_err_url": {
+    "message": "Introduce la dirección del webhook como http://host:8123/api/webhook/id."
+  },
+  "ha_err_http": {
+    "message": "Home Assistant devolvió un error. Comprueba que la automatización con este webhook está guardada."
+  },
+  "ha_howto": {
+    "message": "Cómo conectar en 2 minutos"
+  },
+  "ha_help": {
+    "message": "En Home Assistant: Ajustes → Automatizaciones → Crear → Editar en YAML. Pega el texto de abajo, sustituye light.tv por tus luces y guarda. Después introduce arriba la dirección del webhook y pulsa «Probar». start guarda la escena, play envía el color, stop restaura las luces."
+  },
+  "hue_zone": {
+    "message": "Zona del fotograma"
+  },
+  "hue_zone_a": {
+    "message": "Fotograma completo"
+  },
+  "hue_zone_l": {
+    "message": "Borde izquierdo"
+  },
+  "hue_zone_r": {
+    "message": "Borde derecho"
+  },
+  "p_auto": {
+    "message": "✦ Auto"
+  },
+  "p_auto_hint": {
+    "message": "Ajuste automático: reconoce el tipo de vídeo (cine, anime, juegos, deporte) y adapta el resplandor por sí solo"
+  },
+  "auto_wait": {
+    "message": "Ajuste automático: mirando el vídeo…"
+  },
+  "auto_none": {
+    "message": "Ajuste automático: nada especial, tus propios ajustes"
+  },
+  "auto_now": {
+    "message": "Ajuste automático: ahora «$NAME$»",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "q_glowwin": {
+    "message": "Ventana de luz: una ventana aparte que brilla con el color del vídeo (llévala a un segundo monitor)"
+  },
+  "pip_hint": {
+    "message": "Lleva esta ventana a un segundo monitor o junto a la pantalla"
+  },
+  "w_s1_title": {
+    "message": "Reproduce cualquier vídeo"
+  },
+  "w_s1_text": {
+    "message": "Alrededor del reproductor aparece un suave resplandor que sigue los colores de la escena. Funciona en cualquier sitio, sin configurar nada."
+  },
+  "w_s2_title": {
+    "message": "Elige un estilo"
+  },
+  "w_s2_text": {
+    "message": "«Auto» reconoce películas, anime, juegos y deporte y adapta el resplandor por sí solo. Puedes cambiarlo cuando quieras en la ventana de la extensión."
+  },
+  "w_s3_title": {
+    "message": "Tenlo a mano"
+  },
+  "w_s3_text": {
+    "message": "Fija el icono de Video Glow en la barra (icono del puzle → chincheta). La ventana indica por qué no hay resplandor si algo va mal."
+  },
+  "w_s3_key": {
+    "message": "activa y desactiva el resplandor"
+  }
+}

@@ -429,6 +429,8 @@
       this.scv = null; this.sctx = null; this.sAt = 0; this.sT = -1; this.sPrev = null; this.sBad = false;
       this.sL = -1; this.sSlow = -1; this.sF = 0; this.sFT = 0; this.sFlashAt = 0; this.sCuts = [];
       this.sQuiet = 0; this.cutAt = 0; this.sDark = 0;
+      this.ap = null; this.apS = null;   // автопресет: состояние и статистика окна
+      this.feedAt = 0;
       this.curSc = 1; this.pulseAt = 0; this.clipInfo = null;
       // Pro: фильтры видео
       this.fxKey = ''; this.fxSaved = null;
@@ -663,7 +665,7 @@
       this.steady = false;
       const fs = getFsElement();
       const inFs = !!fs && isInside(this.v, fs);
-      const s = this.s = inFs ? settingsFs : settings;
+      const s = this.s = this.autoView(inFs ? settingsFs : settings, now);
       const v = this.v;
       this.rect = null;
       const active = this.isActive(now, fs, inFs);
@@ -681,11 +683,15 @@
       if (live && s.guard) this.guardStep(now, bdt, playing);
       else if (this.gLevel) { this.gLevel = 0; this.guardUntil = 0; this.gEvts = []; this.gLast = -1; }
       if (playing && this.wantDetect(s) && (lit || s.barsHide)) this.updateCrop(now);
-      if (lit && playing && (s.scene || s.colorCurve === 'cinema')) this.sceneStep(now, bdt);
+      if (lit && playing && (s.scene || s.colorCurve === 'cinema' || s.autoPreset)) this.sceneStep(now, bdt);
       else if (this.sF || this.sDark || this.sFT) { this.sF = 0; this.sFT = 0; this.sDark = 0; this.sPrev = null; }
       this.zoomTick(bdt);
       this.applyFx();
-      const keep = (live && s.guard && playing) || this.gLevel > 0.001 || this.zAnim;
+      // видео в «картинке в картинке»: свечения на странице нет, но лампы и окно-подсветка получают цвет
+      const feed = live && !this.userOff && document.pictureInPictureElement === v && !v.paused && v.readyState >= 2 &&
+        (s.hueOn || s.wledOn || s.haOn || !!pipWin);
+      if (feed) this.feed(now);
+      const keep = (live && s.guard && playing) || this.gLevel > 0.001 || this.zAnim || feed;
 
       if (fade <= 0) this.level = target;
       else if (this.level < target) this.level = Math.min(target, this.level + dt / fade);
@@ -814,6 +820,7 @@
         if (this.sPrev) diff += Math.abs(l - this.sPrev[c]);
       }
       const L = sum / 144;
+      if (this.s.autoPreset) this.autoStat(d, cur, L, this.sPrev && gap <= 400 ? diff / 144 : -1);
       if (!this.sPrev || gap > 400) {      // начало или долгий перерыв (перемотка, вкладка) — без реакции
         this.sNext = this.sPrev; this.sPrev = cur;
         this.sL = L; this.sSlow = L;
@@ -1441,9 +1448,10 @@
       } catch (e) { tctx.globalAlpha = 1; return; }
 
       const lights = s.hueOn || s.wledOn || s.haOn;
-      if (led || s.room || lights) {
+      if (led || s.room || lights || pipWin) {
         const pc = this.probeColors(now, led);
         if (lights && pc) this.lightSend(now, pc);
+        if (pipWin && pc) pipFeed(this, now, pc);
         if (led) {
           this.drawLed(g, pc);
           const dl = performance.now() - t0;
@@ -1542,7 +1550,7 @@
     // ── цвета кадра: тайл, ужатый до сетки PGW×PGH (одно маленькое чтение пикселей) ──
     // avg — средний цвет; vivid — «характерный» цвет сцены (насыщенные пиксели весят больше),
     // приведённый к яркости среднего, чтобы тёмная сцена не давала яркий свет.
-    probeColors(now, force) {
+    probeColors(now, force, src) {
       if (!force && this.pc && now - this.pcAt < 100) return this.pc;
       this.pcAt = now;
       if (!this.pcv) {
@@ -1553,7 +1561,7 @@
       }
       let d;
       try {
-        this.pctx.drawImage(this.tile, 0, 0, PGW, PGH);
+        this.pctx.drawImage(src || this.tile, 0, 0, PGW, PGH);
         d = this.pctx.getImageData(0, 0, PGW, PGH).data;
       } catch (e) { return this.pc; }
       let ar = 0, ag = 0, ab = 0, vr = 0, vg = 0, vb = 0, vw = 0;
@@ -1656,6 +1664,75 @@
         ') 0%, rgba(' + cl + ',0) 40%, rgba(' + cr + ',0) 60%, rgba(' + cr + ',' + (a * 0.6).toFixed(3) + ') 100%)';
       if (bg !== this.roomKey) { this.roomKey = bg; setImp(this.roomRoot, { background: bg }); }
       this.uiSet(this.roomRoot, 'roomA', { opacity: e.toFixed(3) });
+    }
+
+    // Цвета прямо с видео, когда свечение на странице не рисуется (видео в «картинке в картинке»).
+    feed(now) {
+      if (now - this.feedAt < 100) return;
+      this.feedAt = now;
+      const pc = this.probeColors(now, true, this.v);
+      if (!pc) return;
+      if (this.s.hueOn || this.s.wledOn || this.s.haOn) this.lightSend(now, pc);
+      if (pipWin) pipFeed(this, now, pc);
+    }
+
+    // ── Автопресет: тип ролика по кадру 16×9 (тот же, что у реакции на сцену) ──
+    // Каждые 2 с — признаки окна: яркость, насыщенность, доля «травы», движение, полосы.
+    // Новый тип принимается, только если держится 3 окна подряд (первый раз — 2), и не чаще раза в 20 с.
+    // Меняются только параметры свечения и сцены, плавно за 2 с; фильтры видео и затемнение не трогаем.
+    autoStat(d, cur, L, motion) {
+      const st = this.apS || (this.apS = { n: 0, L: 0, S: 0, G: 0, M: 0, mn: 0, bars: 0 });
+      let sat = 0, green = 0, top = 0, bot = 0;
+      for (let i = 0, c = 0; c < 144; i += 4, c++) {
+        const r = d[i], g = d[i + 1], b = d[i + 2], mx = Math.max(r, g, b), ch = (mx - Math.min(r, g, b)) / 255;
+        sat += mx ? ch * 255 / mx : 0;
+        if (g > r * 1.12 && g > b * 1.12 && ch > 0.1) green++;
+        if (c < 16) top += cur[c]; else if (c >= 128) bot += cur[c];
+      }
+      st.n++; st.L += L; st.S += sat / 144; st.G += green / 144;
+      top /= 16; bot /= 16;
+      if (top < 0.045 && bot < 0.045 && (L * 144 - (top + bot) * 16) / 112 > 0.1) st.bars++;
+      if (motion >= 0 && motion < 0.14) { st.M += motion; st.mn++; }   // смену сцены движением не считаем
+    }
+
+    autoEval(now) {
+      const a = this.ap, st = this.apS;
+      this.apS = null;
+      if (!st || st.n < 6) return;
+      const f = { L: st.L / st.n, S: st.S / st.n, G: st.G / st.n, M: st.mn ? st.M / st.mn : 0, bars: st.bars / st.n };
+      if (a.f) for (const k in f) f[k] = a.f[k] + (f[k] - a.f[k]) * 0.5;
+      a.f = f;
+      const c = autoClass(f, a.cls);
+      if (c === a.cand) a.candN++; else { a.cand = c; a.candN = 1; }
+      a.ready = true;
+      if (c === a.cls || a.candN < (a.at ? 3 : 2) || (a.at && now - a.at < 20000)) return;
+      a.from = Object.assign({}, a.view ? pickAuto(a.view) : null);
+      a.cls = c; a.at = now; a.t0 = now;
+      a.to = c ? autoValues(c) : null;
+      a.toBase = !c;
+    }
+
+    autoView(base, now) {
+      if (!base.autoPreset) {
+        if (this.ap) { this.ap = null; this.apS = null; this.forceDraw = true; this.cache = {}; this.lkKey = ''; this.rootKey = ''; }
+        return base;
+      }
+      const a = this.ap || (this.ap = { cls: '', cand: '', candN: 0, at: 0, evalAt: now, t0: 0, from: null, to: null,
+        toBase: false, f: null, ready: false, view: null, base: null, k: -1 });
+      if (now - a.evalAt >= 2000) { a.evalAt = now; if (this.apS) this.autoEval(now); }
+      if (!a.t0) return base;                      // ещё ничего не выбрано — настройки пользователя
+      const k = Math.round(smooth((now - a.t0) / 2000) * 20) / 20;
+      if (a.base === base && a.k === k && a.view) return a.view;
+      a.base = base; a.k = k;
+      const to = a.toBase ? base : a.to, from = a.from || base;
+      const v = Object.assign({}, base);
+      for (const key of AUTO_KEYS) {
+        const x = key in from ? from[key] : base[key], y = to[key];
+        v[key] = typeof y === 'number' && typeof x === 'number' ? r1(x + (y - x) * k) : (k >= 0.5 ? y : x);
+      }
+      a.view = v;
+      this.forceDraw = true; this.cache = {}; this.lkKey = ''; this.rootKey = '';
+      return v;
     }
 
     // ── Свет в комнате (Hue, WLED, Home Assistant): цвета сцены уходят в фон расширения,
@@ -1938,6 +2015,76 @@
   // в полном экране панель инструментов браузера скрыта, а здесь видно, что меняешь.
   // Закреплённая панель не скрывается сама; незакреплённая уходит через 10 с без курсора.
   let panel = null;
+
+  // ───────────────── автопресет: какие ключи меняет и куда ─────────────────
+  const AUTO_KEYS = ['spread', 'radius', 'feather', 'blur', 'opacity', 'saturation', 'brightness', 'calm',
+    'scene', 'sceneAmount', 'colorCurve'];
+  const pickAuto = (o) => { const r = {}; if (o) AUTO_KEYS.forEach((k) => { r[k] = o[k]; }); return r; };
+  // Значения пресета с правками пользователя (presets.js загружен перед content.js)
+  function autoValues(id) {
+    const P = self.VG_presets;
+    const p = P && P.list(rawStore).find((x) => x.id === id);
+    return pickAuto(p ? p.values : settings);
+  }
+  // Тип ролика. Текущему типу проще удержаться (порог на 15% мягче) — без «мигания» на границе.
+  function autoClass(f, cur) {
+    const m = (c) => (c === cur ? 0.85 : 1);
+    if (f.bars >= 0.6 * m('cinema') || (f.L < 0.17 / m('cinema') && f.S < 0.35)) return 'cinema';
+    if (f.G > 0.38 * m('sport') && f.M > 0.006 * m('sport')) return 'sport';
+    if (f.S > 0.42 * m('games') && f.M > 0.035 * m('games')) return 'games';
+    if (f.S > 0.42 * m('anime')) return 'anime';
+    return '';
+  }
+
+  // ───────────────── окно-подсветка (Document Picture-in-Picture, Chrome 116+) ─────────────────
+  // Отдельное окно, которое светится цветом видео: его можно унести на второй монитор или поставить рядом.
+  let pipWin = null, pipSrc = null, pipSrcAt = 0, pipAt = 0, pipRc = null, pipKey = '', pipTimer = 0;
+  async function openGlowWindow() {
+    if (pipWin) return;
+    const api = window.documentPictureInPicture;
+    if (!api) return;
+    let w;
+    try { w = await api.requestWindow({ width: 480, height: 270 }); } catch (e) { return; }
+    pipWin = w; pipRc = null; pipKey = ''; pipAt = 0; pipSrc = null;
+    const d = w.document;
+    d.title = 'Video Glow';
+    const st = d.createElement('style');
+    st.textContent = 'html,body{margin:0;height:100%;background:#000;overflow:hidden}' +
+      'p{position:fixed;left:0;right:0;bottom:12px;margin:0;text-align:center;font:13px system-ui,sans-serif;' +
+      'color:#fff;text-shadow:0 1px 3px #000;opacity:.85;transition:opacity 1s}';
+    d.head.append(st);
+    const hint = d.createElement('p');
+    try { hint.textContent = chrome.i18n.getMessage('pip_hint'); } catch (e) { /* ignore */ }
+    d.body.append(hint);
+    setTimeout(() => { hint.style.opacity = '0'; }, 4000);
+    w.addEventListener('pagehide', () => { if (pipWin === w) { pipWin = null; pipSrc = null; clearInterval(pipTimer); } });
+    // видео остановилось — окно плавно гаснет
+    pipTimer = setInterval(() => {
+      if (pipWin && performance.now() - pipAt > 1500 && pipKey !== 'off') { pipKey = 'off'; pipRc = null; d.body.style.background = '#000'; }
+    }, 500);
+    kickAll();
+  }
+  function closeGlowWindow() {
+    clearInterval(pipTimer);
+    if (pipWin) { try { pipWin.close(); } catch (e) { /* ignore */ } }
+    pipWin = null; pipSrc = null;
+  }
+  // Цвет берётся у самого крупного играющего видео; ~10 обновлений в секунду с плавным переходом.
+  function pipFeed(g, now, pc) {
+    if (!pipWin) return;
+    if (pipSrc && pipSrc !== g && !pipSrc.dead && now - pipAt < 1000 && g.area <= pipSrc.area) return;
+    pipSrc = g;
+    const dt = pipAt ? Math.min(500, now - pipAt) : 0;
+    if (dt && dt < 90) return;
+    pipAt = now;
+    const tgt = [pc.left, pc.color, pc.right];
+    if (!pipRc) pipRc = tgt.map((c) => c.slice());
+    const k = dt ? 1 - Math.exp(-dt / 300) : 1;
+    for (let j = 0; j < 3; j++) for (let i = 0; i < 3; i++) pipRc[j][i] += (tgt[j][i] - pipRc[j][i]) * k;
+    const [cl, cm, cr] = pipRc.map((c) => g.tone(c[0], c[1], c[2]));
+    const bg = 'linear-gradient(90deg,rgb(' + cl + ') 0%,rgb(' + cm + ') 50%,rgb(' + cr + ') 100%)';
+    if (bg !== pipKey) { pipKey = bg; try { pipWin.document.body.style.background = bg; } catch (e) { pipWin = null; } }
+  }
   const PANEL_W = 340;
 
   function panelHost() {
@@ -2024,6 +2171,13 @@
       border: '1px solid transparent', background: 'transparent', 'user-select': 'none'
     });
     const pin = mkBtn(); pin.textContent = '📌';
+    const win = 'documentPictureInPicture' in window ? mkBtn() : null;
+    if (win) {
+      win.textContent = '◫';
+      try { win.title = chrome.i18n.getMessage('q_glowwin') || 'Glow window'; } catch (e) { /* ignore */ }
+      win.addEventListener('click', openGlowWindow);
+      btns.append(win);
+    }
     const close = mkBtn(); close.textContent = '✕';
     try { close.title = chrome.i18n.getMessage('panel_close') || 'Close'; } catch (e) { /* ignore */ }
     btns.append(pin, close);
@@ -2034,7 +2188,7 @@
     setImp(frame, { display: 'block', width: '100%', border: '0', margin: '0', padding: '0',
       background: '#15151b', 'color-scheme': 'dark' });
     el.append(bar, frame);
-    panel = { el, bar, pin, close, frame, st: { x: 0, y: 0 }, over: false, dragging: false, idleT: 0 };
+    panel = { el, bar, pin, close, frame, win, st: { x: 0, y: 0 }, over: false, dragging: false, idleT: 0 };
 
     el.addEventListener('mouseenter', () => { panel.over = true; clearTimeout(panel.idleT); el.style.setProperty('opacity', '1', 'important'); });
     el.addEventListener('mouseleave', () => {
@@ -2053,7 +2207,7 @@
     });
     close.addEventListener('click', closePanel);
     bar.addEventListener('pointerdown', (e) => {
-      if (e.target === pin || e.target === close || e.button !== 0) return;
+      if (e.target === pin || e.target === close || (win && e.target === win) || e.button !== 0) return;
       panel.dragging = true;
       const sx = e.clientX - panel.st.x, sy = e.clientY - panel.st.y;
       try { bar.setPointerCapture(e.pointerId); } catch (er) { /* ignore */ }
@@ -2199,6 +2353,7 @@
     glows.clear();
     down = true;
     closePanel();
+    closeGlowWindow();
     mo.disconnect();
     clearTimeout(flushT);
     sharedIo.disconnect();
@@ -2271,7 +2426,15 @@
   // Диагностика для popup: почему свечения нет / что происходит.
   function onMessage(msg, sender, sendResponse) {
     if (msg && msg.type === 'vg:panel') {
-      if (panelHere()) togglePanel(msg.op);
+      if (!panelHere()) return;
+      if (msg.op === 'glowwin') {
+        // окно открывается только по клику на странице: если клик был (кнопка в панели на видео) — сразу,
+        // иначе открываем панель и подсвечиваем её кнопку ◫
+        if (navigator.userActivation && navigator.userActivation.isActive) openGlowWindow();
+        else { openPanel(); if (panel && panel.win) panel.win.animate([{ outline: '2px solid #8b6bff' }, { outline: '2px solid transparent' }], { duration: 700, iterations: 4 }); }
+        return;
+      }
+      togglePanel(msg.op);
       return;
     }
     if (!msg || msg.type !== 'vg:status' || glows.size === 0) return;
@@ -2283,7 +2446,8 @@
     sendResponse({
       count: glows.size, why: best.why, mode: best.mode, readable: best.readable,
       guard: best.gLevel > 0.05, pulse: !best.s.pulse ? 'off' : best.au ? 'on' : 'nodata',
-      zoom: !!best.zApplied
+      zoom: !!best.zApplied,
+      auto: best.ap ? (best.ap.t0 || best.ap.ready ? best.ap.cls || 'none' : 'wait') : ''
     });
   }
 

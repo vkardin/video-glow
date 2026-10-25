@@ -6,6 +6,19 @@
   <script src="ui-theme.js"></script>
   <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="page.css">
+  <style>
+    .wstep { display: grid; grid-template-columns: 28px 1fr; gap: 4px 12px; }
+    .wnum { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--sel-bg); color: var(--sel-text); font-weight: 600; font-size: 13px; }
+    .wstep > :not(.wnum) { grid-column: 2; }
+    .demo { position: relative; margin: 22px auto 10px; width: min(100%, 420px); aspect-ratio: 16 / 9; }
+    .demo canvas { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 6px; }
+    .demo .glow { transform: scale(1.22); filter: blur(26px) saturate(1.3); opacity: .9; transition: opacity .4s; }
+    .demo.led .glow { filter: blur(6px) saturate(1.5); transform: scale(1.16); -webkit-mask: radial-gradient(circle, #000 38%, transparent 42%) 0 0 / 14px 14px; mask: radial-gradient(circle, #000 38%, transparent 42%) 0 0 / 14px 14px; }
+    .demo.cinema .glow { transform: scale(1.12); filter: blur(30px) saturate(1.1); opacity: .75; }
+    .styles { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .styles button.active { background: var(--sel-bg); border-color: var(--sel-bg); color: var(--sel-text); }
+    kbd { font: 12px ui-monospace, monospace; padding: 1px 6px; border-radius: 4px; background: var(--field); }
+  </style>
 </head>
 <body>
   <main>
@@ -19,19 +32,39 @@
       <p id="granted" hidden data-i18n="w_perm_done"></p>
     </section>
 
-    <section class="card">
-      <ol class="steps">
-        <li data-i18n="w_step1"></li>
-        <li data-i18n="w_step2"></li>
-        <li data-i18n="w_step3"></li>
-        <li data-i18n="w_step4"></li>
-      </ol>
-      <p class="muted" data-i18n="w_note"></p>
-      <button type="button" class="primary" id="open" data-i18n="w_open"></button>
+    <section class="card wstep">
+      <span class="wnum">1</span>
+      <h2 data-i18n="w_s1_title"></h2>
+      <p class="muted" data-i18n="w_s1_text"></p>
+      <div class="demo" id="demo"><canvas class="glow" width="32" height="18"></canvas><canvas class="pic" width="320" height="180"></canvas></div>
+    </section>
+
+    <section class="card wstep">
+      <span class="wnum">2</span>
+      <h2 data-i18n="w_s2_title"></h2>
+      <p class="muted" data-i18n="w_s2_text"></p>
+      <div class="styles" id="styles">
+        <button type="button" data-style="auto" data-i18n="p_auto"></button>
+        <button type="button" data-style="soft" data-i18n="preset_soft"></button>
+        <button type="button" data-style="cinema" data-i18n="preset_cinema"></button>
+        <button type="button" data-style="led" data-i18n="p_style_led"></button>
+      </div>
+    </section>
+
+    <section class="card wstep">
+      <span class="wnum">3</span>
+      <h2 data-i18n="w_s3_title"></h2>
+      <p class="muted" data-i18n="w_s3_text"></p>
+      <p class="muted"><kbd>Alt+Shift+B</kbd> <span data-i18n="w_s3_key"></span></p>
+      <div class="row">
+        <button type="button" class="primary" id="open" data-i18n="w_open"></button>
+        <button type="button" id="donate" data-i18n="p_donate" hidden></button>
+      </div>
     </section>
   </main>
 
   <script src="defaults.js"></script>
+  <script src="presets.js"></script>
   <script src="i18n.js"></script>
   <script src="welcome.js"></script>
 </body>

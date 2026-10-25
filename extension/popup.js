@@ -172,6 +172,14 @@
   function buildPresets() {
     const el = $('#presets');
     el.textContent = '';
+    const auto = document.createElement('button');
+    auto.type = 'button';
+    auto.className = 'chip auto';
+    auto.id = 'autoChip';
+    auto.textContent = t('p_auto');
+    auto.title = t('p_auto_hint');
+    auto.addEventListener('click', () => { save('autoPreset', !state.autoPreset); render(); scheduleStatus(); });
+    el.append(auto);
     presetList().forEach((p) => {
       const b = document.createElement('button');
       b.type = 'button';
@@ -179,7 +187,7 @@
       b.dataset.preset = p.id;
       b.textContent = p.builtin ? t(p.nameKey) : p.name;
       b.title = p.builtin ? '' : p.name;
-      b.addEventListener('click', () => saveMany(Object.assign({}, p.values), render));
+      b.addEventListener('click', () => saveMany(Object.assign({}, p.values, { autoPreset: false }), render));   // свой выбор выключает автопресет
       el.append(b);
     });
   }
@@ -187,9 +195,11 @@
   function markPreset() {
     const lst = presetList();
     $$('#presets .chip').forEach((b) => {
+      if (b.id === 'autoChip') { b.classList.toggle('active', !!state.autoPreset); return; }
       const p = lst.find((x) => x.id === b.dataset.preset);
-      b.classList.toggle('active', !!p && Object.keys(p.values).every((k) => state[k] === p.values[k]));
+      b.classList.toggle('active', !state.autoPreset && !!p && Object.keys(p.values).every((k) => state[k] === p.values[k]));
     });
+    if (!state.autoPreset) $('#autoNote').hidden = true;
     $$('#fxPresets .chip').forEach((b) => {
       const p = FX_PRESETS[b.dataset.fx];
       b.classList.toggle('active', Object.keys(p).every((k) => state[k] === p[k]));
@@ -334,6 +344,20 @@
     $('#qRoom').addEventListener('click', () => { save('room', !state.room); render(); });
     $('#qLed').addEventListener('click', () => { save('glowStyle', state.glowStyle === 'led' ? 'soft' : 'led'); render(); });
     $('#qPanel').addEventListener('click', () => $('#openPanel').click());
+    // Окно-подсветка открывается только по клику на странице: из панели на видео — сразу, отсюда — панель с кнопкой ◫
+    setInterval(() => { if (state.autoPreset && !document.hidden) refreshStatus(); }, 2000);   // «Сейчас: …» у автопресета
+    if ('documentPictureInPicture' in window) {
+      $('#qWin').hidden = false;
+      $('#qWin').addEventListener('click', () => {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+          const tab = tabs && tabs[0];
+          if (tab) {
+            try { chrome.tabs.sendMessage(tab.id, { type: 'vg:panel', op: 'glowwin' }, { frameId: 0 }, () => void chrome.runtime.lastError); } catch (er) { /* ignore */ }
+          }
+          if (!/[?&]panel=1/.test(location.search)) window.close();
+        });
+      });
+    }
     $('#qOptions').addEventListener('click', () => chrome.runtime.openOptionsPage());
     // сброс — в два нажатия, чтобы не сбросить случайно
     let qArm = 0;
@@ -459,6 +483,9 @@
         const note = res.guard ? 'st_guard' : res.readable === false ? 'st_unreadable' :
           res.pulse === 'nodata' ? 'st_pulse_nodata' : '';
         showStatus(STATUS_KIND[res.why] || 'info', 'st_' + res.why, note);
+        const an = $('#autoNote');
+        an.hidden = !state.autoPreset || !res.auto;
+        if (!an.hidden) an.textContent = res.auto === 'wait' ? t('auto_wait') : res.auto === 'none' ? t('auto_none') : t('auto_now', t('preset_' + res.auto));
       });
     });
   }

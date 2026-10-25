@@ -1078,5 +1078,52 @@
   },
   "hue_zone_r": {
     "message": "Right edge"
+  },
+  "p_auto": {
+    "message": "✦ Auto"
+  },
+  "p_auto_hint": {
+    "message": "Auto preset: recognises the kind of video (film, anime, games, sport) and adjusts the glow by itself"
+  },
+  "auto_wait": {
+    "message": "Auto preset: looking at the video…"
+  },
+  "auto_none": {
+    "message": "Auto preset: nothing specific, your own settings"
+  },
+  "auto_now": {
+    "message": "Auto preset: now “$NAME$”",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "q_glowwin": {
+    "message": "Glow window: a separate window that glows with the video colour (move it to a second monitor)"
+  },
+  "pip_hint": {
+    "message": "Move this window to a second monitor or next to the screen"
+  },
+  "w_s1_title": {
+    "message": "Play any video"
+  },
+  "w_s1_text": {
+    "message": "A soft glow appears around the player and follows the colours of the scene. It works on any site, nothing to set up."
+  },
+  "w_s2_title": {
+    "message": "Pick a style"
+  },
+  "w_s2_text": {
+    "message": "“Auto” recognises films, anime, games and sport and adjusts the glow by itself. You can change it any time in the extension window."
+  },
+  "w_s3_title": {
+    "message": "Keep it at hand"
+  },
+  "w_s3_text": {
+    "message": "Pin the Video Glow icon on the toolbar (the puzzle icon → pin). The window shows why there is no glow, if something is wrong."
+  },
+  "w_s3_key": {
+    "message": "turns the glow on and off"
   }
 }
