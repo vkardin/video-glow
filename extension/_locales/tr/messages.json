@@ -1,0 +1,1129 @@
+{
+  "extName": {
+    "message": "Video Glow — her video için ortam ışığı"
+  },
+  "extDescription": {
+    "message": "Her sitedeki her videonun çevresinde yumuşak bir ortam ışığı, tam ekranda da. Siyah şeritleri doldurur. Şekil, bulanıklık ve boyut tamamen ayarlanabilir."
+  },
+  "actionTitle": {
+    "message": "Video Glow"
+  },
+  "cmdToggle": {
+    "message": "Işımayı her yerde aç / kapat"
+  },
+  "cmdSite": {
+    "message": "Işımayı bu sitede aç / kapat"
+  },
+  "p_enabled_title": {
+    "message": "Her yerde aç / kapat (Alt+Shift+B)"
+  },
+  "p_site_off": {
+    "message": "$HOST$ üzerinde kapat",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_presets": {
+    "message": "Hazır ayarlar"
+  },
+  "preset_soft": {
+    "message": "Yumuşak"
+  },
+  "preset_cinema": {
+    "message": "Sinema"
+  },
+  "preset_neon": {
+    "message": "Neon"
+  },
+  "preset_exact": {
+    "message": "Tam"
+  },
+  "p_page": {
+    "message": "Sayfada ışıma"
+  },
+  "p_shape": {
+    "message": "Çerçeve şekli"
+  },
+  "p_shape_rect": {
+    "message": "Dikdörtgen"
+  },
+  "p_shape_rounded": {
+    "message": "Yuvarlatılmış"
+  },
+  "p_shape_circle": {
+    "message": "Daire"
+  },
+  "s_spread": {
+    "message": "Çerçeve boyutu"
+  },
+  "s_spread_hint": {
+    "message": "Işımanın video kenarlarının ne kadar dışına taştığı"
+  },
+  "s_feather": {
+    "message": "Kenar yumuşaklığı"
+  },
+  "s_feather_hint": {
+    "message": "Işımanın dış kenara doğru ne kadar yumuşak söndüğü: 0 — keskin kenar, 100 — tüm çerçeve boyunca yumuşak geçiş"
+  },
+  "s_radius": {
+    "message": "Köşe yarıçapı"
+  },
+  "p_seamless": {
+    "message": "Videoyla kesintisiz birleşim"
+  },
+  "p_seamless_hint": {
+    "message": "Görüntü çerçeve kenarlarının ötesine devam eder ve ışıma birleşim noktasında tam güçtedir. Tam ekranda da çalışır"
+  },
+  "p_mode": {
+    "message": "Katman"
+  },
+  "p_mode_screen": {
+    "message": "Üstte, aydınlatma"
+  },
+  "p_mode_normal": {
+    "message": "Üstte, normal"
+  },
+  "p_mode_under": {
+    "message": "Sayfanın arkasında"
+  },
+  "p_mode_hint": {
+    "message": "“Üstte” opak arka planların üzerinde de görünür ve videonun kendisini asla örtmez. “Sayfanın arkasında” içeriğe dokunmaz ama blok arka planlarının arkasında kalabilir."
+  },
+  "p_fs": {
+    "message": "Tam ekran"
+  },
+  "p_fs_fill": {
+    "message": "Tüm ekranı doldur"
+  },
+  "p_fs_fill_hint": {
+    "message": "Yalnızca videonun çevresinde bir çerçeve değil, siyah şeritleri de kaplar"
+  },
+  "p_look": {
+    "message": "Görünüm"
+  },
+  "s_blur": {
+    "message": "Bulanıklık"
+  },
+  "s_sample": {
+    "message": "Örnek boyutu"
+  },
+  "s_sample_hint": {
+    "message": "Videodan alınan görüntünün genişliği: küçük — daha yumuşak ve hafif, büyük — daha ayrıntılı"
+  },
+  "s_opacity": {
+    "message": "Işıma gücü"
+  },
+  "s_saturation": {
+    "message": "Doygunluk"
+  },
+  "s_brightness": {
+    "message": "Renk parlaklığı"
+  },
+  "s_fade": {
+    "message": "Duraklatma / oynatmada geçiş"
+  },
+  "s_fade_hint": {
+    "message": "Işımanın duraklatınca sönmesi ve oynatınca belirmesi ne kadar sürer"
+  },
+  "p_fps": {
+    "message": "Yenileme hızı, fps"
+  },
+  "p_adv": {
+    "message": "Gelişmiş"
+  },
+  "p_fillbars": {
+    "message": "Oynatıcı içindeki şeritleri doldur"
+  },
+  "p_fillbars_hint": {
+    "message": "Video kendi bloğunu doldurmuyorsa (tam ekran dışında)"
+  },
+  "p_cropbars": {
+    "message": "Video içindeki siyah şeritleri yok say"
+  },
+  "p_cropbars_hint": {
+    "message": "Şeritleri gömülü filmler (2,39:1) ışımada karanlık bölgeler oluşturmaz"
+  },
+  "p_adaptive": {
+    "message": "Yavaş cihaza uyum sağla"
+  },
+  "p_adaptive_hint": {
+    "message": "Bilgisayar yetişemezse yenileme hızını otomatik düşürür"
+  },
+  "p_eco": {
+    "message": "Pil tasarrufu"
+  },
+  "p_eco_hint": {
+    "message": "%30'un altında ve şarjda değilken en fazla 15 fps"
+  },
+  "s_minwidth": {
+    "message": "En küçük video genişliği"
+  },
+  "s_minwidth_hint": {
+    "message": "Daha dar videolar (önizlemeler, bannerlar) yok sayılır"
+  },
+  "u_ms": {
+    "message": " ms"
+  },
+  "p_reset": {
+    "message": "Ayarları sıfırla"
+  },
+  "p_options": {
+    "message": "Tüm ayarlar"
+  },
+  "p_donate": {
+    "message": "Projeye destek ol"
+  },
+  "p_note": {
+    "message": "Değişiklikler hemen uygulanır"
+  },
+  "st_ok": {
+    "message": "Işıma bu sayfada çalışıyor"
+  },
+  "st_paused": {
+    "message": "Video duraklatıldı — ışıma kapalı"
+  },
+  "st_small": {
+    "message": "Video en küçük genişlikten küçük"
+  },
+  "st_site": {
+    "message": "Bu sitede kapalı"
+  },
+  "st_disabled": {
+    "message": "Video Glow kapalı"
+  },
+  "st_pageoff": {
+    "message": "Sayfada ışıma kapalı"
+  },
+  "st_fsoff": {
+    "message": "Tam ekranda ışıma kapalı"
+  },
+  "st_offscreen": {
+    "message": "Video ekranda görünmüyor"
+  },
+  "st_hidden": {
+    "message": "Sayfa videoyu gizliyor"
+  },
+  "st_pip": {
+    "message": "Resim içinde resim etkin"
+  },
+  "st_otherfs": {
+    "message": "Başka bir öğe tam ekranda"
+  },
+  "st_novideo": {
+    "message": "Video henüz yüklenmedi"
+  },
+  "st_none": {
+    "message": "Bu sayfada video bulunamadı"
+  },
+  "st_unsupported": {
+    "message": "Bu sayfada kullanılamaz"
+  },
+  "st_unreadable": {
+    "message": "Tarayıcı bu videonun karelerini okumaya izin vermiyor (başka alan adı / koruma). Işıma çalışır ama şerit algılama kullanılamaz."
+  },
+  "o_title": {
+    "message": "Video Glow — ayarlar"
+  },
+  "o_sites": {
+    "message": "Kapalı siteler"
+  },
+  "o_sites_hint": {
+    "message": "Bu sitelerde ışıma asla görünmez."
+  },
+  "o_sites_empty": {
+    "message": "Kapalı site yok"
+  },
+  "o_site_add_ph": {
+    "message": "example.com"
+  },
+  "o_site_add": {
+    "message": "Ekle"
+  },
+  "o_site_remove": {
+    "message": "Kaldır"
+  },
+  "o_backup": {
+    "message": "Yedek"
+  },
+  "o_export": {
+    "message": "Ayarları dışa aktar"
+  },
+  "o_import": {
+    "message": "Ayarları içe aktar"
+  },
+  "o_import_ok": {
+    "message": "Ayarlar içe aktarıldı"
+  },
+  "o_import_err": {
+    "message": "Dosya okunamadı"
+  },
+  "o_reset_all": {
+    "message": "Tüm ayarları sıfırla"
+  },
+  "o_reset_confirm": {
+    "message": "Tüm ayarlar varsayılana dönsün mü? Kapalı siteler listesi de temizlenecek."
+  },
+  "o_shortcuts": {
+    "message": "Klavye kısayolları"
+  },
+  "o_shortcuts_btn": {
+    "message": "Kısayolları ayarla"
+  },
+  "o_shortcuts_text": {
+    "message": "Her yerde aç / kapat: Alt+Shift+B. Sayfanın ve tam ekran videonun üzerindeki ayar paneli: Alt+Shift+G (veya videodaki dişli düğmesi). “Bu sitede aç / kapat” için varsayılan tuş yok — tarayıcının kısayol ayarlarından atayın."
+  },
+  "o_about": {
+    "message": "Hakkında"
+  },
+  "o_version": {
+    "message": "Sürüm $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_privacy": {
+    "message": "Gizlilik politikası"
+  },
+  "o_privacy_text": {
+    "message": "Video Glow hiçbir veri toplamaz veya göndermez. Ayarlar tarayıcınızda yerel olarak saklanır."
+  },
+  "o_limits": {
+    "message": "Sınırlamalar"
+  },
+  "o_limits_text": {
+    "message": "DRM ile korunan videoları (Netflix, Disney+ ve benzerleri) tarayıcı okuyamaz, bu yüzden onlar için ışıma yoktur. CORS olmadan başka bir alan adından gelen videolarda şerit algılama ve “videonun kendisi tam ekranda” modu kullanılamaz."
+  },
+  "w_title": {
+    "message": "Video Glow yüklendi"
+  },
+  "w_sub": {
+    "message": "Her sitedeki her video için ortam ışığı."
+  },
+  "w_step1": {
+    "message": "Herhangi bir videoyu açıp oynatın — ışıma çevresinde yumuşakça belirir."
+  },
+  "w_step2": {
+    "message": "Boyutu, bulanıklığı, şekli ve hazır ayarları değiştirmek için uzantı simgesine tıklayın."
+  },
+  "w_step3": {
+    "message": "Alt+Shift+B ışımayı açar veya kapatır."
+  },
+  "w_step4": {
+    "message": "Tam ekranda ışıma ekranınızın siyah şeritlerini doldurur."
+  },
+  "w_note": {
+    "message": "Işıma yok mu? Uzantı penceresini açın — nedeni orada yazar (duraklatma, çok küçük, korumalı video…)."
+  },
+  "w_open": {
+    "message": "Ayarları aç"
+  },
+  "hover_tip": {
+    "message": "Video Glow: ışıma aç/kapat"
+  },
+  "st_useroff": {
+    "message": "Işıma videodaki düğmeyle kapatıldı"
+  },
+  "u_sec": {
+    "message": " sn"
+  },
+  "p_badge_site": {
+    "message": "bu site"
+  },
+  "p_scope_site": {
+    "message": "$HOST$ için özel ayarlar",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_scope_hint": {
+    "message": "Kapalı: değişiklikler tüm sitelere uygulanır. Açık: yalnızca bu siteye."
+  },
+  "p_scope_reset": {
+    "message": "Genel ayarlara dön"
+  },
+  "p_pause": {
+    "message": "Duraklatınca"
+  },
+  "p_pause_mode": {
+    "message": "Duraklatınca ışıma"
+  },
+  "p_pause_fade": {
+    "message": "Söner"
+  },
+  "p_pause_hold": {
+    "message": "Açık kalır"
+  },
+  "p_pause_delay": {
+    "message": "Gecikmeyle söner"
+  },
+  "s_pause_delay": {
+    "message": "Şu süre sonra sön"
+  },
+  "p_fs_same": {
+    "message": "Sayfadakiyle aynı"
+  },
+  "p_fs_same_hint": {
+    "message": "Kapalı: tam ekranın kendi bulanıklık, parlaklık ve duraklatma ayarları olur."
+  },
+  "p_dim": {
+    "message": "Oynatıcının çevresindeki sayfayı karart"
+  },
+  "p_dim_hint": {
+    "message": "Sinema modu: video dışındaki her şey kararır."
+  },
+  "s_dim": {
+    "message": "Karartma"
+  },
+  "p_hover": {
+    "message": "Videodaki düğme"
+  },
+  "p_hover_hint": {
+    "message": "Fareyi videonun üzerine getirdiğinizde küçük bir düğme belirir."
+  },
+  "o_custom_sites": {
+    "message": "Özel ayarlı siteler"
+  },
+  "o_custom_hint": {
+    "message": "Buraya site eklemek için pencerede “Bu site için özel ayarlar”ı açın."
+  },
+  "o_custom_empty": {
+    "message": "Henüz site yok."
+  },
+  "w_perm_title": {
+    "message": "Bir adım daha: sitelere erişime izin verin"
+  },
+  "w_perm_text": {
+    "message": "Videoların yanında ışıma çizmek için Video Glow'un video izlediğiniz sitelerde çalışma iznine ihtiyacı var. Hiçbir şey toplanmaz veya gönderilmez. Bu izin olmadan uzantı hiçbir şey yapmaz."
+  },
+  "w_perm_allow": {
+    "message": "Tüm sitelerde izin ver"
+  },
+  "w_perm_done": {
+    "message": "Tamam — ışıma artık etkin. Önceden açık olan sekmeleri yenileyin."
+  },
+  "p_perm_need": {
+    "message": "Işıma henüz etkin değil: sitelere erişime izin verilmedi."
+  },
+  "p_perm_btn": {
+    "message": "Erişime izin ver…"
+  },
+  "p_pro_badge": {
+    "message": "Pro"
+  },
+  "p_pro_trial": {
+    "message": "Pro deneme: $N$ gün kaldı",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_pro_locked": {
+    "message": "Pro özellikleri kilitli"
+  },
+  "p_pro_get": {
+    "message": "Kilidi aç"
+  },
+  "p_pro_key": {
+    "message": "Anahtar gir"
+  },
+  "p_pro_title_bars": {
+    "message": "Siyah şeritler"
+  },
+  "p_bars_mode": {
+    "message": "Şerit algılama"
+  },
+  "p_bars_auto": {
+    "message": "Otomatik"
+  },
+  "p_bars_force": {
+    "message": "Zorunlu (agresif)"
+  },
+  "p_bars_manual": {
+    "message": "Elle"
+  },
+  "p_bars_hint": {
+    "message": "Zorunlu mod her taraftaki gri veya parazitli şeritleri, tek taraflı olanları bile bulur. Çok karanlık sahneler şerit sanılabilir."
+  },
+  "s_bar_t": {
+    "message": "Üst şerit"
+  },
+  "s_bar_b": {
+    "message": "Alt şerit"
+  },
+  "s_bar_l": {
+    "message": "Sol şerit"
+  },
+  "s_bar_r": {
+    "message": "Sağ şerit"
+  },
+  "p_barshide": {
+    "message": "Şeritleri ekrandan kaldır"
+  },
+  "p_barshide_hint": {
+    "message": "Görüntü oynatıcıyı doldursun diye videoyu büyütür. Kenarlar kırpılır."
+  },
+  "s_barsfill": {
+    "message": "Yakınlaştırma"
+  },
+  "s_barsfill_hint": {
+    "message": "0 — yalnızca görüntüyü sığdır, 100 — oynatıcıyı tamamen doldur."
+  },
+  "p_pro_title_eyes": {
+    "message": "Hassas gözler"
+  },
+  "p_guard": {
+    "message": "Flaş koruması"
+  },
+  "p_guard_hint": {
+    "message": "Görüntü titrediğinde veya flaş yaptığında (saniyede 3+ flaş) videoyu ve ışımayı karartır. Tıbbi bir cihaz değildir."
+  },
+  "p_guard_sens": {
+    "message": "Hassasiyet"
+  },
+  "p_sens_1": {
+    "message": "Düşük"
+  },
+  "p_sens_2": {
+    "message": "Orta"
+  },
+  "p_sens_3": {
+    "message": "Yüksek"
+  },
+  "s_guard_strength": {
+    "message": "Karartma"
+  },
+  "p_guard_video": {
+    "message": "Videonun kendisini de karart"
+  },
+  "s_calm": {
+    "message": "Sakin ışıma"
+  },
+  "s_calm_hint": {
+    "message": "Renk değişimlerini zamanla yumuşatır, daha az ani sıçrama."
+  },
+  "p_pro_title_pulse": {
+    "message": "Ses nabzı"
+  },
+  "p_pulse": {
+    "message": "Sesle birlikte atış"
+  },
+  "p_pulse_hint": {
+    "message": "Işıma sesle birlikte atar. Ses cihazınızda analiz edilir ve asla kaydedilmez. Flaşlara hassassanız kullanmayın."
+  },
+  "s_pulse": {
+    "message": "Nabız gücü"
+  },
+  "p_pulse_mode": {
+    "message": "Tepki verdiği"
+  },
+  "p_pulse_bass": {
+    "message": "Bas"
+  },
+  "p_pulse_all": {
+    "message": "Tüm ses"
+  },
+  "p_pro_title_fx": {
+    "message": "Video filtreleri"
+  },
+  "p_fx": {
+    "message": "Videoya filtre uygula"
+  },
+  "fx_clarity": {
+    "message": "Netlik"
+  },
+  "fx_cinema": {
+    "message": "Sinema"
+  },
+  "fx_vivid": {
+    "message": "Canlı"
+  },
+  "fx_warm": {
+    "message": "Sıcak"
+  },
+  "fx_off": {
+    "message": "Kapalı"
+  },
+  "s_fx_brightness": {
+    "message": "Parlaklık"
+  },
+  "s_fx_contrast": {
+    "message": "Kontrast"
+  },
+  "s_fx_saturation": {
+    "message": "Doygunluk"
+  },
+  "s_fx_sharp": {
+    "message": "Keskinlik"
+  },
+  "s_fx_sharp_hint": {
+    "message": "Keskinlik, sıcaklık ve gölgeler bir SVG filtresi kullanır ve 4K videoda ağır olabilir."
+  },
+  "s_fx_warmth": {
+    "message": "Sıcaklık (− soğuk, + sıcak)"
+  },
+  "s_fx_gamma": {
+    "message": "Gölgeler (aydınlatma)"
+  },
+  "p_pro_title_night": {
+    "message": "Gece konforu"
+  },
+  "p_night": {
+    "message": "Gece konforu"
+  },
+  "p_night_hint": {
+    "message": "Seçilen saatlerde video daha sıcak ve karanlık, ışıma daha yumuşak olur. Tüm sitelerde aynı."
+  },
+  "p_night_from": {
+    "message": "Başlangıç"
+  },
+  "p_night_to": {
+    "message": "Bitiş"
+  },
+  "s_night_strength": {
+    "message": "Güç"
+  },
+  "st_guard": {
+    "message": "Flaş koruması şu anda etkin."
+  },
+  "st_pulse_nodata": {
+    "message": "Ses nabzı: bu video ses verisi vermiyor."
+  },
+  "o_pro": {
+    "message": "Video Glow Pro"
+  },
+  "o_pro_none": {
+    "message": "Pro etkin değil. Tüm Pro özelliklerini açmak için bir lisans anahtarı girin."
+  },
+  "o_pro_trial": {
+    "message": "Deneme süresi: $N$ gün kaldı. Pro özellikleri bitene kadar çalışır.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_pro_license": {
+    "message": "Pro etkin. Lisans: $N$",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_pro_license_anon": {
+    "message": "Pro etkin."
+  },
+  "o_pro_features": {
+    "message": "Pro şunları içerir: zorunlu şerit algılama ve kaldırma, flaş koruması ve sakin ışıma, ses nabzı, video filtreleri, gece konforu."
+  },
+  "o_key_ph": {
+    "message": "Lisans anahtarınızı yapıştırın (VG1. ile başlar)"
+  },
+  "o_key_activate": {
+    "message": "Etkinleştir"
+  },
+  "o_key_remove": {
+    "message": "Anahtarı kaldır"
+  },
+  "o_buy": {
+    "message": "Pro satın al"
+  },
+  "o_key_ok": {
+    "message": "Pro etkinleştirildi"
+  },
+  "o_key_removed": {
+    "message": "Anahtar kaldırıldı"
+  },
+  "o_key_empty": {
+    "message": "Önce bir anahtar yapıştırın"
+  },
+  "o_key_bad": {
+    "message": "Bu anahtar geçersiz"
+  },
+  "o_key_format": {
+    "message": "Bu bir lisans anahtarına benzemiyor"
+  },
+  "o_pro_offline": {
+    "message": "Anahtar bu cihazda doğrulanır, ağ isteği yapılmaz. Güvenli bir yerde saklayın; yedekler onu içermez."
+  },
+  "p_fold_all": {
+    "message": "Tüm bölümleri daralt"
+  },
+  "p_unfold_all": {
+    "message": "Tüm bölümleri genişlet"
+  },
+  "p_panel_btn": {
+    "message": "Sayfa üstü panel"
+  },
+  "p_fs_shape_own": {
+    "message": "Özel çerçeve şekli ve boyutu"
+  },
+  "p_fs_shape_own_hint": {
+    "message": "Tam ekranda ayrı çerçeve şekli, boyutu ve yumuşaklığı."
+  },
+  "p_fs_shape_note": {
+    "message": "Çerçeve, “Tüm ekranı doldur” kapalıyken kullanılır; açıkken ışıma ekranı doldurur."
+  },
+  "panel_title": {
+    "message": "Video Glow ayarları"
+  },
+  "panel_pin": {
+    "message": "Sabitle: panel açık kalsın"
+  },
+  "panel_unpin": {
+    "message": "Sabitlemeyi kaldır: imleç olmadan 10 sn sonra gizle"
+  },
+  "panel_close": {
+    "message": "Kapat"
+  },
+  "hover_gear_tip": {
+    "message": "Video Glow ayarları"
+  },
+  "cmdPanel": {
+    "message": "Sayfa üstündeki ayar panelini göster / gizle"
+  },
+  "p_tune": {
+    "message": "İnce ayar"
+  },
+  "p_behavior": {
+    "message": "Davranış"
+  },
+  "p_picture": {
+    "message": "Görüntü"
+  },
+  "p_comfort": {
+    "message": "Konfor ve ses"
+  },
+  "preset_clarity": {
+    "message": "Netlik"
+  },
+  "preset_night": {
+    "message": "Gece"
+  },
+  "p_preset_save": {
+    "message": "+ Mevcut ayarı kaydet"
+  },
+  "p_preset_manage": {
+    "message": "Hazır ayarları düzenle"
+  },
+  "p_preset_name_ph": {
+    "message": "Hazır ayar adı"
+  },
+  "p_preset_ok": {
+    "message": "Kaydet"
+  },
+  "preset_default_name": {
+    "message": "Ayarım"
+  },
+  "o_presets": {
+    "message": "Hazır ayarlar"
+  },
+  "o_presets_hint": {
+    "message": "Hazır ayar tüm görünümü tek tıkla değiştirir: ışıma, sayfa karartma ve video filtreleri. Yerleşik olanları değiştirin veya kendinizinkini yapın — mevcut ayarları herhangi birine kopyalayabilirsiniz."
+  },
+  "o_preset_add": {
+    "message": "+ Mevcut ayarlardan yeni hazır ayar"
+  },
+  "o_preset_edit": {
+    "message": "Parametreler"
+  },
+  "o_preset_from_current": {
+    "message": "Mevcut ayarları kopyala"
+  },
+  "o_preset_reset": {
+    "message": "Sıfırla"
+  },
+  "o_preset_delete": {
+    "message": "Sil"
+  },
+  "o_preset_saved": {
+    "message": "Hazır ayar kaydedildi"
+  },
+  "o_preset_changed": {
+    "message": "değiştirildi"
+  },
+  "o_pg_glow": {
+    "message": "Işıma"
+  },
+  "o_pg_page": {
+    "message": "Sayfa"
+  },
+  "o_pg_fx": {
+    "message": "Video filtreleri"
+  },
+  "o_theme": {
+    "message": "Görünüm"
+  },
+  "o_theme_hint": {
+    "message": "Menü, panel ve bu sayfalar için tema. Işımanın kendisi değişmez."
+  },
+  "theme_cinema": {
+    "message": "Sinema"
+  },
+  "theme_cinema_d": {
+    "message": "Siyah ve sakin"
+  },
+  "theme_amber": {
+    "message": "Grafit ve kehribar"
+  },
+  "theme_amber_d": {
+    "message": "Sıcak koyu"
+  },
+  "theme_deck": {
+    "message": "Konsol"
+  },
+  "theme_deck_d": {
+    "message": "Açık, cihaz tarzı"
+  },
+  "p_style": {
+    "message": "Işıma stili"
+  },
+  "p_style_soft": {
+    "message": "Yumuşak"
+  },
+  "p_style_led": {
+    "message": "LED'ler"
+  },
+  "p_style_hint": {
+    "message": "“LED'ler” bir TV'nin arkasındaki ışık şeridine benzer: her biri kendi renginde ayrı ışık noktaları."
+  },
+  "s_leds": {
+    "message": "LED'ler"
+  },
+  "p_room": {
+    "message": "Oda rengi"
+  },
+  "p_room_hint": {
+    "message": "Tüm sayfa videonun renkleriyle hafifçe renklenir. En iyi sitenin koyu temasıyla çalışır."
+  },
+  "s_room": {
+    "message": "Renk tonu gücü"
+  },
+  "hue_title": {
+    "message": "Philips Hue"
+  },
+  "hue_hint": {
+    "message": "Odadaki lambalar videonun renklerini izler. Ev ağınızdaki Hue Bridge üzerinden çalışır; hiçbir şey ağınızın dışına çıkmaz."
+  },
+  "hue_on": {
+    "message": "Lambalar videoyu izlesin"
+  },
+  "hue_ip_ph": {
+    "message": "Bridge adresi, örn. 192.168.1.20"
+  },
+  "hue_find": {
+    "message": "Bridge bul"
+  },
+  "hue_link": {
+    "message": "Bağlan"
+  },
+  "hue_searching": {
+    "message": "Aranıyor…"
+  },
+  "hue_found": {
+    "message": "Bridge bulundu: $1. Bağlan'a basın."
+  },
+  "hue_not_found": {
+    "message": "Bridge bulunamadı. Adresini girin (Hue uygulaması → Ayarlar → Bridge'ler)."
+  },
+  "hue_press": {
+    "message": "Bridge üzerindeki yuvarlak düğmeye basın ($1 sn kaldı)…"
+  },
+  "hue_timeout": {
+    "message": "Düğmeye basılmadı. Tekrar deneyin."
+  },
+  "hue_linked": {
+    "message": "Bağlandı. Aşağıdan lambaları seçin."
+  },
+  "hue_lights": {
+    "message": "Lambalar"
+  },
+  "hue_no_lights": {
+    "message": "Bridge'de renkli lamba yok."
+  },
+  "hue_many": {
+    "message": "Çok sayıda lamba güncellemeleri yavaşlatır (bridge saniyede yaklaşık 10 komut alır)."
+  },
+  "hue_bri": {
+    "message": "En yüksek parlaklık"
+  },
+  "hue_speed": {
+    "message": "Tepki"
+  },
+  "hue_speed_slow": {
+    "message": "Yumuşak"
+  },
+  "hue_speed_norm": {
+    "message": "Normal"
+  },
+  "hue_speed_fast": {
+    "message": "Hızlı"
+  },
+  "hue_restore": {
+    "message": "Videodan sonra lambaları geri yükle"
+  },
+  "hue_forget": {
+    "message": "Bridge bağlantısını kes"
+  },
+  "hue_err_net": {
+    "message": "Bridge yanıt vermiyor. Açık ve aynı ağda olduğunu kontrol edin."
+  },
+  "hue_err_ip": {
+    "message": "Adresi 192.168.1.20 biçiminde girin."
+  },
+  "hue_err_auth": {
+    "message": "Bridge artık bu bağlantıyı kabul etmiyor. Yeniden Bağlan'a basın."
+  },
+  "hue_err_busy": {
+    "message": "Arama meşgul, 15 dakika sonra deneyin veya adresi girin."
+  },
+  "hue_err_notbridge": {
+    "message": "Bu adreste Hue Bridge yok."
+  },
+  "theme_midnight": {
+    "message": "Gece yarısı"
+  },
+  "theme_midnight_d": {
+    "message": "Koyu mavi"
+  },
+  "theme_day": {
+    "message": "Gündüz"
+  },
+  "theme_day_d": {
+    "message": "Temiz ve açık"
+  },
+  "theme_custom": {
+    "message": "Özel"
+  },
+  "theme_custom_d": {
+    "message": "Renkleri seçin"
+  },
+  "o_custom_bg": {
+    "message": "Arka plan"
+  },
+  "o_custom_text": {
+    "message": "Metin"
+  },
+  "o_custom_accent": {
+    "message": "Vurgu"
+  },
+  "o_custom_reset": {
+    "message": "Renkleri sıfırla"
+  },
+  "q_room": {
+    "message": "Oda rengi: aç/kapat"
+  },
+  "q_led": {
+    "message": "LED'ler / yumuşak ışıma"
+  },
+  "q_panel": {
+    "message": "Sayfa üstü panel"
+  },
+  "q_options": {
+    "message": "Tüm ayarlar"
+  },
+  "q_reset": {
+    "message": "Ayarları sıfırla"
+  },
+  "q_reset_confirm": {
+    "message": "Sıfırlamak için tekrar tıklayın"
+  },
+  "p_title_scene": {
+    "message": "Sahne tepkisi"
+  },
+  "p_scene": {
+    "message": "Sahneye tepki ver"
+  },
+  "p_scene_hint": {
+    "message": "Sert sahne geçişlerinde ve patlamalarda yumuşak bir ışık parlaması, karanlık sahnelerde yavaş bir “nefes”. Flaş koruması her zaman önceliklidir."
+  },
+  "s_scene": {
+    "message": "Efekt gücü"
+  },
+  "p_curve": {
+    "message": "Renk değişimi"
+  },
+  "p_curve_normal": {
+    "message": "Normal"
+  },
+  "p_curve_soft": {
+    "message": "Yumuşak"
+  },
+  "p_curve_cinema": {
+    "message": "Sinema (kesmede anında)"
+  },
+  "p_curve_sharp": {
+    "message": "Keskin"
+  },
+  "o_pg_scene": {
+    "message": "Efektler"
+  },
+  "preset_anime": {
+    "message": "Anime"
+  },
+  "preset_games": {
+    "message": "Oyunlar"
+  },
+  "preset_sport": {
+    "message": "Spor"
+  },
+  "preset_music": {
+    "message": "Müzik"
+  },
+  "p_site": {
+    "message": "Web sitesi"
+  },
+  "lt_title": {
+    "message": "Oda ışıkları: WLED ve Home Assistant"
+  },
+  "lt_hint": {
+    "message": "WLED LED şeridi ve Home Assistant'taki her lamba videonun renklerini izler. Her şey ev ağınızda kalır, internete hiçbir şey gitmez."
+  },
+  "lt_delay": {
+    "message": "Işık gecikmesi (Hue, WLED, Home Assistant)"
+  },
+  "lt_delay_hint": {
+    "message": "Işıklar görüntüden önce değişiyorsa (örneğin TV'niz gecikme ekliyorsa) sağa kaydırın. 0 gecikme yok demektir."
+  },
+  "lt_checking": {
+    "message": "Kontrol ediliyor…"
+  },
+  "lt_err_net": {
+    "message": "Cihaz yanıt vermiyor. Açık ve aynı ağda olduğunu kontrol edin."
+  },
+  "wl_title": {
+    "message": "WLED şeridi"
+  },
+  "wl_on": {
+    "message": "Şerit videonun renklerini izlesin"
+  },
+  "wl_ip_ph": {
+    "message": "WLED adresi, örn. 192.168.1.50"
+  },
+  "wl_check": {
+    "message": "Bağlan"
+  },
+  "wl_found": {
+    "message": "Bağlandı: $1, $2 LED."
+  },
+  "wl_err_notwled": {
+    "message": "Bu adreste WLED yok."
+  },
+  "wl_layout": {
+    "message": "Şeridin yerleşimi"
+  },
+  "wl_layout_around": {
+    "message": "Ekranın çevresinde"
+  },
+  "wl_layout_top": {
+    "message": "Yalnızca üstte"
+  },
+  "wl_layout_single": {
+    "message": "Tüm şerit için tek renk"
+  },
+  "wl_count": {
+    "message": "LED'ler (0 = otomatik)"
+  },
+  "wl_offset": {
+    "message": "Başlangıç kaydırması"
+  },
+  "wl_reverse": {
+    "message": "Saat yönünün tersine"
+  },
+  "wl_restore": {
+    "message": "Videodan sonra şeridi geri yükle"
+  },
+  "wl_help": {
+    "message": "“Ekranın çevresinde”: şerit sol alt köşeden (ekrana bakarken) saat yönünde ilerler. Renkler kaymışsa “Başlangıç kaydırması”nı ayarlayın veya “Saat yönünün tersine”yi açın."
+  },
+  "ha_title": {
+    "message": "Home Assistant"
+  },
+  "ha_on": {
+    "message": "Rengi Home Assistant'a gönder"
+  },
+  "ha_test": {
+    "message": "Test et"
+  },
+  "ha_sent": {
+    "message": "Turuncu gönderildi. Işık değişmediyse aşağıdaki otomasyonu kontrol edin."
+  },
+  "ha_err_url": {
+    "message": "Webhook adresini http://host:8123/api/webhook/id biçiminde girin."
+  },
+  "ha_err_http": {
+    "message": "Home Assistant bir hata döndürdü. Bu webhook ile otomasyonun kaydedildiğini kontrol edin."
+  },
+  "ha_howto": {
+    "message": "2 dakikada nasıl bağlanır"
+  },
+  "ha_help": {
+    "message": "Home Assistant'ta: Ayarlar → Otomasyonlar → Oluştur → YAML'de düzenle. Aşağıdaki metni yapıştırın, light.tv yerine kendi lambalarınızı yazın ve kaydedin. Sonra yukarıya webhook adresini girip “Test et”e basın. start sahneyi kaydeder, play rengi gönderir, stop ışıkları geri yükler."
+  },
+  "hue_zone": {
+    "message": "Kare bölgesi"
+  },
+  "hue_zone_a": {
+    "message": "Tüm kare"
+  },
+  "hue_zone_l": {
+    "message": "Sol kenar"
+  },
+  "hue_zone_r": {
+    "message": "Sağ kenar"
+  },
+  "p_auto": {
+    "message": "✦ Otomatik"
+  },
+  "p_auto_hint": {
+    "message": "Otomatik ayar: videonun türünü (film, anime, oyun, spor) tanır ve ışımayı kendisi ayarlar"
+  },
+  "auto_wait": {
+    "message": "Otomatik ayar: videoya bakıyorum…"
+  },
+  "auto_none": {
+    "message": "Otomatik ayar: özel bir şey yok, sizin ayarlarınız"
+  },
+  "auto_now": {
+    "message": "Otomatik ayar: şimdi “$NAME$”",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "q_glowwin": {
+    "message": "Işık penceresi: ayrı bir pencere videonun renginde parlar (ikinci monitöre taşıyın)"
+  },
+  "pip_hint": {
+    "message": "Bu pencereyi ikinci bir monitöre veya ekranın yanına taşıyın"
+  },
+  "w_s1_title": {
+    "message": "Herhangi bir video oynatın"
+  },
+  "w_s1_text": {
+    "message": "Oynatıcının çevresinde yumuşak bir ışıma belirir ve sahnenin renklerini izler. Her sitede çalışır, ayar gerekmez."
+  },
+  "w_s2_title": {
+    "message": "Bir stil seçin"
+  },
+  "w_s2_text": {
+    "message": "“Otomatik” filmleri, animeyi, oyunları ve sporu tanır ve ışımayı kendisi ayarlar. Uzantı penceresinden istediğiniz zaman değiştirebilirsiniz."
+  },
+  "w_s3_title": {
+    "message": "Elinizin altında tutun"
+  },
+  "w_s3_text": {
+    "message": "Video Glow simgesini araç çubuğuna sabitleyin (yapboz simgesi → raptiye). Bir sorun olursa pencere neden ışıma olmadığını gösterir."
+  },
+  "w_s3_key": {
+    "message": "ışımayı açar ve kapatır"
+  }
+}

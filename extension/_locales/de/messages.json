@@ -1,0 +1,1129 @@
+{
+  "extName": {
+    "message": "Video Glow — Umgebungslicht für jedes Video"
+  },
+  "extDescription": {
+    "message": "Sanftes Umgebungsleuchten um jedes Video auf jeder Website, auch im Vollbild. Füllt schwarze Balken. Form, Unschärfe und Größe sind frei einstellbar."
+  },
+  "actionTitle": {
+    "message": "Video Glow"
+  },
+  "cmdToggle": {
+    "message": "Leuchten überall ein-/ausschalten"
+  },
+  "cmdSite": {
+    "message": "Leuchten auf dieser Website ein-/ausschalten"
+  },
+  "p_enabled_title": {
+    "message": "Überall ein-/ausschalten (Alt+Shift+B)"
+  },
+  "p_site_off": {
+    "message": "Auf $HOST$ deaktivieren",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_presets": {
+    "message": "Voreinstellungen"
+  },
+  "preset_soft": {
+    "message": "Sanft"
+  },
+  "preset_cinema": {
+    "message": "Kino"
+  },
+  "preset_neon": {
+    "message": "Neon"
+  },
+  "preset_exact": {
+    "message": "Exakt"
+  },
+  "p_page": {
+    "message": "Leuchten auf der Seite"
+  },
+  "p_shape": {
+    "message": "Rahmenform"
+  },
+  "p_shape_rect": {
+    "message": "Rechteck"
+  },
+  "p_shape_rounded": {
+    "message": "Abgerundet"
+  },
+  "p_shape_circle": {
+    "message": "Kreis"
+  },
+  "s_spread": {
+    "message": "Rahmengröße"
+  },
+  "s_spread_hint": {
+    "message": "Wie weit das Leuchten über die Videoränder hinausreicht"
+  },
+  "s_feather": {
+    "message": "Randweichheit"
+  },
+  "s_feather_hint": {
+    "message": "Wie weich das Leuchten zum äußeren Rand ausläuft: 0 — harte Kante, 100 — weicher Verlauf über den ganzen Rahmen"
+  },
+  "s_radius": {
+    "message": "Eckenradius"
+  },
+  "p_seamless": {
+    "message": "Nahtloser Übergang zum Video"
+  },
+  "p_seamless_hint": {
+    "message": "Das Bild setzt sich über die Rahmenränder fort, und das Leuchten ist direkt am Übergang voll da. Funktioniert auch im Vollbild"
+  },
+  "p_mode": {
+    "message": "Ebene"
+  },
+  "p_mode_screen": {
+    "message": "Oben, aufhellen"
+  },
+  "p_mode_normal": {
+    "message": "Oben, normal"
+  },
+  "p_mode_under": {
+    "message": "Hinter der Seite"
+  },
+  "p_mode_hint": {
+    "message": "„Oben“ ist auch über deckenden Hintergründen sichtbar und verdeckt nie das Video selbst. „Hinter der Seite“ berührt den Inhalt nicht, kann aber hinter Block-Hintergründen verschwinden."
+  },
+  "p_fs": {
+    "message": "Vollbild"
+  },
+  "p_fs_fill": {
+    "message": "Ganzen Bildschirm füllen"
+  },
+  "p_fs_fill_hint": {
+    "message": "Deckt die schwarzen Balken ab, nicht nur einen Rahmen um das Video"
+  },
+  "p_look": {
+    "message": "Aussehen"
+  },
+  "s_blur": {
+    "message": "Unschärfe"
+  },
+  "s_sample": {
+    "message": "Probengröße"
+  },
+  "s_sample_hint": {
+    "message": "Breite des Bildes, das aus dem Video genommen wird: kleiner — weicher und leichter, größer — detaillierter"
+  },
+  "s_opacity": {
+    "message": "Leuchtstärke"
+  },
+  "s_saturation": {
+    "message": "Sättigung"
+  },
+  "s_brightness": {
+    "message": "Farbhelligkeit"
+  },
+  "s_fade": {
+    "message": "Ausblenden bei Pause / Wiedergabe"
+  },
+  "s_fade_hint": {
+    "message": "Wie lange das Leuchten bei Pause aus- und bei Wiedergabe einblendet"
+  },
+  "p_fps": {
+    "message": "Aktualisierungsrate, fps"
+  },
+  "p_adv": {
+    "message": "Erweitert"
+  },
+  "p_fillbars": {
+    "message": "Balken im Player füllen"
+  },
+  "p_fillbars_hint": {
+    "message": "Wenn das Video seinen Block nicht ausfüllt (außerhalb des Vollbilds)"
+  },
+  "p_cropbars": {
+    "message": "Schwarze Balken im Video ignorieren"
+  },
+  "p_cropbars_hint": {
+    "message": "Filme mit eingebrannten Balken (2,39:1) erzeugen keine dunklen Zonen im Leuchten"
+  },
+  "p_adaptive": {
+    "message": "An langsames Gerät anpassen"
+  },
+  "p_adaptive_hint": {
+    "message": "Senkt die Aktualisierungsrate automatisch, wenn der Computer nicht mitkommt"
+  },
+  "p_eco": {
+    "message": "Akku sparen"
+  },
+  "p_eco_hint": {
+    "message": "Unter 30 % Ladung und ohne Netzteil: höchstens 15 fps"
+  },
+  "s_minwidth": {
+    "message": "Minimale Videobreite"
+  },
+  "s_minwidth_hint": {
+    "message": "Schmalere Videos (Vorschauen, Banner) werden ignoriert"
+  },
+  "u_ms": {
+    "message": " ms"
+  },
+  "p_reset": {
+    "message": "Einstellungen zurücksetzen"
+  },
+  "p_options": {
+    "message": "Alle Einstellungen"
+  },
+  "p_donate": {
+    "message": "Projekt unterstützen"
+  },
+  "p_note": {
+    "message": "Änderungen gelten sofort"
+  },
+  "st_ok": {
+    "message": "Das Leuchten ist auf dieser Seite aktiv"
+  },
+  "st_paused": {
+    "message": "Video pausiert — das Leuchten ist aus"
+  },
+  "st_small": {
+    "message": "Das Video ist kleiner als die Mindestbreite"
+  },
+  "st_site": {
+    "message": "Auf dieser Website deaktiviert"
+  },
+  "st_disabled": {
+    "message": "Video Glow ist ausgeschaltet"
+  },
+  "st_pageoff": {
+    "message": "Leuchten auf der Seite ist ausgeschaltet"
+  },
+  "st_fsoff": {
+    "message": "Leuchten im Vollbild ist ausgeschaltet"
+  },
+  "st_offscreen": {
+    "message": "Das Video ist nicht auf dem Bildschirm zu sehen"
+  },
+  "st_hidden": {
+    "message": "Das Video wird von der Seite verborgen"
+  },
+  "st_pip": {
+    "message": "Bild-im-Bild ist aktiv"
+  },
+  "st_otherfs": {
+    "message": "Ein anderes Element ist im Vollbild"
+  },
+  "st_novideo": {
+    "message": "Das Video ist noch nicht geladen"
+  },
+  "st_none": {
+    "message": "Kein Video auf dieser Seite gefunden"
+  },
+  "st_unsupported": {
+    "message": "Auf dieser Seite nicht verfügbar"
+  },
+  "st_unreadable": {
+    "message": "Der Browser erlaubt nicht, Bilder dieses Videos zu lesen (andere Domain / Schutz). Das Leuchten funktioniert, aber die Balkenerkennung ist nicht verfügbar."
+  },
+  "o_title": {
+    "message": "Video Glow — Einstellungen"
+  },
+  "o_sites": {
+    "message": "Deaktivierte Websites"
+  },
+  "o_sites_hint": {
+    "message": "Auf diesen Websites erscheint nie ein Leuchten."
+  },
+  "o_sites_empty": {
+    "message": "Keine deaktivierten Websites"
+  },
+  "o_site_add_ph": {
+    "message": "example.com"
+  },
+  "o_site_add": {
+    "message": "Hinzufügen"
+  },
+  "o_site_remove": {
+    "message": "Entfernen"
+  },
+  "o_backup": {
+    "message": "Sicherung"
+  },
+  "o_export": {
+    "message": "Einstellungen exportieren"
+  },
+  "o_import": {
+    "message": "Einstellungen importieren"
+  },
+  "o_import_ok": {
+    "message": "Einstellungen importiert"
+  },
+  "o_import_err": {
+    "message": "Die Datei konnte nicht gelesen werden"
+  },
+  "o_reset_all": {
+    "message": "Alle Einstellungen zurücksetzen"
+  },
+  "o_reset_confirm": {
+    "message": "Alle Einstellungen auf Standard zurücksetzen? Die Liste der deaktivierten Websites wird ebenfalls geleert."
+  },
+  "o_shortcuts": {
+    "message": "Tastenkürzel"
+  },
+  "o_shortcuts_btn": {
+    "message": "Tastenkürzel einrichten"
+  },
+  "o_shortcuts_text": {
+    "message": "Überall ein/aus: Alt+Shift+B. Einstellungsfeld über der Seite und dem Vollbildvideo: Alt+Shift+G (oder das Zahnrad am Video). „Auf dieser Website ein/aus“ hat keine Standardtaste — legen Sie eine in den Tastenkürzel-Einstellungen des Browsers fest."
+  },
+  "o_about": {
+    "message": "Über"
+  },
+  "o_version": {
+    "message": "Version $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_privacy": {
+    "message": "Datenschutz"
+  },
+  "o_privacy_text": {
+    "message": "Video Glow sammelt und sendet keine Daten. Die Einstellungen werden lokal in Ihrem Browser gespeichert."
+  },
+  "o_limits": {
+    "message": "Einschränkungen"
+  },
+  "o_limits_text": {
+    "message": "DRM-geschützte Videos (Netflix, Disney+ und ähnliche) kann der Browser nicht lesen, daher gibt es für sie kein Leuchten. Bei Videos von einer anderen Domain ohne CORS sind die Balkenerkennung und der Modus „Video selbst im Vollbild“ nicht verfügbar."
+  },
+  "w_title": {
+    "message": "Video Glow ist installiert"
+  },
+  "w_sub": {
+    "message": "Umgebungsleuchten für jedes Video auf jeder Website."
+  },
+  "w_step1": {
+    "message": "Öffnen Sie ein Video und starten Sie es — das Leuchten erscheint sanft drumherum."
+  },
+  "w_step2": {
+    "message": "Klicken Sie auf das Erweiterungssymbol, um Größe, Unschärfe, Form und Voreinstellungen zu ändern."
+  },
+  "w_step3": {
+    "message": "Alt+Shift+B schaltet das Leuchten ein oder aus."
+  },
+  "w_step4": {
+    "message": "Im Vollbild füllt das Leuchten die schwarzen Balken Ihres Bildschirms."
+  },
+  "w_note": {
+    "message": "Kein Leuchten? Öffnen Sie das Fenster der Erweiterung — dort steht der Grund (Pause, zu klein, geschütztes Video…)."
+  },
+  "w_open": {
+    "message": "Einstellungen öffnen"
+  },
+  "hover_tip": {
+    "message": "Video Glow: Leuchten ein/aus"
+  },
+  "st_useroff": {
+    "message": "Leuchten mit der Taste am Video ausgeschaltet"
+  },
+  "u_sec": {
+    "message": " s"
+  },
+  "p_badge_site": {
+    "message": "diese Website"
+  },
+  "p_scope_site": {
+    "message": "Eigene Einstellungen für $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_scope_hint": {
+    "message": "Aus: Änderungen gelten für alle Websites. Ein: nur für diese Website."
+  },
+  "p_scope_reset": {
+    "message": "Auf globale Einstellungen zurücksetzen"
+  },
+  "p_pause": {
+    "message": "Bei Pause"
+  },
+  "p_pause_mode": {
+    "message": "Leuchten bei Pause"
+  },
+  "p_pause_fade": {
+    "message": "Blendet aus"
+  },
+  "p_pause_hold": {
+    "message": "Bleibt an"
+  },
+  "p_pause_delay": {
+    "message": "Blendet verzögert aus"
+  },
+  "s_pause_delay": {
+    "message": "Ausblenden nach"
+  },
+  "p_fs_same": {
+    "message": "Wie auf der Seite"
+  },
+  "p_fs_same_hint": {
+    "message": "Aus: Das Vollbild bekommt eigene Unschärfe-, Helligkeits- und Pauseneinstellungen."
+  },
+  "p_dim": {
+    "message": "Seite um den Player abdunkeln"
+  },
+  "p_dim_hint": {
+    "message": "Kinomodus: alles außer dem Video wird dunkler."
+  },
+  "s_dim": {
+    "message": "Abdunkeln"
+  },
+  "p_hover": {
+    "message": "Taste am Video"
+  },
+  "p_hover_hint": {
+    "message": "Eine kleine Taste erscheint am Video, wenn Sie die Maus darüber bewegen."
+  },
+  "o_custom_sites": {
+    "message": "Websites mit eigenen Einstellungen"
+  },
+  "o_custom_hint": {
+    "message": "Aktivieren Sie im Fenster „Eigene Einstellungen für diese Website“, um eine Website hier hinzuzufügen."
+  },
+  "o_custom_empty": {
+    "message": "Noch keine Websites."
+  },
+  "w_perm_title": {
+    "message": "Noch ein Schritt: Zugriff auf Websites erlauben"
+  },
+  "w_perm_text": {
+    "message": "Um das Leuchten neben Videos zu zeichnen, braucht Video Glow die Erlaubnis, auf den Websites zu laufen, auf denen Sie Videos ansehen. Es wird nichts gesammelt oder gesendet. Ohne diese Erlaubnis tut die Erweiterung nichts."
+  },
+  "w_perm_allow": {
+    "message": "Auf allen Websites erlauben"
+  },
+  "w_perm_done": {
+    "message": "Fertig — das Leuchten ist jetzt aktiv. Laden Sie zuvor geöffnete Tabs neu."
+  },
+  "p_perm_need": {
+    "message": "Das Leuchten ist noch nicht aktiv: Der Zugriff auf Websites wurde nicht erlaubt."
+  },
+  "p_perm_btn": {
+    "message": "Zugriff erlauben…"
+  },
+  "p_pro_badge": {
+    "message": "Pro"
+  },
+  "p_pro_trial": {
+    "message": "Pro-Test: noch $N$ Tag(e)",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_pro_locked": {
+    "message": "Pro-Funktionen sind gesperrt"
+  },
+  "p_pro_get": {
+    "message": "Freischalten"
+  },
+  "p_pro_key": {
+    "message": "Schlüssel eingeben"
+  },
+  "p_pro_title_bars": {
+    "message": "Schwarze Balken"
+  },
+  "p_bars_mode": {
+    "message": "Balkenerkennung"
+  },
+  "p_bars_auto": {
+    "message": "Automatisch"
+  },
+  "p_bars_force": {
+    "message": "Erzwungen (aggressiv)"
+  },
+  "p_bars_manual": {
+    "message": "Manuell"
+  },
+  "p_bars_hint": {
+    "message": "Der erzwungene Modus findet graue oder verrauschte Balken an jeder Seite, auch einseitige. Sehr dunkle Szenen können für Balken gehalten werden."
+  },
+  "s_bar_t": {
+    "message": "Oberer Balken"
+  },
+  "s_bar_b": {
+    "message": "Unterer Balken"
+  },
+  "s_bar_l": {
+    "message": "Linker Balken"
+  },
+  "s_bar_r": {
+    "message": "Rechter Balken"
+  },
+  "p_barshide": {
+    "message": "Balken vom Bildschirm entfernen"
+  },
+  "p_barshide_hint": {
+    "message": "Vergrößert das Video, damit das Bild den Player füllt. Die Ränder werden beschnitten."
+  },
+  "s_barsfill": {
+    "message": "Zoom"
+  },
+  "s_barsfill_hint": {
+    "message": "0 — nur das Bild einpassen, 100 — den Player vollständig füllen."
+  },
+  "p_pro_title_eyes": {
+    "message": "Empfindliche Augen"
+  },
+  "p_guard": {
+    "message": "Blitzschutz"
+  },
+  "p_guard_hint": {
+    "message": "Dunkelt Video und Leuchten ab, wenn das Bild flackert oder blitzt (3+ Blitze pro Sekunde). Kein Medizinprodukt."
+  },
+  "p_guard_sens": {
+    "message": "Empfindlichkeit"
+  },
+  "p_sens_1": {
+    "message": "Niedrig"
+  },
+  "p_sens_2": {
+    "message": "Mittel"
+  },
+  "p_sens_3": {
+    "message": "Hoch"
+  },
+  "s_guard_strength": {
+    "message": "Abdunkeln"
+  },
+  "p_guard_video": {
+    "message": "Auch das Video selbst abdunkeln"
+  },
+  "s_calm": {
+    "message": "Ruhiges Leuchten"
+  },
+  "s_calm_hint": {
+    "message": "Glättet Farbwechsel über die Zeit, weniger plötzliche Sprünge."
+  },
+  "p_pro_title_pulse": {
+    "message": "Ton-Puls"
+  },
+  "p_pulse": {
+    "message": "Im Takt des Tons pulsieren"
+  },
+  "p_pulse_hint": {
+    "message": "Das Leuchten schlägt im Takt des Tons. Der Ton wird auf Ihrem Gerät analysiert und nie aufgezeichnet. Nicht verwenden, wenn Sie auf Blitze empfindlich reagieren."
+  },
+  "s_pulse": {
+    "message": "Pulsstärke"
+  },
+  "p_pulse_mode": {
+    "message": "Reagiert auf"
+  },
+  "p_pulse_bass": {
+    "message": "Bass"
+  },
+  "p_pulse_all": {
+    "message": "Gesamten Ton"
+  },
+  "p_pro_title_fx": {
+    "message": "Videofilter"
+  },
+  "p_fx": {
+    "message": "Filter auf Video anwenden"
+  },
+  "fx_clarity": {
+    "message": "Klarheit"
+  },
+  "fx_cinema": {
+    "message": "Kino"
+  },
+  "fx_vivid": {
+    "message": "Lebendig"
+  },
+  "fx_warm": {
+    "message": "Warm"
+  },
+  "fx_off": {
+    "message": "Aus"
+  },
+  "s_fx_brightness": {
+    "message": "Helligkeit"
+  },
+  "s_fx_contrast": {
+    "message": "Kontrast"
+  },
+  "s_fx_saturation": {
+    "message": "Sättigung"
+  },
+  "s_fx_sharp": {
+    "message": "Schärfe"
+  },
+  "s_fx_sharp_hint": {
+    "message": "Schärfe, Wärme und Schatten nutzen einen SVG-Filter und können bei 4K-Video aufwendig sein."
+  },
+  "s_fx_warmth": {
+    "message": "Wärme (− kühl, + warm)"
+  },
+  "s_fx_gamma": {
+    "message": "Schatten (aufhellen)"
+  },
+  "p_pro_title_night": {
+    "message": "Nachtkomfort"
+  },
+  "p_night": {
+    "message": "Nachtkomfort"
+  },
+  "p_night_hint": {
+    "message": "In den gewählten Stunden wird das Video wärmer und dunkler und das Leuchten sanfter. Gilt für alle Websites."
+  },
+  "p_night_from": {
+    "message": "Von"
+  },
+  "p_night_to": {
+    "message": "Bis"
+  },
+  "s_night_strength": {
+    "message": "Stärke"
+  },
+  "st_guard": {
+    "message": "Der Blitzschutz ist gerade aktiv."
+  },
+  "st_pulse_nodata": {
+    "message": "Ton-Puls: Dieses Video liefert keine Audiodaten."
+  },
+  "o_pro": {
+    "message": "Video Glow Pro"
+  },
+  "o_pro_none": {
+    "message": "Pro ist nicht aktiv. Geben Sie einen Lizenzschlüssel ein, um alle Pro-Funktionen freizuschalten."
+  },
+  "o_pro_trial": {
+    "message": "Testzeitraum: noch $N$ Tag(e). Pro-Funktionen laufen bis zum Ende.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_pro_license": {
+    "message": "Pro ist aktiv. Lizenz: $N$",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_pro_license_anon": {
+    "message": "Pro ist aktiv."
+  },
+  "o_pro_features": {
+    "message": "Pro umfasst: erzwungene Balkenerkennung und -entfernung, Blitzschutz und ruhiges Leuchten, Ton-Puls, Videofilter, Nachtkomfort."
+  },
+  "o_key_ph": {
+    "message": "Lizenzschlüssel einfügen (beginnt mit VG1.)"
+  },
+  "o_key_activate": {
+    "message": "Aktivieren"
+  },
+  "o_key_remove": {
+    "message": "Schlüssel entfernen"
+  },
+  "o_buy": {
+    "message": "Pro kaufen"
+  },
+  "o_key_ok": {
+    "message": "Pro aktiviert"
+  },
+  "o_key_removed": {
+    "message": "Schlüssel entfernt"
+  },
+  "o_key_empty": {
+    "message": "Zuerst einen Schlüssel einfügen"
+  },
+  "o_key_bad": {
+    "message": "Dieser Schlüssel ist ungültig"
+  },
+  "o_key_format": {
+    "message": "Das sieht nicht wie ein Lizenzschlüssel aus"
+  },
+  "o_pro_offline": {
+    "message": "Der Schlüssel wird auf diesem Gerät geprüft, es gibt keine Netzwerkanfragen. Bewahren Sie ihn sicher auf; Sicherungen enthalten ihn nicht."
+  },
+  "p_fold_all": {
+    "message": "Alle Abschnitte einklappen"
+  },
+  "p_unfold_all": {
+    "message": "Alle Abschnitte ausklappen"
+  },
+  "p_panel_btn": {
+    "message": "Feld über der Seite"
+  },
+  "p_fs_shape_own": {
+    "message": "Eigene Rahmenform und -größe"
+  },
+  "p_fs_shape_own_hint": {
+    "message": "Eigene Form, Größe und Weichheit des Rahmens im Vollbild."
+  },
+  "p_fs_shape_note": {
+    "message": "Der Rahmen gilt, wenn „Ganzen Bildschirm füllen“ aus ist; ist es an, füllt das Leuchten den Bildschirm."
+  },
+  "panel_title": {
+    "message": "Video Glow Einstellungen"
+  },
+  "panel_pin": {
+    "message": "Anheften: Feld offen lassen"
+  },
+  "panel_unpin": {
+    "message": "Lösen: nach 10 s ohne Mauszeiger ausblenden"
+  },
+  "panel_close": {
+    "message": "Schließen"
+  },
+  "hover_gear_tip": {
+    "message": "Video Glow Einstellungen"
+  },
+  "cmdPanel": {
+    "message": "Einstellungsfeld über der Seite zeigen / verbergen"
+  },
+  "p_tune": {
+    "message": "Feinabstimmung"
+  },
+  "p_behavior": {
+    "message": "Verhalten"
+  },
+  "p_picture": {
+    "message": "Bild"
+  },
+  "p_comfort": {
+    "message": "Komfort und Ton"
+  },
+  "preset_clarity": {
+    "message": "Klarheit"
+  },
+  "preset_night": {
+    "message": "Nacht"
+  },
+  "p_preset_save": {
+    "message": "+ Aktuelles als Voreinstellung speichern"
+  },
+  "p_preset_manage": {
+    "message": "Voreinstellungen bearbeiten"
+  },
+  "p_preset_name_ph": {
+    "message": "Name der Voreinstellung"
+  },
+  "p_preset_ok": {
+    "message": "Speichern"
+  },
+  "preset_default_name": {
+    "message": "Meine Voreinstellung"
+  },
+  "o_presets": {
+    "message": "Voreinstellungen"
+  },
+  "o_presets_hint": {
+    "message": "Eine Voreinstellung setzt das ganze Aussehen mit einem Klick: Leuchten, Abdunkeln der Seite und Videofilter. Ändern Sie die eingebauten oder erstellen Sie eigene — die aktuellen Einstellungen lassen sich in jede kopieren."
+  },
+  "o_preset_add": {
+    "message": "+ Neue Voreinstellung aus aktuellen Einstellungen"
+  },
+  "o_preset_edit": {
+    "message": "Parameter"
+  },
+  "o_preset_from_current": {
+    "message": "Aktuelle Einstellungen kopieren"
+  },
+  "o_preset_reset": {
+    "message": "Zurücksetzen"
+  },
+  "o_preset_delete": {
+    "message": "Löschen"
+  },
+  "o_preset_saved": {
+    "message": "Voreinstellung gespeichert"
+  },
+  "o_preset_changed": {
+    "message": "geändert"
+  },
+  "o_pg_glow": {
+    "message": "Leuchten"
+  },
+  "o_pg_page": {
+    "message": "Seite"
+  },
+  "o_pg_fx": {
+    "message": "Videofilter"
+  },
+  "o_theme": {
+    "message": "Design"
+  },
+  "o_theme_hint": {
+    "message": "Design für Menü, Feld und diese Seiten. Das Leuchten selbst bleibt gleich."
+  },
+  "theme_cinema": {
+    "message": "Kino"
+  },
+  "theme_cinema_d": {
+    "message": "Schwarz und ruhig"
+  },
+  "theme_amber": {
+    "message": "Graphit & Bernstein"
+  },
+  "theme_amber_d": {
+    "message": "Warm dunkel"
+  },
+  "theme_deck": {
+    "message": "Konsole"
+  },
+  "theme_deck_d": {
+    "message": "Hell, im Geräte-Stil"
+  },
+  "p_style": {
+    "message": "Leuchtstil"
+  },
+  "p_style_soft": {
+    "message": "Sanft"
+  },
+  "p_style_led": {
+    "message": "LEDs"
+  },
+  "p_style_hint": {
+    "message": "„LEDs“ sieht aus wie ein Lichtstreifen hinter einem Fernseher: einzelne Lichtpunkte, jeder in eigener Farbe."
+  },
+  "s_leds": {
+    "message": "LEDs"
+  },
+  "p_room": {
+    "message": "Raumfarbe"
+  },
+  "p_room_hint": {
+    "message": "Die ganze Seite wird sanft in den Farben des Videos getönt. Am besten mit dem dunklen Design der Website."
+  },
+  "s_room": {
+    "message": "Tönungsstärke"
+  },
+  "hue_title": {
+    "message": "Philips Hue"
+  },
+  "hue_hint": {
+    "message": "Raumlampen folgen den Farben des Videos. Läuft über die Hue Bridge in Ihrem Heimnetz; nichts verlässt Ihr Netzwerk."
+  },
+  "hue_on": {
+    "message": "Lampen folgen dem Video"
+  },
+  "hue_ip_ph": {
+    "message": "Bridge-Adresse, z. B. 192.168.1.20"
+  },
+  "hue_find": {
+    "message": "Bridge suchen"
+  },
+  "hue_link": {
+    "message": "Verbinden"
+  },
+  "hue_searching": {
+    "message": "Suche…"
+  },
+  "hue_found": {
+    "message": "Bridge gefunden: $1. Drücken Sie Verbinden."
+  },
+  "hue_not_found": {
+    "message": "Keine Bridge gefunden. Geben Sie ihre Adresse ein (Hue-App → Einstellungen → Bridges)."
+  },
+  "hue_press": {
+    "message": "Drücken Sie die runde Taste auf der Bridge (noch $1 s)…"
+  },
+  "hue_timeout": {
+    "message": "Die Taste wurde nicht gedrückt. Versuchen Sie es erneut."
+  },
+  "hue_linked": {
+    "message": "Verbunden. Wählen Sie unten die Lampen."
+  },
+  "hue_lights": {
+    "message": "Lampen"
+  },
+  "hue_no_lights": {
+    "message": "Die Bridge hat keine Farblampen."
+  },
+  "hue_many": {
+    "message": "Viele Lampen verlangsamen die Aktualisierung (die Bridge nimmt etwa 10 Befehle pro Sekunde an)."
+  },
+  "hue_bri": {
+    "message": "Max. Helligkeit"
+  },
+  "hue_speed": {
+    "message": "Reaktion"
+  },
+  "hue_speed_slow": {
+    "message": "Weich"
+  },
+  "hue_speed_norm": {
+    "message": "Normal"
+  },
+  "hue_speed_fast": {
+    "message": "Schnell"
+  },
+  "hue_restore": {
+    "message": "Lampen nach dem Video wiederherstellen"
+  },
+  "hue_forget": {
+    "message": "Bridge trennen"
+  },
+  "hue_err_net": {
+    "message": "Die Bridge antwortet nicht. Prüfen Sie, ob sie an und im selben Netzwerk ist."
+  },
+  "hue_err_ip": {
+    "message": "Geben Sie die Adresse im Format 192.168.1.20 ein."
+  },
+  "hue_err_auth": {
+    "message": "Die Bridge akzeptiert diese Verbindung nicht mehr. Drücken Sie erneut Verbinden."
+  },
+  "hue_err_busy": {
+    "message": "Die Suche ist ausgelastet, versuchen Sie es in 15 Minuten oder geben Sie die Adresse ein."
+  },
+  "hue_err_notbridge": {
+    "message": "Unter dieser Adresse gibt es keine Hue Bridge."
+  },
+  "theme_midnight": {
+    "message": "Mitternacht"
+  },
+  "theme_midnight_d": {
+    "message": "Tiefblau"
+  },
+  "theme_day": {
+    "message": "Tag"
+  },
+  "theme_day_d": {
+    "message": "Klar und hell"
+  },
+  "theme_custom": {
+    "message": "Eigenes"
+  },
+  "theme_custom_d": {
+    "message": "Farben wählen"
+  },
+  "o_custom_bg": {
+    "message": "Hintergrund"
+  },
+  "o_custom_text": {
+    "message": "Text"
+  },
+  "o_custom_accent": {
+    "message": "Akzent"
+  },
+  "o_custom_reset": {
+    "message": "Farben zurücksetzen"
+  },
+  "q_room": {
+    "message": "Raumfarbe: ein/aus"
+  },
+  "q_led": {
+    "message": "LEDs / sanftes Leuchten"
+  },
+  "q_panel": {
+    "message": "Feld über der Seite"
+  },
+  "q_options": {
+    "message": "Alle Einstellungen"
+  },
+  "q_reset": {
+    "message": "Einstellungen zurücksetzen"
+  },
+  "q_reset_confirm": {
+    "message": "Zum Zurücksetzen erneut klicken"
+  },
+  "p_title_scene": {
+    "message": "Szenenreaktion"
+  },
+  "p_scene": {
+    "message": "Auf die Szene reagieren"
+  },
+  "p_scene_hint": {
+    "message": "Ein sanfter Lichtblitz bei harten Schnitten und Explosionen, ein langsames „Atmen“ in dunklen Szenen. Der Blitzschutz hat immer Vorrang."
+  },
+  "s_scene": {
+    "message": "Effektstärke"
+  },
+  "p_curve": {
+    "message": "Farbwechsel"
+  },
+  "p_curve_normal": {
+    "message": "Normal"
+  },
+  "p_curve_soft": {
+    "message": "Weich"
+  },
+  "p_curve_cinema": {
+    "message": "Kino (sofort beim Schnitt)"
+  },
+  "p_curve_sharp": {
+    "message": "Scharf"
+  },
+  "o_pg_scene": {
+    "message": "Effekte"
+  },
+  "preset_anime": {
+    "message": "Anime"
+  },
+  "preset_games": {
+    "message": "Spiele"
+  },
+  "preset_sport": {
+    "message": "Sport"
+  },
+  "preset_music": {
+    "message": "Musik"
+  },
+  "p_site": {
+    "message": "Website"
+  },
+  "lt_title": {
+    "message": "Raumlicht: WLED und Home Assistant"
+  },
+  "lt_hint": {
+    "message": "Ein WLED-LED-Streifen und beliebige Lampen in Home Assistant folgen den Farben des Videos. Alles bleibt in Ihrem Heimnetz, nichts geht ins Internet."
+  },
+  "lt_delay": {
+    "message": "Lichtverzögerung (Hue, WLED, Home Assistant)"
+  },
+  "lt_delay_hint": {
+    "message": "Wenn das Licht vor dem Bild wechselt (z. B. weil Ihr Fernseher verzögert), schieben Sie nach rechts. 0 heißt keine Verzögerung."
+  },
+  "lt_checking": {
+    "message": "Prüfe…"
+  },
+  "lt_err_net": {
+    "message": "Das Gerät antwortet nicht. Prüfen Sie, ob es an und im selben Netzwerk ist."
+  },
+  "wl_title": {
+    "message": "WLED-Streifen"
+  },
+  "wl_on": {
+    "message": "Streifen folgt den Farben des Videos"
+  },
+  "wl_ip_ph": {
+    "message": "WLED-Adresse, z. B. 192.168.1.50"
+  },
+  "wl_check": {
+    "message": "Verbinden"
+  },
+  "wl_found": {
+    "message": "Verbunden: $1, $2 LEDs."
+  },
+  "wl_err_notwled": {
+    "message": "Unter dieser Adresse gibt es kein WLED."
+  },
+  "wl_layout": {
+    "message": "Anordnung des Streifens"
+  },
+  "wl_layout_around": {
+    "message": "Rund um den Bildschirm"
+  },
+  "wl_layout_top": {
+    "message": "Nur oben"
+  },
+  "wl_layout_single": {
+    "message": "Eine Farbe für den ganzen Streifen"
+  },
+  "wl_count": {
+    "message": "LEDs (0 = automatisch)"
+  },
+  "wl_offset": {
+    "message": "Startversatz"
+  },
+  "wl_reverse": {
+    "message": "Gegen den Uhrzeigersinn"
+  },
+  "wl_restore": {
+    "message": "Streifen nach dem Video wiederherstellen"
+  },
+  "wl_help": {
+    "message": "„Rund um den Bildschirm“: Der Streifen verläuft im Uhrzeigersinn ab der unteren linken Ecke (von vorne gesehen). Sind die Farben verschoben, passen Sie „Startversatz“ an oder aktivieren Sie „Gegen den Uhrzeigersinn“."
+  },
+  "ha_title": {
+    "message": "Home Assistant"
+  },
+  "ha_on": {
+    "message": "Farbe an Home Assistant senden"
+  },
+  "ha_test": {
+    "message": "Testen"
+  },
+  "ha_sent": {
+    "message": "Orange gesendet. Hat sich das Licht nicht geändert, prüfen Sie die Automatisierung unten."
+  },
+  "ha_err_url": {
+    "message": "Geben Sie die Webhook-Adresse im Format http://host:8123/api/webhook/id ein."
+  },
+  "ha_err_http": {
+    "message": "Home Assistant hat einen Fehler gemeldet. Prüfen Sie, ob die Automatisierung mit diesem Webhook gespeichert ist."
+  },
+  "ha_howto": {
+    "message": "In 2 Minuten verbinden"
+  },
+  "ha_help": {
+    "message": "In Home Assistant: Einstellungen → Automatisierungen → Erstellen → In YAML bearbeiten. Fügen Sie den Text unten ein, ersetzen Sie light.tv durch Ihre Lampen und speichern Sie. Geben Sie dann oben die Webhook-Adresse ein und drücken Sie „Testen“. start speichert die Szene, play sendet die Farbe, stop stellt das Licht wieder her."
+  },
+  "hue_zone": {
+    "message": "Bildzone"
+  },
+  "hue_zone_a": {
+    "message": "Ganzes Bild"
+  },
+  "hue_zone_l": {
+    "message": "Linker Rand"
+  },
+  "hue_zone_r": {
+    "message": "Rechter Rand"
+  },
+  "p_auto": {
+    "message": "✦ Auto"
+  },
+  "p_auto_hint": {
+    "message": "Auto-Voreinstellung: erkennt die Art des Videos (Film, Anime, Spiele, Sport) und passt das Leuchten selbst an"
+  },
+  "auto_wait": {
+    "message": "Auto-Voreinstellung: schaue mir das Video an…"
+  },
+  "auto_none": {
+    "message": "Auto-Voreinstellung: nichts Besonderes, Ihre Einstellungen"
+  },
+  "auto_now": {
+    "message": "Auto-Voreinstellung: jetzt „$NAME$“",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "q_glowwin": {
+    "message": "Leuchtfenster: ein eigenes Fenster leuchtet in der Farbe des Videos (auf einen zweiten Monitor ziehbar)"
+  },
+  "pip_hint": {
+    "message": "Ziehen Sie dieses Fenster auf einen zweiten Monitor oder neben den Bildschirm"
+  },
+  "w_s1_title": {
+    "message": "Starten Sie ein beliebiges Video"
+  },
+  "w_s1_text": {
+    "message": "Um den Player erscheint ein sanftes Leuchten und folgt den Farben der Szene. Funktioniert auf jeder Website, nichts einzurichten."
+  },
+  "w_s2_title": {
+    "message": "Wählen Sie einen Stil"
+  },
+  "w_s2_text": {
+    "message": "„Auto“ erkennt Filme, Anime, Spiele und Sport und passt das Leuchten selbst an. Sie können es jederzeit im Fenster der Erweiterung ändern."
+  },
+  "w_s3_title": {
+    "message": "Griffbereit halten"
+  },
+  "w_s3_text": {
+    "message": "Heften Sie das Video-Glow-Symbol an die Symbolleiste (Puzzle-Symbol → Pin). Das Fenster zeigt, warum es kein Leuchten gibt, falls etwas nicht stimmt."
+  },
+  "w_s3_key": {
+    "message": "schaltet das Leuchten ein und aus"
+  }
+}

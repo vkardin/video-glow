@@ -1,0 +1,1129 @@
+{
+  "extName": {
+    "message": "Video Glow — podświetlenie dla każdego wideo"
+  },
+  "extDescription": {
+    "message": "Miękka poświata wokół każdego wideo na każdej stronie, także na pełnym ekranie. Wypełnia czarne pasy. Kształt, rozmycie i rozmiar w pełni regulowane."
+  },
+  "actionTitle": {
+    "message": "Video Glow"
+  },
+  "cmdToggle": {
+    "message": "Włącz / wyłącz poświatę wszędzie"
+  },
+  "cmdSite": {
+    "message": "Włącz / wyłącz poświatę na tej stronie"
+  },
+  "p_enabled_title": {
+    "message": "Włącz / wyłącz wszędzie (Alt+Shift+B)"
+  },
+  "p_site_off": {
+    "message": "Wyłącz na $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_presets": {
+    "message": "Ustawienia gotowe"
+  },
+  "preset_soft": {
+    "message": "Miękki"
+  },
+  "preset_cinema": {
+    "message": "Kino"
+  },
+  "preset_neon": {
+    "message": "Neon"
+  },
+  "preset_exact": {
+    "message": "Dokładny"
+  },
+  "p_page": {
+    "message": "Poświata na stronie"
+  },
+  "p_shape": {
+    "message": "Kształt ramki"
+  },
+  "p_shape_rect": {
+    "message": "Prostokąt"
+  },
+  "p_shape_rounded": {
+    "message": "Zaokrąglony"
+  },
+  "p_shape_circle": {
+    "message": "Koło"
+  },
+  "s_spread": {
+    "message": "Rozmiar ramki"
+  },
+  "s_spread_hint": {
+    "message": "Jak daleko poświata wychodzi poza krawędzie wideo"
+  },
+  "s_feather": {
+    "message": "Miękkość krawędzi"
+  },
+  "s_feather_hint": {
+    "message": "Jak łagodnie poświata zanika ku zewnętrznej krawędzi: 0 — ostra krawędź, 100 — miękkie przejście przez całą ramkę"
+  },
+  "s_radius": {
+    "message": "Promień narożników"
+  },
+  "p_seamless": {
+    "message": "Płynne połączenie z wideo"
+  },
+  "p_seamless_hint": {
+    "message": "Obraz ciągnie się poza krawędzie ramki, a poświata ma pełną siłę tuż przy połączeniu. Działa też na pełnym ekranie"
+  },
+  "p_mode": {
+    "message": "Warstwa"
+  },
+  "p_mode_screen": {
+    "message": "Na wierzchu, rozjaśnianie"
+  },
+  "p_mode_normal": {
+    "message": "Na wierzchu, normalnie"
+  },
+  "p_mode_under": {
+    "message": "Pod stroną"
+  },
+  "p_mode_hint": {
+    "message": "„Na wierzchu” widać nawet na nieprzezroczystych tłach i nigdy nie zakrywa samego wideo. „Pod stroną” nie dotyka treści, ale może schować się za tłami bloków."
+  },
+  "p_fs": {
+    "message": "Pełny ekran"
+  },
+  "p_fs_fill": {
+    "message": "Wypełnij cały ekran"
+  },
+  "p_fs_fill_hint": {
+    "message": "Zakrywa czarne pasy, a nie tylko ramkę wokół wideo"
+  },
+  "p_look": {
+    "message": "Wygląd"
+  },
+  "s_blur": {
+    "message": "Rozmycie"
+  },
+  "s_sample": {
+    "message": "Rozmiar próbki"
+  },
+  "s_sample_hint": {
+    "message": "Szerokość obrazu pobieranego z wideo: mniejsza — miękciej i lżej, większa — więcej szczegółów"
+  },
+  "s_opacity": {
+    "message": "Siła poświaty"
+  },
+  "s_saturation": {
+    "message": "Nasycenie"
+  },
+  "s_brightness": {
+    "message": "Jasność koloru"
+  },
+  "s_fade": {
+    "message": "Wygaszanie przy pauzie / odtwarzaniu"
+  },
+  "s_fade_hint": {
+    "message": "Jak długo poświata gaśnie przy pauzie i pojawia się przy odtwarzaniu"
+  },
+  "p_fps": {
+    "message": "Częstotliwość odświeżania, fps"
+  },
+  "p_adv": {
+    "message": "Zaawansowane"
+  },
+  "p_fillbars": {
+    "message": "Wypełnij pasy wewnątrz odtwarzacza"
+  },
+  "p_fillbars_hint": {
+    "message": "Jeśli wideo nie wypełnia swojego bloku (poza pełnym ekranem)"
+  },
+  "p_cropbars": {
+    "message": "Ignoruj czarne pasy w wideo"
+  },
+  "p_cropbars_hint": {
+    "message": "Filmy z wtopionymi pasami (2,39:1) nie dadzą ciemnych stref w poświacie"
+  },
+  "p_adaptive": {
+    "message": "Dostosuj do wolnego urządzenia"
+  },
+  "p_adaptive_hint": {
+    "message": "Automatycznie obniża częstotliwość, jeśli komputer nie nadąża"
+  },
+  "p_eco": {
+    "message": "Oszczędzaj baterię"
+  },
+  "p_eco_hint": {
+    "message": "Poniżej 30% i bez zasilacza: najwyżej 15 fps"
+  },
+  "s_minwidth": {
+    "message": "Minimalna szerokość wideo"
+  },
+  "s_minwidth_hint": {
+    "message": "Węższe wideo (podglądy, banery) jest pomijane"
+  },
+  "u_ms": {
+    "message": " ms"
+  },
+  "p_reset": {
+    "message": "Resetuj ustawienia"
+  },
+  "p_options": {
+    "message": "Wszystkie ustawienia"
+  },
+  "p_donate": {
+    "message": "Wesprzyj projekt"
+  },
+  "p_note": {
+    "message": "Zmiany działają od razu"
+  },
+  "st_ok": {
+    "message": "Poświata działa na tej stronie"
+  },
+  "st_paused": {
+    "message": "Wideo jest wstrzymane — poświata wyłączona"
+  },
+  "st_small": {
+    "message": "Wideo jest mniejsze niż minimalna szerokość"
+  },
+  "st_site": {
+    "message": "Wyłączone na tej stronie"
+  },
+  "st_disabled": {
+    "message": "Video Glow jest wyłączony"
+  },
+  "st_pageoff": {
+    "message": "Poświata na stronie jest wyłączona"
+  },
+  "st_fsoff": {
+    "message": "Poświata na pełnym ekranie jest wyłączona"
+  },
+  "st_offscreen": {
+    "message": "Wideo nie jest widoczne na ekranie"
+  },
+  "st_hidden": {
+    "message": "Strona ukrywa wideo"
+  },
+  "st_pip": {
+    "message": "Obraz w obrazie jest aktywny"
+  },
+  "st_otherfs": {
+    "message": "Inny element jest na pełnym ekranie"
+  },
+  "st_novideo": {
+    "message": "Wideo jeszcze się nie załadowało"
+  },
+  "st_none": {
+    "message": "Na tej stronie nie znaleziono wideo"
+  },
+  "st_unsupported": {
+    "message": "Niedostępne na tej stronie"
+  },
+  "st_unreadable": {
+    "message": "Przeglądarka nie pozwala czytać klatek tego wideo (inna domena / ochrona). Poświata działa, ale wykrywanie pasów jest niedostępne."
+  },
+  "o_title": {
+    "message": "Video Glow — ustawienia"
+  },
+  "o_sites": {
+    "message": "Wyłączone strony"
+  },
+  "o_sites_hint": {
+    "message": "Na tych stronach poświata nigdy się nie pojawia."
+  },
+  "o_sites_empty": {
+    "message": "Brak wyłączonych stron"
+  },
+  "o_site_add_ph": {
+    "message": "example.com"
+  },
+  "o_site_add": {
+    "message": "Dodaj"
+  },
+  "o_site_remove": {
+    "message": "Usuń"
+  },
+  "o_backup": {
+    "message": "Kopia zapasowa"
+  },
+  "o_export": {
+    "message": "Eksportuj ustawienia"
+  },
+  "o_import": {
+    "message": "Importuj ustawienia"
+  },
+  "o_import_ok": {
+    "message": "Ustawienia zaimportowane"
+  },
+  "o_import_err": {
+    "message": "Nie udało się odczytać pliku"
+  },
+  "o_reset_all": {
+    "message": "Resetuj wszystkie ustawienia"
+  },
+  "o_reset_confirm": {
+    "message": "Przywrócić wszystkie ustawienia domyślne? Lista wyłączonych stron też zostanie wyczyszczona."
+  },
+  "o_shortcuts": {
+    "message": "Skróty klawiszowe"
+  },
+  "o_shortcuts_btn": {
+    "message": "Ustaw skróty"
+  },
+  "o_shortcuts_text": {
+    "message": "Włącz / wyłącz wszędzie: Alt+Shift+B. Panel ustawień nad stroną i wideo na pełnym ekranie: Alt+Shift+G (lub przycisk koła zębatego na wideo). „Włącz / wyłącz na tej stronie” nie ma domyślnego klawisza — ustaw go w skrótach przeglądarki."
+  },
+  "o_about": {
+    "message": "O rozszerzeniu"
+  },
+  "o_version": {
+    "message": "Wersja $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_privacy": {
+    "message": "Polityka prywatności"
+  },
+  "o_privacy_text": {
+    "message": "Video Glow nie zbiera ani nie wysyła żadnych danych. Ustawienia są przechowywane lokalnie w przeglądarce."
+  },
+  "o_limits": {
+    "message": "Ograniczenia"
+  },
+  "o_limits_text": {
+    "message": "Wideo chronionego DRM (Netflix, Disney+ i podobne) przeglądarka nie może odczytać, więc nie ma dla niego poświaty. Dla wideo z innej domeny bez CORS niedostępne są wykrywanie pasów i tryb „samo wideo na pełnym ekranie”."
+  },
+  "w_title": {
+    "message": "Video Glow jest zainstalowany"
+  },
+  "w_sub": {
+    "message": "Poświata dla każdego wideo na każdej stronie."
+  },
+  "w_step1": {
+    "message": "Otwórz dowolne wideo i włącz odtwarzanie — poświata łagodnie pojawi się dookoła."
+  },
+  "w_step2": {
+    "message": "Kliknij ikonę rozszerzenia, aby zmienić rozmiar, rozmycie, kształt i ustawienia gotowe."
+  },
+  "w_step3": {
+    "message": "Alt+Shift+B włącza lub wyłącza poświatę."
+  },
+  "w_step4": {
+    "message": "Na pełnym ekranie poświata wypełnia czarne pasy ekranu."
+  },
+  "w_note": {
+    "message": "Brak poświaty? Otwórz okno rozszerzenia — tam jest podany powód (pauza, za małe, chronione wideo…)."
+  },
+  "w_open": {
+    "message": "Otwórz ustawienia"
+  },
+  "hover_tip": {
+    "message": "Video Glow: poświata wł./wył."
+  },
+  "st_useroff": {
+    "message": "Poświata wyłączona przyciskiem na wideo"
+  },
+  "u_sec": {
+    "message": " s"
+  },
+  "p_badge_site": {
+    "message": "ta strona"
+  },
+  "p_scope_site": {
+    "message": "Własne ustawienia dla $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_scope_hint": {
+    "message": "Wyłączone: zmiany dotyczą wszystkich stron. Włączone: tylko tej strony."
+  },
+  "p_scope_reset": {
+    "message": "Wróć do ustawień ogólnych"
+  },
+  "p_pause": {
+    "message": "Przy pauzie"
+  },
+  "p_pause_mode": {
+    "message": "Poświata przy pauzie"
+  },
+  "p_pause_fade": {
+    "message": "Gaśnie"
+  },
+  "p_pause_hold": {
+    "message": "Zostaje"
+  },
+  "p_pause_delay": {
+    "message": "Gaśnie z opóźnieniem"
+  },
+  "s_pause_delay": {
+    "message": "Zgaś po"
+  },
+  "p_fs_same": {
+    "message": "Tak jak na stronie"
+  },
+  "p_fs_same_hint": {
+    "message": "Wyłączone: pełny ekran ma własne rozmycie, jasność i ustawienia pauzy."
+  },
+  "p_dim": {
+    "message": "Przyciemnij stronę wokół odtwarzacza"
+  },
+  "p_dim_hint": {
+    "message": "Tryb kinowy: wszystko oprócz wideo ciemnieje."
+  },
+  "s_dim": {
+    "message": "Przyciemnienie"
+  },
+  "p_hover": {
+    "message": "Przycisk na wideo"
+  },
+  "p_hover_hint": {
+    "message": "Mały przycisk pojawia się na wideo, gdy najedziesz na nie myszą."
+  },
+  "o_custom_sites": {
+    "message": "Strony z własnymi ustawieniami"
+  },
+  "o_custom_hint": {
+    "message": "Włącz „Własne ustawienia dla tej strony” w oknie, aby dodać tu stronę."
+  },
+  "o_custom_empty": {
+    "message": "Jeszcze nie ma stron."
+  },
+  "w_perm_title": {
+    "message": "Jeszcze jeden krok: zezwól na dostęp do stron"
+  },
+  "w_perm_text": {
+    "message": "Aby rysować poświatę obok wideo, Video Glow potrzebuje pozwolenia na działanie na stronach, na których oglądasz wideo. Nic nie jest zbierane ani wysyłane. Bez tego pozwolenia rozszerzenie nic nie robi."
+  },
+  "w_perm_allow": {
+    "message": "Zezwól na wszystkich stronach"
+  },
+  "w_perm_done": {
+    "message": "Gotowe — poświata jest aktywna. Odśwież karty otwarte wcześniej."
+  },
+  "p_perm_need": {
+    "message": "Poświata nie jest jeszcze aktywna: nie zezwolono na dostęp do stron."
+  },
+  "p_perm_btn": {
+    "message": "Zezwól na dostęp…"
+  },
+  "p_pro_badge": {
+    "message": "Pro"
+  },
+  "p_pro_trial": {
+    "message": "Próbny Pro: zostało dni: $N$",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_pro_locked": {
+    "message": "Funkcje Pro są zablokowane"
+  },
+  "p_pro_get": {
+    "message": "Odblokuj"
+  },
+  "p_pro_key": {
+    "message": "Wpisz klucz"
+  },
+  "p_pro_title_bars": {
+    "message": "Czarne pasy"
+  },
+  "p_bars_mode": {
+    "message": "Wykrywanie pasów"
+  },
+  "p_bars_auto": {
+    "message": "Automatyczne"
+  },
+  "p_bars_force": {
+    "message": "Wymuszone (agresywne)"
+  },
+  "p_bars_manual": {
+    "message": "Ręczne"
+  },
+  "p_bars_hint": {
+    "message": "Tryb wymuszony znajduje szare lub zaszumione pasy z każdej strony, nawet jednostronne. Bardzo ciemne sceny mogą zostać wzięte za pasy."
+  },
+  "s_bar_t": {
+    "message": "Górny pas"
+  },
+  "s_bar_b": {
+    "message": "Dolny pas"
+  },
+  "s_bar_l": {
+    "message": "Lewy pas"
+  },
+  "s_bar_r": {
+    "message": "Prawy pas"
+  },
+  "p_barshide": {
+    "message": "Usuń pasy z ekranu"
+  },
+  "p_barshide_hint": {
+    "message": "Powiększa wideo, aby obraz wypełnił odtwarzacz. Krawędzie są przycinane."
+  },
+  "s_barsfill": {
+    "message": "Powiększenie"
+  },
+  "s_barsfill_hint": {
+    "message": "0 — tylko dopasuj obraz, 100 — wypełnij odtwarzacz całkowicie."
+  },
+  "p_pro_title_eyes": {
+    "message": "Wrażliwe oczy"
+  },
+  "p_guard": {
+    "message": "Ochrona przed błyskami"
+  },
+  "p_guard_hint": {
+    "message": "Przyciemnia wideo i poświatę, gdy obraz migocze lub błyska (3+ błyski na sekundę). To nie jest wyrób medyczny."
+  },
+  "p_guard_sens": {
+    "message": "Czułość"
+  },
+  "p_sens_1": {
+    "message": "Niska"
+  },
+  "p_sens_2": {
+    "message": "Średnia"
+  },
+  "p_sens_3": {
+    "message": "Wysoka"
+  },
+  "s_guard_strength": {
+    "message": "Przyciemnienie"
+  },
+  "p_guard_video": {
+    "message": "Przyciemniaj też samo wideo"
+  },
+  "s_calm": {
+    "message": "Spokojna poświata"
+  },
+  "s_calm_hint": {
+    "message": "Wygładza zmiany koloru w czasie, mniej nagłych skoków."
+  },
+  "p_pro_title_pulse": {
+    "message": "Puls dźwięku"
+  },
+  "p_pulse": {
+    "message": "Pulsuj w rytm dźwięku"
+  },
+  "p_pulse_hint": {
+    "message": "Poświata bije w rytm dźwięku. Dźwięk jest analizowany na urządzeniu i nigdy nie jest nagrywany. Unikaj, jeśli jesteś wrażliwy na błyski."
+  },
+  "s_pulse": {
+    "message": "Siła pulsu"
+  },
+  "p_pulse_mode": {
+    "message": "Reaguje na"
+  },
+  "p_pulse_bass": {
+    "message": "Bas"
+  },
+  "p_pulse_all": {
+    "message": "Cały dźwięk"
+  },
+  "p_pro_title_fx": {
+    "message": "Filtry wideo"
+  },
+  "p_fx": {
+    "message": "Stosuj filtry do wideo"
+  },
+  "fx_clarity": {
+    "message": "Klarowność"
+  },
+  "fx_cinema": {
+    "message": "Kino"
+  },
+  "fx_vivid": {
+    "message": "Żywe"
+  },
+  "fx_warm": {
+    "message": "Ciepłe"
+  },
+  "fx_off": {
+    "message": "Wył."
+  },
+  "s_fx_brightness": {
+    "message": "Jasność"
+  },
+  "s_fx_contrast": {
+    "message": "Kontrast"
+  },
+  "s_fx_saturation": {
+    "message": "Nasycenie"
+  },
+  "s_fx_sharp": {
+    "message": "Ostrość"
+  },
+  "s_fx_sharp_hint": {
+    "message": "Ostrość, ciepło i cienie używają filtra SVG i mogą obciążać przy wideo 4K."
+  },
+  "s_fx_warmth": {
+    "message": "Ciepło (− zimne, + ciepłe)"
+  },
+  "s_fx_gamma": {
+    "message": "Cienie (rozjaśnienie)"
+  },
+  "p_pro_title_night": {
+    "message": "Komfort nocny"
+  },
+  "p_night": {
+    "message": "Komfort nocny"
+  },
+  "p_night_hint": {
+    "message": "W wybranych godzinach wideo staje się cieplejsze i ciemniejsze, a poświata łagodniejsza. Tak samo na wszystkich stronach."
+  },
+  "p_night_from": {
+    "message": "Od"
+  },
+  "p_night_to": {
+    "message": "Do"
+  },
+  "s_night_strength": {
+    "message": "Siła"
+  },
+  "st_guard": {
+    "message": "Ochrona przed błyskami właśnie działa."
+  },
+  "st_pulse_nodata": {
+    "message": "Puls dźwięku: to wideo nie daje danych audio."
+  },
+  "o_pro": {
+    "message": "Video Glow Pro"
+  },
+  "o_pro_none": {
+    "message": "Pro nie jest aktywne. Wpisz klucz licencyjny, aby odblokować wszystkie funkcje Pro."
+  },
+  "o_pro_trial": {
+    "message": "Okres próbny: zostało dni: $N$. Funkcje Pro działają do jego końca.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_pro_license": {
+    "message": "Pro jest aktywne. Licencja: $N$",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_pro_license_anon": {
+    "message": "Pro jest aktywne."
+  },
+  "o_pro_features": {
+    "message": "Pro obejmuje: wymuszone wykrywanie i usuwanie pasów, ochronę przed błyskami i spokojną poświatę, puls dźwięku, filtry wideo, komfort nocny."
+  },
+  "o_key_ph": {
+    "message": "Wklej klucz licencyjny (zaczyna się od VG1.)"
+  },
+  "o_key_activate": {
+    "message": "Aktywuj"
+  },
+  "o_key_remove": {
+    "message": "Usuń klucz"
+  },
+  "o_buy": {
+    "message": "Kup Pro"
+  },
+  "o_key_ok": {
+    "message": "Pro aktywowane"
+  },
+  "o_key_removed": {
+    "message": "Klucz usunięty"
+  },
+  "o_key_empty": {
+    "message": "Najpierw wklej klucz"
+  },
+  "o_key_bad": {
+    "message": "Ten klucz jest nieprawidłowy"
+  },
+  "o_key_format": {
+    "message": "To nie wygląda na klucz licencyjny"
+  },
+  "o_pro_offline": {
+    "message": "Klucz jest sprawdzany na tym urządzeniu, bez żądań sieciowych. Przechowuj go bezpiecznie; kopie zapasowe go nie zawierają."
+  },
+  "p_fold_all": {
+    "message": "Zwiń wszystkie sekcje"
+  },
+  "p_unfold_all": {
+    "message": "Rozwiń wszystkie sekcje"
+  },
+  "p_panel_btn": {
+    "message": "Panel nad stroną"
+  },
+  "p_fs_shape_own": {
+    "message": "Własny kształt i rozmiar ramki"
+  },
+  "p_fs_shape_own_hint": {
+    "message": "Osobny kształt, rozmiar i miękkość ramki na pełnym ekranie."
+  },
+  "p_fs_shape_note": {
+    "message": "Ramka działa, gdy „Wypełnij cały ekran” jest wyłączone; po włączeniu poświata wypełnia ekran."
+  },
+  "panel_title": {
+    "message": "Ustawienia Video Glow"
+  },
+  "panel_pin": {
+    "message": "Przypnij: panel zostaje otwarty"
+  },
+  "panel_unpin": {
+    "message": "Odepnij: ukryj po 10 s bez kursora"
+  },
+  "panel_close": {
+    "message": "Zamknij"
+  },
+  "hover_gear_tip": {
+    "message": "Ustawienia Video Glow"
+  },
+  "cmdPanel": {
+    "message": "Pokaż / ukryj panel ustawień nad stroną"
+  },
+  "p_tune": {
+    "message": "Dostrajanie"
+  },
+  "p_behavior": {
+    "message": "Zachowanie"
+  },
+  "p_picture": {
+    "message": "Obraz"
+  },
+  "p_comfort": {
+    "message": "Komfort i dźwięk"
+  },
+  "preset_clarity": {
+    "message": "Klarowność"
+  },
+  "preset_night": {
+    "message": "Noc"
+  },
+  "p_preset_save": {
+    "message": "+ Zapisz bieżące jako ustawienie"
+  },
+  "p_preset_manage": {
+    "message": "Edytuj ustawienia gotowe"
+  },
+  "p_preset_name_ph": {
+    "message": "Nazwa ustawienia"
+  },
+  "p_preset_ok": {
+    "message": "Zapisz"
+  },
+  "preset_default_name": {
+    "message": "Moje ustawienie"
+  },
+  "o_presets": {
+    "message": "Ustawienia gotowe"
+  },
+  "o_presets_hint": {
+    "message": "Ustawienie gotowe zmienia cały wygląd jednym kliknięciem: poświatę, przyciemnienie strony i filtry wideo. Zmieniaj wbudowane lub twórz własne — bieżące ustawienia można skopiować do dowolnego."
+  },
+  "o_preset_add": {
+    "message": "+ Nowe ustawienie z bieżących"
+  },
+  "o_preset_edit": {
+    "message": "Parametry"
+  },
+  "o_preset_from_current": {
+    "message": "Kopiuj bieżące ustawienia"
+  },
+  "o_preset_reset": {
+    "message": "Resetuj"
+  },
+  "o_preset_delete": {
+    "message": "Usuń"
+  },
+  "o_preset_saved": {
+    "message": "Ustawienie zapisane"
+  },
+  "o_preset_changed": {
+    "message": "zmienione"
+  },
+  "o_pg_glow": {
+    "message": "Poświata"
+  },
+  "o_pg_page": {
+    "message": "Strona"
+  },
+  "o_pg_fx": {
+    "message": "Filtry wideo"
+  },
+  "o_theme": {
+    "message": "Wygląd"
+  },
+  "o_theme_hint": {
+    "message": "Motyw menu, panelu i tych stron. Sama poświata się nie zmienia."
+  },
+  "theme_cinema": {
+    "message": "Kino"
+  },
+  "theme_cinema_d": {
+    "message": "Czarny i spokojny"
+  },
+  "theme_amber": {
+    "message": "Grafit i bursztyn"
+  },
+  "theme_amber_d": {
+    "message": "Ciepły ciemny"
+  },
+  "theme_deck": {
+    "message": "Konsola"
+  },
+  "theme_deck_d": {
+    "message": "Jasny, w stylu sprzętu"
+  },
+  "p_style": {
+    "message": "Styl poświaty"
+  },
+  "p_style_soft": {
+    "message": "Miękki"
+  },
+  "p_style_led": {
+    "message": "Diody"
+  },
+  "p_style_hint": {
+    "message": "„Diody” wyglądają jak taśma LED za telewizorem: osobne punkty światła, każdy w swoim kolorze."
+  },
+  "s_leds": {
+    "message": "Diody"
+  },
+  "p_room": {
+    "message": "Kolor pokoju"
+  },
+  "p_room_hint": {
+    "message": "Cała strona lekko barwi się kolorami wideo. Najlepiej z ciemnym motywem strony."
+  },
+  "s_room": {
+    "message": "Siła zabarwienia"
+  },
+  "hue_title": {
+    "message": "Philips Hue"
+  },
+  "hue_hint": {
+    "message": "Lampy w pokoju podążają za kolorami wideo. Działa przez Hue Bridge w sieci domowej; nic nie opuszcza Twojej sieci."
+  },
+  "hue_on": {
+    "message": "Lampy podążają za wideo"
+  },
+  "hue_ip_ph": {
+    "message": "Adres mostka, np. 192.168.1.20"
+  },
+  "hue_find": {
+    "message": "Znajdź mostek"
+  },
+  "hue_link": {
+    "message": "Połącz"
+  },
+  "hue_searching": {
+    "message": "Szukam…"
+  },
+  "hue_found": {
+    "message": "Znaleziono mostek: $1. Naciśnij Połącz."
+  },
+  "hue_not_found": {
+    "message": "Nie znaleziono mostka. Wpisz jego adres (aplikacja Hue → Ustawienia → Mostki)."
+  },
+  "hue_press": {
+    "message": "Naciśnij okrągły przycisk na mostku (zostało $1 s)…"
+  },
+  "hue_timeout": {
+    "message": "Przycisk nie został naciśnięty. Spróbuj ponownie."
+  },
+  "hue_linked": {
+    "message": "Połączono. Wybierz lampy poniżej."
+  },
+  "hue_lights": {
+    "message": "Lampy"
+  },
+  "hue_no_lights": {
+    "message": "Mostek nie ma lamp kolorowych."
+  },
+  "hue_many": {
+    "message": "Wiele lamp spowalnia odświeżanie (mostek przyjmuje około 10 poleceń na sekundę)."
+  },
+  "hue_bri": {
+    "message": "Maks. jasność"
+  },
+  "hue_speed": {
+    "message": "Reakcja"
+  },
+  "hue_speed_slow": {
+    "message": "Płynna"
+  },
+  "hue_speed_norm": {
+    "message": "Normalna"
+  },
+  "hue_speed_fast": {
+    "message": "Szybka"
+  },
+  "hue_restore": {
+    "message": "Przywróć lampy po wideo"
+  },
+  "hue_forget": {
+    "message": "Odłącz mostek"
+  },
+  "hue_err_net": {
+    "message": "Mostek nie odpowiada. Sprawdź, czy jest włączony i w tej samej sieci."
+  },
+  "hue_err_ip": {
+    "message": "Wpisz adres w formacie 192.168.1.20."
+  },
+  "hue_err_auth": {
+    "message": "Mostek nie akceptuje już tego połączenia. Naciśnij ponownie Połącz."
+  },
+  "hue_err_busy": {
+    "message": "Wyszukiwanie jest zajęte, spróbuj za 15 minut lub wpisz adres."
+  },
+  "hue_err_notbridge": {
+    "message": "Pod tym adresem nie ma Hue Bridge."
+  },
+  "theme_midnight": {
+    "message": "Północ"
+  },
+  "theme_midnight_d": {
+    "message": "Głęboki granat"
+  },
+  "theme_day": {
+    "message": "Dzień"
+  },
+  "theme_day_d": {
+    "message": "Czysty i jasny"
+  },
+  "theme_custom": {
+    "message": "Własny"
+  },
+  "theme_custom_d": {
+    "message": "Wybierz kolory"
+  },
+  "o_custom_bg": {
+    "message": "Tło"
+  },
+  "o_custom_text": {
+    "message": "Tekst"
+  },
+  "o_custom_accent": {
+    "message": "Akcent"
+  },
+  "o_custom_reset": {
+    "message": "Resetuj kolory"
+  },
+  "q_room": {
+    "message": "Kolor pokoju: wł./wył."
+  },
+  "q_led": {
+    "message": "Diody / miękka poświata"
+  },
+  "q_panel": {
+    "message": "Panel nad stroną"
+  },
+  "q_options": {
+    "message": "Wszystkie ustawienia"
+  },
+  "q_reset": {
+    "message": "Resetuj ustawienia"
+  },
+  "q_reset_confirm": {
+    "message": "Kliknij ponownie, aby zresetować"
+  },
+  "p_title_scene": {
+    "message": "Reakcja na scenę"
+  },
+  "p_scene": {
+    "message": "Reaguj na scenę"
+  },
+  "p_scene_hint": {
+    "message": "Łagodny błysk światła przy ostrych cięciach i wybuchach, powolny „oddech” w ciemnych scenach. Ochrona przed błyskami zawsze ma pierwszeństwo."
+  },
+  "s_scene": {
+    "message": "Siła efektu"
+  },
+  "p_curve": {
+    "message": "Zmiana koloru"
+  },
+  "p_curve_normal": {
+    "message": "Normalna"
+  },
+  "p_curve_soft": {
+    "message": "Miękka"
+  },
+  "p_curve_cinema": {
+    "message": "Kino (od razu przy cięciu)"
+  },
+  "p_curve_sharp": {
+    "message": "Ostra"
+  },
+  "o_pg_scene": {
+    "message": "Efekty"
+  },
+  "preset_anime": {
+    "message": "Anime"
+  },
+  "preset_games": {
+    "message": "Gry"
+  },
+  "preset_sport": {
+    "message": "Sport"
+  },
+  "preset_music": {
+    "message": "Muzyka"
+  },
+  "p_site": {
+    "message": "Strona"
+  },
+  "lt_title": {
+    "message": "Światło w pokoju: WLED i Home Assistant"
+  },
+  "lt_hint": {
+    "message": "Taśma LED WLED i dowolne lampy w Home Assistant podążają za kolorami wideo. Wszystko zostaje w sieci domowej, nic nie trafia do internetu."
+  },
+  "lt_delay": {
+    "message": "Opóźnienie światła (Hue, WLED, Home Assistant)"
+  },
+  "lt_delay_hint": {
+    "message": "Jeśli światło zmienia się przed obrazem (np. telewizor dodaje opóźnienie), przesuń w prawo. 0 oznacza brak opóźnienia."
+  },
+  "lt_checking": {
+    "message": "Sprawdzam…"
+  },
+  "lt_err_net": {
+    "message": "Urządzenie nie odpowiada. Sprawdź, czy jest włączone i w tej samej sieci."
+  },
+  "wl_title": {
+    "message": "Taśma WLED"
+  },
+  "wl_on": {
+    "message": "Taśma podąża za kolorami wideo"
+  },
+  "wl_ip_ph": {
+    "message": "Adres WLED, np. 192.168.1.50"
+  },
+  "wl_check": {
+    "message": "Połącz"
+  },
+  "wl_found": {
+    "message": "Połączono: $1, diod: $2."
+  },
+  "wl_err_notwled": {
+    "message": "Pod tym adresem nie ma WLED."
+  },
+  "wl_layout": {
+    "message": "Ułożenie taśmy"
+  },
+  "wl_layout_around": {
+    "message": "Wokół ekranu"
+  },
+  "wl_layout_top": {
+    "message": "Tylko u góry"
+  },
+  "wl_layout_single": {
+    "message": "Jeden kolor dla całej taśmy"
+  },
+  "wl_count": {
+    "message": "Diody (0 = auto)"
+  },
+  "wl_offset": {
+    "message": "Przesunięcie początku"
+  },
+  "wl_reverse": {
+    "message": "Przeciwnie do wskazówek zegara"
+  },
+  "wl_restore": {
+    "message": "Przywróć taśmę po wideo"
+  },
+  "wl_help": {
+    "message": "„Wokół ekranu”: taśma biegnie zgodnie z ruchem wskazówek zegara od lewego dolnego rogu (patrząc na ekran). Jeśli kolory są przesunięte, zmień „Przesunięcie początku” lub włącz „Przeciwnie do wskazówek zegara”."
+  },
+  "ha_title": {
+    "message": "Home Assistant"
+  },
+  "ha_on": {
+    "message": "Wysyłaj kolor do Home Assistant"
+  },
+  "ha_test": {
+    "message": "Test"
+  },
+  "ha_sent": {
+    "message": "Wysłano pomarańczowy. Jeśli światło się nie zmieniło, sprawdź automatyzację poniżej."
+  },
+  "ha_err_url": {
+    "message": "Wpisz adres webhooka w formacie http://host:8123/api/webhook/id."
+  },
+  "ha_err_http": {
+    "message": "Home Assistant zwrócił błąd. Sprawdź, czy automatyzacja z tym webhookiem jest zapisana."
+  },
+  "ha_howto": {
+    "message": "Jak podłączyć w 2 minuty"
+  },
+  "ha_help": {
+    "message": "W Home Assistant: Ustawienia → Automatyzacje → Utwórz → Edytuj w YAML. Wklej tekst poniżej, zamień light.tv na swoje lampy i zapisz. Potem wpisz powyżej adres webhooka i naciśnij „Test”. start zapamiętuje scenę, play wysyła kolor, stop przywraca światło."
+  },
+  "hue_zone": {
+    "message": "Strefa kadru"
+  },
+  "hue_zone_a": {
+    "message": "Cały kadr"
+  },
+  "hue_zone_l": {
+    "message": "Lewa krawędź"
+  },
+  "hue_zone_r": {
+    "message": "Prawa krawędź"
+  },
+  "p_auto": {
+    "message": "✦ Auto"
+  },
+  "p_auto_hint": {
+    "message": "Autoustawienie: rozpoznaje rodzaj wideo (film, anime, gry, sport) i samo dopasowuje poświatę"
+  },
+  "auto_wait": {
+    "message": "Autoustawienie: patrzę na wideo…"
+  },
+  "auto_none": {
+    "message": "Autoustawienie: nic szczególnego, Twoje ustawienia"
+  },
+  "auto_now": {
+    "message": "Autoustawienie: teraz „$NAME$”",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "q_glowwin": {
+    "message": "Okno światła: osobne okno świeci kolorem wideo (przenieś je na drugi monitor)"
+  },
+  "pip_hint": {
+    "message": "Przenieś to okno na drugi monitor lub obok ekranu"
+  },
+  "w_s1_title": {
+    "message": "Włącz dowolne wideo"
+  },
+  "w_s1_text": {
+    "message": "Wokół odtwarzacza pojawi się miękka poświata i będzie podążać za kolorami sceny. Działa na każdej stronie, niczego nie trzeba ustawiać."
+  },
+  "w_s2_title": {
+    "message": "Wybierz styl"
+  },
+  "w_s2_text": {
+    "message": "„Auto” rozpoznaje filmy, anime, gry i sport i samo dopasowuje poświatę. Zmienić możesz w każdej chwili w oknie rozszerzenia."
+  },
+  "w_s3_title": {
+    "message": "Miej pod ręką"
+  },
+  "w_s3_text": {
+    "message": "Przypnij ikonę Video Glow na pasku (ikona puzzla → pinezka). Okno pokazuje, dlaczego nie ma poświaty, jeśli coś jest nie tak."
+  },
+  "w_s3_key": {
+    "message": "włącza i wyłącza poświatę"
+  }
+}

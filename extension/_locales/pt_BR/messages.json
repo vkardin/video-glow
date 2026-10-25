@@ -1,0 +1,1129 @@
+{
+  "extName": {
+    "message": "Video Glow — luz ambiente para qualquer vídeo"
+  },
+  "extDescription": {
+    "message": "Brilho ambiente suave em volta de qualquer vídeo em qualquer site, também em tela cheia. Preenche as barras pretas. Forma, desfoque e tamanho totalmente ajustáveis."
+  },
+  "actionTitle": {
+    "message": "Video Glow"
+  },
+  "cmdToggle": {
+    "message": "Ligar / desligar o brilho em todos os sites"
+  },
+  "cmdSite": {
+    "message": "Ligar / desligar o brilho neste site"
+  },
+  "p_enabled_title": {
+    "message": "Ligar / desligar em todos os sites (Alt+Shift+B)"
+  },
+  "p_site_off": {
+    "message": "Desativar em $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_presets": {
+    "message": "Predefinições"
+  },
+  "preset_soft": {
+    "message": "Suave"
+  },
+  "preset_cinema": {
+    "message": "Cinema"
+  },
+  "preset_neon": {
+    "message": "Neon"
+  },
+  "preset_exact": {
+    "message": "Exato"
+  },
+  "p_page": {
+    "message": "Brilho na página"
+  },
+  "p_shape": {
+    "message": "Forma da moldura"
+  },
+  "p_shape_rect": {
+    "message": "Retângulo"
+  },
+  "p_shape_rounded": {
+    "message": "Arredondada"
+  },
+  "p_shape_circle": {
+    "message": "Círculo"
+  },
+  "s_spread": {
+    "message": "Tamanho da moldura"
+  },
+  "s_spread_hint": {
+    "message": "Quanto o brilho se estende além das bordas do vídeo"
+  },
+  "s_feather": {
+    "message": "Suavidade da borda"
+  },
+  "s_feather_hint": {
+    "message": "Com que suavidade o brilho se apaga até a borda externa: 0 — borda nítida, 100 — degradê suave em toda a moldura"
+  },
+  "s_radius": {
+    "message": "Raio dos cantos"
+  },
+  "p_seamless": {
+    "message": "Junção perfeita com o vídeo"
+  },
+  "p_seamless_hint": {
+    "message": "A imagem continua além das bordas da moldura e o brilho fica com força total bem na junção. Também funciona em tela cheia"
+  },
+  "p_mode": {
+    "message": "Camada"
+  },
+  "p_mode_screen": {
+    "message": "Por cima, clarear"
+  },
+  "p_mode_normal": {
+    "message": "Por cima, normal"
+  },
+  "p_mode_under": {
+    "message": "Atrás da página"
+  },
+  "p_mode_hint": {
+    "message": "“Por cima” aparece mesmo sobre fundos opacos e nunca cobre o próprio vídeo. “Atrás da página” não mexe no conteúdo, mas pode ficar escondido atrás de fundos de blocos."
+  },
+  "p_fs": {
+    "message": "Tela cheia"
+  },
+  "p_fs_fill": {
+    "message": "Preencher a tela inteira"
+  },
+  "p_fs_fill_hint": {
+    "message": "Cobre as barras pretas, não só uma moldura em volta do vídeo"
+  },
+  "p_look": {
+    "message": "Aparência"
+  },
+  "s_blur": {
+    "message": "Desfoque"
+  },
+  "s_sample": {
+    "message": "Tamanho da amostra"
+  },
+  "s_sample_hint": {
+    "message": "Largura da imagem tirada do vídeo: menor — mais suave e leve, maior — mais detalhada"
+  },
+  "s_opacity": {
+    "message": "Intensidade do brilho"
+  },
+  "s_saturation": {
+    "message": "Saturação"
+  },
+  "s_brightness": {
+    "message": "Brilho da cor"
+  },
+  "s_fade": {
+    "message": "Transição ao pausar / reproduzir"
+  },
+  "s_fade_hint": {
+    "message": "Quanto tempo o brilho leva para sumir ao pausar e aparecer ao reproduzir"
+  },
+  "p_fps": {
+    "message": "Taxa de atualização, fps"
+  },
+  "p_adv": {
+    "message": "Avançado"
+  },
+  "p_fillbars": {
+    "message": "Preencher barras dentro do player"
+  },
+  "p_fillbars_hint": {
+    "message": "Se o vídeo não preenche o seu bloco (fora da tela cheia)"
+  },
+  "p_cropbars": {
+    "message": "Ignorar barras pretas dentro do vídeo"
+  },
+  "p_cropbars_hint": {
+    "message": "Filmes com barras embutidas (2,39:1) não criam zonas escuras no brilho"
+  },
+  "p_adaptive": {
+    "message": "Adaptar a um aparelho lento"
+  },
+  "p_adaptive_hint": {
+    "message": "Reduz a taxa automaticamente se o computador não acompanhar"
+  },
+  "p_eco": {
+    "message": "Economizar bateria"
+  },
+  "p_eco_hint": {
+    "message": "Abaixo de 30% e fora da tomada, limita a 15 fps"
+  },
+  "s_minwidth": {
+    "message": "Largura mínima do vídeo"
+  },
+  "s_minwidth_hint": {
+    "message": "Vídeos mais estreitos (prévias, banners) são ignorados"
+  },
+  "u_ms": {
+    "message": " ms"
+  },
+  "p_reset": {
+    "message": "Redefinir configurações"
+  },
+  "p_options": {
+    "message": "Todas as configurações"
+  },
+  "p_donate": {
+    "message": "Apoiar o projeto"
+  },
+  "p_note": {
+    "message": "As mudanças valem na hora"
+  },
+  "st_ok": {
+    "message": "O brilho está funcionando nesta página"
+  },
+  "st_paused": {
+    "message": "O vídeo está pausado — o brilho está desligado"
+  },
+  "st_small": {
+    "message": "O vídeo é menor que a largura mínima"
+  },
+  "st_site": {
+    "message": "Desativado neste site"
+  },
+  "st_disabled": {
+    "message": "O Video Glow está desligado"
+  },
+  "st_pageoff": {
+    "message": "O brilho na página está desligado"
+  },
+  "st_fsoff": {
+    "message": "O brilho em tela cheia está desligado"
+  },
+  "st_offscreen": {
+    "message": "O vídeo não está visível na tela"
+  },
+  "st_hidden": {
+    "message": "A página esconde o vídeo"
+  },
+  "st_pip": {
+    "message": "Picture-in-picture está ativo"
+  },
+  "st_otherfs": {
+    "message": "Outro elemento está em tela cheia"
+  },
+  "st_novideo": {
+    "message": "O vídeo ainda não carregou"
+  },
+  "st_none": {
+    "message": "Nenhum vídeo encontrado nesta página"
+  },
+  "st_unsupported": {
+    "message": "Indisponível nesta página"
+  },
+  "st_unreadable": {
+    "message": "O navegador não permite ler os quadros deste vídeo (outro domínio / proteção). O brilho funciona, mas a detecção de barras não está disponível."
+  },
+  "o_title": {
+    "message": "Video Glow — configurações"
+  },
+  "o_sites": {
+    "message": "Sites desativados"
+  },
+  "o_sites_hint": {
+    "message": "O brilho nunca aparece nesses sites."
+  },
+  "o_sites_empty": {
+    "message": "Nenhum site desativado"
+  },
+  "o_site_add_ph": {
+    "message": "example.com"
+  },
+  "o_site_add": {
+    "message": "Adicionar"
+  },
+  "o_site_remove": {
+    "message": "Remover"
+  },
+  "o_backup": {
+    "message": "Backup"
+  },
+  "o_export": {
+    "message": "Exportar configurações"
+  },
+  "o_import": {
+    "message": "Importar configurações"
+  },
+  "o_import_ok": {
+    "message": "Configurações importadas"
+  },
+  "o_import_err": {
+    "message": "Não foi possível ler o arquivo"
+  },
+  "o_reset_all": {
+    "message": "Redefinir todas as configurações"
+  },
+  "o_reset_confirm": {
+    "message": "Redefinir todas as configurações para o padrão? A lista de sites desativados também será apagada."
+  },
+  "o_shortcuts": {
+    "message": "Atalhos de teclado"
+  },
+  "o_shortcuts_btn": {
+    "message": "Configurar atalhos"
+  },
+  "o_shortcuts_text": {
+    "message": "Ligar / desligar em todos os sites: Alt+Shift+B. Painel de configurações sobre a página e o vídeo em tela cheia: Alt+Shift+G (ou o botão de engrenagem no vídeo). “Ligar / desligar neste site” não tem tecla padrão — defina uma nos atalhos do navegador."
+  },
+  "o_about": {
+    "message": "Sobre"
+  },
+  "o_version": {
+    "message": "Versão $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_privacy": {
+    "message": "Política de privacidade"
+  },
+  "o_privacy_text": {
+    "message": "O Video Glow não coleta nem envia dados. As configurações ficam salvas localmente no seu navegador."
+  },
+  "o_limits": {
+    "message": "Limitações"
+  },
+  "o_limits_text": {
+    "message": "Vídeos protegidos por DRM (Netflix, Disney+ e similares) não podem ser lidos pelo navegador, então não há brilho para eles. Para vídeos de outro domínio sem CORS, a detecção de barras e o modo “o próprio vídeo em tela cheia” não estão disponíveis."
+  },
+  "w_title": {
+    "message": "O Video Glow está instalado"
+  },
+  "w_sub": {
+    "message": "Brilho ambiente para qualquer vídeo em qualquer site."
+  },
+  "w_step1": {
+    "message": "Abra qualquer vídeo e dê play — o brilho aparece suavemente em volta."
+  },
+  "w_step2": {
+    "message": "Clique no ícone da extensão para mudar tamanho, desfoque, forma e predefinições."
+  },
+  "w_step3": {
+    "message": "Alt+Shift+B liga ou desliga o brilho."
+  },
+  "w_step4": {
+    "message": "Em tela cheia o brilho preenche as barras pretas da sua tela."
+  },
+  "w_note": {
+    "message": "Sem brilho? Abra a janela da extensão — lá aparece o motivo (pausa, vídeo pequeno demais, vídeo protegido…)."
+  },
+  "w_open": {
+    "message": "Abrir configurações"
+  },
+  "hover_tip": {
+    "message": "Video Glow: brilho liga/desliga"
+  },
+  "st_useroff": {
+    "message": "Brilho desligado pelo botão no vídeo"
+  },
+  "u_sec": {
+    "message": " s"
+  },
+  "p_badge_site": {
+    "message": "este site"
+  },
+  "p_scope_site": {
+    "message": "Configurações próprias para $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_scope_hint": {
+    "message": "Desligado: as mudanças valem para todos os sites. Ligado: só para este site."
+  },
+  "p_scope_reset": {
+    "message": "Voltar às configurações gerais"
+  },
+  "p_pause": {
+    "message": "Na pausa"
+  },
+  "p_pause_mode": {
+    "message": "Brilho na pausa"
+  },
+  "p_pause_fade": {
+    "message": "Apaga"
+  },
+  "p_pause_hold": {
+    "message": "Continua aceso"
+  },
+  "p_pause_delay": {
+    "message": "Apaga com atraso"
+  },
+  "s_pause_delay": {
+    "message": "Apagar após"
+  },
+  "p_fs_same": {
+    "message": "Igual à página"
+  },
+  "p_fs_same_hint": {
+    "message": "Desligado: a tela cheia tem desfoque, brilho e pausa próprios."
+  },
+  "p_dim": {
+    "message": "Escurecer a página em volta do player"
+  },
+  "p_dim_hint": {
+    "message": "Modo cinema: tudo menos o vídeo fica mais escuro."
+  },
+  "s_dim": {
+    "message": "Escurecimento"
+  },
+  "p_hover": {
+    "message": "Botão no vídeo"
+  },
+  "p_hover_hint": {
+    "message": "Um pequeno botão aparece no vídeo quando você passa o mouse por cima."
+  },
+  "o_custom_sites": {
+    "message": "Sites com configurações próprias"
+  },
+  "o_custom_hint": {
+    "message": "Ative “Configurações próprias para este site” na janela para adicionar um site aqui."
+  },
+  "o_custom_empty": {
+    "message": "Ainda não há sites."
+  },
+  "w_perm_title": {
+    "message": "Mais um passo: permitir o acesso aos sites"
+  },
+  "w_perm_text": {
+    "message": "Para desenhar o brilho perto dos vídeos, o Video Glow precisa de permissão para rodar nos sites onde você assiste vídeos. Nada é coletado nem enviado. Sem essa permissão a extensão não faz nada."
+  },
+  "w_perm_allow": {
+    "message": "Permitir em todos os sites"
+  },
+  "w_perm_done": {
+    "message": "Pronto — o brilho está ativo. Recarregue as abas que já estavam abertas."
+  },
+  "p_perm_need": {
+    "message": "O brilho ainda não está ativo: o acesso aos sites não foi permitido."
+  },
+  "p_perm_btn": {
+    "message": "Permitir acesso…"
+  },
+  "p_pro_badge": {
+    "message": "Pro"
+  },
+  "p_pro_trial": {
+    "message": "Teste Pro: falta(m) $N$ dia(s)",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "p_pro_locked": {
+    "message": "Os recursos Pro estão bloqueados"
+  },
+  "p_pro_get": {
+    "message": "Desbloquear"
+  },
+  "p_pro_key": {
+    "message": "Inserir chave"
+  },
+  "p_pro_title_bars": {
+    "message": "Barras pretas"
+  },
+  "p_bars_mode": {
+    "message": "Detecção de barras"
+  },
+  "p_bars_auto": {
+    "message": "Automática"
+  },
+  "p_bars_force": {
+    "message": "Forçada (agressiva)"
+  },
+  "p_bars_manual": {
+    "message": "Manual"
+  },
+  "p_bars_hint": {
+    "message": "O modo forçado encontra barras cinzas ou com ruído em qualquer lado, até de um lado só. Cenas muito escuras podem ser confundidas com barras."
+  },
+  "s_bar_t": {
+    "message": "Barra de cima"
+  },
+  "s_bar_b": {
+    "message": "Barra de baixo"
+  },
+  "s_bar_l": {
+    "message": "Barra da esquerda"
+  },
+  "s_bar_r": {
+    "message": "Barra da direita"
+  },
+  "p_barshide": {
+    "message": "Tirar as barras da tela"
+  },
+  "p_barshide_hint": {
+    "message": "Amplia o vídeo para a imagem preencher o player. As bordas são cortadas."
+  },
+  "s_barsfill": {
+    "message": "Zoom"
+  },
+  "s_barsfill_hint": {
+    "message": "0 — só ajustar a imagem, 100 — preencher o player por completo."
+  },
+  "p_pro_title_eyes": {
+    "message": "Olhos sensíveis"
+  },
+  "p_guard": {
+    "message": "Proteção contra flashes"
+  },
+  "p_guard_hint": {
+    "message": "Escurece o vídeo e o brilho quando a imagem pisca ou dá flashes (3+ por segundo). Não é um dispositivo médico."
+  },
+  "p_guard_sens": {
+    "message": "Sensibilidade"
+  },
+  "p_sens_1": {
+    "message": "Baixa"
+  },
+  "p_sens_2": {
+    "message": "Média"
+  },
+  "p_sens_3": {
+    "message": "Alta"
+  },
+  "s_guard_strength": {
+    "message": "Escurecimento"
+  },
+  "p_guard_video": {
+    "message": "Escurecer também o próprio vídeo"
+  },
+  "s_calm": {
+    "message": "Brilho calmo"
+  },
+  "s_calm_hint": {
+    "message": "Suaviza as mudanças de cor ao longo do tempo, menos saltos bruscos."
+  },
+  "p_pro_title_pulse": {
+    "message": "Pulso do som"
+  },
+  "p_pulse": {
+    "message": "Pulsar com o som"
+  },
+  "p_pulse_hint": {
+    "message": "O brilho pulsa com o áudio. O som é analisado no seu aparelho e nunca é gravado. Evite se você é sensível a flashes."
+  },
+  "s_pulse": {
+    "message": "Força do pulso"
+  },
+  "p_pulse_mode": {
+    "message": "Reage a"
+  },
+  "p_pulse_bass": {
+    "message": "Graves"
+  },
+  "p_pulse_all": {
+    "message": "Todo o som"
+  },
+  "p_pro_title_fx": {
+    "message": "Filtros de vídeo"
+  },
+  "p_fx": {
+    "message": "Aplicar filtros ao vídeo"
+  },
+  "fx_clarity": {
+    "message": "Nitidez"
+  },
+  "fx_cinema": {
+    "message": "Cinema"
+  },
+  "fx_vivid": {
+    "message": "Vivo"
+  },
+  "fx_warm": {
+    "message": "Quente"
+  },
+  "fx_off": {
+    "message": "Desligado"
+  },
+  "s_fx_brightness": {
+    "message": "Brilho"
+  },
+  "s_fx_contrast": {
+    "message": "Contraste"
+  },
+  "s_fx_saturation": {
+    "message": "Saturação"
+  },
+  "s_fx_sharp": {
+    "message": "Nitidez"
+  },
+  "s_fx_sharp_hint": {
+    "message": "Nitidez, calor e sombras usam um filtro SVG e podem pesar em vídeo 4K."
+  },
+  "s_fx_warmth": {
+    "message": "Calor (− frio, + quente)"
+  },
+  "s_fx_gamma": {
+    "message": "Sombras (clarear)"
+  },
+  "p_pro_title_night": {
+    "message": "Conforto noturno"
+  },
+  "p_night": {
+    "message": "Conforto noturno"
+  },
+  "p_night_hint": {
+    "message": "Nas horas escolhidas o vídeo fica mais quente e escuro e o brilho mais suave. Igual para todos os sites."
+  },
+  "p_night_from": {
+    "message": "De"
+  },
+  "p_night_to": {
+    "message": "Até"
+  },
+  "s_night_strength": {
+    "message": "Intensidade"
+  },
+  "st_guard": {
+    "message": "A proteção contra flashes está ativa agora."
+  },
+  "st_pulse_nodata": {
+    "message": "Pulso do som: este vídeo não fornece dados de áudio."
+  },
+  "o_pro": {
+    "message": "Video Glow Pro"
+  },
+  "o_pro_none": {
+    "message": "O Pro não está ativo. Insira uma chave de licença para liberar todos os recursos Pro."
+  },
+  "o_pro_trial": {
+    "message": "Período de teste: falta(m) $N$ dia(s). Os recursos Pro funcionam até o fim.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_pro_license": {
+    "message": "O Pro está ativo. Licença: $N$",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "o_pro_license_anon": {
+    "message": "O Pro está ativo."
+  },
+  "o_pro_features": {
+    "message": "O Pro inclui: detecção e remoção forçada de barras, proteção contra flashes e brilho calmo, pulso do som, filtros de vídeo, conforto noturno."
+  },
+  "o_key_ph": {
+    "message": "Cole sua chave de licença (começa com VG1.)"
+  },
+  "o_key_activate": {
+    "message": "Ativar"
+  },
+  "o_key_remove": {
+    "message": "Remover chave"
+  },
+  "o_buy": {
+    "message": "Comprar Pro"
+  },
+  "o_key_ok": {
+    "message": "Pro ativado"
+  },
+  "o_key_removed": {
+    "message": "Chave removida"
+  },
+  "o_key_empty": {
+    "message": "Cole uma chave primeiro"
+  },
+  "o_key_bad": {
+    "message": "Esta chave não é válida"
+  },
+  "o_key_format": {
+    "message": "Isso não parece uma chave de licença"
+  },
+  "o_pro_offline": {
+    "message": "A chave é verificada neste aparelho e nenhuma requisição de rede é feita. Guarde-a num lugar seguro; os backups não a incluem."
+  },
+  "p_fold_all": {
+    "message": "Recolher todas as seções"
+  },
+  "p_unfold_all": {
+    "message": "Expandir todas as seções"
+  },
+  "p_panel_btn": {
+    "message": "Painel sobre a página"
+  },
+  "p_fs_shape_own": {
+    "message": "Forma e tamanho de moldura próprios"
+  },
+  "p_fs_shape_own_hint": {
+    "message": "Forma, tamanho e suavidade da moldura próprios em tela cheia."
+  },
+  "p_fs_shape_note": {
+    "message": "A moldura vale quando “Preencher a tela inteira” está desligado; ligado, o brilho preenche a tela."
+  },
+  "panel_title": {
+    "message": "Configurações do Video Glow"
+  },
+  "panel_pin": {
+    "message": "Fixar: manter o painel aberto"
+  },
+  "panel_unpin": {
+    "message": "Soltar: esconder após 10 s sem o cursor"
+  },
+  "panel_close": {
+    "message": "Fechar"
+  },
+  "hover_gear_tip": {
+    "message": "Configurações do Video Glow"
+  },
+  "cmdPanel": {
+    "message": "Mostrar / esconder o painel de configurações sobre a página"
+  },
+  "p_tune": {
+    "message": "Ajuste fino"
+  },
+  "p_behavior": {
+    "message": "Comportamento"
+  },
+  "p_picture": {
+    "message": "Imagem"
+  },
+  "p_comfort": {
+    "message": "Conforto e som"
+  },
+  "preset_clarity": {
+    "message": "Nitidez"
+  },
+  "preset_night": {
+    "message": "Noite"
+  },
+  "p_preset_save": {
+    "message": "+ Salvar o atual como predefinição"
+  },
+  "p_preset_manage": {
+    "message": "Editar predefinições"
+  },
+  "p_preset_name_ph": {
+    "message": "Nome da predefinição"
+  },
+  "p_preset_ok": {
+    "message": "Salvar"
+  },
+  "preset_default_name": {
+    "message": "Minha predefinição"
+  },
+  "o_presets": {
+    "message": "Predefinições"
+  },
+  "o_presets_hint": {
+    "message": "Uma predefinição muda todo o visual num clique: o brilho, o escurecimento da página e os filtros de vídeo. Altere as embutidas ou crie as suas — dá para copiar as configurações atuais em qualquer uma."
+  },
+  "o_preset_add": {
+    "message": "+ Nova predefinição a partir das configurações atuais"
+  },
+  "o_preset_edit": {
+    "message": "Parâmetros"
+  },
+  "o_preset_from_current": {
+    "message": "Copiar configurações atuais"
+  },
+  "o_preset_reset": {
+    "message": "Redefinir"
+  },
+  "o_preset_delete": {
+    "message": "Excluir"
+  },
+  "o_preset_saved": {
+    "message": "Predefinição salva"
+  },
+  "o_preset_changed": {
+    "message": "alterada"
+  },
+  "o_pg_glow": {
+    "message": "Brilho"
+  },
+  "o_pg_page": {
+    "message": "Página"
+  },
+  "o_pg_fx": {
+    "message": "Filtros de vídeo"
+  },
+  "o_theme": {
+    "message": "Aparência"
+  },
+  "o_theme_hint": {
+    "message": "Tema do menu, do painel e destas páginas. O brilho em si não muda."
+  },
+  "theme_cinema": {
+    "message": "Cinema"
+  },
+  "theme_cinema_d": {
+    "message": "Preto e discreto"
+  },
+  "theme_amber": {
+    "message": "Grafite e âmbar"
+  },
+  "theme_amber_d": {
+    "message": "Escuro quente"
+  },
+  "theme_deck": {
+    "message": "Console"
+  },
+  "theme_deck_d": {
+    "message": "Claro, estilo aparelho"
+  },
+  "p_style": {
+    "message": "Estilo do brilho"
+  },
+  "p_style_soft": {
+    "message": "Suave"
+  },
+  "p_style_led": {
+    "message": "LEDs"
+  },
+  "p_style_hint": {
+    "message": "“LEDs” parece uma fita de luz atrás da TV: pontos de luz separados, cada um com sua cor."
+  },
+  "s_leds": {
+    "message": "LEDs"
+  },
+  "p_room": {
+    "message": "Cor do ambiente"
+  },
+  "p_room_hint": {
+    "message": "A página inteira ganha um tom suave com as cores do vídeo. Funciona melhor com o tema escuro do site."
+  },
+  "s_room": {
+    "message": "Intensidade do tom"
+  },
+  "hue_title": {
+    "message": "Philips Hue"
+  },
+  "hue_hint": {
+    "message": "As lâmpadas do ambiente seguem as cores do vídeo. Funciona pelo Hue Bridge da sua rede doméstica; nada sai da sua rede."
+  },
+  "hue_on": {
+    "message": "Lâmpadas seguem o vídeo"
+  },
+  "hue_ip_ph": {
+    "message": "Endereço do bridge, ex. 192.168.1.20"
+  },
+  "hue_find": {
+    "message": "Procurar bridge"
+  },
+  "hue_link": {
+    "message": "Conectar"
+  },
+  "hue_searching": {
+    "message": "Procurando…"
+  },
+  "hue_found": {
+    "message": "Bridge encontrado: $1. Clique em Conectar."
+  },
+  "hue_not_found": {
+    "message": "Nenhum bridge encontrado. Insira o endereço (app Hue → Configurações → Bridges)."
+  },
+  "hue_press": {
+    "message": "Aperte o botão redondo do bridge (faltam $1 s)…"
+  },
+  "hue_timeout": {
+    "message": "O botão não foi apertado. Tente de novo."
+  },
+  "hue_linked": {
+    "message": "Conectado. Escolha as lâmpadas abaixo."
+  },
+  "hue_lights": {
+    "message": "Lâmpadas"
+  },
+  "hue_no_lights": {
+    "message": "O bridge não tem lâmpadas coloridas."
+  },
+  "hue_many": {
+    "message": "Muitas lâmpadas deixam as atualizações mais lentas (o bridge aceita cerca de 10 comandos por segundo)."
+  },
+  "hue_bri": {
+    "message": "Brilho máximo"
+  },
+  "hue_speed": {
+    "message": "Resposta"
+  },
+  "hue_speed_slow": {
+    "message": "Suave"
+  },
+  "hue_speed_norm": {
+    "message": "Normal"
+  },
+  "hue_speed_fast": {
+    "message": "Rápida"
+  },
+  "hue_restore": {
+    "message": "Restaurar as lâmpadas após o vídeo"
+  },
+  "hue_forget": {
+    "message": "Desconectar bridge"
+  },
+  "hue_err_net": {
+    "message": "O bridge não responde. Verifique se está ligado e na mesma rede."
+  },
+  "hue_err_ip": {
+    "message": "Insira o endereço como 192.168.1.20."
+  },
+  "hue_err_auth": {
+    "message": "O bridge não aceita mais esta conexão. Clique em Conectar de novo."
+  },
+  "hue_err_busy": {
+    "message": "A busca está ocupada, tente em 15 minutos ou insira o endereço."
+  },
+  "hue_err_notbridge": {
+    "message": "Não há Hue Bridge neste endereço."
+  },
+  "theme_midnight": {
+    "message": "Meia-noite"
+  },
+  "theme_midnight_d": {
+    "message": "Azul profundo"
+  },
+  "theme_day": {
+    "message": "Dia"
+  },
+  "theme_day_d": {
+    "message": "Limpo e claro"
+  },
+  "theme_custom": {
+    "message": "Personalizado"
+  },
+  "theme_custom_d": {
+    "message": "Escolha as cores"
+  },
+  "o_custom_bg": {
+    "message": "Fundo"
+  },
+  "o_custom_text": {
+    "message": "Texto"
+  },
+  "o_custom_accent": {
+    "message": "Destaque"
+  },
+  "o_custom_reset": {
+    "message": "Redefinir cores"
+  },
+  "q_room": {
+    "message": "Cor do ambiente: liga/desliga"
+  },
+  "q_led": {
+    "message": "LEDs / brilho suave"
+  },
+  "q_panel": {
+    "message": "Painel sobre a página"
+  },
+  "q_options": {
+    "message": "Todas as configurações"
+  },
+  "q_reset": {
+    "message": "Redefinir configurações"
+  },
+  "q_reset_confirm": {
+    "message": "Clique de novo para redefinir"
+  },
+  "p_title_scene": {
+    "message": "Reação à cena"
+  },
+  "p_scene": {
+    "message": "Reagir à cena"
+  },
+  "p_scene_hint": {
+    "message": "Um flash suave de luz em cortes bruscos e explosões, uma “respiração” lenta em cenas escuras. A proteção contra flashes sempre vence."
+  },
+  "s_scene": {
+    "message": "Força do efeito"
+  },
+  "p_curve": {
+    "message": "Mudança de cor"
+  },
+  "p_curve_normal": {
+    "message": "Normal"
+  },
+  "p_curve_soft": {
+    "message": "Suave"
+  },
+  "p_curve_cinema": {
+    "message": "Cinema (instantânea no corte)"
+  },
+  "p_curve_sharp": {
+    "message": "Brusca"
+  },
+  "o_pg_scene": {
+    "message": "Efeitos"
+  },
+  "preset_anime": {
+    "message": "Anime"
+  },
+  "preset_games": {
+    "message": "Jogos"
+  },
+  "preset_sport": {
+    "message": "Esporte"
+  },
+  "preset_music": {
+    "message": "Música"
+  },
+  "p_site": {
+    "message": "Site"
+  },
+  "lt_title": {
+    "message": "Luzes do ambiente: WLED e Home Assistant"
+  },
+  "lt_hint": {
+    "message": "Uma fita LED WLED e qualquer luz do Home Assistant seguem as cores do vídeo. Tudo fica na sua rede doméstica, nada vai para a internet."
+  },
+  "lt_delay": {
+    "message": "Atraso da luz (Hue, WLED, Home Assistant)"
+  },
+  "lt_delay_hint": {
+    "message": "Se as luzes mudam antes da imagem (por exemplo, a TV adiciona atraso), mova para a direita. 0 significa sem atraso."
+  },
+  "lt_checking": {
+    "message": "Verificando…"
+  },
+  "lt_err_net": {
+    "message": "O aparelho não responde. Verifique se está ligado e na mesma rede."
+  },
+  "wl_title": {
+    "message": "Fita WLED"
+  },
+  "wl_on": {
+    "message": "A fita segue as cores do vídeo"
+  },
+  "wl_ip_ph": {
+    "message": "Endereço do WLED, ex. 192.168.1.50"
+  },
+  "wl_check": {
+    "message": "Conectar"
+  },
+  "wl_found": {
+    "message": "Conectado: $1, $2 LEDs."
+  },
+  "wl_err_notwled": {
+    "message": "Não há WLED neste endereço."
+  },
+  "wl_layout": {
+    "message": "Posição da fita"
+  },
+  "wl_layout_around": {
+    "message": "Em volta da tela"
+  },
+  "wl_layout_top": {
+    "message": "Só em cima"
+  },
+  "wl_layout_single": {
+    "message": "Uma cor para a fita toda"
+  },
+  "wl_count": {
+    "message": "LEDs (0 = auto)"
+  },
+  "wl_offset": {
+    "message": "Deslocamento inicial"
+  },
+  "wl_reverse": {
+    "message": "Sentido anti-horário"
+  },
+  "wl_restore": {
+    "message": "Restaurar a fita após o vídeo"
+  },
+  "wl_help": {
+    "message": "“Em volta da tela”: a fita corre no sentido horário a partir do canto inferior esquerdo (olhando para a tela). Se as cores estiverem deslocadas, ajuste “Deslocamento inicial” ou ligue “Sentido anti-horário”."
+  },
+  "ha_title": {
+    "message": "Home Assistant"
+  },
+  "ha_on": {
+    "message": "Enviar a cor ao Home Assistant"
+  },
+  "ha_test": {
+    "message": "Testar"
+  },
+  "ha_sent": {
+    "message": "Laranja enviado. Se a luz não mudou, confira a automação abaixo."
+  },
+  "ha_err_url": {
+    "message": "Insira o endereço do webhook como http://host:8123/api/webhook/id."
+  },
+  "ha_err_http": {
+    "message": "O Home Assistant retornou um erro. Verifique se a automação com este webhook está salva."
+  },
+  "ha_howto": {
+    "message": "Como conectar em 2 minutos"
+  },
+  "ha_help": {
+    "message": "No Home Assistant: Configurações → Automações → Criar → Editar em YAML. Cole o texto abaixo, troque light.tv pelas suas luzes e salve. Depois insira o endereço do webhook acima e clique em “Testar”. start salva a cena, play envia a cor, stop restaura as luzes."
+  },
+  "hue_zone": {
+    "message": "Zona do quadro"
+  },
+  "hue_zone_a": {
+    "message": "Quadro inteiro"
+  },
+  "hue_zone_l": {
+    "message": "Borda esquerda"
+  },
+  "hue_zone_r": {
+    "message": "Borda direita"
+  },
+  "p_auto": {
+    "message": "✦ Auto"
+  },
+  "p_auto_hint": {
+    "message": "Predefinição automática: reconhece o tipo de vídeo (filme, anime, jogos, esporte) e ajusta o brilho sozinha"
+  },
+  "auto_wait": {
+    "message": "Predefinição automática: olhando o vídeo…"
+  },
+  "auto_none": {
+    "message": "Predefinição automática: nada especial, suas configurações"
+  },
+  "auto_now": {
+    "message": "Predefinição automática: agora “$NAME$”",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "q_glowwin": {
+    "message": "Janela de luz: uma janela à parte brilha com a cor do vídeo (leve-a para um segundo monitor)"
+  },
+  "pip_hint": {
+    "message": "Leve esta janela para um segundo monitor ou para o lado da tela"
+  },
+  "w_s1_title": {
+    "message": "Dê play em qualquer vídeo"
+  },
+  "w_s1_text": {
+    "message": "Um brilho suave aparece em volta do player e segue as cores da cena. Funciona em qualquer site, sem configurar nada."
+  },
+  "w_s2_title": {
+    "message": "Escolha um estilo"
+  },
+  "w_s2_text": {
+    "message": "“Auto” reconhece filmes, anime, jogos e esporte e ajusta o brilho sozinho. Você pode mudar a qualquer momento na janela da extensão."
+  },
+  "w_s3_title": {
+    "message": "Deixe à mão"
+  },
+  "w_s3_text": {
+    "message": "Fixe o ícone do Video Glow na barra (ícone de quebra-cabeça → alfinete). A janela mostra por que não há brilho, se algo estiver errado."
+  },
+  "w_s3_key": {
+    "message": "liga e desliga o brilho"
+  }
+}
