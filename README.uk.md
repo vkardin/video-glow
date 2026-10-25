@@ -20,6 +20,7 @@ Video Glow перетворює екран на маленький кіноза�
 
 - **Chrome, Edge, Brave, Opera:** [Chrome Web Store](https://chromewebstore.google.com/detail/bjgbalkabocifimhnhbcnomeknpbhkea)
 - **Firefox:** [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/video-glow/)
+- **Вручну:** zip-архіви для Chrome і Firefox на сторінці [Releases](../../releases)
 
 ## Можливості
 
@@ -52,6 +53,7 @@ Video Glow перетворює екран на маленький кіноза�
 | [`extension/`](extension) | Вихідний код розширення (`chrome://extensions` → Режим розробника → Завантажити розпаковане) |
 | [`docs/`](docs) | Сайт, публікується через GitHub Pages |
 | [`store/`](store) | Тексти для магазинів, графіка й тестові скрипти |
+| [`tools/`](tools) | `build.py` збирає zip для Chrome і Firefox |
 
 ## Ліцензія
 

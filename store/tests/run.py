@@ -1,6 +1,6 @@
 import asyncio, json, http.server, threading, functools, sys
 from playwright.async_api import async_playwright
-EXT='/home/claude/video-ambilight'
+EXT=__import__('os').path.abspath('extension')
 H=functools.partial(http.server.SimpleHTTPRequestHandler,directory='.')
 class Q(H.func):
     def log_message(self,*a): pass

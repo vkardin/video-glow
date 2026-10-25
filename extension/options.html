@@ -3,12 +3,115 @@
 <head>
   <meta charset="utf-8">
   <title>Video Glow</title>
+  <script src="ui-theme.js"></script>
+  <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="page.css">
 </head>
 <body>
   <main>
     <h1><span class="logo"></span><span data-i18n="o_title"></span></h1>
     <p class="sub" id="version"></p>
+
+    <section class="card" id="pro">
+      <h2 data-i18n="o_pro"></h2>
+      <p id="proState"></p>
+      <p class="muted" data-i18n="o_pro_features"></p>
+      <textarea id="keyInput" rows="3" spellcheck="false" data-i18n-ph="o_key_ph"></textarea>
+      <div class="row">
+        <button type="button" id="keyActivate" class="primary" data-i18n="o_key_activate"></button>
+        <button type="button" id="keyRemove" hidden data-i18n="o_key_remove"></button>
+        <button type="button" id="buy" hidden data-i18n="o_buy"></button>
+      </div>
+      <p class="muted small" data-i18n="o_pro_offline"></p>
+    </section>
+
+    <section class="card" id="look">
+      <h2 data-i18n="o_theme"></h2>
+      <p class="muted" data-i18n="o_theme_hint"></p>
+      <div class="themes" role="radiogroup">
+        <button type="button" class="theme" role="radio" data-pick="cinema"><span class="sw"><i></i><i></i></span><b data-i18n="theme_cinema"></b><small data-i18n="theme_cinema_d"></small></button>
+        <button type="button" class="theme" role="radio" data-pick="amber"><span class="sw"><i></i><i></i></span><b data-i18n="theme_amber"></b><small data-i18n="theme_amber_d"></small></button>
+        <button type="button" class="theme" role="radio" data-pick="deck"><span class="sw"><i></i><i></i></span><b data-i18n="theme_deck"></b><small data-i18n="theme_deck_d"></small></button>
+        <button type="button" class="theme" role="radio" data-pick="midnight"><span class="sw"><i></i><i></i></span><b data-i18n="theme_midnight"></b><small data-i18n="theme_midnight_d"></small></button>
+        <button type="button" class="theme" role="radio" data-pick="day"><span class="sw"><i></i><i></i></span><b data-i18n="theme_day"></b><small data-i18n="theme_day_d"></small></button>
+        <button type="button" class="theme" role="radio" data-pick="custom"><span class="sw" id="customSw"><i></i><i></i></span><b data-i18n="theme_custom"></b><small data-i18n="theme_custom_d"></small></button>
+      </div>
+      <div class="custom" id="customBox" hidden>
+        <label><input type="color" data-c="bg"><span data-i18n="o_custom_bg"></span></label>
+        <label><input type="color" data-c="text"><span data-i18n="o_custom_text"></span></label>
+        <label><input type="color" data-c="accent"><span data-i18n="o_custom_accent"></span></label>
+        <button type="button" id="customReset" data-i18n="o_custom_reset"></button>
+      </div>
+    </section>
+
+    <section class="card" id="hue">
+      <h2 data-i18n="hue_title"></h2>
+      <p class="muted" data-i18n="hue_hint"></p>
+      <label class="pctl"><span data-i18n="hue_on"></span><input type="checkbox" id="hueOn"></label>
+      <div class="row" style="margin-top:10px">
+        <input type="text" id="hueIp" spellcheck="false" data-i18n-ph="hue_ip_ph">
+        <button type="button" id="hueFind" data-i18n="hue_find"></button>
+        <button type="button" id="hueLink" class="primary" data-i18n="hue_link"></button>
+      </div>
+      <p class="muted small" id="hueMsg" aria-live="polite"></p>
+      <div id="hueLinked" hidden>
+        <h4 data-i18n="hue_lights"></h4>
+        <div class="pgrid" id="hueList"></div>
+        <div class="pgrid" style="margin-top:14px">
+          <label class="pctl"><span data-i18n="hue_bri"></span><output id="hueBriOut"></output><input type="range" id="hueBri" min="5" max="100" step="5"></label>
+          <label class="pctl"><span data-i18n="hue_speed"></span><select id="hueSpeed"><option value="400" data-i18n="hue_speed_slow"></option><option value="250" data-i18n="hue_speed_norm"></option><option value="150" data-i18n="hue_speed_fast"></option></select></label>
+          <label class="pctl"><span data-i18n="hue_restore"></span><input type="checkbox" id="hueRestore"></label>
+        </div>
+        <div class="row" style="margin-top:12px"><button type="button" id="hueForget" data-i18n="hue_forget"></button></div>
+      </div>
+    </section>
+
+    <section class="card" id="lights">
+      <h2 data-i18n="lt_title"></h2>
+      <p class="muted" data-i18n="lt_hint"></p>
+      <label class="pctl"><span data-i18n="lt_delay"></span><output id="ltDelayOut"></output><input type="range" id="ltDelay" min="0" max="1000" step="50"></label>
+      <p class="muted small" data-i18n="lt_delay_hint"></p>
+
+      <h4 data-i18n="wl_title"></h4>
+      <label class="pctl"><span data-i18n="wl_on"></span><input type="checkbox" id="wlOn"></label>
+      <div class="row" style="margin-top:10px">
+        <input type="text" id="wlIp" spellcheck="false" data-i18n-ph="wl_ip_ph">
+        <button type="button" id="wlCheck" class="primary" data-i18n="wl_check"></button>
+      </div>
+      <p class="muted small" id="wlMsg" aria-live="polite"></p>
+      <div class="pgrid" style="margin-top:14px">
+        <label class="pctl"><span data-i18n="wl_layout"></span><select id="wlLayout"><option value="around" data-i18n="wl_layout_around"></option><option value="top" data-i18n="wl_layout_top"></option><option value="single" data-i18n="wl_layout_single"></option></select></label>
+        <label class="pctl"><span data-i18n="wl_count"></span><input type="number" id="wlCount" min="0" max="1500" step="1"></label>
+        <label class="pctl"><span data-i18n="wl_offset"></span><input type="number" id="wlOffset" min="-1500" max="1500" step="1"></label>
+        <label class="pctl"><span data-i18n="wl_reverse"></span><input type="checkbox" id="wlReverse"></label>
+        <label class="pctl"><span data-i18n="hue_bri"></span><output id="wlBriOut"></output><input type="range" id="wlBri" min="5" max="100" step="5"></label>
+        <label class="pctl"><span data-i18n="hue_speed"></span><select id="wlSpeed"><option value="200" data-i18n="hue_speed_slow"></option><option value="100" data-i18n="hue_speed_norm"></option><option value="60" data-i18n="hue_speed_fast"></option></select></label>
+        <label class="pctl"><span data-i18n="wl_restore"></span><input type="checkbox" id="wlRestore"></label>
+      </div>
+      <p class="muted small" data-i18n="wl_help"></p>
+
+      <h4 data-i18n="ha_title"></h4>
+      <label class="pctl"><span data-i18n="ha_on"></span><input type="checkbox" id="haOn"></label>
+      <div class="row" style="margin-top:10px">
+        <input type="text" id="haUrl" spellcheck="false">
+        <button type="button" id="haTest" class="primary" data-i18n="ha_test"></button>
+      </div>
+      <p class="muted small" id="haMsg" aria-live="polite"></p>
+      <div class="pgrid" style="margin-top:14px">
+        <label class="pctl"><span data-i18n="hue_speed"></span><select id="haSpeed"><option value="1000" data-i18n="hue_speed_slow"></option><option value="500" data-i18n="hue_speed_norm"></option><option value="250" data-i18n="hue_speed_fast"></option></select></label>
+      </div>
+      <details style="margin-top:12px"><summary class="small" data-i18n="ha_howto"></summary>
+        <p class="muted small" data-i18n="ha_help"></p>
+        <textarea id="haYaml" rows="14" readonly spellcheck="false"></textarea>
+      </details>
+    </section>
+
+    <section class="card" id="presets">
+      <h2 data-i18n="o_presets"></h2>
+      <p class="muted" data-i18n="o_presets_hint"></p>
+      <div id="presetList"></div>
+      <div class="row"><button type="button" id="presetAdd" data-i18n="o_preset_add"></button></div>
+    </section>
 
     <section class="card">
       <h2 data-i18n="o_sites"></h2>
@@ -52,6 +155,7 @@
       <p class="muted" data-i18n="o_privacy_text"></p>
       <div class="row">
         <button type="button" id="privacy" hidden data-i18n="o_privacy"></button>
+        <button type="button" id="site" hidden data-i18n="p_site"></button>
         <button type="button" id="donate" hidden data-i18n="p_donate"></button>
       </div>
     </section>
@@ -59,7 +163,13 @@
   <div id="toast"></div>
 
   <script src="defaults.js"></script>
+  <script src="license.js"></script>
   <script src="i18n.js"></script>
+  <script src="presets.js"></script>
   <script src="options.js"></script>
+  <script src="hue.js"></script>
+  <script src="hue-options.js"></script>
+  <script src="lights.js"></script>
+  <script src="lights-options.js"></script>
 </body>
 </html>

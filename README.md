@@ -20,6 +20,7 @@ Video Glow turns your screen into a small home cinema: a soft light in the colou
 
 - **Chrome, Edge, Brave, Opera:** [Chrome Web Store](https://chromewebstore.google.com/detail/bjgbalkabocifimhnhbcnomeknpbhkea)
 - **Firefox:** [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/video-glow/)
+- **Manual install:** zip files for Chrome and Firefox on the [Releases](../../releases) page
 
 ## Features
 
@@ -52,6 +53,7 @@ Video Glow collects no data and sends nothing anywhere: everything runs on your 
 | [`extension/`](extension) | Extension source (load via `chrome://extensions` → Developer mode → Load unpacked) |
 | [`docs/`](docs) | Website, served by GitHub Pages |
 | [`store/`](store) | Store listing texts, graphics and test scripts |
+| [`tools/`](tools) | `build.py` packs the Chrome and Firefox zips |
 
 ## License
 

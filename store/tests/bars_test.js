@@ -1,5 +1,5 @@
 const fs=require('fs');
-const src=fs.readFileSync('/home/claude/video-ambilight/content.js','utf8');
+const src=fs.readFileSync('extension/content.js','utf8');
 const a=src.indexOf('function detectBars'), b=src.indexOf('// Альфа-маска');
 const detectBars=new Function(src.slice(a,b)+';return detectBars;')();
 const W=64,H=36;

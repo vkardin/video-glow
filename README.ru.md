@@ -20,6 +20,7 @@ Video Glow превращает экран в маленький кинозал:
 
 - **Chrome, Edge, Brave, Opera:** [Chrome Web Store](https://chromewebstore.google.com/detail/bjgbalkabocifimhnhbcnomeknpbhkea)
 - **Firefox:** [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/video-glow/)
+- **Вручную:** zip-архивы для Chrome и Firefox на странице [Releases](../../releases)
 
 ## Возможности
 
@@ -52,6 +53,7 @@ Video Glow превращает экран в маленький кинозал:
 | [`extension/`](extension) | Исходный код расширения (`chrome://extensions` → Режим разработчика → Загрузить распакованное) |
 | [`docs/`](docs) | Сайт, публикуется через GitHub Pages |
 | [`store/`](store) | Тексты для магазинов, графика и тестовые скрипты |
+| [`tools/`](tools) | `build.py` собирает zip для Chrome и Firefox |
 
 ## Лицензия
 

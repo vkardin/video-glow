@@ -3,12 +3,21 @@
 <head>
   <meta charset="utf-8">
   <title>Video Glow</title>
+  <script src="ui-theme.js"></script>
+  <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="page.css">
 </head>
 <body>
   <main>
     <h1><span class="logo"></span><span data-i18n="w_title"></span></h1>
     <p class="sub" data-i18n="w_sub"></p>
+
+    <section class="card" id="grant" hidden>
+      <h2 data-i18n="w_perm_title"></h2>
+      <p class="muted" data-i18n="w_perm_text"></p>
+      <button type="button" class="primary" id="allow" data-i18n="w_perm_allow"></button>
+      <p id="granted" hidden data-i18n="w_perm_done"></p>
+    </section>
 
     <section class="card">
       <ol class="steps">
