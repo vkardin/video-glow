@@ -1,82 +1,125 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Video Glow — Privacy Policy</title>
-<style>
-:root{--bg:#fff;--fg:#1c1c24;--muted:#5d6070;--line:#e3e4ec;--accent:#6b4ce6}
-@media (prefers-color-scheme:dark){:root{--bg:#14141b;--fg:#ecebf3;--muted:#9a9cb0;--line:#2d2d39;--accent:#a08bff}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:720px;margin:0 auto;padding:32px 20px 64px}
-h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:28px 0 8px}
-nav{display:flex;gap:8px;margin:16px 0 28px}
-nav a{border:1px solid var(--line);border-radius:8px;padding:4px 12px;text-decoration:none;color:var(--fg)}
-nav a:hover{border-color:var(--accent)}
-.muted{color:var(--muted)}a{color:var(--accent)}
-section{display:none}section:target{display:block}
-section.default{display:block}
-body:has(section:target) section.default{display:none}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Glow — подсветка для любого видео</title>
+  <meta name="description" content="Подсветка в цвет картинки вокруг любого видео в браузере. Бесплатное расширение для Chrome и Firefox.">
+  <meta property="og:title" content="Video Glow">
+  <meta property="og:image" content="https://vkardin.github.io/video-glow/img/glow-en.webp">
+  <link rel="icon" href="img/icon32.png">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body><main>
-<h1>Video Glow</h1>
-<p class="muted">Privacy Policy · Last updated: 2026-10-14</p>
-<nav><a href="#en">English</a><a href="#ru">Русский</a><a href="#uk">Українська</a></nav>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#"><img src="img/logo.svg" alt="">Video Glow</a>
+      <nav class="nav">
+        <a href="#features" data-i18n="nav_features"></a>
+        <a href="#install" data-i18n="nav_install"></a>
+        <a href="#donate" data-i18n="nav_donate"></a>
+      </nav>
+      <div class="langs" role="group" aria-label="Language">
+        <button type="button" data-lang="ru">RU</button>
+        <button type="button" data-lang="uk">UK</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
 
-<section id="en" class="default">
-<h2>Summary</h2>
-<p><strong>Video Glow does not collect, store on a server, transmit, sell or share any personal data.</strong></p>
-<h2>What the extension does with your data</h2>
-<ul>
-<li>It reads video frames from the page you are watching, entirely inside your browser, only to draw the glow. Frames are never saved, uploaded or sent anywhere.</li>
-<li>Your settings (glow shape, blur, per-site settings, list of disabled sites) are stored locally in your browser with <code>chrome.storage.local</code>. They are not synced or transmitted.</li>
-<li>The extension makes no network requests and uses no analytics, telemetry, advertising or remote code.</li>
-<li>The "access to all sites" permission is used only to find <code>&lt;video&gt;</code> elements on pages and draw the glow next to them. No other page content is read.</li>
-</ul>
-<h2>Changes</h2>
-<p>If this policy changes, the new version will be published on this page with an updated date.</p>
-<h2>Contact</h2>
-<p>Questions: open an issue in <a class="issues" href="#">this project's Issues tab</a> on GitHub.</p>
-</section>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1 data-i18n="hero_title"></h1>
+        <p class="lead" data-i18n="hero_lead"></p>
+        <div class="cta">
+          <a class="btn primary store-chrome" href="#install"><span data-i18n="btn_chrome"></span></a>
+          <a class="btn store-firefox" href="#install"><span data-i18n="btn_firefox"></span></a>
+        </div>
+        <p class="free" data-i18n="hero_free"></p>
+        <div class="screen"><img data-shot="glow" alt="" width="1280" height="800"></div>
+      </div>
+    </section>
 
-<section id="ru">
-<h2>Кратко</h2>
-<p><strong>Video Glow не собирает, не хранит на сервере, не передаёт, не продаёт и никому не отдаёт персональные данные.</strong></p>
-<h2>Что расширение делает с данными</h2>
-<ul>
-<li>Читает кадры видео на странице, которую вы смотрите, целиком внутри вашего браузера и только для отрисовки свечения. Кадры нигде не сохраняются и никуда не отправляются.</li>
-<li>Ваши настройки (форма свечения, размытие, настройки сайтов, список отключённых сайтов) хранятся только в вашем браузере через <code>chrome.storage.local</code>. Они не синхронизируются и не передаются.</li>
-<li>Расширение не делает сетевых запросов и не использует аналитику, телеметрию, рекламу или удалённый код.</li>
-<li>Разрешение «доступ ко всем сайтам» нужно только для того, чтобы находить элементы <code>&lt;video&gt;</code> на страницах и рисовать свечение рядом с ними. Другое содержимое страниц не читается.</li>
-</ul>
-<h2>Изменения</h2>
-<p>Если политика изменится, новая версия будет опубликована на этой странице с новой датой.</p>
-<h2>Контакты</h2>
-<p>Вопросы: откройте обращение на вкладке <a class="issues" href="#">Issues этого проекта</a> на GitHub.</p>
-</section>
+    <section class="block" id="features">
+      <div class="wrap">
+        <h2 data-i18n="f_title"></h2>
+        <p class="sub" data-i18n="f_sub"></p>
+        <div class="feat">
+          <div class="pic"><img data-shot="led" alt="" width="1280" height="800" loading="lazy"></div>
+          <div><h3 data-i18n="f_led_t"></h3><p data-i18n="f_led_d"></p></div>
+        </div>
+        <div class="feat">
+          <div class="pic"><img data-shot="room" alt="" width="1280" height="800" loading="lazy"></div>
+          <div><h3 data-i18n="f_room_t"></h3><p data-i18n="f_room_d"></p></div>
+        </div>
+        <div class="feat">
+          <div class="pic"><img data-shot="themes" alt="" width="1280" height="800" loading="lazy"></div>
+          <div><h3 data-i18n="f_themes_t"></h3><p data-i18n="f_themes_d"></p></div>
+        </div>
+      </div>
+    </section>
 
-<section id="uk">
-<h2>Коротко</h2>
-<p><strong>Video Glow не збирає, не зберігає на сервері, не передає, не продає і нікому не віддає персональні дані.</strong></p>
-<h2>Що розширення робить з даними</h2>
-<ul>
-<li>Читає кадри відео на сторінці, яку ви дивитеся, повністю всередині вашого браузера і лише для малювання сяйва. Кадри ніде не зберігаються і нікуди не надсилаються.</li>
-<li>Ваші налаштування (форма сяйва, розмиття, налаштування сайтів, список вимкнених сайтів) зберігаються лише у вашому браузері через <code>chrome.storage.local</code>. Вони не синхронізуються і не передаються.</li>
-<li>Розширення не робить мережевих запитів і не використовує аналітику, телеметрію, рекламу чи віддалений код.</li>
-<li>Дозвіл «доступ до всіх сайтів» потрібен лише для того, щоб знаходити елементи <code>&lt;video&gt;</code> на сторінках і малювати сяйво поруч із ними. Інший вміст сторінок не читається.</li>
-</ul>
-<h2>Зміни</h2>
-<p>Якщо політика зміниться, нова версія буде опублікована на цій сторінці з новою датою.</p>
-<h2>Контакти</h2>
-<p>Питання: створіть звернення на вкладці <a class="issues" href="#">Issues цього проєкту</a> на GitHub.</p>
-</section>
+    <section class="block">
+      <div class="wrap">
+        <h2 data-i18n="m_title"></h2>
+        <p class="sub" data-i18n="m_sub"></p>
+        <div class="grid">
+          <div class="tile"><b data-i18n="m1_t"></b><span data-i18n="m1_d"></span></div>
+          <div class="tile"><b data-i18n="m2_t"></b><span data-i18n="m2_d"></span></div>
+          <div class="tile"><b data-i18n="m3_t"></b><span data-i18n="m3_d"></span></div>
+          <div class="tile"><b data-i18n="m4_t"></b><span data-i18n="m4_d"></span></div>
+          <div class="tile"><b data-i18n="m5_t"></b><span data-i18n="m5_d"></span></div>
+          <div class="tile"><b data-i18n="m6_t"></b><span data-i18n="m6_d"></span></div>
+        </div>
+      </div>
+    </section>
 
-<script>
-// На GitHub Pages адрес вида user.github.io/repo/ → ссылка на github.com/user/repo/issues
-(function(){
-  var m=location.hostname.match(/^([^.]+)\.github\.io$/), p=location.pathname.split('/')[1];
-  if(m&&p){document.querySelectorAll('a.issues').forEach(function(a){a.href='https://github.com/'+m[1]+'/'+p+'/issues';});}
-})();
-</script>
-</main></body></html>
+    <section class="block" id="install">
+      <div class="wrap">
+        <h2 data-i18n="i_title"></h2>
+        <p class="sub" data-i18n="i_sub"></p>
+        <div class="install">
+          <a class="tile store store-chrome" target="_blank" rel="noopener">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#f3f2ef"/><circle cx="24" cy="24" r="9" fill="#0a0a0b"/><circle cx="24" cy="24" r="6" fill="#f3f2ef"/><path d="M24 15h19M16.2 28.5 6.7 12M31.8 28.5 22.3 45" stroke="#0a0a0b" stroke-width="2.4"/></svg>
+            <div><b>Chrome Web Store</b><span data-i18n="i_chrome"></span></div>
+          </a>
+          <a class="tile store store-firefox" target="_blank" rel="noopener">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#f3f2ef"/><path d="M24 9a15 15 0 1 0 14.6 11.6c-1.4 3-4 4.4-6.4 4.4 1.2-5.5-2.2-10-7-11.5 1.4 3-1.2 5.3-3.4 5.6-2.3.4-4 2.3-4 4.6 0 3.3 2.8 5.8 6.2 5.8" fill="none" stroke="#0a0a0b" stroke-width="2.6" stroke-linecap="round"/></svg>
+            <div><b>Firefox Add-ons</b><span data-i18n="i_firefox"></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block donate" id="donate">
+      <div class="wrap">
+        <h2 data-i18n="d_title"></h2>
+        <p class="sub" data-i18n="d_sub"></p>
+        <div class="wallets" id="wallets"></div>
+        <p class="warn" data-i18n="d_warn"></p>
+        <p class="thanks" data-i18n="d_thanks"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>© <span id="year"></span> Video Glow</span>
+      <a href="privacy.html" data-i18n="privacy"></a>
+      <a href="#donate" data-i18n="nav_donate"></a>
+    </div>
+  </footer>
+
+  <template id="wallet">
+    <div class="tile">
+      <div class="coin"><i></i><div><b></b><small></small></div></div>
+      <div class="qr"><img alt="QR" width="300" height="300"></div>
+      <div class="addr"></div>
+      <button type="button" class="btn copy"></button>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
