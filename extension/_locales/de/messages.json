@@ -1125,5 +1125,8 @@
   },
   "w_s3_key": {
     "message": "schaltet das Leuchten ein und aus"
+  },
+  "w_import_hint": {
+    "message": "Sie wechseln von einem anderen Computer? Laden Sie Ihre Sicherungsdatei, und alle Einstellungen sind zurück."
   }
 }

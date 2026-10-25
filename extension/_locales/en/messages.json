@@ -1125,5 +1125,8 @@
   },
   "w_s3_key": {
     "message": "turns the glow on and off"
+  },
+  "w_import_hint": {
+    "message": "Moving from another computer? Load your backup file and all your settings come back."
   }
 }

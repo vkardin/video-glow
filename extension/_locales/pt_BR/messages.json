@@ -1125,5 +1125,8 @@
   },
   "w_s3_key": {
     "message": "liga e desliga o brilho"
+  },
+  "w_import_hint": {
+    "message": "Vindo de outro computador? Carregue seu arquivo de backup e todas as configurações voltam."
   }
 }

@@ -56,6 +56,33 @@ document.getElementById('open').addEventListener('click', () => chrome.runtime.o
   });
 }
 
+// Перенос с другого компьютера: файл из «Экспорт настроек» (тот же формат и та же проверка, что в настройках)
+{
+  const msg = document.getElementById('importMsg');
+  const say = (key) => { msg.textContent = self.vgT(key); msg.hidden = false; };
+  const file = document.getElementById('importFile');
+  document.getElementById('importBtn').addEventListener('click', () => file.click());
+  file.addEventListener('change', () => {
+    const f = file.files && file.files[0];
+    file.value = '';
+    if (!f) return;
+    const r = new FileReader();
+    r.onload = () => {
+      try {
+        const clean = self.VG_sanitizeBackup(JSON.parse(String(r.result)));
+        if (!Object.keys(clean).length) throw new Error('empty');
+        chrome.storage.local.set(clean, () => {
+          say('o_import_ok');
+          document.querySelectorAll('#styles button').forEach((b) => b.classList.toggle('active',
+            b.dataset.style === (clean.autoPreset ? 'auto' : clean.glowStyle === 'led' ? 'led' : '')));
+        });
+      } catch (e) { say('o_import_err'); }
+    };
+    r.onerror = () => say('o_import_err');
+    r.readAsText(f);
+  });
+}
+
 // Доступ к сайтам: блок показываем, если он ещё не выдан (необязательные права в Chrome/Edge,
 // либо пользователь отключил доступ в Firefox). Если уже выдан — блок скрыт.
 {

@@ -49,6 +49,12 @@
         <button type="button" data-style="cinema" data-i18n="preset_cinema"></button>
         <button type="button" data-style="led" data-i18n="p_style_led"></button>
       </div>
+      <p class="muted" style="margin:16px 0 8px" data-i18n="w_import_hint"></p>
+      <div class="row">
+        <button type="button" id="importBtn" data-i18n="o_import"></button>
+        <span id="importMsg" class="muted" hidden></span>
+      </div>
+      <input type="file" id="importFile" accept=".json,application/json" hidden>
     </section>
 
     <section class="card wstep">
