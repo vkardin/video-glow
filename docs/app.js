@@ -20,6 +20,7 @@ const T = {
   ru: {
     title: 'Video Glow — подсветка для любого видео',
     fb_title: 'Есть идея или нашли ошибку?', fb_sub: 'Расскажите, чего не хватает. Лучшие идеи попадут в следующие версии.', fb_btn: 'Написать',
+    lv_title: 'Ещё от автора: Leveler', lv_sub: 'Бесплатное расширение для Chrome и Firefox: выравнивает громкость любого видео. Тихие диалоги громче, взрывы тише.', lv_btn: 'Открыть Leveler',
     nav_features: 'Возможности', nav_install: 'Установить', nav_donate: 'Поддержать', nav_support: 'Обратная связь',
     hero_title: 'Подсветка в цвет картинки вокруг любого видео',
     hero_lead: 'Video Glow превращает экран в маленький кинозал: вокруг видео загорается мягкий свет, который повторяет цвета кадра.',
@@ -48,6 +49,7 @@ const T = {
   uk: {
     title: 'Video Glow — підсвітка для будь-якого відео',
     fb_title: 'Маєте ідею чи знайшли помилку?', fb_sub: 'Розкажіть, чого бракує. Найкращі ідеї потраплять у наступні версії.', fb_btn: 'Написати',
+    lv_title: 'Ще від автора: Leveler', lv_sub: 'Безкоштовне розширення для Chrome і Firefox: вирівнює гучність будь-якого відео. Тихі діалоги гучніше, вибухи тихіше.', lv_btn: 'Відкрити Leveler',
     nav_features: 'Можливості', nav_install: 'Встановити', nav_donate: 'Підтримати', nav_support: 'Зворотний зв’язок',
     hero_title: 'Підсвітка в колір картинки навколо будь-якого відео',
     hero_lead: 'Video Glow перетворює екран на маленький кінозал: навколо відео спалахує м’яке світло, що повторює кольори кадру.',
@@ -76,6 +78,7 @@ const T = {
   en: {
     title: 'Video Glow — ambient light for any video',
     fb_title: 'Have an idea or found a bug?', fb_sub: 'Tell me what’s missing. The best ideas go into the next versions.', fb_btn: 'Write to us',
+    lv_title: 'Also by the author: Leveler', lv_sub: 'A free Chrome and Firefox extension that evens out the loudness of any video. Quiet dialogue louder, explosions softer.', lv_btn: 'Open Leveler',
     nav_features: 'Features', nav_install: 'Install', nav_donate: 'Donate', nav_support: 'Feedback',
     hero_title: 'Ambient light around any video',
     hero_lead: 'Video Glow turns your screen into a small cinema: a soft light that follows the colours of the picture glows around every video.',

@@ -55,6 +55,10 @@ Video Glow перетворює екран на маленький кіноза�
 | [`store/`](store) | Тексти для магазинів, графіка й тестові скрипти |
 | [`tools/`](tools) | `build.py` збирає zip для Chrome і Firefox |
 
+## Ще від автора
+
+[Leveler](https://vkardin.github.io/leveler/) — безкоштовне розширення для Chrome і Firefox, яке вирівнює гучність будь-якого відео: тихі діалоги гучніше, вибухи тихіше.
+
 ## Ліцензія
 
 [MIT](LICENSE) © vkardin
