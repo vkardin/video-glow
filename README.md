@@ -57,7 +57,8 @@ Video Glow collects no data and sends nothing anywhere: everything runs on your 
 
 ## More from the author
 
-[Leveler](https://vkardin.github.io/leveler/) is a free Chrome and Firefox extension that evens out the loudness of any video: quiet dialogue louder, explosions softer.
+- [Leveler](https://vkardin.github.io/leveler/): a free Chrome and Firefox extension that evens out the loudness of any video: quiet dialogue louder, explosions softer.
+- [Snapt](https://vkardin.github.io/snapt/): a fast, open-source screenshot tool for Windows, macOS and Linux.
 
 ## License
 
