@@ -57,7 +57,8 @@ Video Glow перетворює екран на маленький кіноза�
 
 ## Ще від автора
 
-[Leveler](https://vkardin.github.io/leveler/) — безкоштовне розширення для Chrome і Firefox, яке вирівнює гучність будь-якого відео: тихі діалоги гучніше, вибухи тихіше.
+- [Leveler](https://vkardin.github.io/leveler/): безкоштовне розширення для Chrome і Firefox, яке вирівнює гучність будь-якого відео: тихі діалоги гучніше, вибухи тихіше.
+- [Snapt](https://vkardin.github.io/snapt/uk/): швидкі скриншоти з відкритим кодом для Windows, macOS і Linux.
 
 ## Ліцензія
 

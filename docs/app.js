@@ -20,7 +20,7 @@ const T = {
   ru: {
     title: 'Video Glow — подсветка для любого видео',
     fb_title: 'Есть идея или нашли ошибку?', fb_sub: 'Расскажите, чего не хватает. Лучшие идеи попадут в следующие версии.', fb_btn: 'Написать',
-    lv_title: 'Ещё от автора: Leveler', lv_sub: 'Бесплатное расширение для Chrome и Firefox: выравнивает громкость любого видео. Тихие диалоги громче, взрывы тише.', lv_btn: 'Открыть Leveler',
+    more_title: 'Ещё от автора', more_sub: 'Video Glow делает один разработчик. Вот ещё два бесплатных инструмента с открытым кодом: для звука в видео и для скриншотов.', more_site: 'Сайт', more_dl: 'Скачать', lv_kind: 'Расширение для Chrome, Edge и Firefox', lv_desc: 'Выравнивает громкость любого видео: тихие диалоги громче, взрывы тише. Можно смотреть фильм ночью и не тянуться к регулятору громкости.', lv_c1: 'Ночной режим', lv_c2: 'Громкость до 400%', lv_c3: 'Эквалайзер', lv_c4: 'Скорость 0,25–4×', sn_kind: 'Программа для Windows, macOS и Linux', sn_desc: 'Быстрые и лёгкие скриншоты: выделите область, добавьте стрелку или подпись и скопируйте. Без аккаунтов и облака.', sn_c1: 'Мгновенно', sn_c2: 'Точное выделение', sn_c3: 'Пометки', sn_c4: 'Приватно', sn_url: 'https://vkardin.github.io/snapt/ru/',
     nav_features: 'Возможности', nav_install: 'Установить', nav_donate: 'Поддержать', nav_support: 'Обратная связь',
     hero_title: 'Подсветка в цвет картинки вокруг любого видео',
     hero_lead: 'Video Glow превращает экран в маленький кинозал: вокруг видео загорается мягкий свет, который повторяет цвета кадра.',
@@ -49,7 +49,7 @@ const T = {
   uk: {
     title: 'Video Glow — підсвітка для будь-якого відео',
     fb_title: 'Маєте ідею чи знайшли помилку?', fb_sub: 'Розкажіть, чого бракує. Найкращі ідеї потраплять у наступні версії.', fb_btn: 'Написати',
-    lv_title: 'Ще від автора: Leveler', lv_sub: 'Безкоштовне розширення для Chrome і Firefox: вирівнює гучність будь-якого відео. Тихі діалоги гучніше, вибухи тихіше.', lv_btn: 'Відкрити Leveler',
+    more_title: 'Ще від автора', more_sub: 'Video Glow робить один розробник. Ось ще два безкоштовні інструменти з відкритим кодом: для звуку у відео та для скриншотів.', more_site: 'Сайт', more_dl: 'Завантажити', lv_kind: 'Розширення для Chrome, Edge і Firefox', lv_desc: 'Вирівнює гучність будь-якого відео: тихі діалоги гучніше, вибухи тихіше. Можна дивитися фільм уночі й не тягнутися до регулятора гучності.', lv_c1: 'Нічний режим', lv_c2: 'Гучність до 400%', lv_c3: 'Еквалайзер', lv_c4: 'Швидкість 0,25–4×', sn_kind: 'Програма для Windows, macOS і Linux', sn_desc: 'Швидкі й легкі скриншоти: виділіть область, додайте стрілку чи підпис і скопіюйте. Без акаунтів і хмари.', sn_c1: 'Миттєво', sn_c2: 'Точне виділення', sn_c3: 'Позначки', sn_c4: 'Приватно', sn_url: 'https://vkardin.github.io/snapt/uk/',
     nav_features: 'Можливості', nav_install: 'Встановити', nav_donate: 'Підтримати', nav_support: 'Зворотний зв’язок',
     hero_title: 'Підсвітка в колір картинки навколо будь-якого відео',
     hero_lead: 'Video Glow перетворює екран на маленький кінозал: навколо відео спалахує м’яке світло, що повторює кольори кадру.',
@@ -78,7 +78,7 @@ const T = {
   en: {
     title: 'Video Glow — ambient light for any video',
     fb_title: 'Have an idea or found a bug?', fb_sub: 'Tell me what’s missing. The best ideas go into the next versions.', fb_btn: 'Write to us',
-    lv_title: 'Also by the author: Leveler', lv_sub: 'A free Chrome and Firefox extension that evens out the loudness of any video. Quiet dialogue louder, explosions softer.', lv_btn: 'Open Leveler',
+    more_title: 'More from the author', more_sub: 'Video Glow is made by one developer. Here are two more free, open-source tools: one for video sound and one for screenshots.', more_site: 'Website', more_dl: 'Download', lv_kind: 'Extension for Chrome, Edge and Firefox', lv_desc: 'Evens out the loudness of any video: quiet dialogue gets louder, explosions get softer, so you can watch a movie at night without reaching for the volume.', lv_c1: 'Night mode', lv_c2: 'Volume up to 400%', lv_c3: 'Equalizer', lv_c4: 'Speed 0.25–4×', sn_kind: 'App for Windows, macOS and Linux', sn_desc: 'Fast, lightweight screenshots: select an area, add an arrow or a caption, copy. No accounts, no cloud.', sn_c1: 'Instant', sn_c2: 'Precise selection', sn_c3: 'Annotate', sn_c4: 'Private', sn_url: 'https://vkardin.github.io/snapt/',
     nav_features: 'Features', nav_install: 'Install', nav_donate: 'Donate', nav_support: 'Feedback',
     hero_title: 'Ambient light around any video',
     hero_lead: 'Video Glow turns your screen into a small cinema: a soft light that follows the colours of the picture glows around every video.',
@@ -128,6 +128,7 @@ function apply() {
     if (v != null) el.textContent = v;
   });
   document.title = (window.PAGE_T && PAGE_T[lang].title) || t.title;
+  document.querySelectorAll('[data-href]').forEach(a => { if (t[a.dataset.href]) a.href = t[a.dataset.href]; });
   document.querySelectorAll('[data-shot]').forEach(img => { img.src = `img/${img.dataset.shot}-${lang}.webp`; });
   document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
   document.querySelectorAll('[data-ph]').forEach(el => {
@@ -221,3 +222,10 @@ renderWallets();
 setStores();
 setupFeedback();
 apply();
+
+// Переливание подсветки только пока превью на экране
+(() => {
+  const el = document.querySelector('.screen');
+  if (!el || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e]) => el.classList.toggle('paused', !e.isIntersecting)).observe(el);
+})();
