@@ -180,3 +180,11 @@ input[type=range]::-moz-range-thumb { width: 14px; height: 14px; border: 0; bord
 .custom input[type=color]::-webkit-color-swatch { border: 0; border-radius: 50%; }
 .custom input[type=color]::-moz-color-swatch { border: 0; border-radius: 50%; }
 .custom button { margin-left: auto; padding: 5px 12px; font-size: 12px; }
+
+/* Сенсорные экраны (Firefox для Android): элементы крупнее под палец */
+@media (pointer: coarse) {
+  button, .btn { min-height: 40px; }
+  :root body input[type=range]::-webkit-slider-thumb { width: 24px; height: 24px; border-radius: 50%; }
+  :root body input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; }
+  :root body input[type=range] { margin-top: 16px; margin-bottom: 16px; }
+}

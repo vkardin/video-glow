@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Сборка Video Glow для Chrome и Firefox из одной папки исходников.
+"""Сборка Video Glow для Chrome (и Opera) и Firefox (ПК и Android) из одной папки исходников.
 
     python3 tools/build.py <папка-исходников> <версия> <папка-вывода>
 
@@ -17,6 +17,8 @@ GECKO = {
     "strict_min_version": "128.0",
     "data_collection_permissions": {"required": ["none"]},
 }
+# Firefox для Android: первая версия с полноценным MV3 и scripting
+GECKO_ANDROID = {"strict_min_version": "128.0"}
 
 
 def fail(msg):
@@ -31,7 +33,7 @@ def firefox_manifest(m, src):
         # в Chrome воркер сам подгружает их через importScripts
         extra = [f for f in ("hue.js", "hue-bg.js", "lights.js", "lights-bg.js") if os.path.isfile(os.path.join(src, f))]
         m["background"] = {"scripts": ["defaults.js", "license.js"] + extra + [sw]}
-    m["browser_specific_settings"] = {"gecko": GECKO}
+    m["browser_specific_settings"] = {"gecko": GECKO, "gecko_android": GECKO_ANDROID}
     return m
 
 

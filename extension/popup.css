@@ -299,3 +299,20 @@ button.link:hover { color: var(--text); }
 [data-theme="deck"] .brand .pro-badge { background: var(--accent); border-color: var(--accent); color: #fff; }
 [data-theme="deck"] #presetSave input { border-color: var(--line); background: #fff; }
 [data-theme="amber"] button.icon, [data-theme="deck"] button.icon { border-color: transparent; background: none; }
+
+/* Сенсорные экраны (Firefox для Android): popup открывается во всю ширину, элементы крупнее под палец */
+@media (pointer: coarse) {
+  body:not(.panel) { width: auto; max-width: 560px; margin: 0 auto; font-size: 14px; }
+  .quick button.q { width: 40px; height: 36px; }
+  button.icon { padding: 8px 10px; }
+  :root body input[type=range] { margin: 18px 0 14px; }
+  :root body input[type=range]::-webkit-slider-thumb { width: 24px; height: 24px; border-radius: 50%; }
+  :root body input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; }
+  select { padding-top: 8px; padding-bottom: 8px; font-size: 14px; }
+  .check { gap: 12px; padding: 4px 0; }
+  :root .check input { width: 20px; height: 20px; }
+  .seg button, .chip { min-height: 40px; }
+  :root .switch { width: 46px; height: 28px; }
+  :root .switch span::before { width: 22px; height: 22px; }
+  :root .switch input:checked + span::before { transform: translateX(18px); }
+}
