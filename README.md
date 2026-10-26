@@ -55,6 +55,10 @@ Video Glow collects no data and sends nothing anywhere: everything runs on your 
 | [`store/`](store) | Store listing texts, graphics and test scripts |
 | [`tools/`](tools) | `build.py` packs the Chrome and Firefox zips |
 
+## More from the author
+
+[Leveler](https://vkardin.github.io/leveler/) is a free Chrome and Firefox extension that evens out the loudness of any video: quiet dialogue louder, explosions softer.
+
 ## License
 
 [MIT](LICENSE) © vkardin
