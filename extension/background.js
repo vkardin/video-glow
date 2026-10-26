@@ -45,8 +45,11 @@ async function ensureTrialStart() {
 const norm = (h) => String(h || '').toLowerCase().replace(/^www\./, '');
 
 const setBadge = (enabled) => {
-  api.action.setBadgeText({ text: enabled ? '' : 'OFF' });
-  api.action.setBadgeBackgroundColor({ color: '#666666' });
+  if (!api.action || !api.action.setBadgeText) return;   // на мобильных значка может не быть
+  try {
+    api.action.setBadgeText({ text: enabled ? '' : 'OFF' });
+    api.action.setBadgeBackgroundColor({ color: '#666666' });
+  } catch (e) { /* ignore */ }
 };
 
 async function refreshBadge() {
@@ -119,7 +122,8 @@ api.storage.onChanged.addListener((changes, area) => {
   if (changes.licenseKey) revalidateLicense();
 });
 
-api.commands.onCommand.addListener(async (command) => {
+// Firefox для Android: горячих клавиш нет, api.commands отсутствует
+if (api.commands) api.commands.onCommand.addListener(async (command) => {
   if (command === 'toggle-glow') {
     const { enabled = true } = await api.storage.local.get('enabled');
     await api.storage.local.set({ enabled: !(enabled !== false) });

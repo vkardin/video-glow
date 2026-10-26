@@ -358,12 +358,15 @@
       for (const k of LIC) next[k] = state[k];
       store.set(next, () => { state = next; renderSites(); renderCustom(); renderPro(); });
     });
+    // Firefox для Android: горячих клавиш нет — карточку прячем
+    if (!(typeof browser !== 'undefined' ? browser : chrome).commands) $('#shortcutsCard').hidden = true;
     $('#shortcuts').addEventListener('click', () => {
-      // Firefox: openShortcutSettings; Edge: edge://; Chrome: chrome://
+      // Firefox: openShortcutSettings; Edge: edge://; Opera: opera://; Chrome: chrome://
       const api = typeof browser !== 'undefined' ? browser : chrome;
       if (api.commands && api.commands.openShortcutSettings) { api.commands.openShortcutSettings(); return; }
-      const edge = /\bEdg\//.test(navigator.userAgent);
-      chrome.tabs.create({ url: (edge ? 'edge' : 'chrome') + '://extensions/shortcuts' });
+      const ua = navigator.userAgent;
+      const scheme = /\bEdg\//.test(ua) ? 'edge' : /\bOPR\//.test(ua) ? 'opera' : 'chrome';
+      chrome.tabs.create({ url: scheme + '://extensions/shortcuts' });
     });
     if (CFG.PRIVACY_URL) {
       const b = $('#privacy');

@@ -4,7 +4,7 @@
   "name": "__MSG_extName__",
   "short_name": "Video Glow",
   "homepage_url": "https://vkardin.github.io/video-glow/",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "__MSG_extDescription__",
   "minimum_chrome_version": "110",
   "permissions": ["storage", "scripting"],
