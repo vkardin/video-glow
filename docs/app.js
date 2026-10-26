@@ -222,3 +222,10 @@ renderWallets();
 setStores();
 setupFeedback();
 apply();
+
+// Переливание подсветки только пока превью на экране
+(() => {
+  const el = document.querySelector('.screen');
+  if (!el || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e]) => el.classList.toggle('paused', !e.isIntersecting)).observe(el);
+})();

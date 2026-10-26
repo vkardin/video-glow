@@ -39,10 +39,15 @@ img { max-width: 100%; height: auto; display: block; }
 .cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .free { color: var(--muted); font-size: 13px; margin-top: 14px; }
 .screen { position: relative; margin: 56px auto 0; max-width: 960px; }
-.screen::before { content: ""; position: absolute; inset: 6% 4%; background: conic-gradient(from 200deg, #ff4d6d, #ffb347, #5ee7c7, #6c8cff, #c46bff, #ff4d6d); filter: blur(70px); opacity: .55; z-index: 0; animation: hue 14s linear infinite; }
+.screen::before, .screen::after { content: ""; position: absolute; inset: 6% 4%; filter: blur(70px); z-index: 0; pointer-events: none; will-change: transform, opacity; }
+.screen::before { background: conic-gradient(from 200deg, #ff4d6d, #ffb347, #5ee7c7, #6c8cff, #c46bff, #ff4d6d); opacity: .55; animation: glow-a 9s ease-in-out infinite alternate; }
+.screen::after { background: conic-gradient(from 20deg, #6c8cff, #c46bff, #ff4d6d, #ffb347, #5ee7c7, #6c8cff); opacity: 0; animation: glow-b 13s ease-in-out infinite alternate; }
 .screen img { position: relative; z-index: 1; border-radius: 14px; border: 1px solid var(--line); }
-@keyframes hue { to { filter: blur(70px) hue-rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) { .screen::before { animation: none; } }
+/* Только transform и opacity: размытый слой рисуется один раз, дальше его двигает видеокарта */
+@keyframes glow-a { to { transform: translate(1.5%, -1%) scale(1.04); opacity: .4; } }
+@keyframes glow-b { to { transform: translate(-1.5%, 1%) scale(1.03); opacity: .5; } }
+.screen.paused::before, .screen.paused::after { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .screen::before, .screen::after { animation: none; } }
 
 /* Секции */
 section.block { padding: 72px 0; border-top: 1px solid var(--line); }
