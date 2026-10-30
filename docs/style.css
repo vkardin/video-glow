@@ -95,6 +95,8 @@ footer.foot a { color: var(--muted); }
 /* Ещё от автора */
 .apps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 .app { --a: #2fbf86; --b: #7cf0c0; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column; transition: transform .15s, box-shadow .15s, border-color .15s; }
+.app-floatr { --a: #0d9488; --b: #5eead4; }
+.app-uni { --a: #7aa7ff; --b: #d99a5b; }
 .app-snapt { --a: #8b5cf6; --b: #c4b5fd; }
 .app:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--a) 45%, var(--line)); box-shadow: 0 18px 44px color-mix(in srgb, var(--a) 18%, transparent); }
 .app .shot { display: block; position: relative; background: #0b0b0d; }

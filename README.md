@@ -58,7 +58,9 @@ Video Glow collects no data and sends nothing anywhere: everything runs on your 
 ## More from the author
 
 - [Leveler](https://vkardin.github.io/leveler/): a free Chrome and Firefox extension that evens out the loudness of any video: quiet dialogue louder, explosions softer. [Chrome Web Store](https://chromewebstore.google.com/detail/phbjpipnbhffcegccfbbfabbhmgaelko)
+- [Floatr](https://vkardin.github.io/floatr/): a floating video player for Chrome and Firefox that keeps subtitles and remembers where you stopped.
 - [Snapt](https://vkardin.github.io/snapt/): a fast, open-source screenshot tool for Windows, macOS and Linux.
+- [UNI](https://vkardin.github.io/uni-homebot/): your home server in Telegram, with apps, monitoring and a mini app.
 
 ## License
 

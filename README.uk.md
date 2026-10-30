@@ -58,7 +58,9 @@ Video Glow перетворює екран на маленький кіноза�
 ## Ще від автора
 
 - [Leveler](https://vkardin.github.io/leveler/): безкоштовне розширення для Chrome і Firefox, яке вирівнює гучність будь-якого відео: тихі діалоги гучніше, вибухи тихіше. [Chrome Web Store](https://chromewebstore.google.com/detail/phbjpipnbhffcegccfbbfabbhmgaelko)
+- [Floatr](https://vkardin.github.io/floatr/): плаваючий відеоплеєр для Chrome і Firefox, який зберігає субтитри й пам’ятає, де ви зупинилися.
 - [Snapt](https://vkardin.github.io/snapt/uk/): швидкі скриншоти з відкритим кодом для Windows, macOS і Linux.
+- [UNI](https://vkardin.github.io/uni-homebot/): домашній сервер у Telegram, із застосунками, моніторингом і міні-застосунком.
 
 ## Ліцензія
 
