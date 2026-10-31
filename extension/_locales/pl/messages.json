@@ -1128,5 +1128,26 @@
   },
   "w_import_hint": {
     "message": "Przenosisz się z innego komputera? Wczytaj plik kopii zapasowej, a wszystkie ustawienia wrócą."
+  },
+  "p_lite": {
+    "message": "Tryb lekki"
+  },
+  "p_lite_auto": {
+    "message": "Auto"
+  },
+  "p_lite_on": {
+    "message": "Wł."
+  },
+  "p_lite_off": {
+    "message": "Wył."
+  },
+  "p_lite_hint": {
+    "message": "Dla komputerów bez akceleracji grafiki (często Linux + Firefox): poświata odświeża się rzadziej, ciężkie efekty są pomijane. „Auto” włącza go samo, gdy trzeba."
+  },
+  "p_zoompan": {
+    "message": "Powiększanie i przesuwanie obrazu"
+  },
+  "p_zoompan_hint": {
+    "message": "Alt + kółko — powiększ, Alt + przeciągnij — przesuń, Alt + dwuklik — reset"
   }
 }

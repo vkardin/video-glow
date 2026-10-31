@@ -56,6 +56,8 @@ self.VG_DEFAULTS = {
   fillBars: true,         // заливать чёрные полосы внутри блока плеера (вне полного экрана)
   adaptive: true,         // автоматически снижать частоту, если слабое устройство не успевает
   ecoBattery: true,       // при заряде < 30% без зарядки ограничивать частоту до 15 к/с
+  lite: 'auto',           // лёгкий режим для компьютеров без видеоускорения: 'auto' | 'on' | 'off'
+  zoomPan: true,          // зум и сдвиг картинки: Alt + колесо, Alt + перетаскивание, Alt + двойной щелчок — сброс
   minWidth: 320,          // игнорировать видео, у которого и ширина, и высота меньше этого (превью, баннеры), px
 
   // ───── Pro ─────
@@ -134,7 +136,7 @@ self.VG_PRO_KEYS = ['barsMode', 'barT', 'barB', 'barL', 'barR', 'barsHide', 'bar
 
 // Какие настройки могут отличаться для отдельного сайта (всё, кроме глобальных).
 self.VG_SCOPED = Object.keys(self.VG_DEFAULTS).filter(
-  (k) => !['enabled', 'disabledHosts', 'siteProfiles', 'nightOn', 'nightFrom', 'nightTo', 'nightStrength', 'hueOn', 'wledOn', 'haOn']
+  (k) => !['enabled', 'disabledHosts', 'siteProfiles', 'nightOn', 'nightFrom', 'nightTo', 'nightStrength', 'hueOn', 'wledOn', 'haOn', 'lite']
     .concat(self.VG_HUE_KEYS, self.VG_LICENSE_KEYS, self.VG_PANEL_KEYS, ['userPresets', 'presetOverrides']).includes(k)
 );
 

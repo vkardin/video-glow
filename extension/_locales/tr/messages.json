@@ -1128,5 +1128,26 @@
   },
   "w_import_hint": {
     "message": "Başka bir bilgisayardan mı geçiyorsunuz? Yedek dosyanızı yükleyin, tüm ayarlarınız geri gelsin."
+  },
+  "p_lite": {
+    "message": "Hafif mod"
+  },
+  "p_lite_auto": {
+    "message": "Otomatik"
+  },
+  "p_lite_on": {
+    "message": "Açık"
+  },
+  "p_lite_off": {
+    "message": "Kapalı"
+  },
+  "p_lite_hint": {
+    "message": "Grafik hızlandırması olmayan bilgisayarlar için (çoğu zaman Linux + Firefox): ışıma daha seyrek güncellenir, ağır efektler atlanır. Otomatik, gerektiğinde kendisi açar."
+  },
+  "p_zoompan": {
+    "message": "Görüntüyü yakınlaştır ve kaydır"
+  },
+  "p_zoompan_hint": {
+    "message": "Yakınlaştırmak için Alt + tekerlek, kaydırmak için Alt + sürükle, sıfırlamak için Alt + çift tıklama"
   }
 }

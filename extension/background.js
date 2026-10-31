@@ -13,7 +13,7 @@ async function syncScripts() {
   if (!origins.length) return;
   try {
     await api.scripting.registerContentScripts([{
-      id: 'vg', matches: origins, js: ['defaults.js', 'content.js'],
+      id: 'vg', matches: origins, js: ['defaults.js', 'presets.js', 'zoompan.js', 'content.js'],
       allFrames: true, matchAboutBlank: true, runAt: 'document_idle', persistAcrossSessions: true
     }]);
   } catch (e) { /* неподходящий шаблон — пропускаем */ }
@@ -67,7 +67,7 @@ async function injectIntoOpenTabs() {
     try {
       await api.scripting.executeScript({
         target: { tabId: tab.id, allFrames: true },
-        files: ['defaults.js', 'content.js']
+        files: ['defaults.js', 'presets.js', 'zoompan.js', 'content.js']
       });
     } catch (e) { /* служебные страницы, магазин и т.п. — пропускаем */ }
   }

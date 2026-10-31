@@ -1128,5 +1128,26 @@
   },
   "w_import_hint": {
     "message": "Vindo de outro computador? Carregue seu arquivo de backup e todas as configurações voltam."
+  },
+  "p_lite": {
+    "message": "Modo leve"
+  },
+  "p_lite_auto": {
+    "message": "Auto"
+  },
+  "p_lite_on": {
+    "message": "Ligado"
+  },
+  "p_lite_off": {
+    "message": "Desligado"
+  },
+  "p_lite_hint": {
+    "message": "Para computadores sem aceleração gráfica (muitas vezes Linux + Firefox): o brilho atualiza com menos frequência e os efeitos pesados são desativados. «Auto» liga sozinho quando preciso."
+  },
+  "p_zoompan": {
+    "message": "Zoom e movimento da imagem"
+  },
+  "p_zoompan_hint": {
+    "message": "Alt + roda para zoom, Alt + arrastar para mover, Alt + clique duplo para redefinir"
   }
 }

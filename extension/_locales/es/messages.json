@@ -1128,5 +1128,26 @@
   },
   "w_import_hint": {
     "message": "¿Vienes de otro ordenador? Carga tu copia de seguridad y recuperarás todos tus ajustes."
+  },
+  "p_lite": {
+    "message": "Modo ligero"
+  },
+  "p_lite_auto": {
+    "message": "Auto"
+  },
+  "p_lite_on": {
+    "message": "Sí"
+  },
+  "p_lite_off": {
+    "message": "No"
+  },
+  "p_lite_hint": {
+    "message": "Para equipos sin aceleración gráfica (a menudo Linux + Firefox): el brillo se actualiza con menos frecuencia y se omiten los efectos pesados. «Auto» lo activa solo cuando hace falta."
+  },
+  "p_zoompan": {
+    "message": "Zoom y desplazamiento de la imagen"
+  },
+  "p_zoompan_hint": {
+    "message": "Alt + rueda para acercar, Alt + arrastrar para mover, Alt + doble clic para restablecer"
   }
 }

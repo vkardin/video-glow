@@ -1128,5 +1128,26 @@
   },
   "w_import_hint": {
     "message": "Sie wechseln von einem anderen Computer? Laden Sie Ihre Sicherungsdatei, und alle Einstellungen sind zurück."
+  },
+  "p_lite": {
+    "message": "Leichter Modus"
+  },
+  "p_lite_auto": {
+    "message": "Auto"
+  },
+  "p_lite_on": {
+    "message": "An"
+  },
+  "p_lite_off": {
+    "message": "Aus"
+  },
+  "p_lite_hint": {
+    "message": "Für Computer ohne Grafikbeschleunigung (oft Linux + Firefox): Das Leuchten wird seltener aktualisiert, aufwendige Effekte werden ausgelassen. „Auto“ schaltet ihn bei Bedarf selbst ein."
+  },
+  "p_zoompan": {
+    "message": "Bild zoomen und verschieben"
+  },
+  "p_zoompan_hint": {
+    "message": "Alt + Mausrad zum Zoomen, Alt + Ziehen zum Verschieben, Alt + Doppelklick zum Zurücksetzen"
   }
 }
