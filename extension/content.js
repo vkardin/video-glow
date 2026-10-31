@@ -186,6 +186,8 @@
     ['enabled', 'pageGlow', 'fullscreenGlow', 'fullscreenFill', 'fillBars', 'seamless',
       'cropBars', 'adaptive', 'ecoBattery', 'hoverButton', 'fsSame'].forEach((k) => { o[k] = o[k] !== false; });
     o.dim = !!o.dim;
+    o.zoomPan = o.zoomPan !== false;
+    if (!['auto', 'on', 'off'].includes(o.lite)) o.lite = D.lite;
     ['pauseMode', 'fsPauseMode'].forEach((k) => {
       if (!['fade', 'hold', 'delay'].includes(o[k])) o[k] = D[k];
     });
@@ -215,7 +217,7 @@
   }
 
   // Максимальная частота обновления с учётом режима экономии на батарее.
-  const fpsLimit = () => (battLow ? Math.min(settings.fps, 15) : settings.fps);
+  const fpsLimit = () => Math.min(battLow ? Math.min(settings.fps, 15) : settings.fps, liteActive() ? 20 : 120);
 
   function updateBattery() {
     battLow = !!(battery && settings.ecoBattery && !battery.charging && battery.level < 0.3);
@@ -244,7 +246,7 @@
     const r = box || v.getBoundingClientRect();
     const vw = v.videoWidth, vh = v.videoHeight;
     if (!vw || !vh || !r.width || !r.height) return r;
-    const fit = getComputedStyle(v).objectFit;
+    const fit = (v.ownerDocument.defaultView || window).getComputedStyle(v).objectFit;
     if (fit === 'fill' || fit === 'cover') return r;
     let k = Math.min(r.width / vw, r.height / vh);
     if (fit === 'none') k = 1;
@@ -254,6 +256,114 @@
     const top = r.top + (r.height - h) / 2;
     return { left, top, right: left + w, bottom: top + h, width: w, height: h };
   }
+
+  // ── видео в другом окне (Document Picture-in-Picture: Video Drift, плееры сайтов) ──
+  function foreignWin(v) {
+    const d = v.ownerDocument;
+    return d && d !== document ? d.defaultView : null;
+  }
+  // Где на экране начинается содержимое окна: рамка по бокам и снизу одинаковая, заголовок и панели сверху.
+  function winOrigin(w, z) {
+    const side = Math.max(0, (w.outerWidth - w.innerWidth * z) / 2);
+    return { x: w.screenX + side, y: w.screenY + Math.max(0, w.outerHeight - w.innerHeight * z - side) };
+  }
+  // Рамка видео из выносного окна в координатах нашей страницы — по положению обоих окон на экране.
+  // Масштаб страницы: отношение devicePixelRatio (выносное окно масштаба страницы не наследует).
+  function foreignBox(v, w) {
+    try {
+      if (w.closed) return null;
+      const r = v.getBoundingClientRect();
+      const zm = (window.devicePixelRatio || 1) / (w.devicePixelRatio || 1);
+      const a = winOrigin(w, 1), b = winOrigin(window, zm);
+      const left = (a.x + r.left - b.x) / zm, top = (a.y + r.top - b.y) / zm;
+      const width = r.width / zm, height = r.height / zm;
+      if (!(width > 0 && height > 0)) return null;
+      return { left, top, right: left + width, bottom: top + height, width, height };
+    } catch (e) { return null; }
+  }
+
+  // ── привязка слоёв к странице: при прокрутке браузер двигает их вместе с видео сам ──
+  // (слой position:fixed догонял видео скриптом на следующем кадре — свечение отставало)
+  const CLIP = (() => { try { return CSS.supports('overflow', 'clip') ? 'clip' : 'hidden'; } catch (e) { return 'hidden'; } })();
+  let flowAt = 0, bodyFlow = true;
+  // Размер области под слои: вся страница, но не больше, чтобы у неё не появилось новой прокрутки.
+  // need — до какой высоты (в координатах слоя) нужно место под свечение.
+  function pageBox(need) {
+    const de = document.documentElement, b = document.body;
+    const t = now0();
+    if (t - flowAt > 1000) {
+      flowAt = t;
+      try { bodyFlow = !!b && getComputedStyle(b).overflowY === 'visible'; } catch (e) { bodyFlow = true; }
+    }
+    let H = Math.max(de.clientHeight, de.offsetHeight, bodyFlow && b ? b.scrollHeight : 0);
+    if (need > H) H = Math.max(H, Math.min(de.scrollHeight, need));
+    return [de.clientWidth, Math.ceil(H)];
+  }
+  function anchorEl(el, on, need) {
+    let key = 'f', W = 0, H = 0;
+    if (on) { [W, H] = pageBox(need || 0); key = W + 'x' + H; }
+    if (el.vgAnchor === key) return [W, H];
+    el.vgAnchor = key;
+    if (on) setImp(el, { position: 'absolute', left: '0', top: '0', width: W + 'px', height: H + 'px', overflow: CLIP });
+    else setImp(el, { position: 'fixed', left: '0', top: '0', width: '0', height: '0', overflow: 'visible' });
+    return [W, H];
+  }
+
+  // Video Drift (своё расширение автора) ставит кнопку в правый верхний угол видео — свои кнопки сдвигаем левее.
+  let driftAt = 0, drift = false;
+  function driftHere() {
+    const t = now0();
+    if (t - driftAt > 2000) {
+      driftAt = t;
+      drift = !!document.querySelector('video-drift-overlay, video-drift-player');
+    }
+    return drift;
+  }
+
+  // ── лёгкий режим: компьютер без видеоускорения (часто Linux + Firefox) ──
+  let liteHw = null;     // true — WebGL только программный (определяется один раз на версию браузера)
+  let liteJank = false;  // страница заметно тормозит, пока горит свечение (определено на ходу)
+  function probeSoft() {
+    try {
+      const c = document.createElement('canvas');
+      const gl = c.getContext('webgl', { failIfMajorPerformanceCaveat: true }) ||
+        c.getContext('experimental-webgl', { failIfMajorPerformanceCaveat: true });
+      if (!gl) return true;
+      // Firefox отдаёт настоящее имя в RENDERER, Chrome — в расширении (а в RENDERER пишет «WebKit WebGL»)
+      let r = String(gl.getParameter(gl.RENDERER) || '');
+      if (/webkit/i.test(r)) {
+        const ext = gl.getExtension('WEBGL_debug_renderer_info');
+        if (ext) r = String(gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) || '');
+      }
+      const lose = gl.getExtension('WEBGL_lose_context');
+      if (lose) lose.loseContext();
+      return /llvmpipe|softpipe|swiftshader|software|basic render/i.test(r);
+    } catch (e) { return false; }
+  }
+  function liteProbe(raw) {
+    if (liteHw !== null || settings.lite !== 'auto') return;
+    const c = raw.liteProbe, ua = navigator.userAgent;
+    if (c && c.ua === ua) { liteHw = !!c.soft; return; }
+    liteHw = probeSoft();
+    try { chrome.storage.local.set({ liteProbe: { soft: liteHw, ua } }); } catch (e) { /* ignore */ }
+  }
+  const liteActive = () => settings.lite === 'on' || (settings.lite === 'auto' && (liteHw === true || liteJank));
+  const liteCache = new WeakMap();
+  // Реже обновляем свечение и убираем то, что заставляет перерисовывать огромный слой на каждом кадре.
+  function liteView(s) {
+    let o = liteCache.get(s);
+    if (!o) {
+      o = Object.assign({}, s, {
+        sample: Math.min(s.sample, 48), pulse: false, scene: false,
+        pageMode: s.pageMode === 'screen' ? 'normal' : s.pageMode
+      });
+      liteCache.set(s, o);
+    }
+    return o;
+  }
+
+  // Свободный зум (zoompan.js): что сейчас видно на экране.
+  const freeZoom = (v) => (globalThis.ZoomPan ? globalThis.ZoomPan.get(v) : null);
 
   // Ищет чёрные полосы по краям кадра (letterbox / pillarbox).
   // data — RGBA маленького кадра w×h. Возвращает доли кадра {t,b,l,r}.
@@ -558,8 +668,10 @@
 
     layoutUi(mode, c, fs) {
       const s = this.s;
-      const wantDim = s.dim && mode === 'inline' && s.pageMode !== 'under';
-      const wantBtn = s.hoverButton;
+      const fw = foreignWin(this.v);
+      const wantDim = s.dim && mode === 'inline' && s.pageMode !== 'under' && !fw;
+      const wantBtn = s.hoverButton && !fw;
+      const anch = !!this.anch && !fs;
       const wantRoom = s.room && mode === 'inline' && !fs;
       const host = fs || document.documentElement;
       this.dimOn = wantDim;
@@ -582,11 +694,14 @@
       this.hr = { l: c.left, t: c.top, r: c.right, b: c.bottom };
       if (wantDim) {
         if (this.dimRoot.parentNode !== host) host.appendChild(this.dimRoot);
+        const [aw, ah] = anchorEl(this.dimRoot, anch, this.needH);
         const o = this.dimRoot.getBoundingClientRect();
-        const W = window.innerWidth, H = window.innerHeight;
-        const x0 = r1(c.left), y0 = r1(c.top), x1 = r1(c.right), y1 = r1(c.bottom);
+        // привязанный слой затемняет всю страницу (вырез едет вместе с ней), иначе — только экран
+        const W = anch ? aw : window.innerWidth, H = anch ? ah : window.innerHeight;
+        const dx = anch ? o.left : 0, dy = anch ? o.top : 0;
+        const x0 = r1(c.left - dx), y0 = r1(c.top - dy), x1 = r1(c.right - dx), y1 = r1(c.bottom - dy);
         this.uiSet(this.dimEl, 'dim', {
-          left: r1(-o.left) + 'px', top: r1(-o.top) + 'px', width: W + 'px', height: H + 'px',
+          left: r1(anch ? 0 : -o.left) + 'px', top: r1(anch ? 0 : -o.top) + 'px', width: W + 'px', height: H + 'px',
           'clip-path': 'path(evenodd,"M0 0H' + W + 'V' + H + 'H0Z M' + x0 + ' ' + y0 + 'H' + x1 +
             'V' + y1 + 'H' + x0 + 'Z")'
         });
@@ -595,9 +710,12 @@
       }
       if (wantBtn) {
         if (this.uiRoot.parentNode !== host) host.appendChild(this.uiRoot);
+        anchorEl(this.uiRoot, anch, this.needH);
         const o = this.uiRoot.getBoundingClientRect();
-        // место под обе кнопки (✦ и ⚙ рядом), чтобы шестерёнка не уходила за правый край экрана
-        const bx = Math.max(c.left + 4, Math.min(c.right - 78, window.innerWidth - 76));
+        // место под обе кнопки (✦ и ⚙ рядом), чтобы шестерёнка не уходила за правый край экрана;
+        // в углу уже стоит кнопка Video Drift — встаём левее неё
+        const off = !fs && driftHere() ? 44 : 0;
+        const bx = Math.max(c.left + 4, Math.min(c.right - 78 - off, window.innerWidth - 76 - off));
         const by = Math.max(4, Math.min(c.top + 12, window.innerHeight - 36));
         this.uiSet(this.btn, 'btn', { left: r1(bx - o.left) + 'px', top: r1(by - o.top) + 'px' });
         this.uiSet(this.gear, 'gear', { left: r1(bx - o.left + 36) + 'px', top: r1(by - o.top) + 'px' });
@@ -662,10 +780,16 @@
     // ── главный цикл (работает, пока видео играет или свечение гаснет) ──
     frame(now) {
       if (this.dead) return;
+      // Видео забрал другой плеер (выносное окно Video Drift и т.п.): само <video> не трогаем — ни зума,
+      // ни обрезки, ни фильтров, иначе в чужом окне картинка становится белой или чёрной. Свечение
+      // на странице при этом идёт за окном (см. foreignBox). Раз в секунду проверяем, не вернули ли видео.
+      const away = this.away();
+      if (away) this.park();
       this.steady = false;
       const fs = getFsElement();
       const inFs = !!fs && isInside(this.v, fs);
-      const s = this.s = this.autoView(inFs ? settingsFs : settings, now);
+      const s0 = this.autoView(inFs ? settingsFs : settings, now);
+      const s = this.s = liteActive() ? liteView(s0) : s0;
       const v = this.v;
       this.rect = null;
       const active = this.isActive(now, fs, inFs);
@@ -685,10 +809,12 @@
       if (playing && this.wantDetect(s) && (lit || s.barsHide)) this.updateCrop(now);
       if (lit && playing && (s.scene || s.colorCurve === 'cinema' || s.autoPreset)) this.sceneStep(now, bdt);
       else if (this.sF || this.sDark || this.sFT) { this.sF = 0; this.sFT = 0; this.sDark = 0; this.sPrev = null; }
-      this.zoomTick(bdt);
-      this.applyFx();
+      if (!away) {
+        this.zoomTick(bdt);
+        this.applyFx();
+      }
       // видео в «картинке в картинке»: свечения на странице нет, но лампы и окно-подсветка получают цвет
-      const feed = live && !this.userOff && document.pictureInPictureElement === v && !v.paused && v.readyState >= 2 &&
+      const feed = live && !this.userOff && (document.pictureInPictureElement === v || this.why === 'pip') && !v.paused && v.readyState >= 2 &&
         (s.hueOn || s.wledOn || s.haOn || !!pipWin);
       if (feed) this.feed(now);
       const keep = (live && s.guard && playing) || this.gLevel > 0.001 || this.zAnim || feed;
@@ -712,6 +838,7 @@
       if (lit) {
         this.adaptFps(now);
         this.draw(now);
+        this.jankStep(now, dt);
       }
       this.pulseStep(now, bdt, lit);
       this.paint();
@@ -896,6 +1023,14 @@
     zoomTick(bdt) {
       const v = this.v, s = this.s;
       this.zAnim = false;
+      // свой зум мышью (zoompan.js) или видео в выносном окне — полосы не убираем, свечение идёт за картинкой
+      const zp = freeZoom(v);
+      if (zp || foreignWin(v)) {
+        if (this.zApplied) this.restoreZoom();
+        this.zc = null;
+        this.zs = zp ? this.freeZoomState(zp) : null;
+        return;
+      }
       const live = s.enabled && !siteOff && v.readyState >= 2 && v.videoWidth > 0;
       const want = live && s.barsHide && !this.zOff;
       if (!want && !this.zApplied) { this.zs = null; this.zc = null; return; }
@@ -978,6 +1113,42 @@
       this.zs = { box, vis, cr };
     }
 
+    // Свободный зум: рамка элемента без transform, видимая часть картинки и доли кадра, которые видны.
+    freeZoomState(zp) {
+      const v = this.v, r = v.getBoundingClientRect();
+      const w = r.width / zp.k, h = r.height / zp.k;
+      if (!(w > 0 && h > 0)) return null;
+      const cx = r.left + r.width / 2 - zp.fx * w, cy = r.top + r.height / 2 - zp.fy * h;
+      const box = { left: cx - w / 2, top: cy - h / 2, right: cx + w / 2, bottom: cy + h / 2, width: w, height: h };
+      const c0 = contentRect(v, box);
+      const X = (x) => cx + zp.fx * w + zp.k * (x - cx), Y = (y) => cy + zp.fy * h + zp.k * (y - cy);
+      const P = { l: X(c0.left), r: X(c0.right), t: Y(c0.top), b: Y(c0.bottom) };
+      const vis = { left: Math.max(P.l, box.left), right: Math.min(P.r, box.right),
+        top: Math.max(P.t, box.top), bottom: Math.min(P.b, box.bottom) };
+      vis.width = vis.right - vis.left; vis.height = vis.bottom - vis.top;
+      if (!(vis.width > 4 && vis.height > 4)) return null;
+      const pw = P.r - P.l, ph = P.b - P.t, cb = this.baseCrop(this.s);
+      const cr = {
+        l: clamp(Math.max(cb.l, (vis.left - P.l) / pw), 0, 0.95), r: clamp(Math.max(cb.r, (P.r - vis.right) / pw), 0, 0.95),
+        t: clamp(Math.max(cb.t, (vis.top - P.t) / ph), 0, 0.95), b: clamp(Math.max(cb.b, (P.b - vis.bottom) / ph), 0, 0.95)
+      };
+      return { box, vis, cr };
+    }
+
+    // Лёгкий режим «авто»: если, пока горит свечение, кадры страницы идут реже ~12 в секунду — включаем его.
+    jankStep(now, dt) {
+      if (liteJank || settings.lite !== 'auto' || liteHw || !dt || document.visibilityState !== 'visible') return;
+      if (!this.jAt) { this.jAt = now; this.jN = 0; this.jB = 0; }
+      this.jN++;
+      if (dt > 80) this.jB++;
+      if (now - this.jAt < 4000) return;
+      if (this.jN >= 12 && this.jB / this.jN > 0.5) {
+        liteJank = true;
+        glows.forEach((g) => { g.fpsCap = fpsLimit(); g.lkKey = ''; g.rootKey = ''; });
+      }
+      this.jAt = 0;
+    }
+
     restoreZoom() {
       if (this.zSaved) {
         for (const [p, val, pr] of this.zSaved) {
@@ -1050,7 +1221,8 @@
       if (!s.enabled) return no('disabled');
       if (siteOff) return no('site');
       if (!v.videoWidth) return no('novideo');
-      if (!this.inView) return no('offscreen');
+      const fw = foreignWin(v);
+      if (!this.inView && !fw) return no('offscreen');
       if (!v.paused && !v.ended) { this.played = true; this.pausedAt = 0; }
       else if (!this.pausedAt) this.pausedAt = now;
       if (v.paused || v.ended) {
@@ -1065,7 +1237,13 @@
       if (document.pictureInPictureElement === v) return no('pip');
       if (fs && !inFs) return no('otherfs');
       if (inFs ? !s.fullscreenGlow : !s.pageGlow) return no(inFs ? 'fsoff' : 'pageoff');
-      const r = this.rect = v.getBoundingClientRect();
+      const r = this.rect = fw ? foreignBox(v, fw) : v.getBoundingClientRect();
+      if (!r) return no('pip');
+      if (fw) {
+        // выносное окно целиком вне нашей страницы — светить на ней нечего (лампы при этом работают)
+        const m = Math.max(r.width, r.height) * 0.4;
+        if (r.right < -m || r.bottom < -m || r.left > window.innerWidth + m || r.top > window.innerHeight + m) return no('pip');
+      }
       // «мелкое» — это превью/баннер: смотрим по длинной стороне, чтобы узкие вертикальные
       // ролики (Shorts, TikTok, Reels) не отсекались в невысоком окне или при масштабе страницы
       if (Math.max(r.width, r.height) < s.minWidth || Math.min(r.width, r.height) < s.minWidth * 0.4) return no('small');
@@ -1075,7 +1253,7 @@
       if (rankSet && !rankSet.has(this)) return no('limit');
       if (now - this.visAt > 500) {
         this.visAt = now;
-        const cs = getComputedStyle(v);
+        const cs = (fw || window).getComputedStyle(v);
         this.visOk = cs.visibility !== 'hidden' && cs.display !== 'none' &&
           parseFloat(cs.opacity) > 0.05;
       }
@@ -1161,14 +1339,19 @@
       if (mode !== this.mode) this.switchMode(mode);
       if (mode === 'bare') { this.curCr = this.zs ? this.zs.cr : this.baseCrop(s); return true; }
 
-      const over = mode === 'inline' && s.pageMode !== 'under';
-      this.applyRootStyle(mode, over);
+      const fw = foreignWin(v);
+      // видео в выносном окне: свечение может лежать только поверх нашей страницы
+      const over = mode === 'inline' && (s.pageMode !== 'under' || !!fw);
+      // поверх страницы и видео прокручивается вместе с ней — слой кладём в саму страницу (см. anchorEl)
+      const anch = this.anch = over && !fs && !fw && this.anchorable();
+      this.applyRootStyle(mode, over, anch);
 
       const zs = this.zs;
-      const box = zs ? zs.box : (this.rect && !this.zApplied ? this.rect : v.getBoundingClientRect());
+      const box = zs ? zs.box : (this.rect && !this.zApplied ? this.rect : (fw ? foreignBox(v, fw) : v.getBoundingClientRect()));
+      if (!box) return false;
       // Ничего не сдвинулось и настройки те же — геометрию и стили пересчитывать не нужно
       // (так страница не получает лишних принудительных layout на каждом кадре).
-      const lk = !zs && this.geo ? [mode, fs === this.lkFs ? 1 : 0, s === this.lkS ? 1 : 0, this.crop === this.lkCrop ? 1 : 0,
+      const lk = !zs && this.geo ? [mode, anch ? 1 : 0, fs === this.lkFs ? 1 : 0, s === this.lkS ? 1 : 0, this.crop === this.lkCrop ? 1 : 0,
         v.videoWidth, v.videoHeight, box.left, box.top, box.width, box.height].join('|') : '';
       if (lk && lk === this.lkKey && now0() - this.lkAt < 500 && this.root.parentNode) return true;
       this.lkKey = lk; this.lkAt = now0(); this.lkFs = fs; this.lkS = s; this.lkCrop = this.crop;
@@ -1227,6 +1410,11 @@
         this.rootFit = '';
       }
       if (mode === 'fs') this.fitRoot(hr);
+      if (anch) {
+        const o0 = this.root.getBoundingClientRect();
+        this.needH = B - o0.top + 4;
+        anchorEl(this.root, true, this.needH);
+      }
 
       const g = this.geometry(c, pic, cr, L, T, R, B);
       // границы экрана в координатах холста: по ним считается, где полоса кончается (см. getBlendMask)
@@ -1310,12 +1498,14 @@
       }
     }
 
-    applyRootStyle(mode, over) {
+    applyRootStyle(mode, over, anch) {
       const s = this.s;
-      const key = mode + '|' + (over ? s.pageMode : 'under');
+      const key = mode + '|' + (over ? s.pageMode : 'under') + (anch ? '|a' : '');
       if (this.rootKey === key) return;
       this.rootKey = key;
+      this.root.vgAnchor = '';
       setImp(this.root, {
+        position: 'fixed',
         'z-index': over ? '2147483646' : '-1',
         left: '0', top: '0',
         // mix-blend-mode должен стоять на корне: он создаёт stacking context
@@ -1324,6 +1514,22 @@
         overflow: mode === 'fs' ? 'hidden' : 'visible'
       });
       this.rootFit = '';
+    }
+
+    // Можно ли привязать слой к странице: у видео нет предка position:fixed/sticky (мини-плееры,
+    // плавающее окно Video Drift на странице) — иначе слой оставляем fixed, как видео.
+    anchorable() {
+      const t = now0();
+      if (t - (this.anAt || 0) < 1000) return this.anOk;
+      this.anAt = t;
+      let ok = true;
+      const de = document.documentElement;
+      for (let el = this.v; ok && el && el !== de; el = el.parentNode || el.host || null) {
+        if (el.nodeType !== 1) continue;
+        const p = getComputedStyle(el).position;
+        if (p === 'fixed' || p === 'sticky') ok = false;
+      }
+      return (this.anOk = ok);
     }
 
     // fs: область заливки = экран ∩ плеер. Плеер — самый внешний предок видео (до fs), который
@@ -1939,6 +2145,23 @@
       this.bare = null;
     }
 
+    // Видео унесли из страницы (в другое окно) или его пометил своим атрибутом Video Drift (с 1.3.2).
+    away() {
+      const v = this.v;
+      return v.ownerDocument !== document || v.hasAttribute('data-video-drift');
+    }
+
+    // Снять со <video> всё своё и не возвращать, пока видео не вернётся.
+    park() {
+      if (this.fxSaved) this.restoreFx();
+      this.fxKey = '';
+      if (this.zApplied) this.restoreZoom();
+      this.zc = null; this.zs = null; this.zAnim = false;
+      if (globalThis.ZoomPan && globalThis.ZoomPan.get(this.v)) globalThis.ZoomPan.reset(this.v);
+      if (this.mode === 'bare') this.switchMode('inline');
+      if (!this.awayT) this.awayT = setTimeout(() => { this.awayT = 0; this.kick(); }, 1000);
+    }
+
     // ── полностью убрать свечение со страницы ──
     release() {
       this.audioClose();
@@ -1963,6 +2186,7 @@
 
     destroy() {
       this.dead = true;
+      clearTimeout(this.awayT);
       if (this.vfc) this.unVfc();
       else if (this.raf) cancelAnimationFrame(this.raf);
       EVENTS.forEach((e) => this.v.removeEventListener(e, this.onEvt));
@@ -2377,6 +2601,8 @@
     settingsFs = self.VG_fsView(settings);
     siteOff = computeSiteOff();
     updateBattery();
+    liteProbe(raw);
+    if (globalThis.ZoomPan) globalThis.ZoomPan.setEnabled(settings.zoomPan && settings.enabled && !siteOff);
     glows.forEach((g) => {
       g.forceDraw = true;   // перерисовать кадр с новыми параметрами (даже на паузе)
       g.cache = {};
@@ -2404,6 +2630,8 @@
   function start() {
     window.dispatchEvent(new Event('video-glow-takeover'));   // снять старый экземпляр
     window.addEventListener('video-glow-takeover', teardown);
+    // перед свободным зумом убираем свой зум «без полос», чтобы zoompan.js запомнил исходный style видео
+    if (globalThis.ZoomPan) globalThis.ZoomPan.onBeforeApply = (v) => { const g = glows.get(v); if (g) g.restoreZoom(); };
     deepScan();
     mo.observe(document, { childList: true, subtree: true });
     document.addEventListener('play', onPlay, true);

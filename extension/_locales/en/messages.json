@@ -1128,5 +1128,26 @@
   },
   "w_import_hint": {
     "message": "Moving from another computer? Load your backup file and all your settings come back."
+  },
+  "p_lite": {
+    "message": "Light mode"
+  },
+  "p_lite_auto": {
+    "message": "Auto"
+  },
+  "p_lite_on": {
+    "message": "On"
+  },
+  "p_lite_off": {
+    "message": "Off"
+  },
+  "p_lite_hint": {
+    "message": "For computers without graphics acceleration (often Linux + Firefox): the glow updates less often and skips heavy effects. Auto turns it on by itself when needed."
+  },
+  "p_zoompan": {
+    "message": "Zoom and pan the picture"
+  },
+  "p_zoompan_hint": {
+    "message": "Alt + wheel to zoom, Alt + drag to move, Alt + double-click to reset"
   }
 }
