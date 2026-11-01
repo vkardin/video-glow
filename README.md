@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/img/logo.svg" width="96" alt="Video Glow"></p>
+<p align="center"><img src=".github/assets/project-banner.svg" alt="Video Glow by vkardin" width="100%"></p>
 
 <h1 align="center">Video Glow</h1>
 
@@ -55,13 +55,20 @@ Video Glow collects no data and sends nothing anywhere: everything runs on your 
 | [`store/`](store) | Store listing texts, graphics and test scripts |
 | [`tools/`](tools) | `build.py` packs the Chrome and Firefox zips |
 
-## More from the author
-
-- [Leveler](https://vkardin.github.io/leveler/): a free Chrome and Firefox extension that evens out the loudness of any video: quiet dialogue louder, explosions softer. [Chrome Web Store](https://chromewebstore.google.com/detail/phbjpipnbhffcegccfbbfabbhmgaelko)
-- [Floatr](https://vkardin.github.io/floatr/): a floating video player for Chrome and Firefox that keeps subtitles and remembers where you stopped.
-- [Snapt](https://vkardin.github.io/snapt/): a fast, open-source screenshot tool for Windows, macOS and Linux.
-- [UNI](https://vkardin.github.io/uni-homebot/): your home server in Telegram, with apps, monitoring and a mini app.
 
 ## License
 
 [MIT](LICENSE) © vkardin
+
+<!-- project-family:start -->
+## More tools by vkardin
+
+| Project | Projects |
+| --- | --- |
+| **[Leveler](https://vkardin.github.io/leveler/)** | Even loudness, clearer dialogue, an equalizer and playback speed controls. [GitHub](https://github.com/vkardin/leveler) |
+| **[Video Drift](https://vkardin.github.io/video-drift/)** | Floating video with subtitles, saved playback positions and timestamped notes. [GitHub](https://github.com/vkardin/video-drift) |
+| **[Snapt](https://vkardin.github.io/snapt/)** | Capture, annotate and export. A Windows, macOS and Linux app, plus a browser extension. [GitHub](https://github.com/vkardin/snapt) |
+| **[UNI](https://vkardin.github.io/uni-homebot/)** | Your home server in Telegram: apps, monitoring, notifications and a Mini App. [GitHub](https://github.com/vkardin/uni-homebot) |
+
+[github.com/vkardin](https://github.com/vkardin) · Independent tools · open source
+<!-- project-family:end -->
