@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/img/logo.svg" width="96" alt="Video Glow"></p>
+<p align="center"><img src=".github/assets/project-banner.svg" alt="Video Glow by vkardin" width="100%"></p>
 
 <h1 align="center">Video Glow</h1>
 
@@ -55,13 +55,20 @@ Video Glow превращает экран в маленький кинозал:
 | [`store/`](store) | Тексты для магазинов, графика и тестовые скрипты |
 | [`tools/`](tools) | `build.py` собирает zip для Chrome и Firefox |
 
-## Ещё от автора
-
-- [Leveler](https://vkardin.github.io/leveler/): бесплатное расширение для Chrome и Firefox, которое выравнивает громкость любого видео: тихие диалоги громче, взрывы тише. [Chrome Web Store](https://chromewebstore.google.com/detail/phbjpipnbhffcegccfbbfabbhmgaelko)
-- [Floatr](https://vkardin.github.io/floatr/): плавающий видеоплеер для Chrome и Firefox, который сохраняет субтитры и помнит, где вы остановились.
-- [Snapt](https://vkardin.github.io/snapt/ru/): быстрые скриншоты с открытым кодом для Windows, macOS и Linux.
-- [UNI](https://vkardin.github.io/uni-homebot/): домашний сервер в Telegram, с приложениями, мониторингом и мини-приложением.
 
 ## Лицензия
 
 [MIT](LICENSE) © vkardin
+
+<!-- project-family:start -->
+## Другие инструменты от vkardin
+
+| Project | Проекты |
+| --- | --- |
+| **[Leveler](https://vkardin.github.io/leveler/)** | Ровная громкость, разборчивые диалоги, эквалайзер и управление скоростью. [GitHub](https://github.com/vkardin/leveler) |
+| **[Video Drift](https://vkardin.github.io/video-drift/)** | Видео поверх других окон, субтитры, сохранение позиции и заметки к моментам. [GitHub](https://github.com/vkardin/video-drift) |
+| **[Snapt](https://vkardin.github.io/snapt/)** | Скриншоты, стрелки и подписи. Приложение для Windows, macOS и Linux и расширение браузера. [GitHub](https://github.com/vkardin/snapt) |
+| **[UNI](https://vkardin.github.io/uni-homebot/)** | Домашний сервер в Telegram: приложения, мониторинг, уведомления и мини-приложение. [GitHub](https://github.com/vkardin/uni-homebot) |
+
+[github.com/vkardin](https://github.com/vkardin) · Независимые инструменты · открытый код
+<!-- project-family:end -->

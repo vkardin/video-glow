@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/img/logo.svg" width="96" alt="Video Glow"></p>
+<p align="center"><img src=".github/assets/project-banner.svg" alt="Video Glow by vkardin" width="100%"></p>
 
 <h1 align="center">Video Glow</h1>
 
@@ -55,13 +55,20 @@ Video Glow перетворює екран на маленький кіноза�
 | [`store/`](store) | Тексти для магазинів, графіка й тестові скрипти |
 | [`tools/`](tools) | `build.py` збирає zip для Chrome і Firefox |
 
-## Ще від автора
-
-- [Leveler](https://vkardin.github.io/leveler/): безкоштовне розширення для Chrome і Firefox, яке вирівнює гучність будь-якого відео: тихі діалоги гучніше, вибухи тихіше. [Chrome Web Store](https://chromewebstore.google.com/detail/phbjpipnbhffcegccfbbfabbhmgaelko)
-- [Floatr](https://vkardin.github.io/floatr/): плаваючий відеоплеєр для Chrome і Firefox, який зберігає субтитри й пам’ятає, де ви зупинилися.
-- [Snapt](https://vkardin.github.io/snapt/uk/): швидкі скриншоти з відкритим кодом для Windows, macOS і Linux.
-- [UNI](https://vkardin.github.io/uni-homebot/): домашній сервер у Telegram, із застосунками, моніторингом і міні-застосунком.
 
 ## Ліцензія
 
 [MIT](LICENSE) © vkardin
+
+<!-- project-family:start -->
+## Інші інструменти від vkardin
+
+| Project | Проєкти |
+| --- | --- |
+| **[Leveler](https://vkardin.github.io/leveler/)** | Рівна гучність, розбірливі діалоги, еквалайзер і керування швидкістю. [GitHub](https://github.com/vkardin/leveler) |
+| **[Video Drift](https://vkardin.github.io/video-drift/)** | Відео поверх інших вікон, субтитри, збереження позиції й нотатки до моментів. [GitHub](https://github.com/vkardin/video-drift) |
+| **[Snapt](https://vkardin.github.io/snapt/)** | Знімки екрана, стрілки й підписи. Застосунок для Windows, macOS та Linux і розширення браузера. [GitHub](https://github.com/vkardin/snapt) |
+| **[UNI](https://vkardin.github.io/uni-homebot/)** | Домашній сервер у Telegram: застосунки, моніторинг, сповіщення й мінізастосунок. [GitHub](https://github.com/vkardin/uni-homebot) |
+
+[github.com/vkardin](https://github.com/vkardin) · Незалежні інструменти · відкритий код
+<!-- project-family:end -->
