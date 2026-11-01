@@ -1149,5 +1149,17 @@
   },
   "p_zoompan_hint": {
     "message": "Alt + rueda para acercar, Alt + arrastrar para mover, Alt + doble clic para restablecer"
+  },
+  "o_glow": {
+    "message": "Ajustes del brillo"
+  },
+  "o_glow_hint": {
+    "message": "Forma, estilo, pantalla completa, comportamiento, imagen y comodidad. Son los ajustes generales; un sitio con ajustes propios se cambia desde el menú de la extensión en ese sitio."
+  },
+  "o_nav_sites": {
+    "message": "Sitios"
+  },
+  "o_nav_lights": {
+    "message": "Luz de la habitación"
   }
 }

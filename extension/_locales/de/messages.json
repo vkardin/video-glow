@@ -1149,5 +1149,17 @@
   },
   "p_zoompan_hint": {
     "message": "Alt + Mausrad zum Zoomen, Alt + Ziehen zum Verschieben, Alt + Doppelklick zum Zurücksetzen"
+  },
+  "o_glow": {
+    "message": "Leuchteinstellungen"
+  },
+  "o_glow_hint": {
+    "message": "Form, Stil, Vollbild, Verhalten, Bild und Komfort. Das sind die allgemeinen Einstellungen; eine Website mit eigenen Einstellungen änderst du im Erweiterungsmenü auf dieser Website."
+  },
+  "o_nav_sites": {
+    "message": "Websites"
+  },
+  "o_nav_lights": {
+    "message": "Raumlicht"
   }
 }

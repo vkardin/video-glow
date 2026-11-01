@@ -1149,5 +1149,17 @@
   },
   "p_zoompan_hint": {
     "message": "Alt + roda para zoom, Alt + arrastar para mover, Alt + clique duplo para redefinir"
+  },
+  "o_glow": {
+    "message": "Configurações do brilho"
+  },
+  "o_glow_hint": {
+    "message": "Forma, estilo, tela cheia, comportamento, imagem e conforto. Estas são as configurações gerais; um site com configurações próprias é alterado no menu da extensão nesse site."
+  },
+  "o_nav_sites": {
+    "message": "Sites"
+  },
+  "o_nav_lights": {
+    "message": "Luz do ambiente"
   }
 }

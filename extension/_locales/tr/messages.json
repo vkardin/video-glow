@@ -1149,5 +1149,17 @@
   },
   "p_zoompan_hint": {
     "message": "Yakınlaştırmak için Alt + tekerlek, kaydırmak için Alt + sürükle, sıfırlamak için Alt + çift tıklama"
+  },
+  "o_glow": {
+    "message": "Işıma ayarları"
+  },
+  "o_glow_hint": {
+    "message": "Şekil, stil, tam ekran, davranış, görüntü ve konfor. Bunlar genel ayarlardır; kendi ayarları olan bir site, o sitedeyken eklenti menüsünden değiştirilir."
+  },
+  "o_nav_sites": {
+    "message": "Siteler"
+  },
+  "o_nav_lights": {
+    "message": "Oda ışığı"
   }
 }

@@ -1149,5 +1149,17 @@
   },
   "p_zoompan_hint": {
     "message": "Alt + kółko — powiększ, Alt + przeciągnij — przesuń, Alt + dwuklik — reset"
+  },
+  "o_glow": {
+    "message": "Ustawienia poświaty"
+  },
+  "o_glow_hint": {
+    "message": "Kształt, styl, pełny ekran, zachowanie, obraz i komfort. To ustawienia ogólne; stronę z własnymi ustawieniami zmienisz w menu rozszerzenia na tej stronie."
+  },
+  "o_nav_sites": {
+    "message": "Strony"
+  },
+  "o_nav_lights": {
+    "message": "Światło w pokoju"
   }
 }

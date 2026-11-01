@@ -316,3 +316,27 @@ button.link:hover { color: var(--text); }
   :root .switch span::before { width: 22px; height: 22px; }
   :root .switch input:checked + span::before { transform: translateX(18px); }
 }
+
+/* ───────── 2.0: три вида одной страницы ───────── */
+.quick button.q svg { display: block; margin: auto; }
+/* Окно у значка: только главное — вкл/выкл, сайт, пресеты, яркость и насыщенность. Остальное — в «Все настройки». */
+body.simple details[data-sec],
+body.simple #foldAll,
+body.simple #qRoom, body.simple #qLed, body.simple #qReset,
+body.simple #reset, body.simple #site,
+body.simple > .note { display: none; }
+footer button.primary, footer button.primary:hover { background: var(--sel-bg); border-color: var(--sel-bg); color: var(--sel-text); font-weight: 500; }
+body.simple footer button.primary { flex-basis: 100%; order: -1; padding: 8px 10px; font-size: 13px; }
+body:not(.simple) #quickCard { display: none; }
+#quickCard .ctl + .ctl { margin-top: 10px; }
+/* Раздел «Настройки свечения» на странице настроек (фрейм): только сворачиваемые карточки, общие значения. */
+body.full { width: auto; padding: 0; background: transparent; }
+body.full .sticky, body.full #status, body.full #perm, body.full #siteCard,
+body.full #presetsCard, body.full #proBar, body.full footer, body.full > .note { display: none; }
+body.full .card { margin-bottom: 10px; }
+/* в окне у значка мини-кнопки встают в одну строку с названием, перед выключателем */
+body.simple .sticky { display: flex; align-items: center; gap: 6px; }
+body.simple .sticky header { display: contents; }
+body.simple .brand { order: 0; flex: 1; margin-left: 2px; }
+body.simple .quick { order: 1; }
+body.simple .hbtns { order: 2; margin-left: 4px; }

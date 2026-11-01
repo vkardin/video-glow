@@ -8,7 +8,17 @@
   const store = chrome.storage.local;
   const norm = (h) => String(h || '').toLowerCase().replace(/^www\./, '');
 
+  // Где открыта страница: окно у значка (главное), панель поверх видео (всё) или раздел в настройках (всё, общие значения).
+  const PANEL = /[?&]panel=1/.test(location.search);
+  const FULL = /[?&]view=full/.test(location.search);
+  const SIMPLE = !PANEL && !FULL;
+
   const SLIDERS = {
+    // в окне у значка: только яркость и насыщенность
+    quickSliders: [
+      { key: 'opacity', label: 's_opacity', min: 0, max: 100, step: 1, unit: '%' },
+      { key: 'saturation', label: 's_saturation', min: 0, max: 250, step: 5, unit: '%' }
+    ],
     glowSliders: [
       { key: 'spread', label: 's_spread', hint: 's_spread_hint', min: 0, max: 60, step: 1, unit: '%' },
       { key: 'radius', label: 's_radius', min: 0, max: 50, step: 1, unit: '%', show: (s) => s.shape === 'rounded' },
@@ -152,6 +162,7 @@
     const input = document.createElement('input');
     input.type = 'range';
     input.min = def.min; input.max = def.max; input.step = def.step;
+    input.setAttribute('aria-label', t(def.label));
     wrap.append(top, input);
     if (def.hint) {
       const h = document.createElement('div');
@@ -345,7 +356,7 @@
     $('#qLed').addEventListener('click', () => { save('glowStyle', state.glowStyle === 'led' ? 'soft' : 'led'); render(); });
     $('#qPanel').addEventListener('click', () => $('#openPanel').click());
     // Окно-подсветка открывается только по клику на странице: из панели на видео — сразу, отсюда — панель с кнопкой ◫
-    setInterval(() => { if (state.autoPreset && !document.hidden) refreshStatus(); }, 2000);   // «Сейчас: …» у автопресета
+    if (!FULL) setInterval(() => { if (state.autoPreset && !document.hidden) refreshStatus(); }, 2000);   // «Сейчас: …» у автопресета
     if ('documentPictureInPicture' in window) {
       $('#qWin').hidden = false;
       $('#qWin').addEventListener('click', () => {
@@ -491,6 +502,7 @@
   }
 
   function scheduleStatus() {
+    if (FULL) return;
     clearTimeout(statusTimer);
     statusTimer = setTimeout(refreshStatus, 350);
   }
@@ -509,7 +521,7 @@
   }
 
   // Сворачиваемые разделы: состояние помним между открытиями.
-  const FOLD_KEY = 'vgFold';
+  const FOLD_KEY = FULL ? 'vgFoldFull' : 'vgFold';
   const FOLD_DEFAULT_OPEN = { page: true };
   function setupFold() {
     let saved = {};
@@ -542,7 +554,19 @@
     updateFoldBtn();
   }
 
-  if (/[?&]panel=1/.test(location.search)) document.body.classList.add('panel');
+  document.body.classList.toggle('panel', PANEL);
+  document.body.classList.toggle('full', FULL);
+  document.body.classList.toggle('simple', SIMPLE);
+
+  // В настройках страница встроена во фрейм: подгоняем его высоту под содержимое.
+  function fitFrame() {
+    let f = null;
+    try { f = window.frameElement; } catch (e) { f = null; }
+    if (!f) return;
+    const fit = () => { f.style.height = Math.ceil(document.documentElement.scrollHeight) + 'px'; };
+    new ResizeObserver(fit).observe(document.body);
+    fit();
+  }
 
   store.get(D, (res) => {
     raw = Object.assign({}, D, res);
@@ -558,6 +582,7 @@
     renderPro();
     render();
     renderPro();   // выставить disabled уже после того, как render() расставил значения
+    if (FULL) { fitFrame(); return; }   // в настройках — общие значения, без привязки к вкладке
     setupSite();
     setupPerm();
     refreshStatus();

@@ -8,7 +8,12 @@
   const apply = (root) => {
     const scope = root || document;
     scope.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = t(el.dataset.i18n); });
-    scope.querySelectorAll('[data-i18n-title]').forEach((el) => { el.title = t(el.dataset.i18nTitle); });
+    scope.querySelectorAll('[data-i18n-title]').forEach((el) => {
+      el.title = t(el.dataset.i18nTitle);
+      // кнопкам-значкам и переключателям нужно имя для экранного диктора
+      const named = el.matches('button, iframe') ? el : el.matches('label') ? el.querySelector('input') : null;
+      if (named && !named.textContent.trim()) named.setAttribute('aria-label', el.title);
+    });
     scope.querySelectorAll('[data-i18n-ph]').forEach((el) => { el.placeholder = t(el.dataset.i18nPh); });
     document.documentElement.lang = chrome.i18n.getUILanguage();
   };

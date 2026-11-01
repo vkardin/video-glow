@@ -1149,5 +1149,17 @@
   },
   "p_zoompan_hint": {
     "message": "Alt + wheel to zoom, Alt + drag to move, Alt + double-click to reset"
+  },
+  "o_glow": {
+    "message": "Glow settings"
+  },
+  "o_glow_hint": {
+    "message": "Shape, style, fullscreen, behaviour, picture and comfort. These are the general settings; a site with its own settings is changed from the toolbar menu on that site."
+  },
+  "o_nav_sites": {
+    "message": "Sites"
+  },
+  "o_nav_lights": {
+    "message": "Room lights"
   }
 }

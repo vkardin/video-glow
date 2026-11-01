@@ -13,6 +13,16 @@
     <h1><span class="logo"></span><span data-i18n="o_title"></span></h1>
     <p class="sub" id="version"></p>
 
+    <nav class="toc">
+      <a href="#glow" data-i18n="o_glow"></a>
+      <a href="#presets" data-i18n="o_presets"></a>
+      <a href="#sitesCard" data-i18n="o_nav_sites"></a>
+      <a href="#hue" data-i18n="o_nav_lights"></a>
+      <a href="#look" data-i18n="o_theme"></a>
+      <a href="#backup" data-i18n="o_backup"></a>
+      <a href="#about" data-i18n="o_about"></a>
+    </nav>
+
     <section class="card" id="pro">
       <h2 data-i18n="o_pro"></h2>
       <p id="proState"></p>
@@ -26,23 +36,12 @@
       <p class="muted small" data-i18n="o_pro_offline"></p>
     </section>
 
-    <section class="card" id="look">
-      <h2 data-i18n="o_theme"></h2>
-      <p class="muted" data-i18n="o_theme_hint"></p>
-      <div class="themes" role="radiogroup">
-        <button type="button" class="theme" role="radio" data-pick="cinema"><span class="sw"><i></i><i></i></span><b data-i18n="theme_cinema"></b><small data-i18n="theme_cinema_d"></small></button>
-        <button type="button" class="theme" role="radio" data-pick="amber"><span class="sw"><i></i><i></i></span><b data-i18n="theme_amber"></b><small data-i18n="theme_amber_d"></small></button>
-        <button type="button" class="theme" role="radio" data-pick="deck"><span class="sw"><i></i><i></i></span><b data-i18n="theme_deck"></b><small data-i18n="theme_deck_d"></small></button>
-        <button type="button" class="theme" role="radio" data-pick="midnight"><span class="sw"><i></i><i></i></span><b data-i18n="theme_midnight"></b><small data-i18n="theme_midnight_d"></small></button>
-        <button type="button" class="theme" role="radio" data-pick="day"><span class="sw"><i></i><i></i></span><b data-i18n="theme_day"></b><small data-i18n="theme_day_d"></small></button>
-        <button type="button" class="theme" role="radio" data-pick="custom"><span class="sw" id="customSw"><i></i><i></i></span><b data-i18n="theme_custom"></b><small data-i18n="theme_custom_d"></small></button>
+    <section id="glow">
+      <div class="card">
+        <h2 data-i18n="o_glow"></h2>
+        <p class="muted" data-i18n="o_glow_hint"></p>
       </div>
-      <div class="custom" id="customBox" hidden>
-        <label><input type="color" data-c="bg"><span data-i18n="o_custom_bg"></span></label>
-        <label><input type="color" data-c="text"><span data-i18n="o_custom_text"></span></label>
-        <label><input type="color" data-c="accent"><span data-i18n="o_custom_accent"></span></label>
-        <button type="button" id="customReset" data-i18n="o_custom_reset"></button>
-      </div>
+      <iframe id="glowFrame" src="popup.html?view=full" data-i18n-title="o_glow"></iframe>
     </section>
 
     <section class="card" id="presets">
@@ -52,7 +51,7 @@
       <div class="row"><button type="button" id="presetAdd" data-i18n="o_preset_add"></button></div>
     </section>
 
-    <section class="card">
+    <section class="card" id="sitesCard">
       <h2 data-i18n="o_sites"></h2>
       <p class="muted" data-i18n="o_sites_hint"></p>
       <div class="row">
@@ -66,37 +65,6 @@
       <h2 data-i18n="o_custom_sites"></h2>
       <p class="muted" data-i18n="o_custom_hint"></p>
       <ul class="sites" id="customSites"></ul>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="o_backup"></h2>
-      <div class="row">
-        <button type="button" id="export" data-i18n="o_export"></button>
-        <button type="button" id="importBtn" data-i18n="o_import"></button>
-        <button type="button" id="resetAll" data-i18n="o_reset_all"></button>
-      </div>
-      <input type="file" id="importFile" accept=".json,application/json" hidden>
-    </section>
-
-    <section class="card" id="shortcutsCard">
-      <h2 data-i18n="o_shortcuts"></h2>
-      <p class="muted" data-i18n="o_shortcuts_text"></p>
-      <button type="button" id="shortcuts" data-i18n="o_shortcuts_btn"></button>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="o_limits"></h2>
-      <p class="muted" data-i18n="o_limits_text"></p>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="o_about"></h2>
-      <p class="muted" data-i18n="o_privacy_text"></p>
-      <div class="row">
-        <button type="button" id="privacy" hidden data-i18n="o_privacy"></button>
-        <button type="button" id="site" hidden data-i18n="p_site"></button>
-        <button type="button" id="donate" hidden data-i18n="p_donate"></button>
-      </div>
     </section>
 
     <section class="card" id="hue">
@@ -159,6 +127,56 @@
         <p class="muted small" data-i18n="ha_help"></p>
         <textarea id="haYaml" rows="14" readonly spellcheck="false"></textarea>
       </details>
+    </section>
+
+    <section class="card" id="look">
+      <h2 data-i18n="o_theme"></h2>
+      <p class="muted" data-i18n="o_theme_hint"></p>
+      <div class="themes" role="radiogroup">
+        <button type="button" class="theme" role="radio" data-pick="cinema"><span class="sw"><i></i><i></i></span><b data-i18n="theme_cinema"></b><small data-i18n="theme_cinema_d"></small></button>
+        <button type="button" class="theme" role="radio" data-pick="amber"><span class="sw"><i></i><i></i></span><b data-i18n="theme_amber"></b><small data-i18n="theme_amber_d"></small></button>
+        <button type="button" class="theme" role="radio" data-pick="deck"><span class="sw"><i></i><i></i></span><b data-i18n="theme_deck"></b><small data-i18n="theme_deck_d"></small></button>
+        <button type="button" class="theme" role="radio" data-pick="midnight"><span class="sw"><i></i><i></i></span><b data-i18n="theme_midnight"></b><small data-i18n="theme_midnight_d"></small></button>
+        <button type="button" class="theme" role="radio" data-pick="day"><span class="sw"><i></i><i></i></span><b data-i18n="theme_day"></b><small data-i18n="theme_day_d"></small></button>
+        <button type="button" class="theme" role="radio" data-pick="custom"><span class="sw" id="customSw"><i></i><i></i></span><b data-i18n="theme_custom"></b><small data-i18n="theme_custom_d"></small></button>
+      </div>
+      <div class="custom" id="customBox" hidden>
+        <label><input type="color" data-c="bg"><span data-i18n="o_custom_bg"></span></label>
+        <label><input type="color" data-c="text"><span data-i18n="o_custom_text"></span></label>
+        <label><input type="color" data-c="accent"><span data-i18n="o_custom_accent"></span></label>
+        <button type="button" id="customReset" data-i18n="o_custom_reset"></button>
+      </div>
+    </section>
+
+    <section class="card" id="backup">
+      <h2 data-i18n="o_backup"></h2>
+      <div class="row">
+        <button type="button" id="export" data-i18n="o_export"></button>
+        <button type="button" id="importBtn" data-i18n="o_import"></button>
+        <button type="button" id="resetAll" data-i18n="o_reset_all"></button>
+      </div>
+      <input type="file" id="importFile" accept=".json,application/json" hidden>
+    </section>
+
+    <section class="card" id="shortcutsCard">
+      <h2 data-i18n="o_shortcuts"></h2>
+      <p class="muted" data-i18n="o_shortcuts_text"></p>
+      <button type="button" id="shortcuts" data-i18n="o_shortcuts_btn"></button>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="o_limits"></h2>
+      <p class="muted" data-i18n="o_limits_text"></p>
+    </section>
+
+    <section class="card" id="about">
+      <h2 data-i18n="o_about"></h2>
+      <p class="muted" data-i18n="o_privacy_text"></p>
+      <div class="row">
+        <button type="button" id="privacy" hidden data-i18n="o_privacy"></button>
+        <button type="button" id="site" hidden data-i18n="p_site"></button>
+        <button type="button" id="donate" hidden data-i18n="p_donate"></button>
+      </div>
     </section>
   </main>
   <div id="toast"></div>

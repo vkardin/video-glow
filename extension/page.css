@@ -188,3 +188,17 @@ input[type=range]::-moz-range-thumb { width: 14px; height: 14px; border: 0; bord
   :root body input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; }
   :root body input[type=range] { margin-top: 16px; margin-bottom: 16px; }
 }
+
+/* 2.0: оглавление и раздел «Настройки свечения» */
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+.toc {
+  position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 6px;
+  margin: -8px -4px 16px; padding: 10px 4px; background: var(--bg);
+}
+.toc a {
+  color: var(--text-2, var(--muted)); text-decoration: none; font-size: 13px;
+  padding: 5px 12px; border-radius: var(--r-ctl); background: var(--field);
+}
+.toc a:hover { color: var(--text); background: var(--field-hover); }
+#glow .card { margin-bottom: 10px; }
+#glowFrame { display: block; width: 100%; height: 600px; border: 0; background: transparent; color-scheme: normal; }
