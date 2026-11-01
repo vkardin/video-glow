@@ -1155,5 +1155,8 @@
   },
   "o_nav_lights": {
     "message": "Raumlicht"
+  },
+  "o_preview_hint": {
+    "message": "So sieht der Schein mit Ihren aktuellen Einstellungen aus. Ändern Sie sie im Popup, und das Bild passt sich an."
   }
 }

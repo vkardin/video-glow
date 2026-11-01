@@ -1155,5 +1155,8 @@
   },
   "o_nav_lights": {
     "message": "Room lights"
+  },
+  "o_preview_hint": {
+    "message": "This is how the glow looks with your current settings. Change them in the popup and the picture updates."
   }
 }

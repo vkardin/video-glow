@@ -9,12 +9,20 @@ body {
 }
 :focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
 main { max-width: 640px; margin: 0 auto; }
+/* крупное превью свечения в «Оформлении» */
+.pv-card { padding: 0; overflow: hidden; }
+.pv-stage {
+  position: relative; display: grid; place-items: center; padding: 64px 22px;
+  background: radial-gradient(60% 70% at 50% 50%, rgb(232 110 120 / calc(var(--pv-room, 0) * .45)), transparent 75%);
+}
+.pv-stage::before { content: ""; position: absolute; inset: 0; background: #000; opacity: calc(var(--pv-dim, 0) * .55); transition: opacity .4s; }
+.pv-stage .screen { width: min(280px, 70%); }
+.pv-note { margin: 0; padding: 0 22px 18px; font-size: 13px; text-align: center; }
 /* страница настроек: слева мини-экран и меню разделов, справа карточки */
 .layout { display: grid; grid-template-columns: 220px minmax(0, 640px); gap: 48px; justify-content: center; }
 .layout main { margin: 0; min-width: 0; }
 .side { position: sticky; top: 40px; align-self: start; }
-.side-head { display: flex; flex-direction: column; align-items: flex-start; }
-.side .screen { width: 150px; margin: 22px 0 34px 22px; }
+.side-head { display: flex; flex-direction: column; align-items: flex-start; padding-top: 8px; }
 .side h1 { font-size: 20px; gap: 10px; }
 .side h1 .logo { width: 24px; height: 24px; }
 .side .sub { margin: 0 0 22px; font-size: 13px; }
@@ -34,7 +42,6 @@ html { scroll-behavior: smooth; }
   .layout { grid-template-columns: minmax(0, 640px); gap: 0; }
   .side { position: static; }
   .side-head { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0 16px; }
-  .side .screen { width: 96px; margin: 12px 14px 12px 12px; }
   .side .sub { flex-basis: 100%; }
   .toc {
     position: sticky; top: 0; z-index: 5; flex-direction: row; overflow-x: auto; scrollbar-width: none;

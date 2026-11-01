@@ -1155,5 +1155,8 @@
   },
   "o_nav_lights": {
     "message": "Światło w pokoju"
+  },
+  "o_preview_hint": {
+    "message": "Tak wygląda poświata z obecnymi ustawieniami. Zmieniaj je w menu rozszerzenia, a obraz się zaktualizuje."
   }
 }
