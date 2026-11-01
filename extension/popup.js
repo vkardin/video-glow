@@ -134,6 +134,7 @@
       raw.siteProfiles = profiles;
       global.siteProfiles = profiles;
     }
+    if (self.vgPreview) self.vgPreview(state);
     store.set(global, cb);
     scheduleStatus();
   }
@@ -278,6 +279,7 @@
     $('#scopeBadge').hidden = !siteMode;
     document.body.classList.toggle('site-mode', siteMode);
     markPreset();
+    if (self.vgPreview) self.vgPreview(state);
   }
 
   function bind() {
@@ -467,6 +469,7 @@
   // ── статус: что происходит на текущей вкладке ──
   function showStatus(kind, key, noteKey) {
     $('#status').dataset.kind = kind;
+    if (self.vgPreview) self.vgPreview(state, kind);
     $('#statusText').textContent = t(key);
     const note = $('#statusNote');
     note.textContent = noteKey ? t(noteKey) : '';
@@ -531,7 +534,7 @@
     function updateFoldBtn() {
       const any = secs.some((d) => d.open);
       const b = $('#foldAll');
-      b.textContent = any ? '\u25B4' : '\u25BE';
+      b.classList.toggle('folded', !any);
       b.title = t(any ? 'p_fold_all' : 'p_unfold_all');
     }
     $('#foldAll').addEventListener('click', () => {

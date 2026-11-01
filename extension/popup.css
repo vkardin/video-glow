@@ -16,7 +16,7 @@ body {
 .sticky header { margin-bottom: 10px; }
 .quick { display: flex; align-items: center; gap: 6px; }
 .quick .qsep { flex: 1; }
-.quick button.q { width: 32px; height: 28px; padding: 0; font-size: 15px; line-height: 1; color: var(--muted); background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
+.quick button.q { display: grid; place-items: center; width: 32px; height: 30px; padding: 0; line-height: 1; color: var(--muted); background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
 .quick button.q:hover { color: var(--text); }
 .quick button.q.on { color: var(--sel-text); background: var(--sel-bg); border-color: var(--sel-bg); }
 .quick button.q.warn { color: #fff; background: #c0392b; border-color: #c0392b; }
@@ -27,23 +27,58 @@ header {
   margin: 0 2px 16px;
 }
 .brand { display: flex; align-items: center; gap: 11px; font-size: 15px; }
-.brand b { font-weight: 500; letter-spacing: -.01em; }
+.brand b { font-weight: 600; font-size: 16px; letter-spacing: -.02em; }
 /* логотип — та же картинка, что и иконка расширения */
 .logo { flex: none; width: 22px; height: 22px; background: url(icons/logo.svg) center / contain no-repeat; }
 
-/* статус */
+/* Сцена: маленький экран со свечением по текущим настройкам (preview.js) и статус под ним */
+.stage {
+  position: relative; display: flex; flex-direction: column; align-items: center;
+  margin: 0 -14px 10px; padding: 30px 14px 12px; overflow: hidden;
+  background: radial-gradient(60% 70% at 50% 42%, rgb(232 110 120 / calc(var(--pv-room, 0) * .45)), transparent 75%);
+}
+.stage::before { /* затемнение страницы вокруг плеера */
+  content: ""; position: absolute; inset: 0; background: #000; opacity: calc(var(--pv-dim, 0) * .55);
+  transition: opacity .4s; pointer-events: none;
+}
+.screen { position: relative; width: 168px; aspect-ratio: 16 / 9; margin-bottom: 30px; }
+.screen .pic, .screen .halo {
+  position: absolute; border-radius: 3px;
+  /* «кадр»: закат над водой — свечение берёт цвета из него же */
+  background:
+    radial-gradient(circle at 34% 57%, #fff1c4 0 5%, #ffc061 9%, rgb(255 150 70 / .0) 26%),
+    linear-gradient(to bottom, transparent 60%, #2c1d4a 60%, #3a2a66 72%, #141433 100%),
+    linear-gradient(to bottom, #24318a 0%, #6a4fc9 26%, #e2607a 46%, #ff9a4d 60%);
+  background-size: 150% 100%;
+  animation: pv-drift 16s ease-in-out infinite alternate;
+}
+.screen .pic { inset: 0; box-shadow: 0 0 0 1px rgb(255 255 255 / .08); }
+.screen .halo {
+  inset: calc(var(--pv-spread, 11px) * -1);
+  border-radius: var(--pv-radius, 11px);
+  filter: blur(var(--pv-blur, 12px)) saturate(var(--pv-sat, 1.15));
+  opacity: var(--pv-alpha, .85);
+  transition: inset .25s, border-radius .25s, filter .25s, opacity .4s;
+}
+.screen[data-style="led"] .halo {
+  -webkit-mask: radial-gradient(circle, #000 0 36%, transparent 44%) 0 0 / var(--pv-led) var(--pv-led);
+  mask: radial-gradient(circle, #000 0 36%, transparent 44%) 0 0 / var(--pv-led) var(--pv-led);
+}
+.screen:not(.lit) .pic { filter: saturate(.35) brightness(.7); }
+@keyframes pv-drift { to { background-position: 100% 0; } }
+@media (prefers-reduced-motion: reduce) { .screen .pic, .screen .halo { animation: none; } }
+
 .status {
-  display: flex; gap: 10px; align-items: flex-start;
-  background: transparent; border: 1px solid var(--line); border-radius: 18px;
-  padding: 7px 14px; margin-bottom: 10px; color: var(--text-2); font-size: 12px;
+  position: relative; display: flex; gap: 8px; align-items: flex-start; justify-content: center;
+  max-width: 100%; color: var(--text-2); font-size: 12px; text-align: center;
 }
-.status i {
-  flex: none; width: 6px; height: 6px; margin-top: 6px; border-radius: 50%; background: var(--faint);
-}
+.status i { flex: none; width: 6px; height: 6px; margin-top: 6px; border-radius: 50%; background: var(--faint); }
 .status[data-kind="ok"] i { background: var(--ok); box-shadow: 0 0 8px var(--ok); }
 .status[data-kind="warn"] i { background: var(--warn); }
 .status[data-kind="info"] i { background: var(--info); }
 .status small { margin-top: 2px; }
+#perm { display: flex; gap: 10px; text-align: left; justify-content: flex-start; border: 1px solid var(--line); border-radius: var(--r-card); padding: 10px 14px; margin-bottom: 10px; }
+#perm i { background: var(--warn); }
 
 .card {
   background: var(--card);
@@ -122,13 +157,22 @@ details[open] > summary { margin-bottom: 12px; }
 summary:hover h3::before { border-color: var(--text); }
 .card > summary + .check, .card > summary + .ctl { margin-top: 0; }
 .hbtns { display: flex; align-items: center; gap: 10px; }
-button.icon { padding: 2px 8px; font-size: 13px; line-height: 1.3; color: var(--muted); background: none; border-color: transparent; }
+button.icon { display: grid; place-items: center; padding: 4px 6px; font-size: 13px; line-height: 1.3; color: var(--muted); background: none; border-color: transparent; }
 button.icon:hover { color: var(--text); background: none; }
+#foldAll svg { transition: transform .2s; }
+#foldAll.folded svg { transform: rotate(180deg); }
 body.panel { width: auto; min-width: 0; padding: 10px; }
 body.panel #openPanel { display: none; }
 
 /* пресеты */
 .chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 8px; }
+#presets {
+  display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 8px -16px 0; padding: 0 16px 2px;
+  -webkit-mask: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 24px), transparent);
+  mask: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 24px), transparent);
+}
+#presets::-webkit-scrollbar { display: none; }
+#presets .chip { flex: none; padding: 6px 14px; }
 .chip { padding: 6px 2px; font-size: 12px; color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .chip.active, .chip.active:hover { background: var(--sel-bg); color: var(--sel-text); border-color: var(--sel-bg); font-weight: 500; }
 
@@ -161,7 +205,12 @@ body.panel #openPanel { display: none; }
 .switch input:focus-visible + span { outline: 2px solid var(--text); outline-offset: 2px; }
 
 footer { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 10px; }
-footer button { flex: 1 1 auto; font-size: 12px; padding: 6px 10px; }
+footer { justify-content: center; gap: 18px; }
+footer #reset, footer #openPanel, footer #openOptions { display: none; }
+:root footer button, :root footer button:hover { flex: none; background: none; border-color: transparent; padding: 4px 0; font-size: 12px; color: var(--muted); }
+:root footer button:hover { color: var(--text); }
+footer #donate { color: var(--text-2); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--check); }
+.note { text-align: center; }
 button {
   background: var(--field); color: var(--text); border: 1px solid transparent;
   border-radius: var(--r-ctl); padding: 5px 12px; cursor: pointer; font: inherit;
@@ -227,7 +276,7 @@ button.link:hover { color: var(--text); }
 
 /* ───────── Тема «Графит и янтарь» ───────── */
 [data-theme="amber"] .brand b { font-weight: 600; }
-[data-theme="amber"] .status { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0 2px 12px; margin-bottom: 12px; font-size: 13px; }
+[data-theme="amber"] .status { font-size: 13px; }
 [data-theme="amber"] .status[data-kind="ok"] i { box-shadow: none; }
 [data-theme="amber"] .card { border-color: var(--line); margin-bottom: 8px; }
 [data-theme="amber"] h3,
