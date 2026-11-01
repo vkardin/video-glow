@@ -8,13 +8,14 @@
   <meta property="og:title" content="Video Glow">
   <meta property="og:image" content="https://vkardin.github.io/video-glow/img/glow-en.webp">
   <link rel="icon" href="img/icon32.png">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
   <header class="top">
     <div class="wrap">
       <a class="brand" href="#"><img src="img/logo.svg" alt="">Video Glow</a>
       <nav class="nav">
+        <a href="#demo" data-i18n="nav_demo"></a>
         <a href="#features" data-i18n="nav_features"></a>
         <a href="#install" data-i18n="nav_install"></a>
         <a href="#donate" data-i18n="nav_donate"></a>
@@ -31,6 +32,7 @@
   <main>
     <section class="hero">
       <div class="wrap">
+        <a class="badge" href="#demo"><b>2.0</b><span data-i18n="hero_badge"></span></a>
         <h1 data-i18n="hero_title"></h1>
         <p class="lead" data-i18n="hero_lead"></p>
         <div class="cta">
@@ -39,6 +41,50 @@
         </div>
         <p class="free" data-i18n="hero_free"></p>
         <div class="screen"><img data-shot="glow" alt="" width="1280" height="800"></div>
+      </div>
+    </section>
+
+    <section class="block demo" id="demo">
+      <div class="wrap">
+        <h2 data-i18n="demo_title"></h2>
+        <p class="sub" data-i18n="demo_sub"></p>
+        <div class="demo-grid">
+          <div class="demo-stage" data-style="soft">
+            <div class="demo-screen">
+              <canvas class="halo" width="32" height="18" aria-hidden="true"></canvas>
+              <canvas class="pic" width="640" height="360" role="img" data-i18n-aria="demo_alt"></canvas>
+            </div>
+          </div>
+          <div class="demo-panel">
+            <div class="dp-head">
+              <span class="dp-brand"><img src="img/logo.svg" alt="" width="22" height="22">Video Glow</span>
+              <label class="switch"><input type="checkbox" data-demo="on" checked data-i18n-aria="demo_on"><span></span></label>
+            </div>
+            <div class="dp-card">
+              <span class="dp-lbl" data-i18n="demo_presets"></span>
+              <div class="dp-chips">
+                <button type="button" data-preset="soft" data-i18n="pr_soft"></button>
+                <button type="button" data-preset="cinema" data-i18n="pr_cinema"></button>
+                <button type="button" data-preset="neon" data-i18n="pr_neon"></button>
+                <button type="button" data-preset="music" data-i18n="pr_music"></button>
+                <button type="button" data-preset="night" data-i18n="pr_night"></button>
+              </div>
+            </div>
+            <div class="dp-card">
+              <span class="dp-lbl" data-i18n="demo_style"></span>
+              <div class="dp-seg">
+                <button type="button" data-style="soft" data-i18n="demo_soft"></button>
+                <button type="button" data-style="led" data-i18n="demo_led"></button>
+              </div>
+              <div class="dp-row"><label for="dBright" data-i18n="demo_bright"></label><output for="dBright"></output></div>
+              <input type="range" id="dBright" data-demo="bright" min="40" max="150" step="5" value="100">
+              <div class="dp-row"><label for="dSize" data-i18n="demo_size"></label><output for="dSize"></output></div>
+              <input type="range" id="dSize" data-demo="size" min="30" max="180" step="5" value="100">
+              <label class="dp-check"><input type="checkbox" data-demo="room"><span data-i18n="demo_room"></span></label>
+            </div>
+            <p class="dp-note" data-i18n="demo_note"></p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -55,8 +101,8 @@
           <div><h3 data-i18n="f_room_t"></h3><p data-i18n="f_room_d"></p></div>
         </div>
         <div class="feat">
-          <div class="pic"><img data-shot="themes" alt="" width="1280" height="800" loading="lazy"></div>
-          <div><h3 data-i18n="f_themes_t"></h3><p data-i18n="f_themes_d"></p></div>
+          <div class="pic"><img data-shot="settings" alt="" width="1280" height="800" loading="lazy"></div>
+          <div><h3 data-i18n="f_set_t"></h3><p data-i18n="f_set_d"></p></div>
         </div>
       </div>
     </section>
@@ -65,14 +111,7 @@
       <div class="wrap">
         <h2 data-i18n="m_title"></h2>
         <p class="sub" data-i18n="m_sub"></p>
-        <div class="grid">
-          <div class="tile"><b data-i18n="m1_t"></b><span data-i18n="m1_d"></span></div>
-          <div class="tile"><b data-i18n="m2_t"></b><span data-i18n="m2_d"></span></div>
-          <div class="tile"><b data-i18n="m3_t"></b><span data-i18n="m3_d"></span></div>
-          <div class="tile"><b data-i18n="m4_t"></b><span data-i18n="m4_d"></span></div>
-          <div class="tile"><b data-i18n="m5_t"></b><span data-i18n="m5_d"></span></div>
-          <div class="tile"><b data-i18n="m6_t"></b><span data-i18n="m6_d"></span></div>
-        </div>
+        <ul class="mlist" id="mlist"></ul>
       </div>
     </section>
 
@@ -194,6 +233,7 @@
     </div>
   </template>
 
-  <script src="app.js?v=10"></script>
+  <script src="app.js?v=11"></script>
+  <script src="demo.js?v=1"></script>
 </body>
 </html>
