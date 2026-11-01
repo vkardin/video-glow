@@ -33,9 +33,9 @@ Video Glow turns your screen into a small home cinema: a soft light in the colou
 - Cinema mode, an on/off button on the video, per-site settings, hotkeys, backup
 - Six interface themes; English, Deutsch, Español, Polski, Português (Brasil), Türkçe, Русский, Українська
 
-| LED strip | Room colour | Themes |
+| LED strip | Room colour | Settings |
 |---|---|---|
-| ![LED strip](docs/img/led-en.webp) | ![Room colour](docs/img/room-en.webp) | ![Themes](docs/img/themes-en.webp) |
+| ![LED strip](docs/img/led-en.webp) | ![Room colour](docs/img/room-en.webp) | ![Settings](docs/img/settings-en.webp) |
 
 ## Privacy
 
