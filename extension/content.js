@@ -507,7 +507,7 @@
       this.crop = NO_CROP;     // найденные чёрные полосы внутри видео (доли кадра)
       this.cropPend = null;
       this.cropAt = 0;
-      this.probe = null;
+      this.snap = null;
       this.readable = null;    // можно ли читать пиксели кадра (false — видео чужого домена без CORS)
       this.s = settings;       // действующие настройки: страница или полный экран
       this.played = false;     // видео уже запускалось (для режимов паузы)
@@ -560,7 +560,7 @@
       this.vloop = (now) => { clearTimeout(this.vfcT); this.vfc = 0; this.raf = 0; this.frame(now); };
       this.vlate = () => { if (this.vfc) { this.unVfc(); this.steady = false; this.next(); } };   // кадров нет — назад к rAF
       this.onEvt = (e) => {
-        if (e && e.type === 'emptied') { this.played = false; this.pausedAt = 0; this.zOff = false; this.audioClose(); }
+        if (e && e.type === 'emptied') { this.snap = null; this.played = false; this.pausedAt = 0; this.zOff = false; this.audioClose(); }
         if (e && (e.type === 'play' || e.type === 'playing')) this.played = true;
         if (e && RESET_CROP_EVENTS.has(e.type)) { this.crop = NO_CROP; this.cropPend = null; this.cropAt = 0; }
         this.kick();
@@ -883,7 +883,7 @@
       }
       let d;
       try {
-        this.gctx.drawImage(v, 0, 0, 32, 18);
+        this.gctx.drawImage(this.snapFrame(), 0, 0, 32, 18);
         d = this.gctx.getImageData(0, 0, 32, 18).data;
       } catch (e) { this.gBad = true; this.readable = false; return; }
       let sum = 0;
@@ -936,7 +936,7 @@
       }
       let d;
       try {
-        this.sctx.drawImage(v, 0, 0, 16, 9);
+        this.sctx.drawImage(this.snapFrame(), 0, 0, 16, 9);
         d = this.sctx.getImageData(0, 0, 16, 9).data;
       } catch (e) { this.sBad = true; return; }
       const cur = this.sNext || new Float32Array(144);   // два буфера по очереди, без мусора
@@ -1262,6 +1262,25 @@
       return true;
     }
 
+    // ── один маленький снимок кадра на все замеры (полосы, вспышки, смена сцены) ──
+    // Чтение кадра видео в память — самая дорогая операция: делаем её один раз на кадр, а не три.
+    snapFrame() {
+      const v = this.v, vw = v.videoWidth, vh = v.videoHeight;
+      const w = 96, h = Math.max(24, Math.round(w * vh / vw));
+      let p = this.snap;
+      if (!p) {
+        const cv = document.createElement('canvas');
+        p = this.snap = { cv, ctx: cv.getContext('2d', { willReadFrequently: true }), t: -1, src: '' };
+      }
+      const src = v.currentSrc + '|' + vw + 'x' + vh;
+      if (p.cv.width !== w || p.cv.height !== h) { p.cv.width = w; p.cv.height = h; p.t = -1; }
+      if (p.t !== v.currentTime || p.src !== src) {
+        p.ctx.drawImage(v, 0, 0, w, h);
+        p.t = v.currentTime; p.src = src;
+      }
+      return p.cv;
+    }
+
     // ── автоопределение чёрных полос внутри самого видео ──
     updateCrop(now) {
       const v = this.v;
@@ -1270,17 +1289,11 @@
       if (v.readyState < 2) return;
       const vw = v.videoWidth, vh = v.videoHeight;
       if (!vw || !vh) return;
-      const pw = 96, ph = Math.max(24, Math.round(pw * vh / vw));
-      if (!this.probe) {
-        const cv = document.createElement('canvas');
-        this.probe = { cv, ctx: cv.getContext('2d', { willReadFrequently: true }) };
-      }
-      const p = this.probe;
-      if (p.cv.width !== pw || p.cv.height !== ph) { p.cv.width = pw; p.cv.height = ph; }
-      let data;
+      let data, pw, ph;
       try {
-        p.ctx.drawImage(v, 0, 0, pw, ph);
-        data = p.ctx.getImageData(0, 0, pw, ph).data;
+        const cv = this.snapFrame();
+        pw = cv.width; ph = cv.height;
+        data = this.snap.ctx.getImageData(0, 0, pw, ph).data;
         this.readable = true;
       } catch (e) {
         this.readable = false;       // кадр прочитать нельзя (чужой домен без CORS)
