@@ -3,26 +3,28 @@
 (() => {
   const el = document.getElementById('screen');
   if (!el) return;
+  const host = el.parentElement || el;   // сцена вокруг экрана: «цвет комнаты» и затемнение
+  const k = Number(el.dataset.scale) || 1; // миниатюра в попапе меньше полного превью
   let last = '';
   self.vgPreview = (s, kind) => {
     if (kind) el.dataset.kind = kind;
     if (!s) return;
     const lit = s.enabled && s.pageGlow && el.dataset.kind !== 'off';
-    const shape = s.shape === 'circle' ? '50%' : s.shape === 'rect' ? '3px' : Math.round(s.radius * 0.5) + 'px';
+    const shape = s.shape === 'circle' ? '50%' : s.shape === 'rect' ? '3px' : Math.round(s.radius * 0.5 * k) + 'px';
     const v = [
-      ['--pv-spread', Math.round(s.spread * 0.6) + 'px'],
-      ['--pv-blur', Math.round(s.blur * (s.glowStyle === 'led' ? 0.12 : 0.35)) + 'px'],
+      ['--pv-spread', Math.round(s.spread * 0.6 * k) + 'px'],
+      ['--pv-blur', Math.round(s.blur * (s.glowStyle === 'led' ? 0.12 : 0.35) * k) + 'px'],
       ['--pv-alpha', lit ? (s.opacity / 100) * Math.min(1.3, s.brightness / 100) : 0],
       ['--pv-sat', (s.saturation || 100) / 100],
       ['--pv-radius', shape],
-      ['--pv-led', Math.max(6, Math.round(320 / Math.max(8, s.ledCount || 40))) + 'px'],
+      ['--pv-led', Math.max(3, Math.round(320 * k / Math.max(8, s.ledCount || 40))) + 'px'],
       ['--pv-room', lit && s.room ? s.roomLevel / 100 : 0],
       ['--pv-dim', lit && s.dim ? s.dimLevel / 100 : 0]
     ];
     const key = JSON.stringify(v) + s.glowStyle;
     if (key === last) return;
     last = key;
-    for (const [k, x] of v) el.style.setProperty(k, x);
+    for (const [n, x] of v) host.style.setProperty(n, x);
     el.dataset.style = s.glowStyle === 'led' ? 'led' : 'soft';
     el.classList.toggle('lit', !!lit);
   };

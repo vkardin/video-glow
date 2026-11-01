@@ -1155,5 +1155,8 @@
   },
   "o_nav_lights": {
     "message": "Luzes do ambiente"
+  },
+  "o_preview_hint": {
+    "message": "É assim que o brilho fica com suas configurações atuais. Mude-as no menu da extensão e a imagem se atualiza."
   }
 }

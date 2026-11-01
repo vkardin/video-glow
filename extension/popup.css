@@ -31,18 +31,18 @@ header {
 /* логотип — та же картинка, что и иконка расширения */
 .logo { flex: none; width: 22px; height: 22px; background: url(icons/logo.svg) center / contain no-repeat; }
 
-/* .stage .screen — размеры мини-экрана в попапе; сам экран в preview.css */
-.stage .screen { margin-bottom: 30px; }
-/* Сцена: маленький экран со свечением по текущим настройкам (preview.js) и статус под ним */
+/* Сцена: миниатюра со свечением по текущим настройкам (preview.js) и статус рядом */
 .stage {
-  position: relative; display: flex; flex-direction: column; align-items: center;
-  margin: 0 -14px 10px; padding: 30px 14px 12px; overflow: hidden;
-  background: radial-gradient(60% 70% at 50% 42%, rgb(232 110 120 / calc(var(--pv-room, 0) * .45)), transparent 75%);
+  position: relative; display: flex; align-items: center; gap: 14px;
+  margin: 0 -14px 10px; padding: 12px 14px 12px 26px; overflow: hidden;
+  background: radial-gradient(40% 90% at 40px 50%, rgb(232 110 120 / calc(var(--pv-room, 0) * .45)), transparent 80%);
 }
 .stage::before { /* затемнение страницы вокруг плеера */
   content: ""; position: absolute; inset: 0; background: #000; opacity: calc(var(--pv-dim, 0) * .55);
   transition: opacity .4s; pointer-events: none;
 }
+.stage .screen { flex: none; width: 60px; }
+.stage .status { justify-content: flex-start; text-align: left; }
 .status {
   position: relative; display: flex; gap: 8px; align-items: flex-start; justify-content: center;
   max-width: 100%; color: var(--text-2); font-size: 12px; text-align: center;

@@ -1155,5 +1155,8 @@
   },
   "o_nav_lights": {
     "message": "Luces de la sala"
+  },
+  "o_preview_hint": {
+    "message": "Así se ve el brillo con tus ajustes actuales. Cámbialos en el menú de la extensión y la imagen se actualiza."
   }
 }

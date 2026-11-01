@@ -1155,5 +1155,8 @@
   },
   "o_nav_lights": {
     "message": "Oda ışıkları"
+  },
+  "o_preview_hint": {
+    "message": "Işıltı mevcut ayarlarınızla böyle görünür. Uzantı menüsünde değiştirin, resim güncellenir."
   }
 }
