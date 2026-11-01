@@ -13,20 +13,20 @@
   <header>
     <div class="brand"><span class="logo"></span><b>Video Glow</b><em id="scopeBadge" hidden data-i18n="p_badge_site"></em><em id="proBadge" class="pro-badge" hidden data-i18n="p_pro_badge"></em></div>
     <div class="hbtns">
-      <button id="foldAll" type="button" class="icon" data-i18n-title="p_fold_all">&#9776;</button>
+      <button id="foldAll" type="button" class="icon" data-i18n-title="p_fold_all"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3l4 3 4-3M4 13l4-3 4 3"/></svg></button>
       <label class="switch" data-i18n-title="p_enabled_title">
         <input type="checkbox" data-key="enabled"><span></span>
       </label>
     </div>
   </header>
   <nav class="quick">
-    <button type="button" class="q" id="qRoom" data-i18n-title="q_room">&#9680;</button>
-    <button type="button" class="q" id="qLed" data-i18n-title="q_led">&#8285;</button>
+    <button type="button" class="q" id="qRoom" data-i18n-title="q_room"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="12" rx="2.5"/><rect x="5" y="5.5" width="6" height="5" rx="1" fill="currentColor" stroke="none"/></svg></button>
+    <button type="button" class="q" id="qLed" data-i18n-title="q_led"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="5" width="7" height="6" rx="1"/><g fill="currentColor" stroke="none"><circle cx="2" cy="4" r="1"/><circle cx="2" cy="8" r="1"/><circle cx="2" cy="12" r="1"/><circle cx="14" cy="4" r="1"/><circle cx="14" cy="8" r="1"/><circle cx="14" cy="12" r="1"/><circle cx="8" cy="2.2" r="1"/><circle cx="8" cy="13.8" r="1"/></g></svg></button>
     <span class="qsep"></span>
-    <button type="button" class="q" id="qPanel" data-i18n-title="q_panel">&#10697;</button>
-    <button type="button" class="q" id="qWin" data-i18n-title="q_glowwin" hidden>&#9707;</button>
-    <button type="button" class="q" id="qOptions" data-i18n-title="q_options">&#9881;</button>
-    <button type="button" class="q" id="qReset" data-i18n-title="q_reset">&#8634;</button>
+    <button type="button" class="q" id="qPanel" data-i18n-title="q_panel"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="2.5" width="13" height="11" rx="2"/><path d="M9.5 2.5v11"/></svg></button>
+    <button type="button" class="q" id="qWin" data-i18n-title="q_glowwin" hidden><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3.5" width="9" height="7" rx="1.5"/><path d="M6 13.5h7.5a1 1 0 0 0 1-1V7"/></svg></button>
+    <button type="button" class="q" id="qOptions" data-i18n-title="q_options"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.2"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M3.4 12.6l1.4-1.4M11.2 4.8l1.4-1.4"/></svg></button>
+    <button type="button" class="q" id="qReset" data-i18n-title="q_reset"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a5 5 0 1 0 1.6-3.7"/><path d="M3 2.5v2.8h2.8"/></svg></button>
   </nav>
   </div>
 
@@ -40,9 +40,15 @@
     <div><span data-i18n="p_perm_need"></span><button id="permBtn" type="button" data-i18n="p_perm_btn"></button></div>
   </div>
 
-  <div id="status" class="status" data-kind="info">
-    <i></i>
-    <div><span id="statusText"></span><small id="statusNote"></small></div>
+  <div class="stage">
+    <div id="screen" class="screen" data-kind="info" aria-hidden="true">
+      <div class="halo"></div>
+      <div class="pic"></div>
+    </div>
+    <div id="status" class="status" data-kind="info" role="status">
+      <i></i>
+      <div><span id="statusText"></span><small id="statusNote"></small></div>
+    </div>
   </div>
 
   <section id="siteCard" class="card compact">
@@ -368,6 +374,7 @@
   <script src="defaults.js"></script>
   <script src="i18n.js"></script>
   <script src="presets.js"></script>
+  <script src="preview.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>
