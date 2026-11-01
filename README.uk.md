@@ -61,9 +61,11 @@ Video Glow перетворює екран на маленький кіноза�
 [MIT](LICENSE) © vkardin
 
 <!-- project-family:start -->
+
+[**vkardin / tools — каталог усіх проєктів ↗**](https://vkardin.github.io/video-glow/projects/)
 ## Інші інструменти від vkardin
 
-| Project | Проєкти |
+| Проєкт | Опис |
 | --- | --- |
 | **[Leveler](https://vkardin.github.io/leveler/)** | Рівна гучність, розбірливі діалоги, еквалайзер і керування швидкістю. [GitHub](https://github.com/vkardin/leveler) |
 | **[Video Drift](https://vkardin.github.io/video-drift/)** | Відео поверх інших вікон, субтитри, збереження позиції й нотатки до моментів. [GitHub](https://github.com/vkardin/video-drift) |

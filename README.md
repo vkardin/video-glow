@@ -61,6 +61,8 @@ Video Glow collects no data and sends nothing anywhere: everything runs on your 
 [MIT](LICENSE) © vkardin
 
 <!-- project-family:start -->
+
+[**vkardin / tools — all projects ↗**](https://vkardin.github.io/video-glow/projects/)
 ## More tools by vkardin
 
 | Project | Projects |

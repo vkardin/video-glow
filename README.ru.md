@@ -61,9 +61,11 @@ Video Glow превращает экран в маленький кинозал:
 [MIT](LICENSE) © vkardin
 
 <!-- project-family:start -->
+
+[**vkardin / tools — каталог всех проектов ↗**](https://vkardin.github.io/video-glow/projects/)
 ## Другие инструменты от vkardin
 
-| Project | Проекты |
+| Проект | Описание |
 | --- | --- |
 | **[Leveler](https://vkardin.github.io/leveler/)** | Ровная громкость, разборчивые диалоги, эквалайзер и управление скоростью. [GitHub](https://github.com/vkardin/leveler) |
 | **[Video Drift](https://vkardin.github.io/video-drift/)** | Видео поверх других окон, субтитры, сохранение позиции и заметки к моментам. [GitHub](https://github.com/vkardin/video-drift) |
