@@ -2,30 +2,67 @@ name: Release
 
 on:
   push:
-    tags: ["v*"]
+    branches: [main]
+    paths:
+      - extension/**
+      - tools/build.py
+      - .github/workflows/release.yml
   workflow_dispatch:
     inputs:
       version:
-        description: "Version, for example 1.4.0"
-        required: true
+        description: Version from manifest.json, for example 2.0.0
+        required: false
 
 permissions:
   contents: write
 
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      VERSION: ${{ inputs.version || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
-      - name: Build Chrome and Firefox zips
-        run: python3 tools/build.py extension "${VERSION#v}" dist
-      - name: Publish release
+      - name: Choose immutable build tag
+        id: plan
         env:
           GH_TOKEN: ${{ github.token }}
+          INPUT_VERSION: ${{ inputs.version }}
         run: |
-          V="${VERSION#v}"
-          # повторная сборка той же версии заменяет релиз и переносит метку на текущий коммит
-          if gh release view "v$V" >/dev/null 2>&1; then gh release delete "v$V" --cleanup-tag -y; fi
-          gh release create "v$V" dist/*.zip --target "$GITHUB_SHA" --title "Video Glow $V" --generate-notes
+          V=$(python3 -c 'import json; print(json.load(open("extension/manifest.json"))["version"])')
+          test -z "$INPUT_VERSION" || test "${INPUT_VERSION#v}" = "$V"
+          # Keep the original 2.0.0 tag and its archives intact. The store build
+          # contains the current fixes while retaining the extension version.
+          TAG="v$V-store"
+          echo "version=$V" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v4
+        if: steps.plan.outputs.publish == 'true'
+        with:
+          node-version: '22'
+      - name: Check shared controls and video return
+        if: steps.plan.outputs.publish == 'true'
+        run: |
+          node --test ui-kit/controls.test.cjs
+          node --test store/tests/handoff_test.cjs
+      - name: Build Chrome and Firefox archives
+        if: steps.plan.outputs.publish == 'true'
+        env:
+          VERSION: ${{ steps.plan.outputs.version }}
+        run: python3 tools/build.py extension "$VERSION" dist
+      - name: Publish store build
+        if: steps.plan.outputs.publish == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.plan.outputs.tag }}
+          VERSION: ${{ steps.plan.outputs.version }}
+        run: |
+          printf '%s\n' "Current store build of Video Glow $VERSION, including video-return performance fixes and shared interface controls. The manifest version remains $VERSION. The original release tag and files are preserved." > release-notes.txt
+          gh release create "$TAG" dist/*.zip --target "$GITHUB_SHA" --title "Video Glow $VERSION — store build" --notes-file release-notes.txt --latest
