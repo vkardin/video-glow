@@ -1149,5 +1149,11 @@
   },
   "p_zoompan_hint": {
     "message": "Alt + rueda para acercar, Alt + arrastrar para mover, Alt + doble clic para restablecer"
+  },
+  "o_nav_sites": {
+    "message": "Sitios"
+  },
+  "o_nav_lights": {
+    "message": "Luces de la sala"
   }
 }

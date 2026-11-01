@@ -9,8 +9,42 @@ body {
 }
 :focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
 main { max-width: 640px; margin: 0 auto; }
-h1 { font-size: 26px; font-weight: 500; letter-spacing: -.02em; margin: 0 0 4px; display: flex; align-items: center; gap: 14px; }
-h2 { font-size: 16px; font-weight: 500; letter-spacing: -.01em; margin: 0 0 6px; }
+/* страница настроек: слева мини-экран и меню разделов, справа карточки */
+.layout { display: grid; grid-template-columns: 220px minmax(0, 640px); gap: 48px; justify-content: center; }
+.layout main { margin: 0; min-width: 0; }
+.side { position: sticky; top: 40px; align-self: start; }
+.side-head { display: flex; flex-direction: column; align-items: flex-start; }
+.side .screen { width: 150px; margin: 22px 0 34px 22px; }
+.side h1 { font-size: 20px; gap: 10px; }
+.side h1 .logo { width: 24px; height: 24px; }
+.side .sub { margin: 0 0 22px; font-size: 13px; }
+.toc { display: flex; flex-direction: column; gap: 2px; }
+.toc a {
+  display: block; padding: 7px 12px; margin-left: -12px; border-radius: var(--r-ctl);
+  color: var(--muted); text-decoration: none; font-size: 14px; transition: color .15s, background .15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a[aria-current] { color: var(--text); background: var(--card); }
+.group { scroll-margin-top: 24px; margin-bottom: 28px; }
+.group > .card + .card { margin-top: 10px; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (max-width: 860px) {
+  body { padding-top: 24px; }
+  .layout { grid-template-columns: minmax(0, 640px); gap: 0; }
+  .side { position: static; }
+  .side-head { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0 16px; }
+  .side .screen { width: 96px; margin: 12px 14px 12px 12px; }
+  .side .sub { flex-basis: 100%; }
+  .toc {
+    position: sticky; top: 0; z-index: 5; flex-direction: row; overflow-x: auto; scrollbar-width: none;
+    margin: 0 -16px 18px; padding: 8px 16px; background: var(--bg);
+  }
+  .toc a { flex: none; margin: 0; }
+  .side { display: contents; }
+}
+h1 { font-size: 26px; font-weight: 600; letter-spacing: -.02em; margin: 0 0 4px; display: flex; align-items: center; gap: 14px; }
+h2 { font-size: 16px; font-weight: 600; letter-spacing: -.01em; margin: 0 0 6px; }
 .logo { flex: none; width: 32px; height: 32px; background: url(icons/logo.svg) center / contain no-repeat; }
 .sub { color: var(--muted); margin: 0 0 32px 46px; }
 .card {
@@ -95,7 +129,9 @@ textarea {
 .phead em { font-style: normal; font-size: 11px; color: var(--text-2); border: 1px solid var(--check); border-radius: 8px; padding: 0 7px; }
 .phead input[type=text] { flex: 1; min-width: 120px; }
 .pbtns { display: flex; gap: 6px; flex-wrap: wrap; }
-.pbtns button { padding: 4px 11px; font-size: 12px; }
+.pbtns button { padding: 4px 11px; font-size: 12px; background: none; color: var(--muted); }
+.pbtns button:hover { color: var(--text); background: var(--field); }
+.phead b, .phead strong { font-weight: 500; }
 .pform h4 { margin: 14px 0 8px; font-size: 12px; font-weight: 500; color: var(--text); }
 .pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; }
 .pctl { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; align-items: center; font-size: 13px; color: var(--text-2); }
@@ -188,3 +224,4 @@ input[type=range]::-moz-range-thumb { width: 14px; height: 14px; border: 0; bord
   :root body input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; }
   :root body input[type=range] { margin-top: 16px; margin-bottom: 16px; }
 }
+@media (max-width: 520px) { .themes { grid-template-columns: 1fr 1fr; } }

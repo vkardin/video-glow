@@ -1149,5 +1149,11 @@
   },
   "p_zoompan_hint": {
     "message": "Yakınlaştırmak için Alt + tekerlek, kaydırmak için Alt + sürükle, sıfırlamak için Alt + çift tıklama"
+  },
+  "o_nav_sites": {
+    "message": "Siteler"
+  },
+  "o_nav_lights": {
+    "message": "Oda ışıkları"
   }
 }

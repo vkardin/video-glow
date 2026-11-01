@@ -1149,5 +1149,11 @@
   },
   "p_zoompan_hint": {
     "message": "Alt + kółko — powiększ, Alt + przeciągnij — przesuń, Alt + dwuklik — reset"
+  },
+  "o_nav_sites": {
+    "message": "Strony"
+  },
+  "o_nav_lights": {
+    "message": "Światło w pokoju"
   }
 }
