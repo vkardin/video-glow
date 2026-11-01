@@ -784,6 +784,7 @@
       // ни обрезки, ни фильтров, иначе в чужом окне картинка становится белой или чёрной. Свечение
       // на странице при этом идёт за окном (см. foreignBox). Раз в секунду проверяем, не вернули ли видео.
       const away = this.away();
+      this.handoffState(away, now);
       if (away) this.park();
       this.steady = false;
       const fs = getFsElement();
@@ -1137,6 +1138,10 @@
 
     // Лёгкий режим «авто»: если, пока горит свечение, кадры страницы идут реже ~12 в секунду — включаем его.
     jankStep(now, dt) {
+      if (this.away() || now < (this.handoffUntil || 0)) {
+        this.jAt = 0; this.jN = 0; this.jB = 0;
+        return;
+      }
       if (liteJank || settings.lite !== 'auto' || liteHw || !dt || document.visibilityState !== 'visible') return;
       if (!this.jAt) { this.jAt = now; this.jN = 0; this.jB = 0; }
       this.jN++;
@@ -1329,6 +1334,7 @@
 
     // ── авто-снижение частоты, если устройство не успевает ──
     adaptFps(now) {
+      if (this.away() || now < (this.handoffUntil || 0)) return;
       const target = fpsLimit();
       if (!this.s.adaptive) { this.fpsCap = target; return; }
       if (now - this.adaptAt >= 2000) {
@@ -2162,6 +2168,22 @@
     away() {
       const v = this.v;
       return v.ownerDocument !== document || v.hasAttribute('data-video-drift');
+    }
+
+    // A moved video can be throttled by the browser. These intervals do not
+    // measure the performance of the normal on-page glow.
+    handoffState(away, now) {
+      if (away === !!this.wasAway) return;
+      this.wasAway = away;
+      this.jAt = 0; this.jN = 0; this.jB = 0;
+      if (away) return;
+      this.drawEma = 0;
+      this.adaptAt = now;
+      this.fpsCap = fpsLimit();
+      this.lastStep = 0; this.bgT = 0;
+      this.lastDraw = 0; this.lastTime = -1;
+      this.forceDraw = true;
+      this.handoffUntil = now + 2000;
     }
 
     // Снять со <video> всё своё и не возвращать, пока видео не вернётся.
