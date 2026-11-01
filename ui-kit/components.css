@@ -1,0 +1,30 @@
+:root{--font:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;--accent-ink:var(--knob-on,var(--bg));--soft:var(--field);--chip:var(--field);--bar:var(--card);--fg:var(--text);--dim:var(--muted);--brand:var(--accent);--brand-strong:var(--accent);--accent-2:var(--accent);--r:16px;--r-card:16px;--r-tile:12px;--r-ctl:999px;--radius:16px}
+body{font-family:var(--font);-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font-family:var(--font)}
+:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+button:disabled{cursor:default}
+.card,.now,.settings,.empty{border-radius:16px}
+button.primary,.btn.primary,.btn-primary{border-radius:999px;background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+input[type=text],input[type=number],input[type=search],select,textarea{border-radius:10px}
+input[type=checkbox]{accent-color:var(--accent)}
+button.icon,.icon{border-radius:10px}
+html[data-family-app=snapt] .top{background:var(--bg);color:var(--text);border-bottom:1px solid var(--line)}
+html[data-family-app=snapt] .top .icon,html[data-family-app=snapt] .top .version{color:var(--muted);background:var(--field)}
+html[data-family-app=snapt] .top .title b{font-weight:650;letter-spacing:-.01em}
+html[data-family-app=snapt] .shot:is(:hover,:focus-visible) i{background:var(--accent);color:var(--accent-ink)}
+html[data-family-app=snapt] .bar{background:var(--card)}
+html[data-family-app=snapt] .brand img{box-shadow:none}
+html[data-family-app=snapt] .btn,html[data-family-app=snapt] button.primary{border-radius:999px}
+html[data-family-app=uni-homebot]{--neon:var(--tg-theme-link-color,#a98bff);--pink:#e0a061;--on:var(--accent-ink)}
+html[data-family-app=uni-homebot] .btn.primary{background:var(--accent);color:var(--accent-ink)}
+html[data-family-app=uni-homebot] .card{border-radius:16px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+html[data-family-app=snapt] .top .brand{color:var(--text)}
+html[data-family-app=snapt] .top nav a{color:var(--muted)}
+html[data-family-app=snapt] .hero{background:var(--card);color:var(--text);border-bottom:1px solid var(--line)}
+html[data-family-app=snapt] .hero p,html[data-family-app=snapt] .hero .sub{color:var(--muted)}
+html[data-family-app=snapt] button[aria-pressed=true],html[data-family-app=snapt] .btn{background:var(--accent);color:var(--accent-ink)}
+html[data-family-app=snapt] button.primary{box-shadow:none}
+html[data-family-app=uni-homebot] button.btn.primary{background:var(--accent);color:var(--accent-ink);box-shadow:none}
+html[data-family-app=uni-homebot] .chip.on{color:var(--text)}
