@@ -268,16 +268,6 @@ setStores();
 setupFeedback();
 apply();
 
-// Плавное появление блоков при прокрутке (только transform/opacity, один раз)
-(() => {
-  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const els = document.querySelectorAll('.feat, .mlist, .app, .install .tile, .demo-grid, .wallets .tile');
-  const io = new IntersectionObserver((list) => list.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }), { rootMargin: '0px 0px -8% 0px' });
-  els.forEach((el, i) => { el.classList.add('rv'); el.style.setProperty('--rv-d', (i % 3) * 70 + 'ms'); io.observe(el); });
-})();
-
 // Переливание подсветки только пока превью на экране
 (() => {
   const el = document.querySelector('.screen');
