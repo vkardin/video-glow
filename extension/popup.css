@@ -31,6 +31,8 @@ header {
 /* логотип — та же картинка, что и иконка расширения */
 .logo { flex: none; width: 22px; height: 22px; background: url(icons/logo.svg) center / contain no-repeat; }
 
+/* .stage .screen — размеры мини-экрана в попапе; сам экран в preview.css */
+.stage .screen { margin-bottom: 30px; }
 /* Сцена: маленький экран со свечением по текущим настройкам (preview.js) и статус под ним */
 .stage {
   position: relative; display: flex; flex-direction: column; align-items: center;
@@ -41,33 +43,6 @@ header {
   content: ""; position: absolute; inset: 0; background: #000; opacity: calc(var(--pv-dim, 0) * .55);
   transition: opacity .4s; pointer-events: none;
 }
-.screen { position: relative; width: 168px; aspect-ratio: 16 / 9; margin-bottom: 30px; }
-.screen .pic, .screen .halo {
-  position: absolute; border-radius: 3px;
-  /* «кадр»: закат над водой — свечение берёт цвета из него же */
-  background:
-    radial-gradient(circle at 34% 57%, #fff1c4 0 5%, #ffc061 9%, rgb(255 150 70 / .0) 26%),
-    linear-gradient(to bottom, transparent 60%, #2c1d4a 60%, #3a2a66 72%, #141433 100%),
-    linear-gradient(to bottom, #24318a 0%, #6a4fc9 26%, #e2607a 46%, #ff9a4d 60%);
-  background-size: 150% 100%;
-  animation: pv-drift 16s ease-in-out infinite alternate;
-}
-.screen .pic { inset: 0; box-shadow: 0 0 0 1px rgb(255 255 255 / .08); }
-.screen .halo {
-  inset: calc(var(--pv-spread, 11px) * -1);
-  border-radius: var(--pv-radius, 11px);
-  filter: blur(var(--pv-blur, 12px)) saturate(var(--pv-sat, 1.15));
-  opacity: var(--pv-alpha, .85);
-  transition: inset .25s, border-radius .25s, filter .25s, opacity .4s;
-}
-.screen[data-style="led"] .halo {
-  -webkit-mask: radial-gradient(circle, #000 0 36%, transparent 44%) 0 0 / var(--pv-led) var(--pv-led);
-  mask: radial-gradient(circle, #000 0 36%, transparent 44%) 0 0 / var(--pv-led) var(--pv-led);
-}
-.screen:not(.lit) .pic { filter: saturate(.35) brightness(.7); }
-@keyframes pv-drift { to { background-position: 100% 0; } }
-@media (prefers-reduced-motion: reduce) { .screen .pic, .screen .halo { animation: none; } }
-
 .status {
   position: relative; display: flex; gap: 8px; align-items: flex-start; justify-content: center;
   max-width: 100%; color: var(--text-2); font-size: 12px; text-align: center;

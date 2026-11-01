@@ -6,13 +6,28 @@
   <title>Video Glow</title>
   <script src="ui-theme.js"></script>
   <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="preview.css">
   <link rel="stylesheet" href="page.css">
 </head>
 <body>
-  <main>
-    <h1><span class="logo"></span><span data-i18n="o_title"></span></h1>
-    <p class="sub" id="version"></p>
-
+  <div class="layout">
+    <aside class="side">
+      <div class="side-head">
+        <div id="screen" class="screen lit" data-kind="ok" aria-hidden="true"><div class="halo"></div><div class="pic"></div></div>
+        <h1><span class="logo"></span><span>Video Glow</span></h1>
+        <p class="sub" id="version"></p>
+      </div>
+      <nav class="toc" aria-label="Video Glow">
+        <a href="#g-look" data-i18n="o_theme"></a>
+        <a href="#g-presets" data-i18n="o_presets"></a>
+        <a href="#g-sites" data-i18n="o_nav_sites"></a>
+        <a href="#g-lights" data-i18n="o_nav_lights"></a>
+        <a href="#g-backup" data-i18n="o_backup"></a>
+        <a href="#g-shortcuts" data-i18n="o_shortcuts"></a>
+        <a href="#g-about" data-i18n="o_about"></a>
+      </nav>
+    </aside>
+    <main>
     <section class="card" id="pro">
       <h2 data-i18n="o_pro"></h2>
       <p id="proState"></p>
@@ -25,7 +40,7 @@
       </div>
       <p class="muted small" data-i18n="o_pro_offline"></p>
     </section>
-
+    <div class="group" id="g-look">
     <section class="card" id="look">
       <h2 data-i18n="o_theme"></h2>
       <p class="muted" data-i18n="o_theme_hint"></p>
@@ -44,15 +59,17 @@
         <button type="button" id="customReset" data-i18n="o_custom_reset"></button>
       </div>
     </section>
-
+    </div>
+    <div class="group" id="g-presets">
     <section class="card" id="presets">
       <h2 data-i18n="o_presets"></h2>
       <p class="muted" data-i18n="o_presets_hint"></p>
       <div id="presetList"></div>
       <div class="row"><button type="button" id="presetAdd" data-i18n="o_preset_add"></button></div>
     </section>
-
-    <section class="card">
+    </div>
+    <div class="group" id="g-sites">
+    <section class="card" id="sitesCard">
       <h2 data-i18n="o_sites"></h2>
       <p class="muted" data-i18n="o_sites_hint"></p>
       <div class="row">
@@ -61,44 +78,13 @@
       </div>
       <ul class="sites" id="sites"></ul>
     </section>
-
     <section class="card">
       <h2 data-i18n="o_custom_sites"></h2>
       <p class="muted" data-i18n="o_custom_hint"></p>
       <ul class="sites" id="customSites"></ul>
     </section>
-
-    <section class="card">
-      <h2 data-i18n="o_backup"></h2>
-      <div class="row">
-        <button type="button" id="export" data-i18n="o_export"></button>
-        <button type="button" id="importBtn" data-i18n="o_import"></button>
-        <button type="button" id="resetAll" data-i18n="o_reset_all"></button>
-      </div>
-      <input type="file" id="importFile" accept=".json,application/json" hidden>
-    </section>
-
-    <section class="card" id="shortcutsCard">
-      <h2 data-i18n="o_shortcuts"></h2>
-      <p class="muted" data-i18n="o_shortcuts_text"></p>
-      <button type="button" id="shortcuts" data-i18n="o_shortcuts_btn"></button>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="o_limits"></h2>
-      <p class="muted" data-i18n="o_limits_text"></p>
-    </section>
-
-    <section class="card">
-      <h2 data-i18n="o_about"></h2>
-      <p class="muted" data-i18n="o_privacy_text"></p>
-      <div class="row">
-        <button type="button" id="privacy" hidden data-i18n="o_privacy"></button>
-        <button type="button" id="site" hidden data-i18n="p_site"></button>
-        <button type="button" id="donate" hidden data-i18n="p_donate"></button>
-      </div>
-    </section>
-
+    </div>
+    <div class="group" id="g-lights">
     <section class="card" id="hue">
       <h2 data-i18n="hue_title"></h2>
       <p class="muted" data-i18n="hue_hint"></p>
@@ -120,7 +106,6 @@
         <div class="row" style="margin-top:12px"><button type="button" id="hueForget" data-i18n="hue_forget"></button></div>
       </div>
     </section>
-
     <section class="card" id="lights">
       <h2 data-i18n="lt_title"></h2>
       <p class="muted" data-i18n="lt_hint"></p>
@@ -160,14 +145,51 @@
         <textarea id="haYaml" rows="14" readonly spellcheck="false"></textarea>
       </details>
     </section>
-  </main>
+    </div>
+    <div class="group" id="g-backup">
+    <section class="card" id="backup">
+      <h2 data-i18n="o_backup"></h2>
+      <div class="row">
+        <button type="button" id="export" data-i18n="o_export"></button>
+        <button type="button" id="importBtn" data-i18n="o_import"></button>
+        <button type="button" id="resetAll" data-i18n="o_reset_all"></button>
+      </div>
+      <input type="file" id="importFile" accept=".json,application/json" hidden>
+    </section>
+    </div>
+    <div class="group" id="g-shortcuts">
+    <section class="card" id="shortcutsCard">
+      <h2 data-i18n="o_shortcuts"></h2>
+      <p class="muted" data-i18n="o_shortcuts_text"></p>
+      <button type="button" id="shortcuts" data-i18n="o_shortcuts_btn"></button>
+    </section>
+    </div>
+    <div class="group" id="g-about">
+    <section class="card" id="about">
+      <h2 data-i18n="o_about"></h2>
+      <p class="muted" data-i18n="o_privacy_text"></p>
+      <div class="row">
+        <button type="button" id="privacy" hidden data-i18n="o_privacy"></button>
+        <button type="button" id="site" hidden data-i18n="p_site"></button>
+        <button type="button" id="donate" hidden data-i18n="p_donate"></button>
+      </div>
+    </section>
+    <section class="card">
+      <h2 data-i18n="o_limits"></h2>
+      <p class="muted" data-i18n="o_limits_text"></p>
+    </section>
+    </div>
+    </main>
+  </div>
   <div id="toast"></div>
 
   <script src="defaults.js"></script>
   <script src="license.js"></script>
   <script src="i18n.js"></script>
   <script src="presets.js"></script>
+  <script src="preview.js"></script>
   <script src="options.js"></script>
+  <script src="options-nav.js"></script>
   <script src="hue.js"></script>
   <script src="hue-options.js"></script>
   <script src="lights.js"></script>
