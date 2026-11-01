@@ -1,0 +1,20 @@
+name: UI and handoff checks
+on:
+  pull_request:
+    paths: ['extension/**', 'ui-kit/**', 'tools/build.py', 'store/tests/handoff_test.cjs', '.github/workflows/ui.yml']
+  push:
+    branches: [main]
+    paths: ['extension/**', 'ui-kit/**', 'tools/build.py', 'store/tests/handoff_test.cjs', '.github/workflows/ui.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test ui-kit/controls.test.cjs store/tests/handoff_test.cjs
+      - run: python3 ui-kit/sync.py --check
+      - run: python3 tools/build.py extension 2.0.0 dist

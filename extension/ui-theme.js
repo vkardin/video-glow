@@ -61,11 +61,7 @@
   });
 
   // Заполненная часть ползунка: --p = положение бегунка в процентах.
-  const fill = (el) => {
-    const min = Number(el.min) || 0, max = Number(el.max) || 100;
-    el.style.setProperty('--p', ((Number(el.value) - min) / (max - min || 1) * 100) + '%');
-  };
-  document.addEventListener('input', (e) => { if (e.target.type === 'range') fill(e.target); }, true);
+  const fill = self.VkUI.fillRange;
 
   self.VG_THEMES = THEMES;
   self.vgSetTheme = (name) => chrome.storage.local.set({ uiTheme: apply(name) });
