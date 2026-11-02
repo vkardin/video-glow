@@ -62,7 +62,7 @@ Video Glow превращает экран в маленький кинозал:
 
 <!-- project-family:start -->
 
-[**vkardin / tools — каталог всех проектов ↗**](https://vkardin.github.io/video-glow/projects/)
+[**vkardin / tools — каталог всех проектов ↗**](https://vkardin.github.io/)
 ## Другие инструменты от vkardin
 
 | Проект | Описание |
