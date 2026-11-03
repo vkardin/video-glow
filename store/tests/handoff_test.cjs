@@ -3,7 +3,7 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
-const source = fs.readFileSync(require('node:path').join(__dirname, '../../extension/content.js'), 'utf8');
+const source = fs.readFileSync(require('node:path').join(__dirname, '../../extension/content.js'), 'utf8').replace(/\r\n/g, '\n');
 function fixture() {
   const context = vm.createContext({ fpsLimit: () => 60, liteJank: false, liteHw: false, settings: { lite: 'auto' }, document: { visibilityState: 'visible' }, glows: new Map() });
   const g = { s: { adaptive: true }, fpsCap: 15, drawEma: 20, adaptAt: 0, away: () => false };
