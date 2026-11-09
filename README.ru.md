@@ -51,7 +51,7 @@ Video Glow превращает экран в маленький кинозал:
 | Папка | Что внутри |
 |---|---|
 | [`extension/`](extension) | Исходный код расширения (`chrome://extensions` → Режим разработчика → Загрузить распакованное) |
-| [`docs/`](docs) | Сайт, публикуется через GitHub Pages |
+| [`docs/`](docs) | Заметки по поддержке и скриншоты для README. Сайт живёт в [vkardin.github.io](https://github.com/vkardin/vkardin.github.io/tree/main/video-glow) |
 | [`store/`](store) | Тексты для магазинов, графика и тестовые скрипты |
 | [`tools/`](tools) | `build.py` собирает zip для Chrome и Firefox |
 
